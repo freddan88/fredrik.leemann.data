@@ -40,9 +40,9 @@ for_window [class="Catfish"] floating enable
 for_window [class="^.*"] border pixel 1
 
 # Start program on predefined workspace
-; assign [class="Google-chrome"] $wp3
-; assign [class="Postman"] $wp4
-; assign [class="Code"] $wp2
+# assign [class="Google-chrome"] $wp3
+# assign [class="Postman"] $wp4
+# assign [class="Code"] $wp2
 
 # thin borders
 hide_edge_borders both
