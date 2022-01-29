@@ -56,7 +56,7 @@ get_docker_compose() {
 install_all() {
     echo " "
     echo "INITIALIZE" && sleep 2
-    apt update -qq && apt install ca-certificates ssh zsh git unzip zip curl net-tools nano pwgen fail2ban gnupg lsb-release -yqq
+    apt update -qq && apt install ca-certificates ssh zsh git unzip zip curl net-tools nano pwgen gnupg lsb-release -yqq
 
     echo " "
     echo "ADDING KEYS AND REPOSITORIES" && sleep 2
@@ -93,7 +93,7 @@ install_all() {
     apt install ./mint-y-icons_*_all.deb ./mint-x-icons_*_all.deb ./mint-y-theme_*_all.deb -yqq
 
     apt update -qq
-    apt install i3 ufw gufw gimp thunderbird gparted synaptic neofetch nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 insomnia spotify-client vlc -yqq
+    apt install i3 ufw gufw fail2ban gimp thunderbird gparted synaptic neofetch nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 insomnia spotify-client vlc -yqq
     apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -yqq
     apt install imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 -yqq
     apt install openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin -yqq
