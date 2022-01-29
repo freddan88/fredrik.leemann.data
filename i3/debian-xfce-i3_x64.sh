@@ -60,9 +60,10 @@ run_config_lightdm_slick_greeter() {
     echo "background=/usr/share/backgrounds/linux-wallpaper-01.jpg" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
     echo "draw-user-backgrounds=false" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
     echo "theme-name=Arc-Dark" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
-    echo "icon-theme-name=Elementary Xfce dark" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
+    echo "icon-theme-name=elementary-xfce-dark" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
     echo "activate-numlock=true" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
     echo "draw-grid=false" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
+    echo "clock-format=%R | %F v%V" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
     echo "Wrote new config in: $LIGHTDM_SLICK_GREETER_CONFIG_FILE"
 }
 
@@ -73,10 +74,10 @@ install_all() {
 
     echo " "
     echo "ADDING KEYS AND REPOSITORIES" && sleep 2
-    curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
+    curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor --batch --yes --output /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
 
-    wget -q -O- https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --dearmor | tee /usr/share/keyrings/spotify-archive-keyring.gpg >/dev/null
+    wget -q -O- https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --dearmor --batch --yes | tee /usr/share/keyrings/spotify-archive-keyring.gpg >/dev/null
 
     # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | apt-key add - >/dev/null
     echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
