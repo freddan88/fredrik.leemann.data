@@ -54,7 +54,7 @@ get_docker_compose() {
 
 run_config_lightdm_slick_greeter() {
     echo " "
-    echo "UPDATING LIGHTDM SLICK GREETER" && sleep 2
+    echo "CONFIGURING LIGHTDM SLICK GREETER" && sleep 2
     LIGHTDM_SLICK_GREETER_CONFIG_FILE="/etc/lightdm/slick-greeter.conf"
     echo "[Greeter]" >$LIGHTDM_SLICK_GREETER_CONFIG_FILE
     echo "background=/usr/share/backgrounds/linux-wallpaper-01.jpg" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
