@@ -1,0 +1,22 @@
+
+#****************
+#INSTALL DESKTOP*
+#****************
+sudo dnf -y update
+sudo dnf -y install epel-release
+sudo dnf -y groupinstall "X Window system"
+sudo dnf -y groupinstall xfce
+cp /etc/X11/xinit/xinitrc ~/.xinitrc
+sudo echo "exec /usr/bin/xfce4-session" >> ~/.xinitrc
+sudo systemctl set-default graphical.target
+dnf group install "Basic Desktop"
+lightdm-gtk-greeter-settings
+
+dnf install i3 Xorg lightdm slick-greeter lightdm-settings zsh git compton nm-connection-editor xbacklight playerctl alsa-utils alsa-tools volumeicon pulseaudio mirage pcmanfm gparted rofi -y
+dnf install xfce4-terminal xfce4-screenshooter lxappearance neofetch nitrogen libreoffice mate-power-manager firefox lxqt-sudo lxqt-config mousepad net-tools -y
+
+systemctl set-default graphical.target
+
+dnf -y install mint-themes mint-y-theme mint-x-icons mint-y-icons
+
+dnf -y install kernel-devel kernel-headers make gcc

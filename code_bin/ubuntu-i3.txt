@@ -1,0 +1,115 @@
+Suggested packages:
+  colord cups-common gvfs liblcms2-utils librsvg2-bin bindfs
+Recommended packages:
+  at-spi2-core libgdk-pixbuf2.0-bin libgtk-3-bin xserver-xorg
+
+I3 install Ubuntu 20.04 Server 64Bit:
+
+sudo apt purge cloud-init -y && sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+sudo apt install slick-greeter i3 zsh git ssh zip wget curl nano sudo net-tools playerctl alsa-utils alsa-tools volumeicon-alsa pulseaudio pavucontrol -y
+sudo apt install imagemagick xdg-user-dirs xfce4-screenshooter xterm lxterminal numlockx xbacklight xarchiver compton exo-utils gimp thunderbird -y
+sudo apt install pcmanfm gparted lxappearance synaptic mousepad rofi neofetch nitrogen policykit-1 lxpolkit gvfs-backends lxpanel -y
+
+mate-power-manager iceweasel network-manager-gnome // Instalerar Gnome-desktop
+
+###############################
+
+I3 install Xubuntu 20.04 64Bit:
+
+FOR VM:S (VIRTUALBOX GUEST EXTENSIONS)
+apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
+
+SOFTWARE
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install i3-wm zsh git ssh zip wget curl nano sudo ufw gufw net-tools gimp thunderbird gparted synaptic neofetch nitrogen imagemagick libreoffice compton arc-theme  -y
+sudo apt install sqlite3 ubuntu-restricted-extras gnome-icon-theme flatpak snapd apt-transport-https ca-certificates gnupg-agent software-properties-common xfce4-appmenu-plugin -y
+
+sudo add-apt-repository ppa:regolith-linux/stable
+sudo apt update && sudo apt install ayu-theme -y
+
+sudo apt install apache2 libsodium23 mariadb-client mariadb-server \
+php php-{bcmath,cli,common,curl,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip} \
+libapache2-mod-php php-common php-imagick php-pear php-cgi php-phpseclib libpcre3 pwgen \
+imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri \
+libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 openssl libapache2-mpm-itk \
+libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg neofetch ghostscript net-tools curl -y
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo apt-get update && sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+
+# Get latest version: https://github.com/docker/compose/releases
+cd /usr/bin && sudo wget https://github.com/docker/compose/releases/download/1.28.2/docker-compose-Linux-x86_64
+cd /usr/bin && sudo mv docker-compose-Linux-x86_64 docker-compose && sudo chmod 755 docker-compose
+sudo usermod -aG docker <your-username>
+
+LATEST_COMPOSE=$(curl -s https://github.com/docker/compose/releases/latest | cut -d'"' -f2)
+wget ${LATEST_COMPOSE/tag/download}/docker-compose-$(uname -s)-$(uname -m)
+
+# echo $latest | sed -i 's/tag/download/g'
+# echo "${latest/tag/download}"
+
+sudo snap install code --classic
+sudo snap install spotify postman insomnia
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak install flathub com.github.alecaddd.sequeler
+
+WALLPAPER
+
+# https://wallpapersafari.com
+cd /usr/share/backgrounds && sudo wget https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && sudo mv LEps6S.jpg linux-wallpaper-01.jpg
+
+DOWNLOAD AND INSTALL TOOLS:
+
+# https://www.google.se/chrome/?brand=CHBD&gclid=EAIaIQobChMIiov-7tW-6gIViNGyCh3MVAM3EAAYASAAEgIU5fD_BwE&gclsrc=aw.ds
+# https://www.wikihow.com/Install-Google-Chrome-Using-Terminal-on-Linux
+cd $HOME/Downloads wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+cd $HOME/Downloads && sudo apt install ./google-chrome-stable*deb -y
+
+# https://www.mongodb.com/try/download/compass
+cd /tmp && wget https://downloads.mongodb.com/compass/mongodb-compass_1.25.0_amd64.deb
+cd /tmp && sudo apt install ./mongodb-compass*amd64.deb -y
+
+FONTS:
+
+# Download: https://www.jetbrains.com/lp/mono
+# Guide: https://amitpatel.xyz/how-to-install-jetbrains-mono-on-ubuntu-and-enable-in-sublime
+
+sudo apt install fonts-ubuntu-font-family-console ttf-ubuntu-font-family -y
+
+cd && wget https://getcomposer.org/installer
+chmod +x installer && php ./installer
+sudo mv composer.phar /usr/local/bin/composer
+rm -f installer
+
+
+#############################################
+# USER
+
+# https://ohmyz.sh
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# https://github.com/nvm-sh/nvm (node och npm version control)
+cd /tmp && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+
+CONFIGURE:
+
+nano $HOME/.zshrc 
+- Add autosuggestions to plugins. Example: plugins=(git zsh-autosuggestions)
+- Add below to the end of the file:
+echo "" 
+  neofetch
+  cat /etc/lsb-release
+echo ""
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+REBOOT YOUR PC
+
+- Install lates LTS release of npm and node.js
+nvm install --lts

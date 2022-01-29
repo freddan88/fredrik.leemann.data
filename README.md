@@ -1,2 +1,1 @@
-# fredrik.linux.files
-Scripts and configurations for various linux distributions
+### Scripts and configurations for various linux distributions

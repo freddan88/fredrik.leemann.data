@@ -1,0 +1,59 @@
+
+1.
+
+# ADD TO SOURCES-list 
+
+deb http://deb.debian.org/debian buster main contrib non-free
+deb-src http://deb.debian.org/debian buster main contrib non-free
+
+deb http://deb.debian.org/debian-security/ buster/updates main contrib non-free
+deb-src http://deb.debian.org/debian-security/ buster/updates main contrib non-free
+
+deb http://deb.debian.org/debian buster-updates main contrib non-free
+deb-src http://deb.debian.org/debian buster-updates main contrib non-free
+
+--
+
+2.
+
+apt-get update
+apt install x-window-system-core lightdm i3 git rofi nano neofetch xterm nitrogen mousepad synaptic volumeicon-alsa pavucontrol zip compton iceweasel
+apt install libavcodec-extra ttf-mscorefonts-installer unrar gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi gtk2-engines-murrine gtk2-engines-pixbuf
+apt install playerctl pcmanfm zsh lxlock network-manager xbacklight ssh alsa-utils alsa-tools net-tools sudo pulseaudio pulseaudio-utils qlipper
+apt install lxrandr xfce4-terminal lxqt-config lxqt-sudo lxqt-powermanagement
+
+wget https://gist.githubusercontent.com/beast2013/4fa8f8d12adace070afc/raw/8d0a69b78cf27b89577869cbd7d535b950a7f2c2/i3exit -O /usr/bin/i3exit
+chmod 755 /usr/bin/i3exit
+
+# commands:
+lxqt-config-monitor lxqt-sudo lxappearance xfce4-screenshooter lxqt-config-powermanagement lxqt-powermanagement
+
+lxqt-sudo synaptic-pkexec
+
+xfce4-power-manager-settings
+
+VBox:
+apt install linux-headers-$(uname -r) gcc make
+
+xdg-user-dirs-update
+
+# https://github.com/FortAwesome/Font-Awesome/releases
+# https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Touchpad controls
+# bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous

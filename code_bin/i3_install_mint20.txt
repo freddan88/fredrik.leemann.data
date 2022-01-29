@@ -1,0 +1,1 @@
+sudo apt install zsh git ssh zip wget curl net-tools compton xbacklight volumeicon-alsa gparted lxappearance synaptic mousepad rofi neofetch nitrogen -y

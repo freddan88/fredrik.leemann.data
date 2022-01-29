@@ -1,0 +1,81 @@
+> ENABLE NON-FREE AND CONTRIB IN SOURCES.LIST
+example: non-free contrib
+nano /etc/apt/sources.list
+
+> UPDATE SOFTWARE LISTING AND UPGRADE PACKAGES
+apt update && apt upgrade -y
+
+> INSTALL RESTRICTED EXTRAS/CODECS AND STUFF
+apt install libavcodec-extra ttf-mscorefonts-installer gstreamer1.0-plugins-ugly gstreamer1.0-libav gstreamer1.0-vaapi unrar curl wget unzip sudo gnupg -y
+
+> INSTALL MICROCODE FOR INTEL/AMD
+apt-get install intel-microcode firmware-linux-nonfree -y
+apt-get install amd64-microcode firmware-linux-nonfree -y
+
+> ADD YOUR USER TO SUDOERS FILE
+usermod -aG sudo <YOUR_USER>
+
+> REBOOT
+reboot
+
+> INSTALL SOFTWARE & ADD REPOSITORIES & MORE
+cd /tmp
+sudo curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add -
+sudo echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 78BD65473CB3BD13
+sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install ./google-chrome-stable_current_amd64.deb -y
+
+sudo wget https://github.com/oguzhaninan/Stacer/releases/download/v1.1.0/stacer_1.1.0_amd64.deb
+sudo apt install ./stacer_1.1.0_amd64.deb -y
+
+sudo wget https://github.com/JetBrains/JetBrainsMono/releases/download/v2.225/JetBrainsMono-2.225.zip
+sudo unzip -qqo JetBrainsMono*.zip && sudo cp fonts/ttf/JetBrainsMono*.ttf /usr/share/fonts
+
+sudo mkdir -p /usr/share/backgrounds && cd /usr/share/backgrounds
+sudo wget https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg
+sudo mv LEps6S.jpg linux-wallpaper-01.jpg && sudo apt update && cd
+
+sudo apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme lxde-icon-theme lxterminal pcmanfm lxappearance playerctl spotify-client mousepad arandr tar bzip2 cmatrix tty-clock \
+firmware-linux-nonfree fonts-liberation fonts-firacode papirus-icon-theme ttf-ubuntu-font-family net-tools neofetch rofi nitrogen compton xbacklight xbindkeys htop ffmpeg lshw vlc ranger \
+alsa-utils alsa-tools alsa-oss alsa-firmware-loaders apulse pulseaudio pulseaudio-utils pavucontrol i3 xorg suckless-tools network-manager unclutter xterm gimp imagemagick shotwell ncdu -y
+
+VIRTUALBOX GUEST ADDITIONS
+sudo apt install build-essential dkms linux-headers-$(uname -r)
+
+> CREATE SYMBOLIC LINK FOR IFCONFIG
+sudo ln -s /sbin/ifconfig /usr/bin/ifconfig
+
+> ADD TO YOUR: nano .bashrc
+xstarted=$(ps -e | grep -c xinit)
+if (( xstarted == 0 )); then
+  echo "Starting X"
+  startx
+fi
+
+> UPDATE USER DIRECTORIES IN PCMANFM
+xdg-user-dirs-update
+
+EDIT UNMANAGED network (If you want network manager to handle the interfaces)
+sudo nano /etc/NetworkManager/NetworkManager.conf
+--------------------------------------
+> Change managed=false to managed=true
+
+> Photos
+mirage --fullscreen /home/fredrik/Pictures
+
+> REBOOT
+sudo apt autoremove -y && sudo reboot
+
+Install guide debian:
+https://medium.com/hacker-toolbelt/i3wm-on-debian-10-buster-c302420853b1
+
+Autologin debian terminal
+https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line
+
+To install Nvidia drivers
+https://linuxconfig.org/how-to-install-nvidia-driver-on-debian-10-buster-linux
+
+Debian WIKI Nvidia Optimus
+https://wiki.debian.org/NVIDIA%20Optimus#NVIDIAPrimaryGPU

@@ -1,0 +1,92 @@
+sudo add-apt-repository ppa:kgilmer/speed-ricer && sudo apt-get update
+sudo apt install i3 i3blocks lightdm xorg gnome-terminal lxappearance rofi git nemo nano ubuntu-restricted-extras ttf-mscorefonts-installer gtk2-engines-murrine gtk2-engines-pixbuf -y
+
+
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm install --lts
+
+Linux Mint i3:
+--------------
+cd /tmp
+git clone https://github.com/vinceliuice/vimix-gtk-themes.git
+vimix-gtk-themes/install.sh
+
+sudo add-apt-repository ppa:agornostal/ulauncher && apt update
+
+Ubuntu 18 LTS / Linux Mint 18
+sudo apt install i3 lxappearance nitrogen rofi git nano ubuntu-restricted-extras ttf-mscorefonts-installer pavucontrol volumeicon compton xbacklight amixer ulauncher leafpad xterm -y
+
+Ubuntu 20 LTS / Linux Mint 20
+sudo apt install i3 lxappearance nitrogen rofi git nano ubuntu-restricted-extras ttf-mscorefonts-installer pavucontrol volumeicon-alsa compton xbacklight mousepad ulauncher xterm -y
+
+sudo wget https://gist.githubusercontent.com/beast2013/4fa8f8d12adace070afc/raw/8d0a69b78cf27b89577869cbd7d535b950a7f2c2/i3exit -O /usr/bin/i3exit
+sudo chmod 755 /usr/bin/i3exit
+
+# xterm -e 'alsamixer'
+
+# volume/mute control
+bindsym XF86AudioMute exec amixer -q -D pulse sset Master toggle
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%-
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+
+# brightness control with xbacklight
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+# replace ksnapshot with your selected screenshot tool
+bindsym Print exec ksnapshot
+
+i3 config:
+----------
+# Set shut down, restart and locking features
+bindsym $mod+0 mode "$mode_system"
+set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# Set shut down, restart and locking features
+bindsym $mod+0 mode "$mode_system"
+set $mode_system (l) Logout, (r) Reboot, (s) Shutdown
+mode "$mode_system" {
+    bindsym e exec --no-startup-id i3exit lock, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
+    bindsym l exec --no-startup-id i3exit logout, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+c exec --no-startup-id leafpad .config/i3/config
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+bindsym $mod+Ctrl+c exec --no-startup-id cinnamon-control-center
+bindsym $mod+Ctrl+a exec --no-startup-id lxappearance
+bindsym $mod+Ctrl+p exec --no-startup-id pkexec synaptic
+bindsym $mod+Ctrl+s exec --no-startup-id pavucontrol
+bindsym $mod+Ctrl+u exec --no-startup-id mintupdate
+bindsym $mod+Ctrl+f exec --no-startup-id nemo
+
+# Autostart
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+# exec --no-startup-id pasystray
+exec --no-startup-id volumeicon
+exec --no-startup-id nm-applet
+
+
+
+

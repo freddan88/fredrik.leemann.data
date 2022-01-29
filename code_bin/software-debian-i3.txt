@@ -1,0 +1,15 @@
+Install on Debian:
+apt install  
+apt install mate-power-manager mate-power-manager-common
+
+Usage:
+exo-desktop-item-edit --create-new .
+
+/usr/bin/mate-power-manager
+/usr/bin/mate-power-statistics
+/usr/bin/mate-power-preferences
+
+sudo apt update
+apt install xorg i3 lightdm zsh git rofi nano neofetch xterm nitrogen mousepad synaptic compton zip lxlock lxrandr -y
+apt install playerctl pcmanfm network-manager xbacklight ssh net-tools sudo net-tools lxqt-sudo xfce4-screenshooter volumeicon-alsa -y
+sudo apt autoremove -y

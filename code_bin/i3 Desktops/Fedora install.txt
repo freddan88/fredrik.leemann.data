@@ -1,0 +1,44 @@
+
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+-----------------------------------------
+Länk: https://rpmfusion.org/Configuration
+
+dnf install @base-x
+dnf install wget wget curl zip unzip tar bzip2 ffmpeg rofi flatpak lxterminal pcmanfm lxappearance sudo vlc xterm xorg-x11-server-Xorg xorg-x11-xinit mesa-dri-drivers playerctl xbacklight pulseaudio-utils
+dnf reinstall xorg-x11-drv-* 
+dnf --setopt=install_weak_deps=False --best install i3
+
+# /home/username
+echo "exec i3" > .xinitrc
+
+flatpak install flathub com.spotify.Client
+
+useradd -m fredrik
+passwd fredrik
+
+Automatic login (root)
+systemctl edit getty@tty1
+https://www.reddit.com/r/Fedora/comments/k4w7k6/how_to_set_up_autologin_via_command_line_fedora_32
+
+Virtualbox Guest Editions
+https://linuxconfig.org/virtualbox-guest-additions-installation-on-fedora-linux
+
+Download wallpaper
+mkdir -p /usr/share/backgrounds && cd /usr/share/backgrounds
+wget https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg
+mv LEps6S.jpg linux-wallpaper-01.jpg && cd
+
+groupadd sudo
+usermod -aG audio,users,flatpak,sudo fredrik
+
+reboot
+
+Run Spotify:
+flatpak run com.spotify.Client
+
+xstarted=$(ps -e | grep -c xinit)
+if (( xstarted == 0 )); then
+  echo "Starting X"
+  startx
+fi

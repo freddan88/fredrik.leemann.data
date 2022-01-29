@@ -1,0 +1,110 @@
+
+Debian (Base install)
+
+01. Download and install Debian Linux
+https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/10.5.0+nonfree/amd64/iso-cd/
+
+2. Install Software in Debian/Ubuntu Linux
+apt update && apt upgrade -y && apt install ssh zip unzip wget curl tar net-tools nano git sudo neofetch cifs-utils openjdk-8-jdk openjdk-8-jre samba -y
+
+3. Add user to sudo-group (Debian)
+usermod -aG sudo <your-username>
+
+4. Configure interfaces (Debian and old versions of Ubuntu)
+nano /etc/network/interfaces
+
+Put this in your interfaces-file:
+#################################
+
+auto <interface 1>
+iface <interface 1> inet static
+     address 192.168.2.2/24
+
+auto <interface 2>
+iface <interface 2> inet static
+     address 10.0.0.1/24
+
+5. reboot
+
+6. echo 'echo " "' >> .bashrc && echo 'neofetch' >> .bashrc
+
+Links:
+https://www.dell.com/support/article/sv-se/sln296511/uppdatera-poweredge-servrar-med-den-plattformsspecifika-startbara-iso-filen?lang=sv
+https://vpsfix.com/community/server-administration/no-etc-rc-local-file-on-ubuntu-18-04-heres-what-to-do/
+https://www.digitalocean.com/community/tutorials/how-to-install-phpmyadmin-from-source-debian-10
+https://tecadmin.net/install-oracle-java-8-ubuntu-via-ppa/
+
+========================================================================================================================================
+
+Install Apache (Http) Database and PHP for Wordpress and more on ubuntu
+-------------------------------------------------------------
+
+1. Install Software
+sudo apt-get update && sudo apt-get install apache2 sqlite3 wget zip unzip nano tar libsodium23 -y
+sudo apt install curl ssh libapache2-mod-php7.4 php-common php-imagick mysql-client mysql-server -y
+sudo apt install php7.4 php7.4-{bcmath,cli,common,curl,gd,json,mbstring,mysql,opcache,readline,sqlite3,xml,zip,bz2} -y
+sudo apt install imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri -y
+sudo apt install libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 openssl ghostscript -y
+sudo apt install libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg pwgen libpcre3 -y
+
+2. Secure the new instalation for mariadb/mysql
+sudo mysql_secure_installation
+
+3. Install phpMyAdmin
+sudo apt install phpmyadmin
+
+4. Create new super-user for phpMyAdmin
+sudo mysql -p -u root
+CREATE USER 'admin'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Azalea20';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost';
+EXIT
+
+GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, SHUTDOWN, PROCESS, FILE, REFERENCES, INDEX, ALTER, SHOW DATABASES, SUPER, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+
+GRANT APPLICATION_PASSWORD_ADMIN,AUDIT_ADMIN,BACKUP_ADMIN,BINLOG_ADMIN,BINLOG_ENCRYPTION_ADMIN,CLONE_ADMIN,CONNECTION_ADMIN,ENCRYPTION_KEY_ADMIN,GROUP_REPLICATION_ADMIN,INNODB_REDO_LOG_ARCHIVE,INNODB_REDO_LOG_ENABLE,PERSIST_RO_VARIABLES_ADMIN,REPLICATION_APPLIER,REPLICATION_SLAVE_ADMIN,RESOURCE_GROUP_ADMIN,RESOURCE_GROUP_USER,ROLE_ADMIN,SERVICE_CONNECTION_ADMIN,SESSION_VARIABLES_ADMIN,SET_USER_ID,SHOW_ROUTINE,SYSTEM_USER,SYSTEM_VARIABLES_ADMIN,TABLE_ENCRYPTION_ADMIN,XA_RECOVER_ADMIN ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+
+5. change user and permissions
+sudo chown -R www-data:www-data /var/www
+sudo chmod -R 777 /var/www/html
+
+mysqli_real_connect(): (HY000/1698): Access denied for user 'root'@'localhost'
+https://devanswers.co/phpmyadmin-access-denied-for-user-root-localhost
+
+#############################################
+https://tecadmin.net/install-php-ubuntu-20-04
+
+# https://github.com/nvm-sh/nvm (node och npm version control)
+cd /tmp && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+
+< Logout and in from the current session >
+
+- Install lates LTS release of npm and node.js
+nvm install --lts
+
+nano $HOME/.bashrc 
+------------------
+echo "" 
+neofetch
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#########
+Commands:
+sudo mysqladmin
+sudo mysql -u root -p
+pwgen -s 32 1
+
+Mount Windows hare in CMD
+net use mount-point or * \\ip\share-name /user:share-user share-password /persistent:yes
+
+Example1:
+net use P: \\192.168.1.5\share /user:share Azalea20 /persistent:yes
+
+Example2:
+net use * \\192.168.1.5\share /user:share Azalea20 /persistent:yes
+
+---------------------------------------
+
+To install Blancco Configuration tool on Linux (Example)
+java -jar ./b5ct.jar
