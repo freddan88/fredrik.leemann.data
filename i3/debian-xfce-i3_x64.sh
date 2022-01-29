@@ -22,8 +22,7 @@ get_i3_config() {
     echo " "
     echo "UPDATING i3 CONFIG" && sleep 2
     I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt)
-    mkdir -p $SUDO_USER_HOME/.config/i3/config
-    echo $I3_CONFIG >$SUDO_USER_HOME/.config/i3/config
+    mkdir -p $SUDO_USER_HOME/.config/i3 && echo $I3_CONFIG >$SUDO_USER_HOME/.config/i3/config
 }
 
 get_zsh_config() {
