@@ -9,18 +9,20 @@ URL_JETBRAINS_MONOFONT="https://github.com/JetBrains/JetBrainsMono/releases/down
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
-if [ "$(id -u)" != "0" ] || [ "$USER" = "root"]; then
+if [ -z "$SUDO_USER" ]; then
     echo " "
     echo "PLEASE RUN THIS SCRIPT AS SUDO"
     echo " "
     exit
 fi
 
+SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+
 get_i3_config() {
     echo " "
     echo "UPDATING i3 CONFIG" && sleep 4
     I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt)
-    echo $I3_CONFIG >$HOME/.config/i3/config
+    echo $I3_CONFIG >$SUDO_USER_HOME/.config/i3/config
     echo " "
     echo "DONE"
 }
@@ -29,7 +31,7 @@ get_zsh_config() {
     echo " "
     echo "UPDATING ZSH CONFIG" && sleep 4
     ZSH_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/shell/zshrc.txt)
-    echo $ZSH_CONFIG >$HOME/.zshrc
+    echo $ZSH_CONFIG >$SUDO_USER_HOME/.zshrc
     echo " "
     echo "DONE"
 }
@@ -59,7 +61,7 @@ get_docker_compose() {
 install_all() {
     echo " "
     echo "INITIALIZE" && sleep 4
-    apt update -qq && apt install ca-certificates curl wget ssh zsh git unzip zip sudo net-tools nano pwgen fail2ban gnupg lsb-release -yqq
+    apt update -qq && apt install ca-certificates ssh zsh git unzip zip curl net-tools nano pwgen fail2ban gnupg lsb-release -yqq
 
     echo " "
     echo "ADDING KEYS AND REPOSITORIES" && sleep 4
@@ -117,7 +119,6 @@ install_all() {
     echo "greeter-hide-users = false" >>$LIGHTDM_MAIN_CONFIG_FILE
     echo "allow-guest = false" >>$LIGHTDM_MAIN_CONFIG_FILE
 
-    usermod -aG sudo $USER
     usermod -aG docker $USER
 
     echo " "
