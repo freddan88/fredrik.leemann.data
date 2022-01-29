@@ -38,6 +38,7 @@ get_php_composer() {
     rm -f /usr/local/bin/composer
     wget -q https://getcomposer.org/installer && php ./installer
     mv composer.phar /usr/local/bin/composer && chmod 755 /usr/local/bin/composer
+    echo "Installed the composer-command globally as: /usr/local/bin/composer"
 }
 
 get_docker_compose() {
@@ -48,8 +49,7 @@ get_docker_compose() {
     LATEST_DOCKER_COMPOSE_VERSION=$(echo $LATEST_DOCKER_COMPOSE | cut -d'/' -f8)
     wget -q https://github.com/docker/compose/releases/download/$LATEST_DOCKER_COMPOSE_VERSION/docker-compose-Linux-x86_64
     mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose && chmod 755 /usr/local/bin/docker-compose
-    echo " "
-    echo "DONE"
+    echo "Installed the docker-compose-command globally as: /usr/local/bin/docker-compose"
 }
 
 install_all() {
@@ -62,7 +62,9 @@ install_all() {
     curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
 
-    curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | apt-key add - >/dev/null
+    wget -O- https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --dearmor | tee /usr/share/keyrings/spotify-archive-keyring.gpg
+
+    # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | apt-key add - >/dev/null
     echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
 
     echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | tee -a /etc/apt/sources.list.d/insomnia.list
