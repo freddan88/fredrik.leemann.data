@@ -20,35 +20,30 @@ SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
 get_i3_config() {
     echo " "
-    echo "UPDATING i3 CONFIG" && sleep 4
+    echo "UPDATING i3 CONFIG" && sleep 2
     I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt)
+    mkdir -p $SUDO_USER_HOME/.config/i3/config
     echo $I3_CONFIG >$SUDO_USER_HOME/.config/i3/config
-    echo " "
-    echo "DONE"
 }
 
 get_zsh_config() {
     echo " "
-    echo "UPDATING ZSH CONFIG" && sleep 4
+    echo "UPDATING ZSH CONFIG" && sleep 2
     ZSH_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/shell/zshrc.txt)
     echo $ZSH_CONFIG >$SUDO_USER_HOME/.zshrc
-    echo " "
-    echo "DONE"
 }
 
 get_php_composer() {
     echo " "
-    echo "UPDATING PHP COMPOSER" && sleep 4
+    echo "UPDATING PHP COMPOSER" && sleep 2
     rm -f /usr/local/bin/composer
     wget -q https://getcomposer.org/installer && php ./installer
     mv composer.phar /usr/local/bin/composer && chmod 755 /usr/local/bin/composer
-    echo " "
-    echo "DONE"
 }
 
 get_docker_compose() {
     echo " "
-    echo "UPDATING DOCKER COMPOSE" && sleep 4
+    echo "UPDATING DOCKER COMPOSE" && sleep 2
     rm -f /usr/local/bin/docker-compose
     LATEST_DOCKER_COMPOSE=$(curl -s https://github.com/docker/compose/releases/latest | cut -d'"' -f2)
     LATEST_DOCKER_COMPOSE_VERSION=$(echo $LATEST_DOCKER_COMPOSE | cut -d'/' -f8)
@@ -60,15 +55,15 @@ get_docker_compose() {
 
 install_all() {
     echo " "
-    echo "INITIALIZE" && sleep 4
+    echo "INITIALIZE" && sleep 2
     apt update -qq && apt install ca-certificates ssh zsh git unzip zip curl net-tools nano pwgen fail2ban gnupg lsb-release -yqq
 
     echo " "
-    echo "ADDING KEYS AND REPOSITORIES" && sleep 4
+    echo "ADDING KEYS AND REPOSITORIES" && sleep 2
     curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
 
-    curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | apt-key add -
+    curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | apt-key add - >/dev/null
     echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
 
     echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | tee -a /etc/apt/sources.list.d/insomnia.list
@@ -94,11 +89,11 @@ install_all() {
     wget $URL_MINT_ICONS
     apt install ./mint-y-icons_*_all.deb ./mint-y-theme_*_all.deb -y
 
-    apt update -qq && apt install i3 ufw gufw gimp thunderbird gparted synaptic neofetch nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 insomnia \
+    sudo apt update -qq && apt install i3 ufw gufw gimp thunderbird gparted synaptic neofetch nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 insomnia \
         apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php \
         imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 \
         openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin \
-        docker-ce docker-ce-cli containerd.io rofi spotify-client vlc stacer lightdm slick-greeter -yqq
+        docker-ce docker-ce-cli containerd.io rofi spotify-client vlc stacer lightdm slick-greeter libappindicator3-0.1-cil libappindicator3-0.1-cil-dev -yqq
 
     mkdir -p /usr/share/backgrounds
     wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
@@ -119,10 +114,14 @@ install_all() {
     echo "greeter-hide-users = false" >>$LIGHTDM_MAIN_CONFIG_FILE
     echo "allow-guest = false" >>$LIGHTDM_MAIN_CONFIG_FILE
 
-    usermod -aG docker $USER
+    usermod -aG docker $SUDO_USER
+
+    get_i3_config
+    get_zsh_config
+    get_php_composer
+    get_docker_compose
 
     echo " "
-    echo "DONE"
 }
 
 ############
@@ -130,10 +129,6 @@ case "$1" in
 
 install)
     install_all
-    get_i3_config
-    get_zsh_config
-    get_php_composer
-    get_docker_compose
     ;;
 
 i3-config)
