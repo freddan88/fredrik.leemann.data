@@ -38,7 +38,7 @@ get_php_composer() {
     rm -f /usr/local/bin/composer
     wget -q https://getcomposer.org/installer && php ./installer
     mv composer.phar /usr/local/bin/composer && chmod 755 /usr/local/bin/composer
-    echo "Installed the composer-command globally as: /usr/local/bin/composer"
+    echo "Installed the command: composer globally in: /usr/local/bin/composer"
 }
 
 get_docker_compose() {
@@ -49,7 +49,7 @@ get_docker_compose() {
     LATEST_DOCKER_COMPOSE_VERSION=$(echo $LATEST_DOCKER_COMPOSE | cut -d'/' -f8)
     wget -q https://github.com/docker/compose/releases/download/$LATEST_DOCKER_COMPOSE_VERSION/docker-compose-Linux-x86_64
     mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose && chmod 755 /usr/local/bin/docker-compose
-    echo "Installed the docker-compose-command globally as: /usr/local/bin/docker-compose"
+    echo "Installed the command: docker-compose globally in: /usr/local/bin/docker-compose"
 }
 
 install_all() {
