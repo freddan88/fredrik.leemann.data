@@ -60,18 +60,18 @@ install_all() {
 
     echo " "
     echo "ADDING KEYS AND REPOSITORIES" && sleep 2
-    curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+    curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
 
-    wget -O- https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --dearmor | tee /usr/share/keyrings/spotify-archive-keyring.gpg
+    wget -O- https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --dearmor | tee /usr/share/keyrings/spotify-archive-keyring.gpg >/dev/null
 
     # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | apt-key add - >/dev/null
-    echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
+    echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
 
-    echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | tee -a /etc/apt/sources.list.d/insomnia.list
+    echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | tee -a /etc/apt/sources.list.d/insomnia.list >/dev/null
 
     echo " "
-    echo "ADDING PACKAGES AND STUFF" && sleep 4
+    echo "ADDING PACKAGES AND STUFF" && sleep 2
     cd /tmp
     wget -q $URL_MONGODB_COMPASS && apt install ./mongodb-compass_*_amd64.deb -yqq
     wget -q $URL_JETBRAINS_MONOFONT && unzip -qqo JetBrainsMono*.zip && cp fonts/ttf/JetBrainsMono*.ttf /usr/share/fonts/
@@ -82,15 +82,15 @@ install_all() {
 
     URL_LATEST_VSCODE="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
     wget -q $URL_LATEST_VSCODE
-    apt install code_*_amd64.deb
+    apt install code_*_amd64.deb -yqq
 
-    wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
-    apt install ./dbeaver-ce_*_amd64.deb
+    wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
+    apt install ./dbeaver-ce_*_amd64.deb -yqq
 
-    wget $URL_MINT_Y_THEME
-    wget $URL_MINT_Y_ICONS
-    wget $URL_MINT_X_ICONS
-    apt install ./mint-y-icons_*_all.deb ./mint-x-icons_*_all.deb ./mint-y-theme_*_all.deb -y
+    wget -q $URL_MINT_Y_THEME
+    wget -q $URL_MINT_Y_ICONS
+    wget -q $URL_MINT_X_ICONS
+    apt install ./mint-y-icons_*_all.deb ./mint-x-icons_*_all.deb ./mint-y-theme_*_all.deb -yqq
 
     apt update -qq
     apt install i3 ufw gufw gimp thunderbird gparted synaptic neofetch nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 insomnia spotify-client vlc -yqq
