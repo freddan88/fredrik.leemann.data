@@ -56,14 +56,14 @@ get_docker_compose() {
 install_all() {
     echo " "
     echo "INITIALIZE" && sleep 2
-    apt update -qq && apt install ca-certificates ssh zsh git unzip zip curl net-tools nano pwgen gnupg lsb-release -yqq
+    apt update -qq && apt install ca-certificates git unzip zip curl net-tools nano pwgen gnupg lsb-release -yqq
 
     echo " "
     echo "ADDING KEYS AND REPOSITORIES" && sleep 2
     curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
 
-    wget -O- https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --dearmor | tee /usr/share/keyrings/spotify-archive-keyring.gpg >/dev/null
+    wget -q -O- https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --dearmor | tee /usr/share/keyrings/spotify-archive-keyring.gpg >/dev/null
 
     # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | apt-key add - >/dev/null
     echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
@@ -97,7 +97,7 @@ install_all() {
     apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -yqq
     apt install imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 -yqq
     apt install openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin -yqq
-    apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter libappindicator3-0.1-cil libappindicator3-0.1-cil-dev -yqq
+    apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter libappindicator3-0.1-cil libappindicator3-0.1-cil-dev ssh zsh -yqq
 
     mkdir -p /usr/share/backgrounds
     wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
