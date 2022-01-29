@@ -1,7 +1,8 @@
 #!/bin/bash
 
-URL_MINT_THEME="http://packages.linuxmint.com/pool/main/m/mint-y-theme/mint-y-theme_1.2.3_all.deb"
-URL_MINT_ICONS="http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.5.9_all.deb"
+URL_MINT_Y_THEME="http://packages.linuxmint.com/pool/main/m/mint-y-theme/mint-y-theme_1.2.3_all.deb"
+URL_MINT_Y_ICONS="http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.5.9_all.deb"
+URL_MINT_X_ICONS="http://packages.linuxmint.com/pool/main/m/mint-x-icons/mint-x-icons_1.6.4_all.deb"
 URL_MONGODB_COMPASS="https://github.com/mongodb-js/compass/releases/download/v1.30.1/mongodb-compass_1.30.1_amd64.deb"
 URL_JETBRAINS_MONOFONT="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip"
 
@@ -86,9 +87,10 @@ install_all() {
     wget https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
     apt install ./dbeaver-ce_*_amd64.deb
 
-    wget $URL_MINT_THEME
-    wget $URL_MINT_ICONS
-    apt install ./mint-y-icons_*_all.deb ./mint-y-theme_*_all.deb -y
+    wget $URL_MINT_Y_THEME
+    wget $URL_MINT_Y_ICONS
+    wget $URL_MINT_X_ICONS
+    apt install ./mint-y-icons_*_all.deb ./mint-x-icons_*_all.deb ./mint-y-theme_*_all.deb -y
 
     apt update -qq
     apt install i3 ufw gufw gimp thunderbird gparted synaptic neofetch nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 insomnia spotify-client vlc -yqq
