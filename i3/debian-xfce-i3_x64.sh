@@ -16,6 +16,7 @@ fi
 
 SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
+echo " "
 echo "Sudo-user username: $SUDO_USER"
 echo "Sudo-user home-directory: $SUDO_USER_HOME"
 
