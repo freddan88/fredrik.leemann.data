@@ -87,7 +87,6 @@ install_all() {
   echo "ADDING KEYS AND REPOSITORIES" && sleep 2
   curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor --batch --yes --output /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
-  echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | tee -a /etc/apt/sources.list.d/insomnia.list >/dev/null
 
   echo " "
   echo "ADDING PACKAGES AND STUFF" && sleep 2
@@ -104,11 +103,11 @@ install_all() {
   apt install ./dbeaver-ce_*_amd64.deb -y
 
   apt update -qq
-  apt install ufw gufw fail2ban gimp arc-theme elementary-xfce-icon-theme thunderbird nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 insomnia zsh vlc -y
+  apt install ufw gufw fail2ban gimp vlc arc-theme elementary-xfce-icon-theme thunderbird nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 sqlitebrowser -y
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
   apt install imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 -y
   apt install openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin i3 -y
-  apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter libappindicator3-0.1-cil libappindicator3-0.1-cil-dev sqlitebrowser -y
+  apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter libappindicator3-0.1-cil libappindicator3-0.1-cil-dev zsh -y
 
   mkdir -p /usr/share/backgrounds
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
@@ -123,7 +122,6 @@ install_all() {
   usermod -aG docker $SUDO_USER
 
   get_i3_config
-  get_zsh_config
   get_php_composer
   get_docker_compose
   # run_config_lightdm_slick_greeter

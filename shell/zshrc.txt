@@ -106,5 +106,4 @@ export NVM_DIR="$HOME/.nvm"
 
 echo ""
 neofetch
-cat /etc/lsb-release
 echo ""
