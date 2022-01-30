@@ -141,6 +141,7 @@ install)
   if [ -d "$SUDO_USER_HOME/.debian-xfce-i3_x64.lock" ]; then
     echo "Script already run!"
     print_usage
+    exit
   fi
   install_all
   ;;
