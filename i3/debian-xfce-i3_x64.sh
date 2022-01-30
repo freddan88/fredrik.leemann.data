@@ -126,7 +126,7 @@ install_all() {
 
 print_usage() {
   echo " "
-  echo "Usage: install | i3-config | zsh-config | php-composer | docker-compose | config-lightdm-slick-greeter"
+  echo "USAGE: install | i3-config | zsh-config | php-composer | docker-compose | config-lightdm-slick-greeter"
   echo "./debian-xfce-i3_x64.sh install | Install everything and get the latest configurations"
   echo "./debian-xfce-i3_x64.sh i3-config | Download the latest i3-configuration from GitHub"
   echo "./debian-xfce-i3_x64.sh zsh-config | Download the latest zsh-configuration from GitHub"
