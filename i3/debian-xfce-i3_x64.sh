@@ -67,7 +67,7 @@ get_latest_postman() {
   echo " "
   echo "UPDATING POSTMAN APP" && sleep 2
   cd /tmp
-  rm -f postman-x64.tar.gz && rm -f /opt/Postman/app/postman
+  rm -f postman-x64.tar.gz && rm -R -f /opt/Postman
   wget -q -O postman-x64.tar.gz https://dl.pstmn.io/download/latest/linux64 && tar -xf postman-x64.tar.gz
   mv Postman /opt && ln -s /opt/Postman/app/postman /usr/local/bin/postman
   chmod 775 /opt/Postman/app/postman
