@@ -25,7 +25,7 @@ set $wp8 "8"
 # Run: 'xmodmap' to find modifiers
 # Mod4 = Windows or super key
 # Mod1 = Left Alt-key
-# Mod2 = Nomlock (active)
+# Mod2 = Numlock (active)
 set $mod Mod4
 set $alt Mod1
 set $numlock_on Mod2
@@ -131,8 +131,16 @@ bindsym $mod+$numlock_on+KP_8 workspace $wp8
 # split in horizontal orientation
 bindsym $mod+$alt+h split h
 
+# split in horizontal orientation using keypad when numlock is on
+bindsym $mod+$alt+$numlock_on+KP_7 split h
+bindsym $mod+$alt+$numlock_on+KP_1 split h
+
 # split in vertical orientation
 bindsym $mod+$alt+v split v
+
+# split in vertical orientation using keypad when numlock is on
+bindsym $mod+$alt+$numlock_on+KP_13 split v
+bindsym $mod+$alt+$numlock_on+KP_9 split v
 
 # move focused window
 bindsym $mod+$alt+i move right
@@ -145,6 +153,34 @@ bindsym $mod+$alt+Right move right
 bindsym $mod+$alt+Left move left
 bindsym $mod+$alt+Down move down
 bindsym $mod+$alt+Up move up
+
+# change container layout: tabbed | stacked | toggle | splith | splitv
+bindsym $mod+$alt+Tab layout toggle
+bindsym $mod+$alt+q layout toggle
+bindsym $mod+$alt+e layout toggle
+bindsym $mod+$alt+w layout tabbed
+bindsym $mod+$alt+s layout stacking
+bindsym $mod+$alt+d layout splitv
+bindsym $mod+$alt+a layout splith
+
+# change container layout using keypad when numlock is on
+bindsym $mod+$alt+$numlock_on+KP_0 layout toggle
+bindsym $mod+$alt+$numlock_on+KP_8 layout tabbed
+bindsym $mod+$alt+$numlock_on+KP_2 layout stacking
+bindsym $mod+$alt+$numlock_on+KP_4 layout splitv
+bindsym $mod+$alt+$numlock_on+KP_6 layout splith
+
+# enter fullscreen mode for the focused container
+bindsym $mod+$alt+space fullscreen toggle
+
+# enter fullscreen mode for the focused container using keypad when numlock is on
+bindsym $mod+$alt+$numlock_on+KP_5 fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+$alt+Return floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+$alt+BackSpace focus mode_toggle
 
 # ------------------------------------
 # KEYBINDINGS USING: Super + Left Ctrl
@@ -161,16 +197,10 @@ bindsym $mod+Ctrl+Up focus parent
 #bindsym $mod+Ctrl+Down focus child
 
 # reload the configuration file
-bindsym $mod+Ctrl+9 reload
-
-# reload the configuration file using keypad when numlock is on
-bindsym $mod+Ctrl+$numlock_on+KP_9 reload
+bindsym $mod+Ctrl+Return reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Ctrl+0 restart
-
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3) using keypad when numlock is on
-bindsym $mod+Ctrl+$numlock_on+KP_0 restart
+bindsym $mod+Ctrl+BackSpace restart
 
 # move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $wp1
@@ -191,24 +221,6 @@ bindsym $mod+Ctrl+$numlock_on+KP_5 move container to workspace $wp5
 bindsym $mod+Ctrl+$numlock_on+KP_6 move container to workspace $wp6
 bindsym $mod+Ctrl+$numlock_on+KP_7 move container to workspace $wp7
 bindsym $mod+Ctrl+$numlock_on+KP_8 move container to workspace $wp8
-
-# enter fullscreen mode for the focused container
-bindsym $mod+Ctrl+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle, splith, splitv)
-bindsym $mod+Ctrl+Tab layout toggle
-bindsym $mod+Ctrl+s layout stacking
-bindsym $mod+Ctrl+w layout tabbed
-bindsym $mod+Ctrl+a layout splitv
-bindsym $mod+Ctrl+d layout splith
-
-# toggle tiling / floating
-bindsym $mod+Ctrl+q floating toggle
-bindsym $mod+Ctrl+Return floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+Ctrl+e focus mode_toggle
-bindsym $mod+Ctrl+BackSpace focus mode_toggle
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -234,7 +246,7 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+Ctrl+r mode "resize"
+bindsym $mod+Ctrl+space mode "resize"
 
 # ----------------
 # SPECIAL BINDINGS
