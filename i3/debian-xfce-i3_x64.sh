@@ -142,7 +142,7 @@ print_usage() {
 case "$1" in
 
 install)
-  if [ -d "$SUDO_USER_HOME/.debian-xfce-i3_x64.lock" ]; then
+  if [ -f "$SUDO_USER_HOME/.debian-xfce-i3_x64.lock" ]; then
     echo "THE SCRIPT HAS ALREADY RUN..."
     print_usage
     exit
