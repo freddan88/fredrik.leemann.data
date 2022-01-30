@@ -16,6 +16,9 @@ fi
 
 SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
+echo "Sudo-user username: $SUDO_USER"
+echo "Sudo-user home-directory: $SUDO_USER_HOME"
+
 get_i3_config() {
   echo " "
   echo "UPDATING i3 CONFIG" && sleep 2
