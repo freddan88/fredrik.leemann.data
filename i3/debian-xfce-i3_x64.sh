@@ -110,6 +110,7 @@ install_all() {
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
 
   usermod -aG docker $SUDO_USER
+  ln -s /sbin/ifconfig /usr/bin/ifconfig
 
   get_i3_config
   get_php_composer
