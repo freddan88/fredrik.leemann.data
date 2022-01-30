@@ -22,7 +22,7 @@ set $wp6 "6"
 set $wp7 "7"
 set $wp8 "8"
 
-# Run: 'xmodmap' to find modifiers
+# Run: 'xmodmap' in terminal to find modifiers
 # Mod4 = Windows or super key
 # Mod1 = Left Alt-key
 # Mod2 = Numlock (active)
@@ -37,7 +37,7 @@ set $numlock_on Mod2
 exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id xfce4-terminal
 
-# Use xprop in terminal to find window classes
+# Run: 'xprop' in terminal to find window classes
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Catfish"] floating enable
 for_window [class="^.*"] border pixel 1
