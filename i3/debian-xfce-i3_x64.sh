@@ -143,7 +143,7 @@ case "$1" in
 
 install)
   if [ -d "$SUDO_USER_HOME/.debian-xfce-i3_x64.lock" ]; then
-    echo "Script already run!"
+    echo "THE SCRIPT HAS ALREADY RUN..."
     print_usage
     exit
   fi
