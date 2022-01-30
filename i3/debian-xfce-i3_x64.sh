@@ -121,7 +121,9 @@ install_all() {
   systemctl disable apache2.service
   systemctl stop apache2.service
 
-  touch $SUDO_USER_HOME/.debian-xfce-i3_x64.lock
+  echo " "
+  echo "CREATED LOCKFILE IN: /var/lock/debian-xfce-i3_x64.lock"
+  touch /var/lock/debian-xfce-i3_x64.lock
 }
 
 print_usage() {
@@ -140,7 +142,7 @@ print_usage() {
 case "$1" in
 
 install)
-  if [ -f "$SUDO_USER_HOME/.debian-xfce-i3_x64.lock" ]; then
+  if [ -f "/var/lock/debian-xfce-i3_x64.lock" ]; then
     echo " "
     echo "THE SCRIPT HAS ALREADY RUN..."
     print_usage
