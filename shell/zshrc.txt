@@ -106,4 +106,5 @@ export NVM_DIR="$HOME/.nvm"
 
 echo ""
 neofetch
+echo "Codename: $(lsb_release -cs)"
 echo ""
