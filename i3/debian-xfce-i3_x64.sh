@@ -121,6 +121,8 @@ install_all() {
   systemctl disable apache2.service
   systemctl stop apache2.service
 
+  touch $SUDO_USER_HOME/.debian-xfce-i3_x64.lock
+
   echo " "
 }
 
