@@ -78,43 +78,34 @@ run_config_lightdm_slick_greeter() {
 install_all() {
   echo " "
   echo "INITIALIZE" && sleep 2
-  apt update -qq && apt install ca-certificates git unzip zip curl net-tools nano pwgen gnupg lsb-release gparted synaptic neofetch
+  apt update -qq && apt install ssh ca-certificates git unzip zip curl wget net-tools nano pwgen gnupg lsb-release gparted synaptic neofetch -y
 
   echo " "
   echo "ADDING KEYS AND REPOSITORIES" && sleep 2
   curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor --batch --yes --output /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
-
-  wget -q -O- https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | gpg --dearmor --batch --yes | tee /usr/share/keyrings/spotify-archive-keyring.gpg >/dev/null
-
-  # curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | apt-key add - >/dev/null
-  echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
-
   echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | tee -a /etc/apt/sources.list.d/insomnia.list >/dev/null
 
   echo " "
   echo "ADDING PACKAGES AND STUFF" && sleep 2
   cd /tmp
-  wget -q $URL_MONGODB_COMPASS && apt install ./mongodb-compass_*_amd64.deb
+  wget -q $URL_MONGODB_COMPASS && apt install ./mongodb-compass_*_amd64.deb -y
   wget -q $URL_JETBRAINS_MONOFONT && unzip -qqo JetBrainsMono*.zip && cp fonts/ttf/JetBrainsMono*.ttf /usr/share/fonts/
-  wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install ./google-chrome-stable_current_amd64.deb
-
-  # LATEST_MYSQL=$(curl -s https://dev.mysql.com/downloads/repo/apt/ | grep mysql-apt-config | cut -d'(' -f2 | cut -d')' -f1)
-  # wget -q https://dev.mysql.com/get/$LATEST_MYSQL && apt install ./mysql-apt-config_*_all.deb
+  wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install ./google-chrome-stable_current_amd64.deb -y
 
   URL_LATEST_VSCODE="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
   wget -q -O vscode_amd64.deb $URL_LATEST_VSCODE
-  apt install ./vscode_amd64.deb
+  apt install ./vscode_amd64.deb -y
 
   wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
-  apt install ./dbeaver-ce_*_amd64.deb
+  apt install ./dbeaver-ce_*_amd64.deb -y
 
   apt update -qq
-  apt install ufw gufw fail2ban gimp arc-theme elementary-xfce-icon-theme thunderbird nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 insomnia spotify-client
-  apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php
-  apt install imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6
-  apt install openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin i3
-  apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter libappindicator3-0.1-cil libappindicator3-0.1-cil-dev ssh zsh vlc
+  apt install ufw gufw fail2ban gimp arc-theme elementary-xfce-icon-theme thunderbird nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 insomnia zsh vlc -y
+  apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
+  apt install imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 -y
+  apt install openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin i3 -y
+  apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter libappindicator3-0.1-cil libappindicator3-0.1-cil-dev sqlitebrowser -y
 
   mkdir -p /usr/share/backgrounds
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
