@@ -144,7 +144,7 @@ case "$1" in
 install)
   if [ -f "/var/lock/debian-xfce-i3_x64.lock" ]; then
     echo " "
-    echo "THE SCRIPT HAS ALREADY RUN..."
+    echo "THE SCRIPT HAS ALREADY RUN WITH ARGUMENT: INSTALL"
     print_usage
     exit
   fi
