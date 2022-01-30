@@ -63,25 +63,20 @@ get_docker_compose() {
   echo "Installed the command: docker-compose globally in: /usr/local/bin/docker-compose"
 }
 
-run_config_lightdm_slick_greeter() {
+get_latest_postman() {
   echo " "
-  echo "CONFIGURING LIGHTDM SLICK GREETER" && sleep 2
-  LIGHTDM_SLICK_GREETER_CONFIG_FILE="/etc/lightdm/slick-greeter.conf"
-  echo "[Greeter]" >$LIGHTDM_SLICK_GREETER_CONFIG_FILE
-  echo "background=/usr/share/backgrounds/linux-wallpaper-01.jpg" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
-  echo "draw-user-backgrounds=false" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
-  echo "theme-name=Arc-Dark" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
-  echo "icon-theme-name=elementary-xfce-dark" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
-  echo "activate-numlock=true" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
-  echo "draw-grid=false" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
-  echo "clock-format=%R | %F v%V" >>$LIGHTDM_SLICK_GREETER_CONFIG_FILE
-  echo "Wrote new config in: $LIGHTDM_SLICK_GREETER_CONFIG_FILE"
+  echo "UPDATING POSTMAN APP" && sleep 2
+  cd /tmp
+  wget -q -O postman-x64.tar.gz https://dl.pstmn.io/download/latest/linux64 && tar -xf postman-x64.tar.gz
+  mv Postman /opt && ln -s /opt/Postman/app/postman /usr/local/bin/postman
+  chmod 775 /opt/Postman/app/postman
 }
 
 install_all() {
   echo " "
   echo "INITIALIZE" && sleep 2
-  apt update -qq && apt install ssh ca-certificates git unzip zip curl wget net-tools nano pwgen gnupg lsb-release gparted synaptic neofetch -y
+  cd /tmp
+  apt update -qq && apt install ssh ca-certificates git unzip zip curl wget gzip tar net-tools nano pwgen gnupg lsb-release gparted synaptic neofetch -y
 
   echo " "
   echo "ADDING KEYS AND REPOSITORIES" && sleep 2
@@ -112,20 +107,28 @@ install_all() {
   mkdir -p /usr/share/backgrounds
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
 
-  # LIGHTDM_MAIN_CONFIG_FILE="/etc/lightdm/lightdm.conf"
-  # echo " " >>$LIGHTDM_MAIN_CONFIG_FILE
-  # echo "[SeatDefaults]" >>$LIGHTDM_MAIN_CONFIG_FILE
-  # echo "greeter-show-manual-login = false" >>$LIGHTDM_MAIN_CONFIG_FILE
-  # echo "greeter-hide-users = false" >>$LIGHTDM_MAIN_CONFIG_FILE
-  # echo "allow-guest = false" >>$LIGHTDM_MAIN_CONFIG_FILE
-
   usermod -aG docker $SUDO_USER
 
   get_i3_config
   get_php_composer
   get_docker_compose
-  # run_config_lightdm_slick_greeter
+  get_latest_postman
 
+  systemctl disable apache2.service
+  systemctl stop apache2.service
+
+  echo " "
+}
+
+print_usage() {
+  echo " "
+  echo "Usage: install | i3-config | zsh-config | php-composer | docker-compose | config-lightdm-slick-greeter"
+  echo "./debian-xfce-i3_x64.sh install | Install everything and get the latest configurations"
+  echo "./debian-xfce-i3_x64.sh i3-config | Download the latest i3-configuration from GitHub"
+  echo "./debian-xfce-i3_x64.sh zsh-config | Download the latest zsh-configuration from GitHub"
+  echo "./debian-xfce-i3_x64.sh php-composer | Download and install the latest php-composer script"
+  echo "./debian-xfce-i3_x64.sh docker-compose | Download and install the latest docker-compose script"
+  echo "./debian-xfce-i3_x64.sh postman-app | Download and install the latest postman api-testing app"
   echo " "
 }
 
@@ -133,6 +136,10 @@ install_all() {
 case "$1" in
 
 install)
+  if [ -d "$SUDO_USER_HOME/.debian-xfce-i3_x64.lock" ]; then
+    echo "Script already run!"
+    print_usage
+  fi
   install_all
   ;;
 
@@ -152,20 +159,12 @@ docker-compose)
   get_docker_compose
   ;;
 
-config-lightdm-slick-greeter)
-  run_config_lightdm_slick_greeter
+postman-app)
+  get_latest_postman
   ;;
 
 *)
-  echo " "
-  echo "Usage: install | i3-config | zsh-config | php-composer | docker-compose | config-lightdm-slick-greeter"
-  echo "./debian-xfce-i3_x64.sh install | Install everything and get the latest configurations"
-  echo "./debian-xfce-i3_x64.sh i3-config | Download the latest i3-configuration from GitHub"
-  echo "./debian-xfce-i3_x64.sh zsh-config | Download the latest zsh-configuration from GitHub"
-  echo "./debian-xfce-i3_x64.sh php-composer | Download and install the latest php-composer script"
-  echo "./debian-xfce-i3_x64.sh docker-compose | Download and install the latest docker-compose script"
-  echo "./debian-xfce-i3_x64.sh config-lightdm-slick-greeter | Write a new configuration-file for the login-screen"
-  echo " "
+  print_usage
   ;;
 
 esac
