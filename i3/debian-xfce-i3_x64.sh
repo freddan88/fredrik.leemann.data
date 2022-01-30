@@ -122,8 +122,6 @@ install_all() {
   systemctl stop apache2.service
 
   touch $SUDO_USER_HOME/.debian-xfce-i3_x64.lock
-
-  echo " "
 }
 
 print_usage() {
@@ -149,26 +147,32 @@ install)
     exit
   fi
   install_all
+  print_usage
   ;;
 
 i3-config)
   get_i3_config
+  print_usage
   ;;
 
 zsh-config)
   get_zsh_config
+  print_usage
   ;;
 
 php-composer)
   get_php_composer
+  print_usage
   ;;
 
 docker-compose)
   get_docker_compose
+  print_usage
   ;;
 
 postman-app)
   get_latest_postman
+  print_usage
   ;;
 
 *)
