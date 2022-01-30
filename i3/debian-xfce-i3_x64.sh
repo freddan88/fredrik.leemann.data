@@ -19,8 +19,10 @@ SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 get_i3_config() {
   echo " "
   echo "UPDATING i3 CONFIG" && sleep 2
-  I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt)
-  mkdir -p $SUDO_USER_HOME/.config/i3 && echo $I3_CONFIG >$SUDO_USER_HOME/.config/i3/config
+  mkdir -p $SUDO_USER_HOME/.config/i3
+  wget -q -O $SUDO_USER_HOME/.config/i3/config https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt
+  # I3_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt)
+  # mkdir -p $SUDO_USER_HOME/.config/i3 && echo $I3_CONFIG >$SUDO_USER_HOME/.config/i3/config
   chmod -R 775 $SUDO_USER_HOME/.config/i3 && chmod 664 $SUDO_USER_HOME/.config/i3/config && chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
   echo "Wrote new i3-configuration to: $SUDO_USER_HOME/.config/i3/config"
 }
@@ -28,8 +30,9 @@ get_i3_config() {
 get_zsh_config() {
   echo " "
   echo "UPDATING ZSH CONFIG" && sleep 2
-  ZSH_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/shell/zshrc.txt)
-  echo $ZSH_CONFIG >$SUDO_USER_HOME/.zshrc
+  wget -q -O $SUDO_USER_HOME/.zshrc https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/shell/zshrc.txt
+  # ZSH_CONFIG=$(curl -s https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/shell/zshrc.txt)
+  # echo $ZSH_CONFIG >$SUDO_USER_HOME/.zshrc
   chmod 644 $SUDO_USER_HOME/.zshrc && chown $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.zshrc
   echo "Wrote new zsh-configuration to: $SUDO_USER_HOME/.zshrc"
 }
