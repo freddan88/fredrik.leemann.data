@@ -24,6 +24,7 @@ get_i3_config() {
   echo "UPDATING i3 CONFIG" && sleep 2
   mkdir -p $SUDO_USER_HOME/.config/i3
   cd $SUDO_USER_HOME/.config/i3
+  rm -f $SUDO_USER_HOME/.config/i3/config
   wget -q -O config https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt
   chmod -R 775 $SUDO_USER_HOME/.config/i3 && chmod 664 config && chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
   echo "Wrote new i3-configuration to: $SUDO_USER_HOME/.config/i3/config"
@@ -33,6 +34,7 @@ get_zsh_config() {
   echo " "
   echo "UPDATING ZSH CONFIG" && sleep 2
   cd $SUDO_USER_HOME
+  rm -f $SUDO_USER_HOME/.zshrc
   wget -q -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/shell/zshrc.txt
   chmod 644 .zshrc && chown $SUDO_USER:$SUDO_USER .zshrc
   echo "Wrote new zsh-configuration to: $SUDO_USER_HOME/.zshrc"
