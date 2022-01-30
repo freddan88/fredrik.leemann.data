@@ -78,7 +78,7 @@ install_all() {
   echo " "
   echo "INITIALIZE" && sleep 2
   cd /tmp
-  apt update -qq && apt install ssh ca-certificates git unzip zip curl wget gzip tar net-tools nano pwgen gnupg lsb-release gparted synaptic neofetch -y
+  apt update -qq && apt install ca-certificates curl wget gzip tar nano ssh git gnupg lsb-release gparted pwgen -y
 
   echo " "
   echo "ADDING KEYS AND REPOSITORIES" && sleep 2
@@ -104,7 +104,7 @@ install_all() {
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
   apt install imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 -y
   apt install openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin i3 -y
-  apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter libappindicator3-0.1-cil libappindicator3-0.1-cil-dev zsh numlockx -y
+  apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter zsh numlockx catfish unzip zip net-tools synaptic neofetch -y
 
   mkdir -p /usr/share/backgrounds
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
