@@ -45,7 +45,7 @@ get_php_composer() {
   echo " "
   echo "UPDATING PHP COMPOSER" && sleep 2
   cd /tmp
-  rm -f /usr/local/bin/composer
+  rm -f installer && rm -f /usr/local/bin/composer
   wget -q https://getcomposer.org/installer && php ./installer >/dev/null
   mv composer.phar /usr/local/bin/composer && chmod 755 /usr/local/bin/composer
   echo "Installed the command: composer globally in: /usr/local/bin/composer"
@@ -67,6 +67,7 @@ get_latest_postman() {
   echo " "
   echo "UPDATING POSTMAN APP" && sleep 2
   cd /tmp
+  rm -f postman-x64.tar.gz && rm -f /opt/Postman/app/postman
   wget -q -O postman-x64.tar.gz https://dl.pstmn.io/download/latest/linux64 && tar -xf postman-x64.tar.gz
   mv Postman /opt && ln -s /opt/Postman/app/postman /usr/local/bin/postman
   chmod 775 /opt/Postman/app/postman
