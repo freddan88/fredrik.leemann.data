@@ -116,6 +116,8 @@ install_all() {
   get_docker_compose
   get_latest_postman
 
+  echo " "
+  echo "DISABLING APACHE2 HTTP SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
   systemctl disable apache2.service
   systemctl stop apache2.service
 
