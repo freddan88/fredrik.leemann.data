@@ -71,6 +71,7 @@ get_latest_postman() {
   wget -q -O postman-x64.tar.gz https://dl.pstmn.io/download/latest/linux64 && tar -xf postman-x64.tar.gz
   mv Postman /opt && ln -s /opt/Postman/app/postman /usr/local/bin/postman
   chmod 775 /opt/Postman/app/postman
+  echo "Installed the latest api-testing app globally in: /usr/local/bin/postman and /opt/Postman"
 }
 
 install_all() {
