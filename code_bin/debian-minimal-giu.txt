@@ -1,0 +1,26 @@
+apt-get install network-manager network-manager-gnome xorg i3-wm xbacklight pcmanfm lxappearance lxpanel lxterminal net-tools rofi synaptic neofetch unclutter -y
+apt install ufw gufw fail2ban ssh arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-theme nitrogen numlockx xbacklight playerctl tar bzip2 -y
+apt install pulseaudio pulseaudio-utils pavucontrol pasystray suckless-tools htop ffmpeg lshw vlc zip unzip nano gedit -y
+
+The following network interfaces were found in /etc/network/interfaces
+which means they are currently configured by ifupdown:
+- enp0s3
+If you want to manage those interfaces with NetworkManager instead
+remove their configuration from /etc/network/interfaces.
+
+# arandr lxqt-polykit cmatrix
+
+# apt install xbindkeys alsa-utils alsa-tools alsa-oss alsa-firmware-loaders apulse  -y
+
+- lxde-session
+- lxpanel
+- pcmanfm
+- lxterminal
+- notification-daemon
+- policykit-1
+- xscreensaver
+- lxlauncher
+
+
+rm -rf /home/fredrik/.config/i3 && mkdir -p /home/fredrik/.config/i3 && cd /home/fredrik/.config/i3
+wget -q -O config https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-minimal.txt
