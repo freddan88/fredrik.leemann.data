@@ -27,7 +27,7 @@ get_i3_config() {
   cd $SUDO_USER_HOME/.config/i3
   rm -f $SUDO_USER_HOME/.config/i3/config
   wget -q -O config https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt
-  chmod -R 775 $SUDO_USER_HOME/.config/i3 && chmod 664 config && chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
+  chmod -R 775 $SUDO_USER_HOME/.config/i3 && chmod 644 config && chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
   echo "Wrote new i3-configuration to: $SUDO_USER_HOME/.config/i3/config"
 }
 
