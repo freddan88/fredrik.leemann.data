@@ -1,6 +1,6 @@
 apt-get install network-manager network-manager-gnome xorg i3-wm xbacklight pcmanfm lxappearance lxpanel lxterminal net-tools rofi synaptic neofetch unclutter -y
-apt install ufw gufw fail2ban ssh arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-theme nitrogen numlockx xbacklight playerctl tar bzip2 -y
-apt install pulseaudio pulseaudio-utils pavucontrol pasystray suckless-tools htop ffmpeg lshw vlc zip unzip nano gedit -y
+apt install ufw gufw fail2ban ssh gnome-icon-theme lxde-icon-theme nitrogen numlockx xbacklight playerctl tar bzip2 -y
+apt install pulseaudio pulseaudio-utils pavucontrol pasystray suckless-tools htop ffmpeg lshw vlc zip unzip nano gedit sudo -y
 
 The following network interfaces were found in /etc/network/interfaces
 which means they are currently configured by ifupdown:
@@ -12,7 +12,7 @@ remove their configuration from /etc/network/interfaces.
 
 # apt install xbindkeys alsa-utils alsa-tools alsa-oss alsa-firmware-loaders apulse  -y
 
-- lxde-session
+# lxde-session
 - lxpanel
 - pcmanfm
 - lxterminal
