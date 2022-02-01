@@ -34,10 +34,12 @@ set $numlock_on Mod2
 # AUTOSTART AND DEFAULTS
 # ----------------------
 
-# exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
-
+exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id lxpanel
+exec --no-startup-id lxpolkit
 exec --no-startup-id nm-applet
+exec --no-startup-id xscreensaver -no-splash
+exec --no-startup-id $HOME/.xrandr-restore.sh
 
 # Run: 'xprop' in terminal to find window classes
 for_window [class="^.*"] border pixel 1
@@ -78,13 +80,13 @@ floating_modifier $mod
 # --------------------------------------
 
 bindsym $mod+Return exec lxterminal
-# bindsym $mod+BackSpace exec --no-startup-id catfish
+bindsym $mod+BackSpace exec --no-startup-id pcmanfm -f
 bindsym $mod+space exec --no-startup-id rofi -show run
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 bindsym $mod+m exec --no-startup-id stacer
 bindsym $mod+f exec --no-startup-id pcmanfm
-bindsym $mod+c exec --no-startup-id gedit $HOME/.config/i3/config
+bindsym $mod+c exec --no-startup-id featherpad $HOME/.config/i3/config
 bindsym $mod+p exec --no-startup-id synaptic-pkexec
 bindsym $mod+b exec --no-startup-id google-chrome
 
@@ -250,6 +252,10 @@ bindsym $mod+Ctrl+space mode "resize"
 # ----------------
 # SPECIAL BINDINGS
 # ----------------
+
+bindsym $alt+Ctrl+l exec --no-startup-id xscreensaver-command -lock
+bindsym Ctrl+mod1+BackSpace exec systemctl reboot
+bindsym Ctrl+mod1+Escape exec systemctl poweroff
 
 # Readme: https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
 
