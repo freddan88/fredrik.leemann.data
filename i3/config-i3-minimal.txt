@@ -35,11 +35,11 @@ set $numlock_on Mod2
 # ----------------------
 
 exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id lxpanel
-exec --no-startup-id lxpolkit
-exec --no-startup-id nm-applet
-exec --no-startup-id xscreensaver -no-splash
 exec --no-startup-id $HOME/.xrandr-restore.sh
+exec --no-startup-id xscreensaver -no-splash
+exec --no-startup-id nm-applet
+exec --no-startup-id lxpolkit
+exec --no-startup-id lxpanel
 
 # Run: 'xprop' in terminal to find window classes
 for_window [class="^.*"] border pixel 1
