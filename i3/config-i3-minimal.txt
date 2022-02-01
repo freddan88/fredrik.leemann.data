@@ -37,7 +37,6 @@ set $numlock_on Mod2
 # exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
 
 exec --no-startup-id lxpanel
-exec --no-startup-id pasystray
 exec --no-startup-id nm-applet
 
 # Run: 'xprop' in terminal to find window classes
@@ -78,15 +77,14 @@ floating_modifier $mod
 # KEYBINDINGS USING: Super / Windows Key
 # --------------------------------------
 
-bindsym $mod+Return exec xfce4-terminal
-bindsym $mod+BackSpace exec --no-startup-id catfish
-bindsym $mod+space exec --no-startup-id xfce4-appfinder
+bindsym $mod+Return exec lxterminal
+# bindsym $mod+BackSpace exec --no-startup-id catfish
+bindsym $mod+space exec --no-startup-id rofi -show run
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 bindsym $mod+m exec --no-startup-id stacer
-bindsym $mod+f exec --no-startup-id thunar
-bindsym $mod+s exec --no-startup-id xfce4-settings-manager
-bindsym $mod+c exec --no-startup-id mousepad $HOME/.config/i3/config
+bindsym $mod+f exec --no-startup-id pcmanfm
+bindsym $mod+c exec --no-startup-id gedit $HOME/.config/i3/config
 bindsym $mod+p exec --no-startup-id synaptic-pkexec
 bindsym $mod+b exec --no-startup-id google-chrome
 
