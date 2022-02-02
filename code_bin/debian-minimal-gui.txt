@@ -2,29 +2,17 @@ apt update && apt install lxpanel lxterminal lxappearance lxrandr pcmanfm xscree
 apt install ufw gufw net-tools network-manager network-manager-gnome fail2ban synaptic neofetch unclutter pulseaudio pulseaudio-utils pavucontrol suckless-tools playerctl -y
 apt install compton sudo git zsh wget curl tar bzip2 zip unzip nano ffmpeg lshw htop ssh vlc nitrogen gnome-icon-theme lxde-icon-theme debian-edu-artwork featherpad -y
 
+rm -f /usr/share/applications/pcmanfm-desktop-pref.desktop
+
 cd /tmp && wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && apt install ./google-chrome-stable_current_amd64.deb -y
 
 URL_LATEST_VSCODE="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 cd /tmp && wget -q -O vscode_amd64.deb $URL_LATEST_VSCODE
 sudo apt install ./vscode_amd64.deb -y
 
-rm -f /usr/share/applications/pcmanfm-desktop-pref.desktop
 xdg-user-dirs-update
 
 usermod -aG sudo fredrik
-
-xstarted=$(ps -e | grep -c xinit)
-if (( xstarted == 0 )); then
-  startx
-  xrandr_command=$(cat .config/autostart/lxrandr-autostart.desktop | grep Exec | cut -d"'" -f2)
-  $xrandr_command
-fi
-
-xstarted=$(ps -e | grep -c xinit)
-if (( xstarted == 0 )); then
-  echo "Starting X"
-  startx
-fi
 
 Do we need? xbindkeys
 
