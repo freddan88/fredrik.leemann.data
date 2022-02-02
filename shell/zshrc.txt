@@ -107,3 +107,12 @@ echo ""
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+xstarted=$(ps -e | grep -c xinit)
+if ((xstarted == 0)); then
+  echo "PRESS ENTER TO START X OR CTRL+C TO EXIT - YOU CAN START X WITH THE COMMAND: startx"
+  read success
+  if ((success == 0)); then
+    startx
+  fi
+fi
