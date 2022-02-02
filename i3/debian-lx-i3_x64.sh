@@ -26,7 +26,7 @@ get_i3_config() {
   mkdir -p $SUDO_USER_HOME/.config/i3
   cd $SUDO_USER_HOME/.config/i3
   rm -f $SUDO_USER_HOME/.config/i3/config
-  wget -q -O config https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt
+  wget -q -O https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config-i3-minimal.txt
   chmod -R 775 $SUDO_USER_HOME/.config/i3 && chmod 644 config && chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
   echo "Wrote new i3-configuration to: $SUDO_USER_HOME/.config/i3/config"
 }
@@ -78,7 +78,7 @@ install_all() {
   echo " "
   echo "INITIALIZE" && sleep 2
   cd /tmp
-  apt update -qq && apt install ca-certificates curl wget gzip tar nano ssh git gnupg lsb-release gparted pwgen unzip zip net-tools -y
+  apt update -qq && apt install ca-certificates curl wget gzip tar nano ssh git gnupg lsb-release gparted pwgen unzip zip net-tools unclutter -y
 
   echo " "
   echo "ADDING KEYS AND REPOSITORIES" && sleep 2
@@ -100,14 +100,16 @@ install_all() {
   apt install ./dbeaver-ce_*_amd64.deb -y
 
   apt update -qq
-  apt install ufw gufw fail2ban gimp vlc arc-theme elementary-xfce-icon-theme thunderbird nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 sqlitebrowser -y
+  apt update && apt install lxpanel lxterminal lxappearance lxrandr pcmanfm xscreensaver xbacklight numlockx notification-daemon policykit-1 xorg i3-wm rofi stacer -y
+  apt install ufw gufw network-manager network-manager-gnome fail2ban synaptic neofetch unclutter pulseaudio pulseaudio-utils pavucontrol suckless-tools playerctl -y
+  apt install picom sudo git zsh wget curl tar bzip2 zip unzip nano ffmpeg lshw htop ssh vlc nitrogen gnome-icon-theme lxde-icon-theme debian-edu-artwork featherpad -y
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
   apt install imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 -y
-  apt install openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin i3 -y
-  apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter zsh numlockx catfish xbacklight playerctl synaptic neofetch mirage -y
+  apt install gimp thunderbird libreoffice sqlite3 libpcre3 libsodium23 sqlitebrowser ffmpeg ghostscript openssl libapache2-mpm-itk screenkey screenruler -y
+  apt install libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra docker-ce docker-ce-cli containerd.io imagemagick mirage gnome-screenshot -y
 
-  mkdir -p /usr/share/backgrounds
-  wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
+  mkdir -p /usr/share/wallpapers
+  wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
 
   usermod -aG docker $SUDO_USER
   ln -s /sbin/ifconfig /usr/bin/ifconfig
@@ -123,19 +125,19 @@ install_all() {
   systemctl stop apache2.service
 
   echo " "
-  echo "CREATED LOCKFILE IN: /var/lock/debian-xfce-i3_x64.lock"
-  touch /var/lock/debian-xfce-i3_x64.lock
+  echo "CREATED LOCKFILE IN: /var/lock/debian-i3.lock"
+  touch /var/lock/debian-i3.lock
 }
 
 print_usage() {
   echo " "
   echo "USAGE: install | i3-config | zsh-config | php-composer | docker-compose | config-lightdm-slick-greeter"
-  echo "./debian-xfce-i3_x64.sh install | Install everything and get the latest configurations"
-  echo "./debian-xfce-i3_x64.sh i3-config | Download the latest i3-configuration from GitHub"
-  echo "./debian-xfce-i3_x64.sh zsh-config | Download the latest zsh-configuration from GitHub"
-  echo "./debian-xfce-i3_x64.sh php-composer | Download and install the latest php-composer script"
-  echo "./debian-xfce-i3_x64.sh docker-compose | Download and install the latest docker-compose script"
-  echo "./debian-xfce-i3_x64.sh postman-app | Download and install the latest postman api-testing app"
+  echo "./debian-lx-i3_x64.sh install | Install everything and get the latest configurations"
+  echo "./debian-lx-i3_x64.sh i3-config | Download the latest i3-configuration from GitHub"
+  echo "./debian-lx-i3_x64.sh zsh-config | Download the latest zsh-configuration from GitHub"
+  echo "./debian-lx-i3_x64.sh php-composer | Download and install the latest php-composer script"
+  echo "./debian-lx-i3_x64.sh docker-compose | Download and install the latest docker-compose script"
+  echo "./debian-lx-i3_x64.sh postman-app | Download and install the latest postman api-testing app"
   echo " "
 }
 
@@ -143,7 +145,7 @@ print_usage() {
 case "$1" in
 
 install)
-  if [ -f "/var/lock/debian-xfce-i3_x64.lock" ]; then
+  if [ -f "/var/lock/debian-i3.lock" ]; then
     echo " "
     echo "THE SCRIPT HAS ALREADY RUN WITH ARGUMENT: INSTALL"
     print_usage

@@ -26,7 +26,7 @@ get_i3_config() {
   mkdir -p $SUDO_USER_HOME/.config/i3
   cd $SUDO_USER_HOME/.config/i3
   rm -f $SUDO_USER_HOME/.config/i3/config
-  wget -q -O config https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/config-i3-xfce.txt
+  wget -q -O config https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config-i3-xfce.txt
   chmod -R 775 $SUDO_USER_HOME/.config/i3 && chmod 644 config && chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
   echo "Wrote new i3-configuration to: $SUDO_USER_HOME/.config/i3/config"
 }
@@ -78,7 +78,7 @@ install_all() {
   echo " "
   echo "INITIALIZE" && sleep 2
   cd /tmp
-  apt update -qq && apt install ca-certificates curl wget gzip tar nano ssh git gnupg lsb-release gparted pwgen unzip zip net-tools -y
+  apt update -qq && apt install ca-certificates curl wget gzip tar nano ssh git gnupg lsb-release gparted pwgen unzip zip net-tools unclutter -y
 
   echo " "
   echo "ADDING KEYS AND REPOSITORIES" && sleep 2
@@ -123,8 +123,8 @@ install_all() {
   systemctl stop apache2.service
 
   echo " "
-  echo "CREATED LOCKFILE IN: /var/lock/debian-xfce-i3_x64.lock"
-  touch /var/lock/debian-xfce-i3_x64.lock
+  echo "CREATED LOCKFILE IN: /var/lock/debian-i3.lock"
+  touch /var/lock/debian-i3.lock
 }
 
 print_usage() {
@@ -143,7 +143,7 @@ print_usage() {
 case "$1" in
 
 install)
-  if [ -f "/var/lock/debian-xfce-i3_x64.lock" ]; then
+  if [ -f "/var/lock/debian-i3.lock" ]; then
     echo " "
     echo "THE SCRIPT HAS ALREADY RUN WITH ARGUMENT: INSTALL"
     print_usage
