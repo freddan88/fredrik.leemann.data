@@ -21,10 +21,10 @@ set $wp6 "6"
 set $wp7 "7"
 set $wp8 "8"
 
-set $dark   #383c4a
-set $light  #7c818c
-set $active #5294e2
-set $urgent #5294e2
+# set $dark   #383c4a
+# set $light  #7c818c
+# set $active #5294e2
+# set $urgent #5294e2
 
 ## Run: 'xmodmap' in terminal to find modifiers
 ## Mod4 = Windows or super key

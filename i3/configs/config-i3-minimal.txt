@@ -21,10 +21,10 @@ set $wp6 "6"
 set $wp7 "7"
 set $wp8 "8"
 
-set $dark   #383c4a
-set $light  #7c818c
-set $active #5294e2
-set $urgent #5294e2
+# set $dark   #383c4a
+# set $light  #7c818c
+# set $active #5294e2
+# set $urgent #5294e2
 
 ## Run: 'xmodmap' in terminal to find modifiers
 ## Mod4 = Windows or super key
@@ -46,10 +46,12 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id lxpanel
 
 ## Run: 'xprop' in terminal to find window classes
+# for_window [class="XTerm"] fullscreen enable
 for_window [class="^.*"] border pixel 1
 
 ## Start program on predefined workspace
 # assign [class="Google-chrome"] $wp3
+# assign [class="Pavucontrol"] $wp2
 # assign [class="Postman"] $wp4
 # assign [class="Code"] $wp2
 
