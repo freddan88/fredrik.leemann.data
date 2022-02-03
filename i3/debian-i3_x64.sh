@@ -123,12 +123,12 @@ install_all() {
 print_usage() {
   echo " "
   echo "USAGE: install | i3-config | zsh-config | php-composer | docker-compose | postman-app"
-  echo "./debian-i3_x64.sh install | Install everything and get the latest configurations"
-  echo "./debian-i3_x64.sh i3-config | Download the latest i3-configuration from GitHub - Requires variable for download_url"
-  echo "./debian-i3_x64.sh zsh-config | Download the latest zsh-configuration from GitHub"
-  echo "./debian-i3_x64.sh php-composer | Download and install the latest php-composer script"
-  echo "./debian-i3_x64.sh docker-compose | Download and install the latest docker-compose script"
-  echo "./debian-i3_x64.sh postman-app | Download and install the latest postman api-testing app"
+  echo "$0 install | Install everything and get the latest configurations"
+  echo "$0 i3-config | Download the latest i3-configuration from GitHub - Requires variable for download_url"
+  echo "$0 zsh-config | Download the latest zsh-configuration from GitHub"
+  echo "$0 php-composer | Download and install the latest php-composer script"
+  echo "$0 docker-compose | Download and install the latest docker-compose script"
+  echo "$0 postman-app | Download and install the latest postman api-testing app"
   echo " "
 }
 

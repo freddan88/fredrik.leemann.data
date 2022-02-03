@@ -13,16 +13,16 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   exit
 fi
 
-DEBIAN_I3_SCRIPT_NAME="debian-i3_x64.sh"
+DEBIAN_REMOTE_I3_SCRIPT_NAME="debian-i3_x64.sh"
 
 if [ ! -f "/tmp/debian-i3-xfce_x64" ]; then
-  cd /tmp && wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/$DEBIAN_I3_SCRIPT_NAME
+  cd /tmp && wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/$DEBIAN_REMOTE_I3_SCRIPT_NAME
 fi
 
-chmod 754 /tmp/$DEBIAN_I3_SCRIPT_NAME
+chmod 754 /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME
 
 install_all() {
-  /tmp/$DEBIAN_I3_SCRIPT_NAME install
+  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME install
   echo " "
 
   apt update -qq
@@ -32,23 +32,23 @@ install_all() {
   apt install openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin i3 -y
   apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter zsh numlockx catfish xbacklight playerctl synaptic neofetch mirage -y
 
-  /tmp/$DEBIAN_I3_SCRIPT_NAME i3-config
-  /tmp/$DEBIAN_I3_SCRIPT_NAME php-composer
-  /tmp/$DEBIAN_I3_SCRIPT_NAME docker-compose
-  /tmp/$DEBIAN_I3_SCRIPT_NAME postman-app
+  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME i3-config
+  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME php-composer
+  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME docker-compose
+  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME postman-app
   echo " "
 }
 
 get_zsh_config() {
-  /tmp/$DEBIAN_I3_SCRIPT_NAME i3-config
+  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME i3-config
   echo " "
 }
 
 print_usage() {
   echo " "
   echo "USAGE: install | i3-config"
-  echo "$DEBIAN_I3_SCRIPT_NAME install | Install everything and get the latest configurations"
-  echo "$DEBIAN_I3_SCRIPT_NAME zsh-config | Download the latest zsh-configuration from GitHub"
+  echo "$0 install | Install everything and get the latest configurations"
+  echo "$0 zsh-config | Download the latest zsh-configuration from GitHub"
   echo " "
 }
 
