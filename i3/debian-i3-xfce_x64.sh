@@ -24,13 +24,15 @@ chmod 754 /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME
 install_all() {
   /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME install
   echo " "
-
   apt update -qq
-  apt install ufw gufw fail2ban gimp vlc arc-theme elementary-xfce-icon-theme thunderbird nitrogen libreoffice compton sqlite3 libpcre3 libsodium23 sqlitebrowser -y
+  apt install i3 xfce4-screenshooter xfce4-appmenu-plugin arc-theme elementary-xfce-icon-theme gnome-icon-theme debian-edu-artwork thunderbird synaptic stacer mirage -y
+  apt install gimp vlc libreoffice compton nitrogen unclutter catfish ssh git zsh curl tar bzip2 zip unzip nano ffmpeg lshw htop openssl ghostscript ufw gufw fail2ban -y
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
-  apt install imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 -y
-  apt install openssl libapache2-mpm-itk libmagickcore-6.q16hdri-3-extra libmagickcore-6.q16-6-extra ffmpeg ghostscript xfce4-screenshooter xfce4-appmenu-plugin i3 -y
-  apt install docker-ce docker-ce-cli containerd.io rofi imagemagick stacer lightdm slick-greeter zsh numlockx catfish xbacklight playerctl synaptic neofetch mirage -y
+  apt install neofetch suckless-tools playerctl xbacklight numlockx rofi sqlite3 sqlitebrowser lightdm slick-greeter libreoffice libpcre3 libsodium23 imagemagick -y
+  apt install imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libapache2-mpm-itk -y
+  apt install libmagickwand-6.q16hdri-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16hdri-3-extra -y
+  apt install docker-ce docker-ce-cli containerd.io -y
+  # gnome-screenshot screenkey screenruler
 
   /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME i3-config
   /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME php-composer
