@@ -13,17 +13,18 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   exit
 fi
 
-DEBIAN_REMOTE_I3_SCRIPT_NAME="debian-i3_x64.sh"
+DEBIAN_REMOTE_I3_SCRIPT_NAME="debian-xfce-i3-main_x64.sh"
 
-if [ ! -f "/tmp/debian-i3-xfce_x64" ]; then
-  cd /tmp && wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/$DEBIAN_REMOTE_I3_SCRIPT_NAME
+if [ ! -f "$DEBIAN_REMOTE_I3_SCRIPT_NAME" ]; then
+  wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/$DEBIAN_REMOTE_I3_SCRIPT_NAME
 fi
 
-chmod 754 /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME
+chmod 754 $DEBIAN_REMOTE_I3_SCRIPT_NAME
 
 install_all() {
-  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME install
+  ./$DEBIAN_REMOTE_I3_SCRIPT_NAME install
   echo " "
+
   apt update -qq
   apt install i3 i3status xfce4-screenshooter xfce4-appmenu-plugin arc-theme elementary-xfce-icon-theme gnome-icon-theme debian-edu-artwork thunderbird synaptic mirage -y
   apt install gimp vlc libreoffice compton nitrogen unclutter catfish ssh git zsh curl tar bzip2 zip unzip nano ffmpeg lshw htop openssl ghostscript ufw gufw fail2ban -y
@@ -34,23 +35,17 @@ install_all() {
   apt install docker-ce docker-ce-cli containerd.io -y
   # gnome-screenshot screenkey screenruler
 
-  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME i3-config
-  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME php-composer
-  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME docker-compose
-  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME postman-app
-  echo " "
-}
-
-get_zsh_config() {
-  /tmp/$DEBIAN_REMOTE_I3_SCRIPT_NAME i3-config
+  ./$DEBIAN_REMOTE_I3_SCRIPT_NAME i3-config
+  ./$DEBIAN_REMOTE_I3_SCRIPT_NAME php-composer
+  ./$DEBIAN_REMOTE_I3_SCRIPT_NAME docker-compose
+  ./$DEBIAN_REMOTE_I3_SCRIPT_NAME postman-app
   echo " "
 }
 
 print_usage() {
   echo " "
-  echo "USAGE: install | i3-config"
+  echo "USAGE: install"
   echo "$0 install | Install everything and get the latest configurations"
-  echo "$0 zsh-config | Download the latest zsh-configuration from GitHub"
   echo " "
 }
 
@@ -59,11 +54,6 @@ case "$1" in
 
 install)
   install_all
-  print_usage
-  ;;
-
-zsh-config)
-  get_zsh_config
   print_usage
   ;;
 

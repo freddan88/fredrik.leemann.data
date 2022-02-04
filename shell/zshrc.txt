@@ -112,7 +112,8 @@ xstarted=$(ps -e | grep -c xinit)
 if ((xstarted == 0)); then
   echo "PRESS ENTER TO START X OR CTRL+C TO EXIT - YOU CAN START X WITH THE COMMAND: startx"
   read success
-  if ((success == 0)); then
-    startx
-  fi
+  startx
+  # if ((success == 0)); then
+  #  startx
+  # fi
 fi
