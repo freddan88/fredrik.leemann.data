@@ -13,6 +13,23 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   exit
 fi
 
+if [ -f "/var/lock/debian-i3.lock" ]; then
+  echo "THE SCRIPT HAS ALREADY RUN WITH ARGUMENT: INSTALL"
+  echo " "
+  exit
+fi
+
+SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+
+echo " "
+echo "Sudo-user username: $SUDO_USER"
+echo "Sudo-user home-directory: $SUDO_USER_HOME"
+
+wget -q https://github.com/freddan88/fredrik.linux.files/blob/main/shell/xrandr-restore.sh
+mv -f xrandr-restore.sh $SUDO_USER_HOME/.xrandr-restore.sh
+chown $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.xrandr-restore.sh
+chmod 764 $SUDO_USER_HOME/.xrandr-restore.sh
+
 DEBIAN_REMOTE_I3_SCRIPT_NAME="debian-xfce-i3-main_x64.sh"
 
 if [ ! -f "$DEBIAN_REMOTE_I3_SCRIPT_NAME" ]; then
