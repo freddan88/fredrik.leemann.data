@@ -107,6 +107,9 @@ install_all() {
   mkdir -p /usr/share/backgrounds
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
 
+  cd $SUDO_USER_HOME/.config/i3
+  wget -q
+
   usermod -aG docker $SUDO_USER
   ln -s /sbin/ifconfig /usr/bin/ifconfig
 
