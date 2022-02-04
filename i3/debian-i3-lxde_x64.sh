@@ -1,6 +1,6 @@
 #!/bin/bash
 
-URL_I3_CONFIG="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config-i3-minimal.txt"
+URL_I3_CONFIG="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config-i3-lxde.txt"
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
