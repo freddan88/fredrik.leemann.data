@@ -20,7 +20,7 @@ if [ -f "/var/lock/debian-i3.lock" ]; then
   exit
 fi
 
-echo $URL_I3_CONFIG >'URL_I3_CONFIG.txt'
+echo $URL_I3_CONFIG >'url_i3_config.txt'
 
 install_all() {
   echo " "

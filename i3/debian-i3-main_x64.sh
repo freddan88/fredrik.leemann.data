@@ -24,7 +24,7 @@ fi
 get_i3_config() {
   echo " "
   if [ -z "$URL_I3_CONFIG" ]; then
-    echo "ERROR: URL TO DOWNLOAD I3-CONFIG IS NOT SET"
+    echo "ERROR: URL TO DOWNLOAD I3-CONFIG NOT SET"
     exit
   fi
   echo "UPDATING i3 CONFIG" && sleep 2
