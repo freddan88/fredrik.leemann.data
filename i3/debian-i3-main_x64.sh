@@ -104,6 +104,12 @@ install_all() {
   wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
   apt install ./dbeaver-ce_*_amd64.deb -y
 
+  apt install i3 i3status suckless-tools rofi playerctl xbacklight numlockx unclutter neofetch nitrogen git zsh curl tar bzip2 zip unzip nano ffmpeg lshw htop ssh vlc -y
+  apt install ufw gufw openssl sqlite3 fail2ban ffmpeg gimp mirage stacer synaptic thunderbird libreoffice ghostscript debian-edu-artwork gnome-icon-theme libpcre3 -y
+  apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
+  apt install libapache2-mpm-itk libsodium23 sqlitebrowser docker-ce docker-ce-cli containerd.io imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 -y
+  apt install imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16hdri-3-extra -y
+
   mkdir -p /usr/share/backgrounds
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv -f LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
 
