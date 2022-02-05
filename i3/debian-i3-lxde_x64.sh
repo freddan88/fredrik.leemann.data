@@ -20,7 +20,7 @@ if [ -f "/var/lock/debian-i3.lock" ]; then
   exit
 fi
 
-echo $URL_I3_CONFIG >'debain_i3_config_url.txt'
+echo $URL_I3_CONFIG >'debain-i3-config_url.txt'
 
 DEBIAN_XRANDR_RESTORE_SCRIPT="xrandr-restore.sh"
 
