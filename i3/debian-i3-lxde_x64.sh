@@ -1,5 +1,7 @@
 #!/bin/bash
 
+URL_I3_CONFIG="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config-i3-lxde.txt"
+
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
@@ -17,6 +19,8 @@ if [ -f "/var/lock/debian-i3.lock" ]; then
   echo " "
   exit
 fi
+
+echo $URL_I3_CONFIG >'URL_I3_CONFIG.txt'
 
 DEBIAN_XRANDR_RESTORE_SCRIPT="xrandr-restore.sh"
 

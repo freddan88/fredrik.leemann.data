@@ -15,11 +15,11 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   exit
 fi
 
-if [ -f "debian-i3.conf" ]; then
-  source debian-i3.conf
-fi
-
 SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+
+if [ -f "$SUDO_USER_HOME/url_i3_config.txt" ]; then
+  URL_I3_CONFIG=$(cat $SUDO_USER_HOME/url_i3_config.txt)
+fi
 
 get_i3_config() {
   echo " "
@@ -31,6 +31,7 @@ get_i3_config() {
   mkdir -p $SUDO_USER_HOME/.config/i3
   cd $SUDO_USER_HOME/.config/i3
   rm -f $SUDO_USER_HOME/.config/i3/config
+  rm -f $SUDO_USER_HOME/url_i3_config.txt
   wget -q -O config $URL_I3_CONFIG
   chmod -Rf 775 $SUDO_USER_HOME/.config/i3 && chmod -f 644 config && chown -Rf $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
   echo "Wrote new i3-configuration to: $SUDO_USER_HOME/.config/i3/config"
