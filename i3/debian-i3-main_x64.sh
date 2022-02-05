@@ -104,6 +104,7 @@ install_all() {
   wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb
   apt install ./dbeaver-ce_*_amd64.deb -y
 
+  apt update -qq
   apt install i3 i3status suckless-tools rofi playerctl xbacklight numlockx unclutter neofetch nitrogen git zsh curl tar bzip2 zip unzip nano ffmpeg lshw htop ssh vlc -y
   apt install ufw gufw openssl sqlite3 fail2ban ffmpeg gimp mirage stacer synaptic thunderbird libreoffice ghostscript debian-edu-artwork gnome-icon-theme libpcre3 -y
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
