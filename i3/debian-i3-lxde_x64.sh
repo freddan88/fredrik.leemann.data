@@ -24,13 +24,14 @@ SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 echo " "
 echo "Sudo-user username: $SUDO_USER"
 echo "Sudo-user home-directory: $SUDO_USER_HOME"
+echo " "
 
 wget -q https://github.com/freddan88/fredrik.linux.files/blob/main/shell/xrandr-restore.sh
 mv -f xrandr-restore.sh $SUDO_USER_HOME/.xrandr-restore.sh
 chown $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.xrandr-restore.sh
 chmod 764 $SUDO_USER_HOME/.xrandr-restore.sh
 
-DEBIAN_REMOTE_I3_SCRIPT_NAME="debian-xfce-i3-main_x64.sh"
+DEBIAN_REMOTE_I3_SCRIPT_NAME="debian-i3-main_x64.sh"
 
 if [ ! -f "$DEBIAN_REMOTE_I3_SCRIPT_NAME" ]; then
   wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/$DEBIAN_REMOTE_I3_SCRIPT_NAME
