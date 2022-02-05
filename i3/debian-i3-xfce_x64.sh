@@ -32,7 +32,7 @@ install_all() {
   echo " "
 
   apt update -qq
-  apt install xfce4-screenshooter xfce4-appmenu-plugin arc-theme elementary-xfce-icon-theme compton catfish lightdm slick-greeter docker-ce docker-ce-cli containerd.io -y
+  apt install xfce4-screenshooter xfce4-appmenu-plugin arc-theme elementary-xfce-icon-theme compton catfish lightdm slick-greeter -y
   # gnome-screenshot screenkey screenruler
 
   ./$DEBIAN_REMOTE_I3_SCRIPT_NAME i3-config
