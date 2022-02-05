@@ -17,8 +17,8 @@ fi
 
 SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
-if [ -f "$SUDO_USER_HOME/url_i3_config.txt" ]; then
-  URL_I3_CONFIG=$(cat $SUDO_USER_HOME/url_i3_config.txt)
+if [ -f "debain_i3_config_url.txt" ]; then
+  URL_I3_CONFIG=$(cat $SUDO_USER_HOME/debain_i3_config_url.txt)
 fi
 
 get_i3_config() {
