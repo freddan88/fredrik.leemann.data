@@ -17,8 +17,8 @@ fi
 
 SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
-if [ -f "debain-i3-config_url.txt" ]; then
-  URL_I3_CONFIG=$(cat $SUDO_USER_HOME/debain-i3-config_url.txt)
+if [ -f "debian-i3-config_url.txt" ]; then
+  URL_I3_CONFIG=$(cat $SUDO_USER_HOME/debian-i3-config_url.txt)
 fi
 
 get_i3_config() {
