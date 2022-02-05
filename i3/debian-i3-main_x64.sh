@@ -129,11 +129,12 @@ install_all() {
   touch /var/lock/debian-i3.lock
 
   get_i3_config
-  get_zsh_config
   get_php_composer
   get_latest_postman
   get_docker_compose
-  print_usage
+
+  echo " "
+  echo "DONE"
 }
 
 print_usage() {
