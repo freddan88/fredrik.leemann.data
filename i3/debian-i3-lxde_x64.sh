@@ -39,6 +39,9 @@ install_all() {
   # gnome-screenshot screenkey screenruler
 
   echo " "
+  cd $SUDO_USER_HOME/.config/i3 && wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/i3status.conf
+
+  echo " "
   echo "DONE"
   echo " "
 }
