@@ -115,6 +115,9 @@ install_all() {
   mkdir -p /usr/share/backgrounds
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv -f LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
 
+  mkdir -p $SUDO_USER_HOME/.config/i3
+  wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/i3status.conf && mv -f i3status.conf .config/i3
+
   usermod -aG docker $SUDO_USER
   ln -s /sbin/ifconfig /usr/bin/ifconfig
 
