@@ -15,9 +15,9 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   exit
 fi
 
-if [ -f "debian-i3_x64.sh" ]; then
-  source debian-i3_x64.sh
-fi
+# if [ -f "debian-i3_x64.sh" ]; then
+#   source debian-i3_x64.sh
+# fi
 
 SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
