@@ -34,9 +34,11 @@ fi
 install_all() {
   echo " "
   apt update -qq
-  apt install picom xorg network-manager network-manager-gnome lxpanel lxterminal lxappearance lxrandr pcmanfm xscreensaver notification-daemon policykit-1 featherpad -y
-  apt install pulseaudio pulseaudio-utils pavucontrol lxde-icon-theme -y
+  apt install picom xorg network-manager network-manager-gnome lxpanel lxterminal lxappearance lxrandr pcmanfm xscreensaver notification-daemon policykit-1 lxpolkit -y
+  apt install pulseaudio pulseaudio-utils pavucontrol lxde-icon-theme featherpad -y
   # gnome-screenshot screenkey screenruler
+
+  rm -f /usr/share/applications/pcmanfm-desktop-pref.desktop
 
   echo " "
   echo "DONE"

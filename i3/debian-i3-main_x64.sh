@@ -106,7 +106,7 @@ install_all() {
   apt install ./dbeaver-ce_*_amd64.deb -y
 
   apt update -qq
-  apt install i3 i3status suckless-tools rofi playerctl xbacklight numlockx unclutter neofetch nitrogen git zsh curl tar bzip2 zip unzip nano ffmpeg lshw htop ssh vlc -y
+  apt install i3 i3status suckless-tools rofi playerctl xbacklight numlockx unclutter neofetch nitrogen zsh bzip2 zip unzip nano ffmpeg lshw htop vlc samba -y
   apt install ufw gufw openssl sqlite3 fail2ban ffmpeg gimp mirage stacer synaptic thunderbird libreoffice ghostscript debian-edu-artwork gnome-icon-theme libpcre3 -y
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
   apt install libapache2-mpm-itk libsodium23 sqlitebrowser docker-ce docker-ce-cli containerd.io imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 -y
@@ -125,6 +125,13 @@ install_all() {
   echo "DISABLING APACHE2 HTTP SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
   systemctl disable apache2.service
   systemctl stop apache2.service
+
+  echo " "
+  echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
+  systemctl disable smbd.service
+  systemctl disable nmbd.service
+  systemctl stop smbd.service
+  systemctl stop nmbd.service
 
   echo " "
   echo "CREATED LOCKFILE IN: /var/lock/debian-i3.lock"
