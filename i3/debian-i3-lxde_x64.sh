@@ -1,6 +1,5 @@
 #!/bin/bash
 
-DEBIAN_REMOTE_I3_SCRIPT_NAME="debian-i3-main_x64.sh"
 URL_I3_CONFIG="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config-i3-lxde.txt"
 
 ################################
@@ -20,22 +19,21 @@ if [ -f "/var/lock/debian-i3.lock" ]; then
   exit
 fi
 
-SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
-
-echo " "
-echo "Sudo-user username: $SUDO_USER"
-echo "Sudo-user home-directory: $SUDO_USER_HOME"
-
-wget -q https://github.com/freddan88/fredrik.linux.files/blob/main/shell/xrandr-restore.sh
-mv -f xrandr-restore.sh $SUDO_USER_HOME/.xrandr-restore.sh
-chown $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.xrandr-restore.sh
-chmod 764 $SUDO_USER_HOME/.xrandr-restore.sh
+DEBIAN_REMOTE_I3_SCRIPT_NAME="debian-i3-main_x64.sh"
+DEBIAN_XRANDR_RESTORE_SCRIPT="xrandr-restore.sh"
 
 if [ ! -f "$DEBIAN_REMOTE_I3_SCRIPT_NAME" ]; then
   wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/$DEBIAN_REMOTE_I3_SCRIPT_NAME
 fi
 
-chmod 754 $DEBIAN_REMOTE_I3_SCRIPT_NAME
+if [ ! -f ".$DEBIAN_XRANDR_RESTORE_SCRIPT" ]; then
+  wget -q https://github.com/freddan88/fredrik.linux.files/blob/main/shell/$DEBIAN_XRANDR_RESTORE_SCRIPT
+  mv -f $DEBIAN_XRANDR_RESTORE_SCRIPT .$DEBIAN_XRANDR_RESTORE_SCRIPT
+  chown $SUDO_USER:$SUDO_USER .$DEBIAN_XRANDR_RESTORE_SCRIPT
+  chmod -f 754 .xrandr-restore.sh
+fi
+
+chmod -f 754 $DEBIAN_REMOTE_I3_SCRIPT_NAME && chown -f $SUDO_USER:$SUDO_USER $DEBIAN_REMOTE_I3_SCRIPT_NAME
 
 install_all() {
   ./$DEBIAN_REMOTE_I3_SCRIPT_NAME install

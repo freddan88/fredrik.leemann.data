@@ -32,7 +32,7 @@ get_i3_config() {
   cd $SUDO_USER_HOME/.config/i3
   rm -f $SUDO_USER_HOME/.config/i3/config
   wget -q -O config $URL_I3_CONFIG
-  chmod -R 775 $SUDO_USER_HOME/.config/i3 && chmod 644 config && chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
+  chmod -Rf 775 $SUDO_USER_HOME/.config/i3 && chmod -f 644 config && chown -Rf $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
   echo "Wrote new i3-configuration to: $SUDO_USER_HOME/.config/i3/config"
 }
 
@@ -42,7 +42,7 @@ get_zsh_config() {
   cd $SUDO_USER_HOME
   rm -f $SUDO_USER_HOME/.zshrc
   wget -q -O .zshrc $URL_ZSH_CONFIG
-  chmod 644 .zshrc && chown $SUDO_USER:$SUDO_USER .zshrc
+  chmod -f 644 .zshrc && chown -f $SUDO_USER:$SUDO_USER .zshrc
   echo "Wrote new zsh-configuration to: $SUDO_USER_HOME/.zshrc"
 }
 
@@ -52,7 +52,7 @@ get_php_composer() {
   cd /tmp
   rm -f installer && rm -f /usr/local/bin/composer
   wget -q https://getcomposer.org/installer && php ./installer >/dev/null
-  mv composer.phar /usr/local/bin/composer && chmod 755 /usr/local/bin/composer
+  mv -f composer.phar /usr/local/bin/composer && chmod -f 755 /usr/local/bin/composer
   echo "Installed the command: composer globally in: /usr/local/bin/composer"
 }
 
@@ -64,7 +64,7 @@ get_docker_compose() {
   LATEST_DOCKER_COMPOSE=$(curl -s https://github.com/docker/compose/releases/latest | cut -d'"' -f2)
   LATEST_DOCKER_COMPOSE_VERSION=$(echo $LATEST_DOCKER_COMPOSE | cut -d'/' -f8)
   wget -q https://github.com/docker/compose/releases/download/$LATEST_DOCKER_COMPOSE_VERSION/docker-compose-Linux-x86_64
-  mv docker-compose-Linux-x86_64 /usr/local/bin/docker-compose && chmod 755 /usr/local/bin/docker-compose
+  mv -f docker-compose-Linux-x86_64 /usr/local/bin/docker-compose && chmod -f 755 /usr/local/bin/docker-compose
   echo "Installed the command: docker-compose globally in: /usr/local/bin/docker-compose"
 }
 
@@ -74,8 +74,8 @@ get_latest_postman() {
   cd /tmp
   rm -f postman-x64.tar.gz && rm -R -f /opt/Postman && rm -f /usr/local/bin/postman
   wget -q -O postman-x64.tar.gz https://dl.pstmn.io/download/latest/linux64 && tar -xf postman-x64.tar.gz
-  mv Postman /opt && ln -s /opt/Postman/app/postman /usr/local/bin/postman
-  chmod 775 /opt/Postman/app/postman
+  mv -f Postman /opt && ln -s /opt/Postman/app/postman /usr/local/bin/postman
+  chmod -f 775 /opt/Postman/app/postman
   echo "Installed the latest api-testing app globally in: /usr/local/bin/postman and /opt/Postman"
 }
 
@@ -105,7 +105,7 @@ install_all() {
   apt install ./dbeaver-ce_*_amd64.deb -y
 
   mkdir -p /usr/share/backgrounds
-  wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
+  wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv -f LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
 
   cd $SUDO_USER_HOME/.config/i3
   wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/i3status.conf
