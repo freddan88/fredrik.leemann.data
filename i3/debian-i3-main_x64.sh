@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 URL_MONGODB_COMPASS="https://github.com/mongodb-js/compass/releases/download/v1.30.1/mongodb-compass_1.30.1_amd64.deb"
 URL_JETBRAINS_MONOFONT="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip"
@@ -15,9 +15,9 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   exit
 fi
 
-# if [ -f "debian-i3_x64.sh" ]; then
-#   source debian-i3_x64.sh
-# fi
+if [ -f "debian-i3_x64.sh" ]; then
+  source debian-i3_x64.sh
+fi
 
 SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
