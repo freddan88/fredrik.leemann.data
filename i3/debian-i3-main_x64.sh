@@ -15,11 +15,11 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   exit
 fi
 
-SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+if [ -f "debian-i3_x64.sh" ]; then
+  source debian-i3_x64.sh
+fi
 
-echo " "
-echo "Sudo-user username: $SUDO_USER"
-echo "Sudo-user home-directory: $SUDO_USER_HOME"
+SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
 
 get_i3_config() {
   echo " "
@@ -132,7 +132,6 @@ print_usage() {
   echo "$0 php-composer | Download and install the latest php-composer script"
   echo "$0 docker-compose | Download and install the latest docker-compose script"
   echo "$0 postman-app | Download and install the latest postman api-testing app"
-  echo " "
 }
 
 ############
