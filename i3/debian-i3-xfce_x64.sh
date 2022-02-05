@@ -14,6 +14,7 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
 fi
 
 if [ -f "/var/lock/debian-i3.lock" ]; then
+  echo " "
   echo "THE SCRIPT HAS ALREADY RUN"
   echo " "
   exit
@@ -29,16 +30,14 @@ chmod -f 754 $DEBIAN_REMOTE_I3_SCRIPT_NAME && chown -f $SUDO_USER:$SUDO_USER $DE
 
 install_all() {
   ./$DEBIAN_REMOTE_I3_SCRIPT_NAME install
-  echo " "
 
   apt update -qq
   apt install xfce4-screenshooter xfce4-appmenu-plugin arc-theme elementary-xfce-icon-theme compton catfish lightdm slick-greeter -y
   # gnome-screenshot screenkey screenruler
 
-  ./$DEBIAN_REMOTE_I3_SCRIPT_NAME i3-config
-  ./$DEBIAN_REMOTE_I3_SCRIPT_NAME php-composer
-  ./$DEBIAN_REMOTE_I3_SCRIPT_NAME docker-compose
-  ./$DEBIAN_REMOTE_I3_SCRIPT_NAME postman-app
+  echo " "
+  echo "DONE"
+  echo " "
 }
 
 print_usage() {
@@ -53,7 +52,6 @@ case "$1" in
 
 install)
   install_all
-  print_usage
   ;;
 
 *)

@@ -127,6 +127,13 @@ install_all() {
   echo " "
   echo "CREATED LOCKFILE IN: /var/lock/debian-i3.lock"
   touch /var/lock/debian-i3.lock
+
+  get_i3_config
+  get_zsh_config
+  get_php_composer
+  get_latest_postman
+  get_docker_compose
+  print_usage
 }
 
 print_usage() {
@@ -138,6 +145,7 @@ print_usage() {
   echo "$0 php-composer | Download and install the latest php-composer script"
   echo "$0 docker-compose | Download and install the latest docker-compose script"
   echo "$0 postman-app | Download and install the latest postman api-testing app"
+  echo " "
 }
 
 ############
