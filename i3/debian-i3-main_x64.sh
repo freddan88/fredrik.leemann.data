@@ -43,7 +43,7 @@ get_zsh_config() {
   cd $SUDO_USER_HOME
   rm -f $SUDO_USER_HOME/.zshrc
   wget -q -O .zshrc $URL_ZSH_CONFIG
-  chmod -f 644 .zshrc && chown -f $SUDO_USER:$SUDO_USER .zshrc
+  chmod -f 664 .zshrc && chown -f $SUDO_USER:$SUDO_USER .zshrc
   echo "Wrote new zsh-configuration to: $SUDO_USER_HOME/.zshrc"
 }
 
