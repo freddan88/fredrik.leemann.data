@@ -28,12 +28,13 @@ get_i3_config() {
     exit
   fi
   echo "UPDATING i3 CONFIG" && sleep 2
-  mkdir -p $SUDO_USER_HOME/.config/i3
-  cd $SUDO_USER_HOME/.config/i3
   rm -f $SUDO_USER_HOME/.config/i3/config
   rm -f $SUDO_USER_HOME/url_i3_config.txt
+  mkdir -p $SUDO_USER_HOME/.config/i3
+  cd $SUDO_USER_HOME/.config/i3
+  wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/i3status.conf
   wget -q -O config $URL_I3_CONFIG
-  chmod -Rf 775 $SUDO_USER_HOME/.config/i3 && chmod -f 644 config && chown -Rf $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
+  chown -Rf $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config
   echo "Wrote new i3-configuration to: $SUDO_USER_HOME/.config/i3/config"
 }
 
@@ -106,17 +107,14 @@ install_all() {
   apt install ./dbeaver-ce_*_amd64.deb -y
 
   apt update -qq
-  apt install i3 i3status suckless-tools rofi playerctl xbacklight numlockx unclutter neofetch nitrogen zsh bzip2 zip unzip nano ffmpeg lshw htop samba libpcre3 openssl -y
-  apt install ufw gufw sqlite3 fail2ban ffmpeg gimp mirage stacer synaptic thunderbird libreoffice ghostscript debian-edu-artwork gnome-icon-theme kazam vlc obs-studio -y
+  apt install i3 i3status suckless-tools rofi playerctl xbacklight numlockx unclutter neofetch nitrogen zsh bzip2 zip unzip nano lshw htop samba libpcre3 openssl -y
+  apt install ufw gufw sqlite3 fail2ban ffmpeg gimp mirage stacer synaptic thunderbird libreoffice ghostscript debian-edu-artwork gnome-icon-theme kazam vlc ffmpeg -y
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
   apt install libapache2-mpm-itk libsodium23 sqlitebrowser docker-ce docker-ce-cli containerd.io imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 -y
   apt install imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16hdri-3-extra -y
 
-  mkdir -p /usr/share/backgrounds
-  wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv -f LEps6S.jpg /usr/share/backgrounds/linux-wallpaper-01.jpg
-
-  mkdir -p $SUDO_USER_HOME/.config/i3
-  wget -q https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/i3status.conf && mv -f i3status.conf .config/i3
+  mkdir -p /usr/share/wallpapers
+  wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
 
   usermod -aG docker $SUDO_USER
   ln -s /sbin/ifconfig /usr/bin/ifconfig
