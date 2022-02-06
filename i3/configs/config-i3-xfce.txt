@@ -78,7 +78,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id xfce4-terminal
 bindsym $mod+BackSpace exec --no-startup-id catfish
-bindsym $mod+space exec --no-startup-id xfce4-appfinder
+bindsym $mod+space exec --no-startup-id rofi -show run
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 bindsym $mod+m exec --no-startup-id stacer
