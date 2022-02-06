@@ -38,6 +38,7 @@ exec --no-startup-id xfce4-terminal
 
 ## Run: 'xprop' in terminal to find window classes
 for_window [class="Xfce4-appfinder"] floating enable
+# for_window [class="XTerm"] fullscreen enable
 for_window [class="Catfish"] floating enable
 for_window [class="^.*"] border pixel 1
 
@@ -75,14 +76,14 @@ floating_modifier $mod
 ## KEYBINDINGS USING: Super / Windows Key
 ## --------------------------------------
 
-bindsym $mod+Return exec --no-startup-id lxterminal
-bindsym $mod+BackSpace exec --no-startup-id pcmanfm -f
-bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+Return exec --no-startup-id xfce4-terminal
+bindsym $mod+BackSpace exec --no-startup-id catfish
+bindsym $mod+space exec --no-startup-id xfce4-appfinder
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 bindsym $mod+m exec --no-startup-id stacer
-bindsym $mod+f exec --no-startup-id pcmanfm
-bindsym $mod+c exec --no-startup-id featherpad $HOME/.config/i3/config
+bindsym $mod+f exec --no-startup-id thunar
+bindsym $mod+c exec --no-startup-id mousepad $HOME/.config/i3/config
 bindsym $mod+p exec --no-startup-id synaptic-pkexec
 bindsym $mod+b exec --no-startup-id google-chrome
 

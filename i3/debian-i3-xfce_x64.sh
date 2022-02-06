@@ -25,8 +25,7 @@ echo $URL_I3_CONFIG >'debian-i3-config_url.txt'
 install_all() {
   echo " "
   apt update -qq
-  apt install xfce4-screenshooter xfce4-appmenu-plugin arc-theme elementary-xfce-icon-theme compton catfish lightdm slick-greeter -y
-  # gnome-screenshot screenkey screenruler
+  apt install compton catfish lightdm slick-greeter xfce4-screenshooter xfce4-appmenu-plugin -y
 
   echo " "
   echo "DONE"

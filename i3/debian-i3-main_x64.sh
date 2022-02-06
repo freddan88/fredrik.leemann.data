@@ -107,11 +107,13 @@ install_all() {
   apt install ./dbeaver-ce_*_amd64.deb -y
 
   apt update -qq
-  apt install i3 i3status suckless-tools rofi playerctl xbacklight numlockx unclutter neofetch nitrogen zsh bzip2 zip unzip nano lshw htop samba libpcre3 openssl -y
-  apt install ufw gufw sqlite3 fail2ban ffmpeg gimp mirage stacer synaptic thunderbird libreoffice ghostscript debian-edu-artwork gnome-icon-theme kazam vlc ffmpeg -y
+  apt install i3 i3status suckless-tools rofi playerctl xbacklight numlockx unclutter zsh bzip2 zip unzip nano vim lshw htop libpcre3 xterm -y
+  apt install ufw gufw sqlite3 fail2ban ffmpeg gimp mirage stacer synaptic thunderbird libreoffice ghostscript vlc ffmpeg openssl samba neofetch -y
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
   apt install libapache2-mpm-itk libsodium23 sqlitebrowser docker-ce docker-ce-cli containerd.io imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 -y
   apt install imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16hdri-3-extra -y
+  apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme debian-edu-artwork nitrogen -y
+  # apt install screenkey screenruler -y
 
   mkdir -p /usr/share/wallpapers
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg

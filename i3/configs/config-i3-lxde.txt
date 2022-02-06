@@ -34,14 +34,18 @@ set $numlock_on Mod2
 ## ----------------------
 
 exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
+# exec --no-startup-id /usr/lib/notification-daemon/notification-daemon
 exec --no-startup-id $HOME/.xrandr-restore.sh
 exec --no-startup-id xscreensaver -no-splash
+exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pulseaudio
 exec --no-startup-id nm-applet
 exec --no-startup-id lxpolkit
 exec --no-startup-id lxpanel
 
 ## Run: 'xprop' in terminal to find window classes
+for_window [class="Xfce4-appfinder"] floating enable
 # for_window [class="XTerm"] fullscreen enable
 for_window [class="^.*"] border pixel 1
 
@@ -82,7 +86,7 @@ floating_modifier $mod
 
 bindsym $mod+Return exec --no-startup-id lxterminal
 bindsym $mod+BackSpace exec --no-startup-id pcmanfm -f
-bindsym $mod+space exec --no-startup-id rofi -show run
+bindsym $mod+space exec --no-startup-id rofi xfce4-appfinder
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 bindsym $mod+m exec --no-startup-id stacer
