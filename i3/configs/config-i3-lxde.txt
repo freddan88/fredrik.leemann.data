@@ -45,7 +45,6 @@ exec --no-startup-id lxpolkit
 exec --no-startup-id lxpanel
 
 ## Run: 'xprop' in terminal to find window classes
-for_window [class="Xfce4-appfinder"] floating enable
 # for_window [class="XTerm"] fullscreen enable
 for_window [class="^.*"] border pixel 1
 
