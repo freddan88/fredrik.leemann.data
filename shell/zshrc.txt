@@ -107,7 +107,6 @@ xstarted=$(ps -e | grep -c xinit)
 if ((xstarted == 0)); then
   echo " "
   echo "PRESS ENTER TO START X OR CTRL+C TO EXIT - YOU CAN START X WITH THE COMMAND: startx"
-  echo " "
   read key
   startx
 else
