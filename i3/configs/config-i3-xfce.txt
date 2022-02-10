@@ -33,7 +33,7 @@ set $numlock_on Mod2
 # AUTOSTART AND DEFAULTS
 # ----------------------
 
-exec_always --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id xfce4-terminal
 
 ## Run: 'xprop' in terminal to find window classes
@@ -250,7 +250,7 @@ bindsym $mod+Ctrl+space mode "resize"
 ## SPECIAL BINDINGS
 ## ----------------
 
-bindsym $alt+Ctrl+l exec --no-startup-id xscreensaver-command -lock
+bindsym $alt+Ctrl+l exec --no-startup-id xflock4
 bindsym $alt+Ctrl+BackSpace exec --no-startup-id systemctl reboot
 bindsym $alt+Ctrl+Escape exec --no-startup-id systemctl poweroff
 

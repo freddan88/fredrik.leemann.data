@@ -107,7 +107,7 @@ install_all() {
   apt install ./dbeaver-ce_*_amd64.deb -y
 
   apt update -qq
-  apt install i3 i3status suckless-tools rofi playerctl xbacklight numlockx unclutter zsh bzip2 zip unzip nano vim lshw htop libpcre3 xterm -y
+  apt install i3 i3status picom suckless-tools rofi playerctl xbacklight numlockx unclutter zsh bzip2 zip unzip nano vim lshw htop libpcre3 xterm -y
   apt install ufw gufw sqlite3 fail2ban ffmpeg gimp mirage stacer synaptic thunderbird libreoffice ghostscript vlc ffmpeg openssl samba neofetch -y
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
   apt install libapache2-mpm-itk libsodium23 sqlitebrowser docker-ce docker-ce-cli containerd.io imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 -y

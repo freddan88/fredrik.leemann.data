@@ -34,7 +34,7 @@ fi
 install_all() {
   echo " "
   apt update -qq
-  apt install picom xorg network-manager network-manager-gnome lxpanel lxterminal lxappearance lxrandr pcmanfm xscreensaver notification-daemon policykit-1 lxpolkit -y
+  apt install xorg network-manager network-manager-gnome lxpanel lxterminal lxappearance lxrandr pcmanfm xscreensaver notification-daemon policykit-1 lxpolkit -y
   apt install pulseaudio pulseaudio-utils pavucontrol lxde-icon-theme featherpad cups system-config-printer colord xiccd xarchiver -y
   apt install xfce4-screenshooter xfce4-power-manager xfce4-notifyd --no-install-recommends -y
 
