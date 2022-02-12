@@ -39,6 +39,7 @@ install_all() {
   apt install xfce4-screenshooter xfce4-appfinder xfce4-power-manager xfce4-notifyd --no-install-recommends -y
 
   rm -f /usr/share/applications/pcmanfm-desktop-pref.desktop
+  rm -f /usr/share/applications/vim.desktop
 
   echo " "
   echo "DONE"
