@@ -112,8 +112,7 @@ install_all() {
   apt install apache2 php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} libapache2-mod-php -y
   apt install libapache2-mpm-itk libsodium23 sqlitebrowser docker-ce docker-ce-cli containerd.io imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 -y
   apt install imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16hdri-3-extra -y
-  apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme debian-edu-artwork nitrogen -y
-  # apt install screenkey screenruler -y
+  apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme debian-edu-artwork nitrogen members dos2unix cifs-utils screen screenkey cutecom -y
 
   mkdir -p /usr/share/wallpapers
   wget -q https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
@@ -150,7 +149,7 @@ print_usage() {
   echo " "
   echo "USAGE: install | i3-config | zsh-config | php-composer | docker-compose | postman-app"
   echo "$0 install | Install everything and get the latest configurations"
-  echo "$0 i3-config | Download the latest i3-configuration from GitHub - Requires variable for download_url"
+  echo "$0 i3-config | Download the latest i3-configuration from GitHub - Requires configuration-file"
   echo "$0 zsh-config | Download the latest zsh-configuration from GitHub"
   echo "$0 php-composer | Download and install the latest php-composer script"
   echo "$0 docker-compose | Download and install the latest docker-compose script"
