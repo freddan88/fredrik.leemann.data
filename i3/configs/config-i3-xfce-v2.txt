@@ -37,8 +37,8 @@ exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
 # exec --no-startup-id lxpolkit
 # exec --no-startup-id xfce4-panel
 
-# --------             
-# DEFAULTS             
+# --------
+# DEFAULTS
 # --------
 
 # Use xprop in terminal to find window classes
@@ -54,7 +54,7 @@ for_window [class="^.*"] border pixel 1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# thin borders
+# Thin borders
 hide_edge_borders both
 
 # Set default workspace layout
@@ -69,8 +69,8 @@ font pango:monospace 10
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
 
-# -----------------------             
-# KEYBINDINGS: MEDIA-KEYS             
+# -----------------------
+# KEYBINDINGS: MEDIA-KEYS
 # -----------------------
 
 # Use pactl to adjust volume in PulseAudio.
@@ -80,8 +80,8 @@ font pango:monospace 10
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# ----------------------             
-# KEYBINDINGS: SUPER-KEY             
+# ----------------------
+# KEYBINDINGS: SUPER-KEY
 # ----------------------
 
 bindsym $mod+Return exec --no-startup-id xfce4-terminal
@@ -113,19 +113,19 @@ bindsym $mod+y exec --no-startup-id gnome-disks
 bindsym $mod+h exec --no-startup-id synaptic-pkexec
 bindsym $mod+n exec --no-startup-id gnome-software
 
-# change focus
+# Change focus
 bindsym $mod+l focus right
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+i focus up
 
-# alternatively, you can use the cursor keys:
+# Alternatively, you can use the cursor keys:
 bindsym $mod+Right focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 
-# switch to workspace
+# Switch to workspace
 bindsym $mod+1 workspace $wp1
 bindsym $mod+2 workspace $wp2
 bindsym $mod+3 workspace $wp3
@@ -135,49 +135,59 @@ bindsym $mod+6 workspace $wp6
 bindsym $mod+7 workspace $wp7
 bindsym $mod+8 workspace $wp8
 
-# ---------------------------------             
-# KEYBINDINGS: SUPER-KEY + LEFT-ALT             
+# Switch workspaces using keypad when numlock is on
+bindsym $mod+$numlock_on+KP_1 workspace $wp1
+bindsym $mod+$numlock_on+KP_2 workspace $wp2
+bindsym $mod+$numlock_on+KP_3 workspace $wp3
+bindsym $mod+$numlock_on+KP_4 workspace $wp4
+bindsym $mod+$numlock_on+KP_5 workspace $wp5
+bindsym $mod+$numlock_on+KP_6 workspace $wp6
+bindsym $mod+$numlock_on+KP_7 workspace $wp7
+bindsym $mod+$numlock_on+KP_8 workspace $wp8
+
+# ---------------------------------
+# KEYBINDINGS: SUPER-KEY + LEFT-ALT
 # ---------------------------------
 
-# split in horizontal orientation
+# Split in horizontal orientation
 bindsym $mod+$alt+h split h
 
-# split in vertical orientation
+# Split in vertical orientation
 bindsym $mod+$alt+v split v
 
-# move focused window
+# Move focused window
 bindsym $mod+$alt+i move right
 bindsym $mod+$alt+j move left
 bindsym $mod+$alt+k move down
 bindsym $mod+$alt+l move up
 
-# alternatively, you can use the cursor keys:
+# Alternatively, you can use the cursor keys:
 bindsym $mod+$alt+Right move right
 bindsym $mod+$alt+Left move left
 bindsym $mod+$alt+Down move down
 bindsym $mod+$alt+Up move up
 
-# ----------------------------------             
-# KEYBINDINGS: SUPER-KEY + LEFT-CTRL             
+# ----------------------------------
+# KEYBINDINGS: SUPER-KEY + LEFT-CTRL
 # ----------------------------------
 
 # Cycle through active workspaces
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Ctrl+Left workspace prev
 
-# focus the parent container
+# Focus the parent container
 bindsym $mod+Ctrl+Up focus parent
 
-# focus the child container
+# Focus the child container
 #bindsym $mod+Ctrl+Down focus child
 
-# reload the configuration file
+# Reload the configuration file
 bindsym $mod+Ctrl+9 reload
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Ctrl+0 restart
 
-# move focused container to workspace
+# Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $wp1
 bindsym $mod+Ctrl+2 move container to workspace $wp2
 bindsym $mod+Ctrl+3 move container to workspace $wp3
@@ -187,20 +197,20 @@ bindsym $mod+Ctrl+6 move container to workspace $wp6
 bindsym $mod+Ctrl+7 move container to workspace $wp7
 bindsym $mod+Ctrl+8 move container to workspace $wp8
 
-# enter fullscreen mode for the focused container
+# Enter fullscreen mode for the focused container
 bindsym $mod+Ctrl+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle, splith, splitv)
+# Change container layout (stacked, tabbed, toggle, splith, splitv)
 bindsym $mod+Ctrl+Return layout toggle
 bindsym $mod+Ctrl+s layout stacking
 bindsym $mod+Ctrl+w layout tabbed
 bindsym $mod+Ctrl+a layout splitv
 bindsym $mod+Ctrl+d layout splith
 
-# toggle tiling / floating
+# Toggle tiling / floating
 bindsym $mod+Ctrl+q floating toggle
 
-# change focus between tiling / floating windows
+# Change focus between tiling / floating windows
 bindsym $mod+Ctrl+e focus mode_toggle
 
 # ----------------
@@ -228,7 +238,7 @@ bindsym $mod+Ctrl+e focus mode_toggle
 bindsym Ctrl+mod1+Delete exec systemctl reboot
 bindsym Ctrl+mod1+Escape exec systemctl poweroff
 
-# window colors
+# Window colors
 #                               border              background         text                 indicator
 client.focused                  $active             $active            $dark                $active
 client.unfocused                $dark               $dark              $light               $active
