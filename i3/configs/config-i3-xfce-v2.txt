@@ -199,7 +199,7 @@ bindsym $mod+$alt+v split v
 bindsym $mod+$alt+$numlock_on+KP_7 split h
 bindsym $mod+$alt+$numlock_on+KP_1 split h
 
-# Split in verticacatfishl orientation using keypad when numlock is on
+# Split in vertical orientation using keypad when numlock is on
 bindsym $mod+$alt+$numlock_on+KP_3 split v
 bindsym $mod+$alt+$numlock_on+KP_9 split v
 
