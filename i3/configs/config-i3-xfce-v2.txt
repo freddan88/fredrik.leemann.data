@@ -2,6 +2,8 @@
 # VARIABLES
 # ---------
 
+set_from_resource $rofiTheme /usr/share/rofi/themes/Pop-Dark.rasi
+
 # Workspaces
 set $wp1 "1"
 set $wp2 "2"
@@ -35,18 +37,23 @@ exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
 # exec --no-startup-id $HOME/.xrandr-restore.sh
 # exec --no-startup-id xscreensaver -no-splash
 # exec --no-startup-id xfce4-power-manager
+# exec --no-startup-id xfce4-panel
 # exec --no-startup-id pulseaudio
 # exec --no-startup-id nm-applet
 # exec --no-startup-id lxpolkit
-# exec --no-startup-id xfce4-panel
 
 # --------
 # DEFAULTS
 # --------
 
 # Use xprop in terminal to find window classes
-for_window [class="XTerm"] fullscreen enable
 for_window [class="^.*"] border pixel 1
+for_window [class="Steam"] floating enable
+for_window [class="Catfish"] floating enable
+for_window [class="hwengine"] floating enable
+for_window [class="hedgewars"] floating enable
+for_window [class="gta-sa.carspawn-trainer v1.1.exe"] floating enable
+# for_window [class="XTerm"] fullscreen enable
 
 # Start program on predefined workspace
 # assign [class="Google-chrome"] $wp3
@@ -72,14 +79,11 @@ font pango:monospace 10
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
 
-# set_from_resource $rofiTheme /usr/share/rofi/themes/Pop-Dark.rasi
-
 # ---------------------
 # KEYBINDINGS: SPECIALS
 # ---------------------
 
 # Use pactl to adjust volume in PulseAudio.
-# set $refresh_i3status killall -SIGUSR1 i3status
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
@@ -195,7 +199,7 @@ bindsym $mod+$alt+v split v
 bindsym $mod+$alt+$numlock_on+KP_7 split h
 bindsym $mod+$alt+$numlock_on+KP_1 split h
 
-# Split in vertical orientation using keypad when numlock is on
+# Split in verticacatfishl orientation using keypad when numlock is on
 bindsym $mod+$alt+$numlock_on+KP_3 split v
 bindsym $mod+$alt+$numlock_on+KP_9 split v
 
@@ -219,6 +223,13 @@ bindsym $mod+$alt+w layout tabbed
 bindsym $mod+$alt+s layout stacking
 bindsym $mod+$alt+d layout splitv
 bindsym $mod+$alt+a layout splith
+
+# Change container layout using number-keys
+bindsym $mod+$alt+5 layout toggle
+bindsym $mod+$alt+1 layout tabbed
+bindsym $mod+$alt+2 layout stacking
+bindsym $mod+$alt+3 layout splitv
+bindsym $mod+$alt+4 layout splith
 
 # Change container layout using keypad when numlock is on
 bindsym $mod+$alt+$numlock_on+KP_5 layout toggle
@@ -256,8 +267,7 @@ bindsym $mod+Ctrl+Up focus parent
 
 # Reload the configuration file
 bindsym $mod+Ctrl+9 reload
-
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+catfishce (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Ctrl+0 restart
 
 # Move focused container to workspace
