@@ -124,6 +124,12 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -theme $rofiTheme
 bindsym $mod+Return exec --no-startup-id xfce4-terminal
 bindsym $mod+Ctrl+space exec --no-startup-id catfish
 
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Ctrl+0 restart
+
+# Reload the configuration file
+bindsym $mod+Ctrl+9 reloads
+
 # ----------------------
 # KEYBINDINGS: SUPER-KEY
 # ----------------------
@@ -264,11 +270,6 @@ bindsym $mod+Ctrl+Up focus parent
 
 # Focus the child container
 #bindsym $mod+Ctrl+Down focus child
-
-# Reload the configuration file
-bindsym $mod+Ctrl+9 reload
-catfishce (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Ctrl+0 restart
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $wp1
