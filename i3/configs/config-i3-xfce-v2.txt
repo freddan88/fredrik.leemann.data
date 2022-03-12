@@ -32,6 +32,7 @@ set $numlock_on Mod2
 # ---------
 
 # exec --no-startup-id xrandr -s 1600x900
+exec --no-startup-id xscreensaver -no-splash
 exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
 # exec --no-startup-id $HOME/.xrandr-restore.sh
@@ -112,29 +113,27 @@ font pango:JetBrains Mono Bold 10
 # bindsym XF86AudioNext exec playerctl next
 # bindsym XF86AudioPrev exec playerctl previous
 
-# bindsym Ctrl+$alt+Delete exec systemctl reboot
-# bindsym Ctrl+$alt+Escape exec systemctl poweroff
-# bindsym $alt+Ctrl+l exec --no-startup-id xflock4
-# bindsym $alt+Ctrl+BackSpace exec --no-startup-id systemctl reboot
-# bindsym $alt+Ctrl+Escape exec --no-startup-id systemctl poweroff
+bindsym Ctrl+$alt+Escape exec --no-startup-id xfce4-taskmanager
+bindsym Ctrl+$alt+Delete exec --no-startup-id xkill
 
-bindsym $mod+Ctrl+l exec xfce4-session-logout --logout
-bindsym $mod+Ctrl+r exec xfce4-session-logout --reboot
-bindsym $mod+Ctrl+Escape exec xfce4-session-logout --reboot
-bindsym $mod+Ctrl+Delete exec xfce4-session-logout --halt
-bindsym $mod+Ctrl+p exec xfce4-session-logout --halt
+bindsym Ctrl+$alt+l exec xfce4-session-logout --fast --logout
+bindsym Ctrl+$alt+r exec xfce4-session-logout --fast --reboot
+bindsym Ctrl+$alt+p exec xfce4-session-logout --fast --halt
 
 bindsym $mod+$alt+space exec --no-startup-id rofi -show run -theme $rofiTheme
 bindsym $mod+space exec --no-startup-id rofi -show drun -theme $rofiTheme
 bindsym $mod+Tab exec --no-startup-id rofi -show window -theme $rofiTheme
 bindsym $mod+Return exec --no-startup-id xfce4-terminal
-bindsym $mod+Ctrl+space exec --no-startup-id catfish
+bindsym $mod+BackSpace exec --no-startup-id catfish
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Ctrl+0 restart
+bindsym Ctrl+$alt+0 restart
 
-# Reload the configuration file
-bindsym $mod+Ctrl+9 reload
+# Reload the configuration file for i3-wm
+bindsym Ctrl+$alt+9 reload
+
+# Edit the configuration file for i3-wm
+bindsym Ctrl+$alt+8 mousepad $HOME/.config/i3/config
 
 # ----------------------
 # KEYBINDINGS: SUPER-KEY
