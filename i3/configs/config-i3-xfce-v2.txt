@@ -133,7 +133,7 @@ bindsym Ctrl+$alt+0 restart
 bindsym Ctrl+$alt+9 reload
 
 # Edit the configuration file for i3-wm
-bindsym Ctrl+$alt+8 mousepad $HOME/.config/i3/config
+bindsym Ctrl+$alt+8 exec --no-startup-id mousepad $HOME/.config/i3/config
 
 # ----------------------
 # KEYBINDINGS: SUPER-KEY
