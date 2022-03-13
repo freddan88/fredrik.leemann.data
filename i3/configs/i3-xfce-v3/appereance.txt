@@ -1,0 +1,7 @@
+# ----------
+# Appereance
+# ----------
+
+hide_edge_borders both
+# new_window 1pixel
+# new_float pixel 5
