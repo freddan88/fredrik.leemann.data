@@ -1,0 +1,474 @@
+###############################################################################
+# i3-gaps config file for the Regolith Desktop Environment
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+###############################################################################
+
+## Workspaces
+set $wp1 "1"
+set $wp2 "2"
+set $wp3 "3"
+set $wp4 "4"
+set $wp5 "5"
+set $wp6 "6"
+set $wp7 "7"
+set $wp8 "8"
+
+workspace $wp1 output primary
+workspace $wp2 output primary
+workspace $wp3 output primary
+workspace $wp4 output primary
+workspace $wp5 output primary
+workspace $wp6 output primary
+workspace $wp7 output primary
+
+## Run: 'xmodmap' in terminal to find modifiers
+## Mod4 = Windows or super key
+## Mod1 = Left Alt-key
+## Mod2 = Numlock (active)
+set $mod Mod4
+set $alt Mod1
+set $numlock_on Mod2
+
+## ----------------
+## SPECIAL BINDINGS
+## ----------------
+
+# bindsym $alt+Ctrl+l exec --no-startup-id xflock4
+# bindsym $alt+Ctrl+BackSpace exec --no-startup-id systemctl reboot
+# bindsym $alt+Ctrl+Escape exec --no-startup-id systemctl poweroff
+
+## Readme: https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
+
+## Pulse Audio controls
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+# bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+## Screen brightness controls
+# bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
+# bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
+
+## Touchpad controls
+# bindsym XF86TouchpadToggle exec --no-startup-id /some/path/toggletouchpad.sh # toggle touchpad
+
+## Media player controls
+# bindsym XF86AudioPlay exec --no-startup-id playerctl play
+# bindsym XF86AudioPause exec --no-startup-id playerctl pause
+# bindsym XF86AudioNext exec --no-startup-id playerctl next
+# bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# Move focused workspace between monitors
+# bindsym $mod+Shift+Ctrl+Right move workspace to output right
+# bindsym $mod+Shift+Ctrl+Left move workspace to output left
+# bindsym $mod+Shift+Ctrl+Down move workspace to output down
+# bindsym $mod+Shift+Ctrl+Up move workspace to output up
+
+# Move focused container between monitors
+bindsym $mod+Shift+Right move container to output right
+bindsym $mod+Shift+Left move container to output left
+bindsym $mod+Shift+Down move container to output down
+bindsym $mod+Shift+Up move container to output up
+
+# Move focused container to workspace and swap to that workspace
+bindsym $mod+Shift+1 move container to workspace $wp1; workspace $wp1
+bindsym $mod+Shift+2 move container to workspace $wp2; workspace $wp2
+bindsym $mod+Shift+3 move container to workspace $wp3; workspace $wp3
+bindsym $mod+Shift+4 move container to workspace $wp4; workspace $wp4
+bindsym $mod+Shift+5 move container to workspace $wp5; workspace $wp5
+bindsym $mod+Shift+6 move container to workspace $wp6; workspace $wp6
+bindsym $mod+Shift+7 move container to workspace $wp7; workspace $wp7
+bindsym $mod+Shift+8 move container to workspace $wp8; workspace $wp8
+
+# Move focused container to workspace using keypad when numlock is on and swap to that workspace
+# bindsym $mod+Shift+$numlock_on+KP_1 move container to workspace $wp1; workspace $wp1
+# bindsym $mod+Shift+$numlock_on+KP_2 move container to workspace $wp2; workspace $wp2
+# bindsym $mod+Shift+$numlock_on+KP_3 move container to workspace $wp3; workspace $wp3
+# bindsym $mod+Shift+$numlock_on+KP_4 move container to workspace $wp4; workspace $wp4
+# bindsym $mod+Shift+$numlock_on+KP_5 move container to workspace $wp5; workspace $wp5
+# bindsym $mod+Shift+$numlock_on+KP_6 move container to workspace $wp6; workspace $wp6
+# bindsym $mod+Shift+$numlock_on+KP_7 move container to workspace $wp7; workspace $wp7
+# bindsym $mod+Shift+$numlock_on+KP_8 move container to workspace $wp8; workspace $wp8
+
+# ----------------------
+# AUTOSTART AND DEFAULTS
+# ----------------------
+
+# Start the installed regolith-compositor
+set_from_resource $i3-wm.program.compositor i3-wm.program.compositor /usr/share/regolith-compositor/init
+exec_always --no-startup-id $i3-wm.program.compositor
+
+# Hide the mouse pointer if unused for a duration
+set_from_resource $i3-wm.program.unclutter i3-wm.program.unclutter /usr/bin/unclutter -b
+exec --no-startup-id $i3-wm.program.unclutter
+
+# Load nm-applet to provide auth dialogs for network access
+set_from_resource $i3-wm.program.nm-applet i3-wm.program.nm-applet /usr/bin/nm-applet
+exec --no-startup-id $i3-wm.program.nm-applet
+
+# Start custom programs at start
+exec --no-startup-id xfce4-panel
+
+## Run: 'xprop' in terminal to find window classes
+for_window [class="Xfce4-appfinder"] floating enable
+# for_window [class="XTerm"] fullscreen enable
+for_window [class="Gnome-control-center"] floating enable
+for_window [class="^.*"] border pixel 1
+
+## Start program on predefined workspace
+# assign [class="Google-chrome"] $wp3
+# assign [class="Postman"] $wp4
+# assign [class="Code"] $wp2
+
+## Thin borders
+hide_edge_borders both
+
+## Set default workspace layout
+## Workspace_layouts <default|stacking|tabbed>
+workspace_layout tabbed
+
+## Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
+font pango:monospace 8
+
+## This font is widely installed, provides lots of unicode glyphs, right-to-left
+## Text rendering and scalability on retina/hidpi displays (thanks to pango).
+# font pango:DejaVu Sans Mono 8
+# font pango:monospace 9
+
+## Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+set_from_resource $rofiTheme rofi.theme /etc/regolith/styles/lascaille/rofi.rasi
+
+## Session // Lock Screen // <> Escape ##
+set_from_resource $i3-wm.binding.lock i3-wm.binding.lock Escape
+set_from_resource $i3-wm.program.lock i3-wm.program.lock dbus-send --type=method_call --dest=org.gnome.ScreenSaver /org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+bindsym $mod+$i3-wm.binding.lock exec $i3-wm.program.lock
+
+bindsym $mod+Ctrl+p exec --no-startup-id gnome-session-quit --power-off
+bindsym $mod+Ctrl+r exec --no-startup-id gnome-session-quit --reboot
+bindsym $mod+Ctrl+l exec --no-startup-id gnome-session-quit --logout
+bindsym $mod+Ctrl+q exec --no-startup-id xdg-screensaver lock
+
+###############################################################################
+# Key Mappings: Super / Windows Key
+###############################################################################
+
+bindsym $mod+Return exec --no-startup-id /usr/bin/x-terminal-emulator
+bindsym $mod+BackSpace exec --no-startup-id rofi -show find -modi find:/usr/share/rofi/modi/finder.sh
+bindsym $mod+space exec --no-startup-id rofi -show drun -theme $rofiTheme
+bindsym $mod+$alt+space exec --no-startup-id rofi -show run -theme $rofiTheme
+bindsym $mod+Tab exec --no-startup-id rofi -show window -theme $rofiTheme
+bindsym $mod+l exec --no-startup-id rofi -show look -modi look:/usr/share/rofi/modi/look-selector.sh
+bindsym $mod+m exec --no-startup-id stacer
+bindsym $mod+f exec --no-startup-id /usr/bin/nautilus --new-window
+bindsym $mod+c exec --no-startup-id gnome-control-center --class=floating_window
+bindsym $mod+p exec --no-startup-id synaptic-pkexec
+bindsym $mod+s exec --no-startup-id gnome-software
+bindsym $mod+b exec --no-startup-id google-chrome
+bindsym $mod+9 exec --no-startup-id gedit $HOME/.config/regolith/i3/config
+
+## Reload the configuration file
+bindsym $mod+0 reload
+
+## kill focused window
+bindsym $mod+q kill
+
+## change focus
+bindsym $mod+Right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+
+## Switch workspaces
+bindsym $mod+1 workspace $wp1
+bindsym $mod+2 workspace $wp2
+bindsym $mod+3 workspace $wp3
+bindsym $mod+4 workspace $wp4
+bindsym $mod+5 workspace $wp5
+bindsym $mod+6 workspace $wp6
+bindsym $mod+7 workspace $wp7
+bindsym $mod+8 workspace $wp8
+
+## Switch workspaces using keypad when numlock is on
+bindsym $mod+$numlock_on+KP_1 workspace $wp1
+bindsym $mod+$numlock_on+KP_2 workspace $wp2
+bindsym $mod+$numlock_on+KP_3 workspace $wp3
+bindsym $mod+$numlock_on+KP_4 workspace $wp4
+bindsym $mod+$numlock_on+KP_5 workspace $wp5
+bindsym $mod+$numlock_on+KP_6 workspace $wp6
+bindsym $mod+$numlock_on+KP_7 workspace $wp7
+bindsym $mod+$numlock_on+KP_8 workspace $wp8
+
+###############################################################################
+# Key Mappings: Super + Left Alt
+###############################################################################
+
+## Split in horizontal orientation
+bindsym $mod+$alt+h split h
+
+## Split in horizontal orientation using keypad when numlock is on
+bindsym $mod+$alt+$numlock_on+KP_7 split h
+bindsym $mod+$alt+$numlock_on+KP_1 split h
+
+## Split in vertical orientation
+bindsym $mod+$alt+v split v
+
+## Split in vertical orientation using keypad when numlock is on
+bindsym $mod+$alt+$numlock_on+KP_9 split v
+bindsym $mod+$alt+$numlock_on+KP_3 split v
+
+## Move focused window
+bindsym $mod+$alt+i move right
+bindsym $mod+$alt+j move left
+bindsym $mod+$alt+k move down
+bindsym $mod+$alt+l move up
+
+## Alternatively, you can use the cursor keys:
+bindsym $mod+$alt+Right move right
+bindsym $mod+$alt+Left move left
+bindsym $mod+$alt+Down move down
+bindsym $mod+$alt+Up move up
+
+## Change container layout: tabbed | stacked | toggle | splith | splitv
+bindsym $mod+$alt+Tab layout toggle
+bindsym $mod+$alt+q layout toggle
+bindsym $mod+$alt+e layout toggle
+bindsym $mod+$alt+w layout tabbed
+bindsym $mod+$alt+s layout stacking
+bindsym $mod+$alt+d layout splitv
+bindsym $mod+$alt+a layout splith
+
+## Change container layout using keypad when numlock is on
+bindsym $mod+$alt+$numlock_on+KP_0 layout toggle
+bindsym $mod+$alt+$numlock_on+KP_8 layout tabbed
+bindsym $mod+$alt+$numlock_on+KP_2 layout stacking
+bindsym $mod+$alt+$numlock_on+KP_4 layout splitv
+bindsym $mod+$alt+$numlock_on+KP_6 layout splith
+
+## Enter fullscreen mode for the focused container
+bindsym $mod+$alt+0 fullscreen toggle
+
+## Enter fullscreen mode for the focused container using keypad when numlock is on
+bindsym $mod+$alt+$numlock_on+KP_5 fullscreen toggle
+
+## Toggle tiling / floating
+bindsym $mod+$alt+Return floating toggle
+
+## Change focus between tiling / floating windows
+bindsym $mod+$alt+BackSpace focus mode_toggle
+
+###############################################################################
+# Key Mappings: Super + Left Ctrl
+###############################################################################
+
+## Cycle through active workspaces
+bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+Left workspace prev
+
+## Focus the parent container
+bindsym $mod+Ctrl+Up focus parent
+
+## Focus the child container
+bindsym $mod+Ctrl+Down focus child
+
+## Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# bindsym $mod+Ctrl+0 restart
+
+## Move focused container to workspace
+bindsym $mod+Ctrl+1 move container to workspace $wp1
+bindsym $mod+Ctrl+2 move container to workspace $wp2
+bindsym $mod+Ctrl+3 move container to workspace $wp3
+bindsym $mod+Ctrl+4 move container to workspace $wp4
+bindsym $mod+Ctrl+5 move container to workspace $wp5
+bindsym $mod+Ctrl+6 move container to workspace $wp6
+bindsym $mod+Ctrl+7 move container to workspace $wp7
+bindsym $mod+Ctrl+8 move container to workspace $wp8
+
+## Move focused container to workspace using keypad when numlock is on
+bindsym $mod+Ctrl+$numlock_on+KP_1 move container to workspace $wp1
+bindsym $mod+Ctrl+$numlock_on+KP_2 move container to workspace $wp2
+bindsym $mod+Ctrl+$numlock_on+KP_3 move container to workspace $wp3
+bindsym $mod+Ctrl+$numlock_on+KP_4 move container to workspace $wp4
+bindsym $mod+Ctrl+$numlock_on+KP_5 move container to workspace $wp5
+bindsym $mod+Ctrl+$numlock_on+KP_6 move container to workspace $wp6
+bindsym $mod+Ctrl+$numlock_on+KP_7 move container to workspace $wp7
+bindsym $mod+Ctrl+$numlock_on+KP_8 move container to workspace $wp8
+
+###############################################################################
+# Window Resize and Gaps
+###############################################################################
+
+set_from_resource $i3-wm.binding.inc_gaps i3-wm.binding.inc_gaps plus
+set_from_resource $i3-wm.binding.dec_gaps i3-wm.binding.dec_gaps minus
+
+set_from_resource $i3-wm.binding.inc_gaps_big i3-wm.binding.inc_gaps_big Shift+plus
+set_from_resource $i3-wm.binding.dec_gaps_big i3-wm.binding.dec_gaps_big Shift+minus
+
+## Resize // Enter Resize Mode // <> r ##
+mode "Resize Mode" {
+  # These bindings trigger as soon as you enter the resize mode
+
+  ## Resize // Resize Window // ↑ ↓ ← → ##
+  bindsym Left resize shrink width 6 px or 6 ppt
+  bindsym Down resize grow height 6 px or 6 ppt
+  bindsym Up resize shrink height 6 px or 6 ppt
+  bindsym Right resize grow width 6 px or 6 ppt
+
+  bindsym Shift+Left resize shrink width 12 px or 12 ppt
+  bindsym Shift+Down resize grow height 12 px or 12 ppt
+  bindsym Shift+Up resize shrink height 12 px or 12 ppt
+  bindsym Shift+Right resize grow width 12 px or 12 ppt
+
+  ## Resize // Resize Window // k j h l ##
+  bindsym $i3-wm.binding.left resize shrink width 6 px or 6 ppt
+  bindsym $i3-wm.binding.up resize grow height 6 px or 6 ppt
+  bindsym $i3-wm.binding.down resize shrink height 6 px or 6 ppt
+  bindsym $i3-wm.binding.right resize grow width 6 px or 6 ppt
+
+  bindsym $i3-wm.binding.move_left resize shrink width 12 px or 12 ppt
+  bindsym $i3-wm.binding.move_up resize grow height 12 px or 12 ppt
+  bindsym $i3-wm.binding.move_down resize shrink height 12 px or 12 ppt
+  bindsym $i3-wm.binding.move_right resize grow width 12 px or 12 ppt
+
+  ## Resize // Window Gaps // + - ##
+  bindsym $i3-wm.binding.dec_gaps gaps inner current minus 6
+  bindsym $i3-wm.binding.inc_gaps gaps inner current plus 6
+  bindsym $i3-wm.binding.dec_gaps_big gaps inner current minus 12
+  bindsym $i3-wm.binding.inc_gaps_big gaps inner current plus 12
+
+  ## Resize // Exit Resize Mode // Escape or Enter ##
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+  bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "Resize Mode"
+
+###############################################################################
+# i3 Appearance and Behavior
+###############################################################################
+
+# Disable titlebar
+set_from_resource $i3-wm.window.border.size i3-wm.window.border.size 1
+set_from_resource $i3-wm.floatingwindow.border.size i3-wm.floatingwindow.border.size 1
+default_border pixel $i3-wm.window.border.size
+default_floating_border pixel $i3-wm.floatingwindow.border.size
+
+# Specify the distance between windows in pixels. (i3-gaps)
+set_from_resource $i3-wm.gaps.inner.size i3-wm.gaps.inner.size 5
+set_from_resource $i3-wm.gaps.outer.size i3-wm.gaps.outer.size 0
+gaps inner $i3-wm.gaps.inner.size
+gaps outer $i3-wm.gaps.outer.size
+
+# Only enable gaps on a workspace when there is at least one container
+set_from_resource $i3-wm.gaps.smart i3-wm.gaps.smart on
+smart_gaps $i3-wm.gaps.smart
+
+# Enable popup during fullscreen
+set_from_resource $i3-wm.gaps.popup_during_fullscreen i3-wm.gaps.popup_during_fullscreen smart
+popup_during_fullscreen $i3-wm.gaps.popup_during_fullscreen
+
+# window focus follows your mouse movements as the mouse crosses window borders
+set_from_resource $i3-wm.gaps.focus_follows_mouse i3-wm.gaps.focus_follows_mouse no
+focus_follows_mouse $i3-wm.gaps.focus_follows_mouse
+
+###############################################################################
+# i3 Colors and Fonts
+###############################################################################
+
+# Create variables from Xresources for i3's look.
+set_from_resource $focused.color.border i3-wm.client.focused.color.border "#002b36"
+set_from_resource $focused.color.background i3-wm.client.focused.color.background "#586e75"
+set_from_resource $focused.color.text i3-wm.client.focused.color.text "#fdf6e3"
+set_from_resource $focused.color.indicator i3-wm.client.focused.color.indicator "#268bd2"
+set_from_resource $focused.color.child_border i3-wm.client.focused.color.child_border
+
+set_from_resource $focused_inactive.color.border i3-wm.client.focused_inactive.color.border "#002b36"
+set_from_resource $focused_inactive.color.background i3-wm.client.focused_inactive.color.background "#073642"
+set_from_resource $focused_inactive.color.text i3-wm.client.focused_inactive.color.text "#839496"
+set_from_resource $focused_inactive.color.indicator i3-wm.client.focused_inactive.color.indicator "#073642"
+set_from_resource $focused_inactive.color.child_border i3-wm.client.focused_inactive.color.child_border
+
+set_from_resource $unfocused.color.border i3-wm.client.unfocused.color.border "#002b36"
+set_from_resource $unfocused.color.background i3-wm.client.unfocused.color.background "#073642"
+set_from_resource $unfocused.color.text i3-wm.client.unfocused.color.text "#839496"
+set_from_resource $unfocused.color.indicator i3-wm.client.unfocused.color.indicator "#073642"
+set_from_resource $unfocused.color.child_border i3-wm.client.unfocused.color.child_border
+
+set_from_resource $urgent.color.border i3-wm.client.urgent.color.border "#002b36"
+set_from_resource $urgent.color.background i3-wm.client.urgent.color.background "#dc322f"
+set_from_resource $urgent.color.text i3-wm.client.urgent.color.text "#fdf6e3"
+set_from_resource $urgent.color.indicator i3-wm.client.urgent.color.indicator "#002b36"
+set_from_resource $urgent.color.child_border i3-wm.client.urgent.color.child_border
+
+
+# Window Border color
+# class                 border                             background                         text                               indicator                          child_border
+client.focused          $focused.color.border              $focused.color.background          $focused.color.text                $focused.color.indicator           $focused.color.child_border
+client.focused_inactive $focused_inactive.color.border     $focused_inactive.color.background $focused_inactive.color.text       $focused_inactive.color.indicator  $focused_inactive.color.child_border
+client.unfocused        $unfocused.color.border            $unfocused.color.background        $unfocused.color.text              $unfocused.color.indicator         $unfocused.color.child_border
+client.urgent           $urgent.color.border               $urgent.color.background           $urgent.color.text                 $urgent.color.indicator            $urgent.color.child_border
+
+# Create variables from Xresources for i3bars's look.
+set_from_resource $i3-wm.bar.background.color i3-wm.bar.background.color "#002b36"
+set_from_resource $i3-wm.bar.statusline.color i3-wm.bar.statusline.color "#93a1a1"
+set_from_resource $i3-wm.bar.separator.color i3-wm.bar.separator.color "#268bd2"
+
+set_from_resource $i3-wm.bar.workspace.focused.border.color i3-wm.bar.workspace.focused.border.color "#073642"
+set_from_resource $i3-wm.bar.workspace.focused.background.color i3-wm.bar.workspace.focused.background.color "#073642"
+set_from_resource $i3-wm.bar.workspace.focused.text.color i3-wm.bar.workspace.focused.text.color "#eee8d5"
+
+set_from_resource $i3-wm.bar.workspace.active.border.color i3-wm.bar.workspace.active.border.color "#073642"
+set_from_resource $i3-wm.bar.workspace.active.background.color i3-wm.bar.workspace.active.background.color "#073642"
+set_from_resource $i3-wm.bar.workspace.active.text.color i3-wm.bar.workspace.active.text.color "#586e75"
+
+set_from_resource $i3-wm.bar.workspace.inactive.border.color i3-wm.bar.workspace.inactive.border.color "#002b36"
+set_from_resource $i3-wm.bar.workspace.inactive.background.color i3-wm.bar.workspace.inactive.background.color "#002b36"
+set_from_resource $i3-wm.bar.workspace.inactive.text.color i3-wm.bar.workspace.inactive.text.color "#586e75"
+
+set_from_resource $i3-wm.bar.workspace.urgent.border.color i3-wm.bar.workspace.urgent.border.color "#dc322f"
+set_from_resource $i3-wm.bar.workspace.urgent.background.color i3-wm.bar.workspace.urgent.background.color "#dc322f"
+set_from_resource $i3-wm.bar.workspace.urgent.text.color i3-wm.bar.workspace.urgent.text.color "#fdf6e3"
+
+# Sets i3 font for dialogs
+set_from_resource $i3-wm.font i3-wm.font pango:Source Code Pro Medium 13
+font $i3-wm.font
+
+###############################################################################
+# i3 Bar
+###############################################################################
+
+set_from_resource $i3-wm.bar.position i3-wm.bar.position bottom
+set_from_resource $i3-wm.bar.font i3-wm.bar.font pango:Source Code Pro Medium 13, Material Design Icons 13
+set_from_resource $i3-wm.bar.separator i3-wm.bar.separator " "
+set_from_resource $i3-wm.bar.trayoutput i3-wm.bar.trayoutput primary
+set_from_resource $i3-wm.bar.stripworkspacenumbers i3-wm.bar.stripworkspacenumbers yes
+set_from_resource $i3-wm.bar.mode i3-wm.bar.mode dock
+
+# i3xrocks config file. Override this for a custom status bar generator.
+set_from_resource $i3-wm.bar.status_command i3-wm.bar.status_command i3xrocks -u ~/.config/regolith/i3xrocks/conf.d -d /etc/regolith/i3xrocks/conf.d
+
+# The bar configuration
+bar {
+  position $i3-wm.bar.position
+  mode $i3-wm.bar.mode
+  font $i3-wm.bar.font
+  separator_symbol $i3-wm.bar.separator
+  status_command $i3-wm.bar.status_command
+  tray_output $i3-wm.bar.trayoutput
+  strip_workspace_numbers $i3-wm.bar.stripworkspacenumbers
+
+  colors {
+      background $i3-wm.bar.background.color
+      statusline $i3-wm.bar.statusline.color
+      separator  $i3-wm.bar.separator.color
+
+#                        BORDER  BACKGROUND TEXT
+      focused_workspace  $i3-wm.bar.workspace.focused.border.color      $i3-wm.bar.workspace.focused.background.color   $i3-wm.bar.workspace.focused.text.color
+      active_workspace   $i3-wm.bar.workspace.active.border.color       $i3-wm.bar.workspace.active.background.color    $i3-wm.bar.workspace.active.text.color
+      inactive_workspace $i3-wm.bar.workspace.inactive.border.color     $i3-wm.bar.workspace.inactive.background.color  $i3-wm.bar.workspace.inactive.text.color
+      urgent_workspace   $i3-wm.bar.workspace.urgent.border.color       $i3-wm.bar.workspace.urgent.background.color    $i3-wm.bar.workspace.urgent.text.color
+  }
+}
