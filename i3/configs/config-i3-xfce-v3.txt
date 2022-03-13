@@ -83,31 +83,7 @@ workspace $wp8 output primary
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Set default workspace layout## Resize window (you can also use the mouse for that)
-mode "resize" {
-  ## These bindings trigger as soon as you enter the resize mode
-
-  ## Pressing left will shrink the window’s width.
-  ## Pressing right will grow the window’s width.
-  ## Pressing up will shrink the window’s height.
-  ## Pressing down will grow the window’s height.
-  bindsym j resize shrink width 10 px or 10 ppt
-  bindsym k resize grow height 10 px or 10 ppt
-  bindsym i resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
-
-  ## Same bindings, but for the arrow keys
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
-
-  ## Back to normal: Enter or Escape
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-
-bindsym $mod+Ctrl+space mode "resize"d>
+# Set default workspace layout <default|stacking|tabbed>
 workspace_layout tabbed
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -297,6 +273,31 @@ bindsym $mod+$alt+Return floating toggle
 # Change focus between tiling / floating windows
 bindsym $mod+$alt+BackSpace focus mode_toggle
 
+mode "resize" {
+  ## These bindings trigger as soon as you enter the resize mode
+
+  ## Pressing left will shrink the window’s width.
+  ## Pressing right will grow the window’s width.
+  ## Pressing up will shrink the window’s height.
+  ## Pressing down will grow the window’s height.
+  bindsym j resize shrink width 10 px or 10 ppt
+  bindsym k resize grow height 10 px or 10 ppt
+  bindsym i resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
+
+  ## Same bindings, but for the arrow keys
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
+
+  ## Back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+$alt+r mode "resize"
+
 # ----------------------------------
 # KEYBINDINGS: SUPER-KEY + LEFT-CTRL
 # ----------------------------------
@@ -332,35 +333,6 @@ bindsym $mod+Ctrl+$numlock_on+KP_6 move container to workspace $wp6
 bindsym $mod+Ctrl+$numlock_on+KP_7 move container to workspace $wp7
 bindsym $mod+Ctrl+$numlock_on+KP_8 move container to workspace $wp8
 bindsym $mod+Ctrl+$numlock_on+KP_9 move container to workspace $wp9
-
-# ------------------------------------
-# RESIZE WINDOW: SUPER + LEFT-CTRL + R
-# ------------------------------------
-
-mode "resize" {
-  ## These bindings trigger as soon as you enter the resize mode
-
-  ## Pressing left will shrink the window’s width.
-  ## Pressing right will grow the window’s width.
-  ## Pressing up will shrink the window’s height.
-  ## Pressing down will grow the window’s height.
-  bindsym j resize shrink width 10 px or 10 ppt
-  bindsym k resize grow height 10 px or 10 ppt
-  bindsym i resize shrink height 10 px or 10 ppt
-  bindsym l resize grow width 10 px or 10 ppt
-
-  ## Same bindings, but for the arrow keys
-  bindsym Left resize shrink width 10 px or 10 ppt
-  bindsym Down resize grow height 10 px or 10 ppt
-  bindsym Up resize shrink height 10 px or 10 ppt
-  bindsym Right resize grow width 10 px or 10 ppt
-
-  ## Back to normal: Enter or Escape
-  bindsym Return mode "default"
-  bindsym Escape mode "default"
-}
-
-bindsym $mod+Ctrl+r mode "resize"
 
 # -----------------------------------
 # KEYBINDINGS: SUPER-KEY + LEFT-SHIFT
