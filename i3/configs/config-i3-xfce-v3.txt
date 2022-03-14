@@ -144,12 +144,13 @@ bindsym Ctrl+$alt+9 reload
 # Edit the configuration file for i3-wm
 bindsym Ctrl+$alt+8 exec --no-startup-id mousepad $HOME/.config/i3/config
 
+# Kill focused window
+bindsym $mod+q kill
+
 # ----------------------
 # KEYBINDINGS: SUPER-KEY
 # ----------------------
 
-# Kill focused window
-bindsym $mod+q kill
 bindsym $mod+w exec --no-startup-id nitrogen
 bindsym $mod+e exec --no-startup-id xfce4-keyboard-settings
 
