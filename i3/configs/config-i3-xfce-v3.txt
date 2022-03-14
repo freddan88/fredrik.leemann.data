@@ -173,6 +173,8 @@ bindsym $mod+y exec --no-startup-id gnome-disks
 bindsym $mod+h exec --no-startup-id synaptic-pkexec
 bindsym $mod+n exec --no-startup-id gnome-software
 
+bindsym $mod+u exec --no-startup-id gnome-system-monitor
+
 # Change focus
 bindsym $mod+l focus right
 bindsym $mod+j focus left
