@@ -122,13 +122,14 @@ font pango:JetBrains Mono Bold 10
 # bindsym XF86AudioNext exec playerctl next
 # bindsym XF86AudioPrev exec playerctl previous
 
-bindsym Ctrl+$alt+Delete exec --no-startup-id xkill
+bindsym --release Ctrl+$alt+Delete exec xkill
 bindsym Ctrl+$alt+Escape exec --no-startup-id xfce4-taskmanager
 bindsym Ctrl+$alt+q exec --no-startup-id xscreensaver-command -lock
 bindsym Ctrl+$alt+p exec systemctl poweroff
 bindsym Ctrl+$alt+r exec systemctl reboot
 bindsym Ctrl+$alt+l exec i3-msg exit
 
+bindsym $mod+Ctrl+space exec --no-startup-id catfish
 bindsym $mod+$alt+space exec --no-startup-id rofi -show run -theme $rofiTheme
 bindsym $mod+space exec --no-startup-id rofi -show drun -theme $rofiTheme
 bindsym $mod+Tab exec --no-startup-id rofi -show window -theme $rofiTheme
@@ -160,7 +161,7 @@ bindsym $mod+d exec --no-startup-id xfce4-display-settings
 
 bindsym $mod+z exec --no-startup-id xfce4-mouse-settings
 bindsym $mod+x exec --no-startup-id xfce4-panel --preferences
-bindsym $mod+c exec --no-startup-id mousepad $HOME/.config/i3/config
+bindsym $mod+c exec --no-startup-id xfce4-settings-manager
 
 bindsym $mod+r exec --no-startup-id pavucontrol
 bindsym $mod+f exec --no-startup-id thunar
