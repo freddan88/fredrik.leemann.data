@@ -3,6 +3,13 @@
 # ---------
 
 set_from_resource $rofiTheme /usr/share/rofi/themes/Pop-Dark.rasi
+# sudo ln -s /bin/xfce4-settings-manager /usr/local/bin/gnome-control-center
+# /usr/share/applications/xfce-backdrop-settings.desktop <- Hidden=true
+# /usr/share/applications/xfce-workspaces-settings.desktop <- Hidden=true
+# /usr/share/applications/xfce-wmtweaks-settings.desktop <- Hidden=true
+# /usr/share/applications/xfce-wm-settings.desktop <- Hidden=true
+# /usr/share/applications/xfce-session-settings.desktop <- true=Hidden
+# sudo apt install cups
 
 # Workspaces
 set $wp1 "1"
@@ -32,15 +39,21 @@ set $numlock_on Mod2
 # AUTOSTART
 # ---------
 
-exec_always --no-startup-id pulseaudio
+exec_always --no-startup-id /usr/bin/xdg-user-dirs-update
 exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
-exec --no-startup-id xfsettingsd --sm-client-disable
-exec --no-startup-id xscreensaver -no-splash
-exec --no-startup-id xfce4-power-manager
-exec --no-startup-id xfce4-panel
-exec --no-startup-id nm-applet
+exec --no-startup-id /usr/libexec/at-spi-bus-launcher --launch-immediately
+exec --no-startup-id /usr/libexec/evolution-data-server/evolution-alarm-notify
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/share/xscreensaver/xscreensaver-wrapper.sh -no-splash
+exec --no-startup-id /usr/bin/xfsettingsd --sm-client-disable
+exec --no-startup-id /usr/bin/system-config-printer-applet
+exec --no-startup-id /usr/bin/start-pulseaudio-x11
+exec --no-startup-id /usr/bin/xfce4-power-manager
+exec --no-startup-id /usr/bin/xfce4-clipman
+exec --no-startup-id /usr/bin/xfce4-panel
+exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/xiccd
 
 # ----------
 # Appereance
@@ -132,7 +145,7 @@ bindsym Ctrl+$alt+l exec i3-msg exit
 
 bindsym $mod+Ctrl+space exec --no-startup-id catfish
 bindsym $mod+$alt+space exec --no-startup-id rofi -show run -theme $rofiTheme
-bindsym $mod+space exec --no-startup-id rofi -show drun -theme $rofiTheme
+bindsym $mod+space exec --no-startup-id xfce4-appfinder
 bindsym $mod+Tab exec --no-startup-id rofi -show window -theme $rofiTheme
 bindsym $mod+Return exec --no-startup-id xfce4-terminal
 bindsym $mod+BackSpace exec --no-startup-id catfish
