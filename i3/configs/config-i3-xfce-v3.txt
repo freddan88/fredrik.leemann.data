@@ -10,6 +10,7 @@ set_from_resource $rofiTheme /usr/share/rofi/themes/Pop-Dark.rasi
 # /usr/share/applications/xfce-wm-settings.desktop <- Hidden=true
 # /usr/share/applications/xfce-session-settings.desktop <- true=Hidden
 # sudo apt install cups
+# ps -e | grep i3$
 
 # Workspaces
 set $wp1 "1"
