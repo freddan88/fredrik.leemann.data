@@ -3,15 +3,6 @@
 # ---------
 
 set_from_resource $rofiTheme /usr/share/rofi/themes/Pop-Dark.rasi
-# sudo ln -s /bin/xfce4-settings-manager /usr/local/bin/gnome-control-center
-# /usr/share/applications/xfce-backdrop-settings.desktop <- Hidden=true
-# /usr/share/applications/xfce-workspaces-settings.desktop <- Hidden=true
-# /usr/share/applications/xfce-wmtweaks-settings.desktop <- Hidden=true
-# /usr/share/applications/xfce-wm-settings.desktop <- Hidden=true
-# /usr/share/applications/xfce-session-settings.desktop <- true=Hidden
-# sed -i 's/old-text/new-text/g' input.txt
-# sudo apt install cups menulibre mugshot
-# ps -e | pgrep i3$
 
 # Workspaces
 set $wp1 "1"
