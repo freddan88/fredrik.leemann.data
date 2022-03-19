@@ -9,6 +9,7 @@ set_from_resource $rofiTheme /usr/share/rofi/themes/Pop-Dark.rasi
 # /usr/share/applications/xfce-wmtweaks-settings.desktop <- Hidden=true
 # /usr/share/applications/xfce-wm-settings.desktop <- Hidden=true
 # /usr/share/applications/xfce-session-settings.desktop <- true=Hidden
+# sed -i 's/old-text/new-text/g' input.txt
 # sudo apt install cups
 # ps -e | pgrep i3$
 
