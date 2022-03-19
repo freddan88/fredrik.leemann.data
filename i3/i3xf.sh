@@ -25,6 +25,17 @@ function hideConfigurationItems() {
   done
 }
 
+# wget https://github.com/google/fonts/archive/main.tar.gz
+# tar -zxvf main.tar.gz
+# sudo mkdir -p /usr/share/fonts/truetype/google-fonts
+# ls
+# ls fonts-main/
+# find $PWD/fonts-main/ -name "*.ttf" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/
+# find $PWD/fonts-main/ -name "*.ttf" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \;
+# cd ..
+# rm -rf fonts/
+# fc-cache -f
+
 function installEssentials() {
   # Create symbolic-link for gnome-control-center to let the global-menu work
   sudo ln -sf /bin/xfce4-settings-manager /usr/local/bin/gnome-control-center
@@ -33,7 +44,7 @@ function installEssentials() {
   sudo apt install cups system-config-printer colord xiccd xarchiver exo-utils ntfs-3g exfat-utils dosfstools lightdm slick-greeter -y
   sudo apt install menulibre mugshot catfish xfce4-appmenu-plugin xfce4-screenshooter gparted gnome-software synaptic stacer ffmpeg -y
   sudo apt install gimp mirage thunderbird libreoffice ghostscript vlc openssl samba libpcre3 neofetch screenkey cpuid nitrogen -y
-  sudo apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme debian-edu-artwork members cifs-utils screen -y
+  sudo apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme debian-edu-artwork members cifs-utils screen typecatcher -y
   # apt install sqlite3 apache2 libapache2-mod-php php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} -y
   # apt install libapache2-mpm-itk libsodium23 sqlitebrowser docker-ce docker-ce-cli containerd.io imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 -y
   # apt install imagemagick-6.q16hdri libmagickcore-6.q16-6 libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16hdri-3-extra -y
