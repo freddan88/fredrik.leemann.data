@@ -10,7 +10,7 @@ set_from_resource $rofiTheme /usr/share/rofi/themes/Pop-Dark.rasi
 # /usr/share/applications/xfce-wm-settings.desktop <- Hidden=true
 # /usr/share/applications/xfce-session-settings.desktop <- true=Hidden
 # sed -i 's/old-text/new-text/g' input.txt
-# sudo apt install cups
+# sudo apt install cups menulibre mugshot
 # ps -e | pgrep i3$
 
 # Workspaces
@@ -156,10 +156,10 @@ bindsym $mod+BackSpace exec --no-startup-id catfish
 bindsym Ctrl+$alt+0 restart
 
 # Reload the configuration file for i3-wm
-bindsym Ctrl+$alt+9 reload
+bindsym Ctrl+$alt+BackSpace reload
 
 # Edit the configuration file for i3-wm
-bindsym Ctrl+$alt+8 exec --no-startup-id mousepad $HOME/.config/i3/config
+bindsym Ctrl+$alt+Return exec --no-startup-id mousepad $HOME/.config/i3/config
 
 # Kill focused window
 bindsym $mod+q kill
