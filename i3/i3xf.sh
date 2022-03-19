@@ -25,6 +25,8 @@ function hideConfigurationItems() {
   done
 }
 
+# https://gist.github.com/keeferrourke/d29bf364bd292c78cf774a5c37a791db
+# sudo apt install fonts-cantarell fonts-cascadia-code ttf-ubuntu-font-family -y
 # wget https://github.com/google/fonts/archive/main.tar.gz
 # tar -zxvf main.tar.gz
 # sudo mkdir -p /usr/share/fonts/truetype/google-fonts
