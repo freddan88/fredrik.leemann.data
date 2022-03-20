@@ -159,7 +159,7 @@ function install_essential_software() {
   apt install lightdm slick-greeter catfish xfce4-appmenu-plugin xfce4-screenshooter gparted gnome-software synaptic stacer -y
   apt install gimp mirage thunderbird libreoffice xscreensaver gnome-disks gnome-system-monitor gnome-power-statistics gnome-calendar -y
   apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme debian-edu-artwork typecatcher nitrogen baobab cmatrix -y
-  apt install ghostscript openssl libpcre3 neofetch screenkey cpuid cpuidtool cpuinfo lshw -y
+  apt install ghostscript openssl libpcre3 neofetch screenkey cpuid cpuidtool cpuinfo lshw pandoc -y
 
   ln -s /sbin/ifconfig /usr/bin/ifconfigs
   chown -R tftp:nogroup /srv/tftp 2>/dev/null
