@@ -22,8 +22,8 @@ set $urgent #5294e2
 
 # Run: 'xmodmap' in terminal to find modifiers
 # Mod4 = Windows or super key
-# Mod1 = Left Alt-key
 # Mod2 = Numlock (active)
+# Mod1 = Left Alt-key
 set $mod Mod4
 set $alt Mod1
 set $numlock_on Mod2
@@ -62,21 +62,20 @@ default_floating_border normal
 
 # Use xprop in terminal to find window classes
 for_window [class="^.*"] border pixel 1
-for_window [class="Gnome-calculator"] floating enable
-for_window [class="Gnome-calendar"] floating enable
-for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Steam"] floating enable
+for_window [class="XTerm"] fullscreen enable
 for_window [class="Catfish"] floating enable
 for_window [class="hwengine"] floating enable
 for_window [class="hedgewars"] floating enable
-for_window [class="gta-sa.carspawn-trainer v1.1.exe"] floating enable
-# for_window [class="XTerm"] fullscreen enable
+for_window [class="Gnome-calendar"] floating enable
+for_window [class="Xfce4-appfinder"] floating enable
+for_window [class="Gnome-calculator"] floating enable
 
 # Start program on predefined workspace
 # assign [class="Google-chrome"] $wp3
+# assign [class="Pavucontrol"] $wp2
 # assign [class="Postman"] $wp4
 # assign [class="Code"] $wp2
-# assign [class="Pavucontrol"] $wp2
 
 workspace $wp1 output primary
 workspace $wp2 output primary
