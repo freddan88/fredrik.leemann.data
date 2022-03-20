@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 i3_confid_file="/mnt/data/fredrik/Projects/fredrik.linux.files/i3/configs/config-i3-xfce-v3.txt"
-i3_output_path="$HOME/.config/i3/htdocs"
+i3_output_path="$HOME/.config/i3/docs"
 
 if [ -f "$i3_output_path/lock" ]; then exit; fi
 
@@ -18,6 +18,7 @@ cat $i3_confid_file | grep ^set | cut -d" " -f2- >$i3_temp_variables_file
 
 rm -rf $i3_output_path && mkdir -p $i3_output_path
 cp $PWD/i3keybindings.css $i3_output_path/i3keybindings.css
+i3_output_markdown_file="$i3_output_path/i3keybindings.md"
 i3_output_html_file="$i3_output_path/i3keybindings.html"
 
 echo "<link rel='stylesheet' href='i3keybindings.css'>" >$i3_output_html_file
@@ -65,6 +66,8 @@ echo "</tbody>" >>$i3_output_html_file
 echo "</table>" >>$i3_output_html_file
 echo "<p>Run: 'xmodmap' in terminal to find other modifier-keys like 'Mod4'</p>" >>$i3_output_html_file
 echo "</div>" >>$i3_output_html_file
+
+pandoc -s -r html $i3_output_html_file -o $i3_output_markdown_file
 
 rm -f $i3_temp_keybindings_file
 rm -f $i3_temp_variables_file
