@@ -63,13 +63,13 @@ default_floating_border normal
 # Use xprop in terminal to find window classes
 for_window [class="^.*"] border pixel 1
 for_window [class="Steam"] floating enable
-for_window [class="XTerm"] fullscreen enable
 for_window [class="Catfish"] floating enable
 for_window [class="hwengine"] floating enable
 for_window [class="hedgewars"] floating enable
 for_window [class="Gnome-calendar"] floating enable
 for_window [class="Xfce4-appfinder"] floating enable
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="XTerm"] fullscreen enable
 
 # Start program on predefined workspace
 # assign [class="Google-chrome"] $wp3
@@ -108,8 +108,8 @@ font pango:JetBrains Mono Bold 10
 # Use pactl to adjust volume in PulseAudio.
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+# bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
 # Readme: https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
 
@@ -131,13 +131,15 @@ font pango:JetBrains Mono Bold 10
 bindsym --release Ctrl+$alt+Delete exec xkill
 bindsym Ctrl+$alt+Escape exec --no-startup-id xfce4-taskmanager
 bindsym Ctrl+$alt+q exec --no-startup-id xscreensaver-command -lock
+bindsym Ctrl+$alt+e exec --no-startup-id xscreensaver-command -lock
 bindsym Ctrl+$alt+p exec systemctl poweroff
 bindsym Ctrl+$alt+r exec systemctl reboot
 bindsym Ctrl+$alt+l exec i3-msg exit
+bindsym Ctrl+$alt+m exec --no-startup-id xterm -e cmatrix
 
 bindsym $mod+Ctrl+space exec --no-startup-id catfish
-bindsym $mod+$alt+space exec --no-startup-id rofi -show run -theme $rofiTheme
 bindsym $mod+space exec --no-startup-id xfce4-appfinder
+bindsym $mod+$alt+space exec --no-startup-id rofi -show run -theme $rofiTheme
 bindsym $mod+Tab exec --no-startup-id rofi -show window -theme $rofiTheme
 bindsym $mod+Return exec --no-startup-id xfce4-terminal
 bindsym $mod+BackSpace exec --no-startup-id catfish
