@@ -2,7 +2,7 @@
 # VARIABLES
 # ---------
 
-set_from_resource $rofiTheme /usr/share/rofi/themes/Pop-Dark.rasi
+set $rofiTheme /usr/share/rofi/themes/Pop-Dark.rasi
 
 # Workspaces
 set $wp1 "1"
@@ -15,10 +15,10 @@ set $wp7 "7"
 set $wp8 "8"
 set $wp9 "9"
 
-set $dark   #383c4a
-set $light  #7c818c
-set $active #5294e2
-set $urgent #5294e2
+set $dark_color   #383c4a
+set $light_color  #7c818c
+set $active_color #5294e2
+set $urgent_color #5294e2
 
 # Run: 'xmodmap' in terminal to find modifiers
 # Mod4 = Windows or super key
@@ -358,11 +358,11 @@ bindsym $mod+Shift+Down move container to output down
 bindsym $mod+Shift+Up move container to output up
 
 # Window colors
-#                               border              background         text                 indicator
-client.focused                  $active             $active            $dark                $active
-client.unfocused                $dark               $dark              $light               $active
-client.focused_inactive         $dark               $dark              $light               $active
-client.urgent                   $urgent             $urgent            $dark                $active
+#                               border                    background               text                       indicator
+client.focused                  $active_color             $active_color            $dark_color                $active_color
+client.unfocused                $dark_color               $dark_color              $light_color               $active_color
+client.focused_inactive         $dark_color               $dark_color              $light_color               $active_color
+client.urgent                   $urgent_color             $urgent_color            $dark_color                $active_color
 
 # Start i3bar to display a workspace bar and time
 bar {
@@ -372,11 +372,11 @@ bar {
     tray_output none
 
     colors {
-        background $dark
-        separator $dark
-        #                       border             background         text
-        focused_workspace       $active            $active            $dark
-        inactive_workspace      $dark              $dark              $light
-        urgent_workspace        $urgent            $urgent            $dark
+        background $dark_color
+        separator $dark_color
+        #                       border                   background               text
+        focused_workspace       $active_color            $active_color            $dark_color
+        inactive_workspace      $dark_color              $dark_color              $light_color
+        urgent_workspace        $urgent_color            $urgent_color            $dark_color
     }
 }
