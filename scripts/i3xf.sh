@@ -2,7 +2,7 @@
 
 url_zsh_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/shell/zshrc.txt"
 url_i3_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config-i3-xfce-v3.txt"
-url_i3status_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/i3status.conf"
+url_i3status_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config_i3status"
 url_mongodb_compass="https://github.com/mongodb-js/compass/releases/download/v1.30.1/mongodb-compass_1.30.1_amd64.deb"
 url_xfce_panel_profiles="http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb"
 url_jetbrains_mono_fonts="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip"
@@ -138,14 +138,14 @@ function setup_initialization() {
   cd /tmp && mkdir -p /usr/share/wallpapers
   cd /tmp && wget -q $url_linux_wallpaper && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
   echo "INSTALLING FONTS" && sleep 2
-  apt install fonts-cascadia-code -y
+  apt install fonts-cascadia-code fonts-cantarell -y
   cd /tmp && wget -q $url_jetbrains_mono_fonts && unzip -qqo JetBrainsMono*.zip
   cd /tmp && mkdir -p /usr/share/fonts/truetype/jetbrains-mono
   cd /tmp && find $PWD/fonts/ttf/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/jetbrains-mono/ \;
   cd /tmp && wget -q $url_google_fonts && tar -zxvf main.tar.gz
   cd /tmp && mkdir -p /usr/share/fonts/truetype/google-fonts
   cd /tmp && find $PWD/fonts-main/ -name "*.ttf" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \;
-  cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz && fc-cache
+  cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz && fc-cache -f
 }
 
 function install_essential_software() {
@@ -153,22 +153,25 @@ function install_essential_software() {
   echo " "
   echo "INSTALLING ESSENTIAL SOFTWARE" && sleep 2
   echo " "
-  apt install i3 i3status suckless-tools picom rofi playerctl xbacklight numlockx xterm samba cifs-utils screen members -y
+  apt install i3 i3status suckless-tools nitrogen picom rofi playerctl xbacklight numlockx xterm screen members -y
   apt install zsh ssh ftp tftp htop pwgen net-tools fail2ban dos2unix nano vim ntfs-3g exfat-utils dosfstools exo-utils vlc -y
   apt install colord xiccd xarchiver ufw gufw tftpd-hpa menulibre mugshot ffmpeg cutecom minicom cups system-config-printer -y
   apt install lightdm slick-greeter catfish xfce4-appmenu-plugin xfce4-screenshooter gparted gnome-software synaptic stacer -y
-  apt install gimp mirage thunderbird libreoffice xscreensaver gnome-disks gnome-system-monitor gnome-power-statistics gnome-calendar -y
-  apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme debian-edu-artwork typecatcher nitrogen baobab cmatrix -y
+  apt install gimp mirage thunderbird libreoffice gnome-system-monitor gnome-calendar thunar-archive-plugin typecatcher -y
+  apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme baobab cmatrix samba cifs-utils nfs-common -y
   apt install ghostscript openssl libpcre3 neofetch screenkey cpuid cpuidtool cpuinfo lshw pandoc -y
+  # xfce4-screensaver
 
-  ln -s /sbin/ifconfig /usr/bin/ifconfigs
   chown -R tftp:nogroup /srv/tftp 2>/dev/null
   cd /tmp && wget -q $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
   cd /tmp && rm -f google-chrome-stable_current_amd64.deb
 
-  if [[ $(uname -n) == "debian" ]]; then
+  if [[ $(lsb_release -is) == "debian" ]]; then
+    ln -s /sbin/ifconfig /usr/bin/ifconfigs
+    apt install xscreensaver gnome-disks debian-edu-artwork
     cd /tmp && wget $url_xfce_panel_profiles && apt install ./xfce4-panel-profiles*.deb
     cd /tmp && rm -f xfce4-panel-profiles*.deb
+    # gnome-power-statistics
   fi
 
   echo " "
@@ -190,11 +193,15 @@ function install_developer_software() {
   echo "INSTALLING WEB-DEVELOPER SOFTWARE"
   echo " "
 
-  if [[ $(uname -n) == "debian" ]]; then
+  if [[ $(lsb_release -is) == "debian" ]]; then
     curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor --batch --yes --output /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
     apt install docker-ce docker-ce-cli containerd.io -y
     usermod -aG docker $SUDO_USER
+  fi
+
+  if [[ $(lsb_release -is) == "Ubuntu" ]]; then
+    # Install docker xubuntu / ubuntu
   fi
 
   apt install apache2 libapache2-mpm-itk libapache2-mod-php libsodium23 sqlite3 sqlitebrowser mysql-client -y
