@@ -91,6 +91,40 @@ function hide_configuration_items() {
   echo " "
 }
 
+update_php_composer() {
+  check_sudo_user
+  echo " "
+  echo "UPDATING PHP COMPOSER" && sleep 2
+  cd /tmp && rm -f /usr/local/bin/composer
+  cd /tmp && wget -q https://getcomposer.org/installer && php ./installer >/dev/null
+  cd /tmp && mv -f composer.phar /usr/local/bin/composer && chmod 755 /usr/local/bin/composer
+  cd /tmp && rm -f installer
+  echo " "
+}
+
+update_docker_compose() {
+  latest_docker_compose=$(curl -s https://github.com/docker/compose/releases/latest | cut -d'"' -f2)
+  latest_docker_compose_version=$(echo $latest_docker_compose | cut -d'/' -f8)
+  check_sudo_user
+  echo " "
+  echo "UPDATING DOCKER COMPOSE" && sleep 2
+  cd /tmp && rm -f /usr/local/bin/docker-compose
+  cd /tmp && wget -q https://github.com/docker/compose/releases/download/$latest_docker_compose_version/docker-compose-Linux-x86_64
+  cd /tmp && mv -f docker-compose-Linux-x86_64 /usr/local/bin/docker-compose && chmod -f 755 /usr/local/bin/docker-compose
+  echo " "
+}
+
+update_postman_app() {
+  check_sudo_user
+  echo " "
+  echo "UPDATING POSTMAN APP" && sleep 2
+  cd /tmp && rm -R -f /opt/Postman && rm -f /usr/local/bin/postman
+  cd /tmp && wget -q -O postman-x64.tar.gz https://dl.pstmn.io/download/latest/linux64 && tar -xf postman-x64.tar.gz
+  cd /tmp && mv -f Postman /opt && ln -s /opt/Postman/app/postman /usr/local/bin/postman && chmod -f 775 /opt/Postman/app/postman
+  cd /tmp && rm -f postman-x64.tar.gz
+  echo " "
+}
+
 function setup_initialization() {
   url_google_fonts="https://github.com/google/fonts/archive/main.tar.gz"
   url_linux_wallpaper="https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg"
@@ -177,10 +211,14 @@ function install_developer_software() {
   echo "DISABLING APACHE2 HTTP SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
   systemctl disable apache2.service
   systemctl stop apache2.service
+
+  update_postman_app
+  update_php_composer
+  update_docker_compose
 }
 
 function install_all() {
-  # check_sudo_user
+  check_sudo_user
   # setup_initialization
   # install_essential_software
   echo -n "Install tools for web-developing? (y/N) [Default = N]: "
@@ -191,11 +229,14 @@ function install_all() {
 function print_usage() {
   echo " "
   echo "USAGE:"
-  echo "$0 install              | (sudo) Install packages and more for i3-wm"
-  echo "$0 update-zsh-config    | (user) Update configuration for zsh-shell from freddan88@github"
-  echo "$0 update-i3-config     | (user) Update configurations for i3 and i3status from freddan88@github"
-  echo "$0 show-xfce-conf-items | (user) Show xfce specific configuration-items in xfce4-settings-manager"
-  echo "$0 hide-xfce-conf-items | (user) Hide xfce specific configuration-items in xfce4-settings-manager"
+  echo "$0 install                | (sudo) Install packages and more for i3-wm"
+  echo "$0 update-postman-app     | (sudo) Update to the latest postman api-testing software"
+  echo "$0 update-php-composer    | (sudo) Update to the latest php-composer package-manager"
+  echo "$0 update-docker-compose  | (sudo) Update to the latest docker-compose file from @github"
+  echo "$0 update-zsh-config      | (user) Update configuration for zsh-shell from freddan88@github"
+  echo "$0 update-i3-config       | (user) Update configurations for i3 and i3status from freddan88@github"
+  echo "$0 show-xfce-conf-items   | (user) Show xfce specific configuration-items in xfce4-settings-manager"
+  echo "$0 hide-xfce-conf-items   | (user) Hide xfce specific configuration-items in xfce4-settings-manager"
   echo " "
 }
 
@@ -204,6 +245,18 @@ case "$1" in
 
 install)
   install_all
+  ;;
+
+update-postman-app)
+  update_postman_app
+  ;;
+
+update-php-composer)
+  update_php_composer
+  ;;
+
+update-docker-compose)
+  update_docker_compose
   ;;
 
 update-zsh-config)
