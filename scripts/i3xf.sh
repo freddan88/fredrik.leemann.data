@@ -165,7 +165,7 @@ function install_essential_software() {
   cd /tmp && wget -q $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
   cd /tmp && rm -f google-chrome-stable_current_amd64.deb
 
-  if [[ $(lsb_release -is) == "debian" ]]; then
+  if [[ $(lsb_release -is) == "Debian" ]]; then
     ln -s /sbin/ifconfig /usr/bin/ifconfigs
     apt install xscreensaver gnome-disks debian-edu-artwork
     cd /tmp && wget $url_xfce_panel_profiles && apt install ./xfce4-panel-profiles*.deb
@@ -191,7 +191,7 @@ function install_developer_software() {
   echo "INSTALLING WEB-DEVELOPER SOFTWARE"
   echo " "
 
-  if [[ $(lsb_release -is) == "debian" ]]; then
+  if [[ $(lsb_release -is) == "Debian" ]]; then
     curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor --batch --yes --output /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
     echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
     apt install docker-ce docker-ce-cli containerd.io -y
