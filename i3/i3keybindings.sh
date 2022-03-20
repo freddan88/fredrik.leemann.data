@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
 i3_confid_file="/mnt/data/fredrik/Projects/fredrik.linux.files/i3/configs/config-i3-xfce-v3.txt"
-i3_output_path="$HOME/.config/i3/docs"
+i3_output_path="$HOME/.config/i3/i3_docs"
 
 if [ -f "$i3_output_path/lock" ]; then exit; fi
 
 echo " "
 echo "GENERATING A NEW I3 KEYMAP CHEAT-SHEET IN HTML" && sleep 2
-echo " "
 
+rm -rf $i3_output_path && mkdir -p $i3_output_path
 touch $i3_output_path/lock
 
 i3_temp_variables_file="/tmp/i3variables.txt"
@@ -16,7 +16,6 @@ i3_temp_keybindings_file="/tmp/i3keybindings.txt"
 cat $i3_confid_file | grep ^bindsym | cut -d" " -f2- >$i3_temp_keybindings_file
 cat $i3_confid_file | grep ^set | cut -d" " -f2- >$i3_temp_variables_file
 
-rm -rf $i3_output_path && mkdir -p $i3_output_path
 cp $PWD/i3keybindings.css $i3_output_path/i3keybindings.css
 i3_output_markdown_file="$i3_output_path/i3keybindings.md"
 i3_output_html_file="$i3_output_path/i3keybindings.html"
@@ -72,3 +71,11 @@ pandoc -s -r html $i3_output_html_file -o $i3_output_markdown_file
 rm -f $i3_temp_keybindings_file
 rm -f $i3_temp_variables_file
 rm -f $i3_output_path/lock
+
+if [[ "$1" == "-l" ]]; then
+  cp -rf $i3_output_path $HOME
+fi
+
+echo "---------------------------------------------------------------------------"
+echo "ADD '-l' AS AN ARGUMENT TO ALSO COPY GENERATED-FILES TO YOUR HOME-DIRECTORY"
+echo " "
