@@ -49,6 +49,7 @@ exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id /usr/bin/xiccd
 # /etc/xdg/autostart (exo-open)
 # cat /etc/xdg/autostart/* | grep Exec | cut -d"=" -f"2" > autostart.txt
+# https://flatpak.org
 
 # ----------
 # Appereance
