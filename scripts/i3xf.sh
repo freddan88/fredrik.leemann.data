@@ -158,7 +158,7 @@ function install_essential_software() {
   apt install colord xiccd xarchiver ufw gufw tftpd-hpa menulibre mugshot ffmpeg cutecom minicom cups system-config-printer -y
   apt install lightdm slick-greeter catfish xfce4-appmenu-plugin xfce4-screenshooter gparted gnome-software synaptic stacer -y
   apt install gimp mirage thunderbird libreoffice gnome-system-monitor gnome-calendar thunar-archive-plugin typecatcher -y
-  apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme baobab cmatrix samba cifs-utils nfs-common -y
+  apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme baobab cmatrix samba cifs-utils nfs-common util-linux -y
   apt install ghostscript openssl libpcre3 neofetch screenkey cpuid cpuidtool cpuinfo lshw pandoc lightdm-settings -y
 
   chown -R tftp:nogroup /srv/tftp 2>/dev/null
