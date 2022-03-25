@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-# light-locker
 
 mkdir -p /tmp/i3xf_autostart
 
@@ -26,4 +25,5 @@ fi
 
 if [[ $(lsb_release -is) == "Ubuntu" ]]; then
   # Autostart applications for Ubuntu
+  # light-locker
 fi
