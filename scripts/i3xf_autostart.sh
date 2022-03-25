@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Autostart applications for Ubuntu
+# light-locker
+
 mkdir -p /tmp/i3xf_autostart
 
 if [[ $(systemd-detect-virt) == "kvm" ]]; then
@@ -24,6 +27,18 @@ if [[ $(lsb_release -is) == "Debian" ]]; then
 fi
 
 if [[ $(lsb_release -is) == "Ubuntu" ]]; then
-  # Autostart applications for Ubuntu
-  # light-locker
+  Exec=/usr/libexec/ayatana-indicator-application/ayatana-indicator-application-service
+  Exec=blueman-applet
+  Exec=/usr/libexec/geoclue-2.0/demos/agent
+  Exec=sh -c 'if [ "x$XDG_SESSION_TYPE" = "xwayland" ] ; then exec env IM_CONFIG_CHECK_ENV=1 im-launch true; fi'
+  TryExec=im-launch
+  Exec=/usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+  Exec=onboard --not-show-in=GNOME,GNOME-Classic:GNOME --startup-delay=3.0
+  Exec=/usr/bin/snap userd --autostart
+  Exec=update-notifier
+  Exec=xdg-user-dirs-gtk-update
+  TryExec=xdg-user-dirs-update
+  Exec=xdg-user-dirs-update
+  Exec=xfce4-notes
+  Exec=xfce4-screensaver
 fi
