@@ -1,0 +1,20 @@
+
+# ---------
+# AUTOSTART
+# ---------
+
+exec_always --no-startup-id /usr/bin/xdg-user-dirs-update
+exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
+exec --no-startup-id /usr/libexec/at-spi-bus-launcher --launch-immediately
+exec --no-startup-id /usr/libexec/evolution-data-server/evolution-alarm-notify
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/share/xscreensaver/xscreensaver-wrapper.sh -no-splash
+exec --no-startup-id /usr/bin/xfsettingsd --sm-client-disable
+exec --no-startup-id /usr/bin/system-config-printer-applet
+exec --no-startup-id /usr/bin/start-pulseaudio-x11
+exec --no-startup-id /usr/bin/xfce4-power-manager
+exec --no-startup-id /usr/bin/xfce4-clipman
+exec --no-startup-id /usr/bin/xfce4-panel
+exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id /usr/bin/xiccd
