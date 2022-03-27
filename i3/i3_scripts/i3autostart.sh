@@ -3,7 +3,7 @@
 # Autostart applications for Ubuntu
 # light-locker
 
-tmp_directory="/tmp/i3autostart"fredrik
+tmp_directory="/tmp/i3autostart"
 mkdir -p $tmp_directory
 
 if [[ $(systemd-detect-virt) == "kvm" ]]; then
