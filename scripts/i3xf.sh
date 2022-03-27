@@ -216,6 +216,7 @@ function install_developer_software() {
   apt install libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16hdri-3-extra -y
 
   flatpak install flathub rest.insomnia.Insomnia --noninteractive -y
+  flatpak install flathub com.github.alecaddd.sequeler --noninteractive -y
 
   cd /tmp && wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb && apt install ./dbeaver-ce_*_amd64.deb -y
   cd /tmp && wget -q -O vscode_amd64.deb $url_latest_vscode && apt install ./vscode_amd64.deb -y
