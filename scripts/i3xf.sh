@@ -164,6 +164,11 @@ function install_essential_software() {
   apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme baobab cmatrix samba cifs-utils nfs-common util-linux -y
   apt install ghostscript openssl libpcre3 neofetch screenkey cpuid cpuidtool cpuinfo lshw pandoc lightdm-settings -y
 
+  apt install flatpak gnome-software-plugin-flatpak
+  flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+
+  flatpak install flathub com.spotify.Client --noninteractive -y
+
   chown -R tftp:nogroup /srv/tftp 2>/dev/null
   cd /tmp && wget -q $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
   cd /tmp && rm -f google-chrome-stable_current_amd64.deb
@@ -209,6 +214,8 @@ function install_developer_software() {
   apt install php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} -y
   apt install imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 -y
   apt install libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16hdri-3-extra -y
+
+  flatpak install flathub rest.insomnia.Insomnia --noninteractive -y
 
   cd /tmp && wget -q https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb && apt install ./dbeaver-ce_*_amd64.deb -y
   cd /tmp && wget -q -O vscode_amd64.deb $url_latest_vscode && apt install ./vscode_amd64.deb -y
