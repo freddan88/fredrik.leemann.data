@@ -132,11 +132,14 @@ function setup_initialization() {
   echo "INITIALIZE" && sleep 2
   echo " "
   apt update -qq && apt install lsb-release gnupg ca-certificates curl wget git gzip bzip2 unzip zip tar -y
+
   # Create symbolic-link for gnome-control-center to let the global-menu work
   ln -sf /bin/xfce4-settings-manager /usr/local/bin/gnome-control-center
+
   # Download and add linux-penguin wallpaper from wallpapersafari.com
   cd /tmp && mkdir -p /usr/share/wallpapers
   cd /tmp && wget -q $url_linux_wallpaper && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
+
   echo "INSTALLING FONTS" && sleep 2
   apt install fonts-cascadia-code fonts-cantarell -y
   cd /tmp && wget -q $url_jetbrains_mono_fonts && unzip -qqo JetBrainsMono*.zip
@@ -226,8 +229,8 @@ function install_developer_software() {
 
 function install_all() {
   check_sudo_user
-  # setup_initialization
-  # install_essential_software
+  setup_initialization
+  install_essential_software
   echo -n "Install tools for web-developing? (y/N) [Default = N]: "
   read answear
   if [[ "${answear}" == "y" ]]; then install_developer_software; fi
