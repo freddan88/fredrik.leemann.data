@@ -25,8 +25,7 @@ flock -xn $tmp_directory/13 -c "xiccd" &
 
 if [[ $(lsb_release -is) == "Debian" ]]; then
   flock -xn $tmp_directory/14 -c "/usr/share/xscreensaver/xscreensaver-wrapper.sh -no-splash" &
-  # flock -xn $tmp_directory/07 -c "/usr/libexec/gsd-disk-utility-notify" &asus_velid,88
-
+  # flock -xn $tmp_directory/07 -c "/usr/libexec/gsd-disk-utility-notify" &
 fi
 
 if [[ $(lsb_release -is) == "Ubuntu" ]]; then
