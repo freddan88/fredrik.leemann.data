@@ -24,9 +24,9 @@ set $urgent_color #5294e2
 # Mod4 = Windows or super key
 # Mod2 = Numlock (active)
 # Mod1 = Left Alt-key
+set $numlock_on Mod2
 set $mod Mod4
 set $alt Mod1
-set $numlock_on Mod2
 
 # ---------
 # AUTOSTART
@@ -49,9 +49,6 @@ exec_always --no-startup-id $HOME/.config/i3/scripts/i3xf_autostart.sh
 # exec --no-startup-id /usr/bin/xfce4-panel
 # exec --no-startup-id /usr/bin/nm-applet
 # exec --no-startup-id /usr/bin/xiccd
-## /etc/xdg/autostart (exo-open)
-## cat /etc/xdg/autostart/* | grep Exec | cut -d"=" -f"2" > autostart.txt
-## https://flatpak.org
 
 # ----------
 # Appereance
