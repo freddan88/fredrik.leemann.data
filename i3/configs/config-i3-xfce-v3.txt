@@ -34,7 +34,7 @@ set $alt Mod1
 
 exec_always --no-startup-id /usr/bin/xdg-user-dirs-update
 exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec_always --no-startup-id $HOME/.config/i3/scripts/i3xf_autostart.sh
+exec_always --no-startup-id $HOME/.config/i3/scripts/i3autostart.sh
 
 # exec --no-startup-id /usr/lib/x86_64-linux-gnu/xfce4/notifyd/xfce4-notifyd
 # exec --no-startup-id /usr/libexec/at-spi-bus-launcher --launch-immediately
