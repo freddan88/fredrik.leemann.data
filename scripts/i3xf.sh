@@ -259,7 +259,6 @@ function print_usage() {
   echo " "
 }
 
-# cat config-i3-xfce-v3.txt | grep ^bindsym
 ############
 case "$1" in
 
