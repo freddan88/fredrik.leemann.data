@@ -247,7 +247,8 @@ function install_all() {
 function print_usage() {
   echo " "
   echo "USAGE:"
-  echo "$0 install                | (sudo) Install packages and more for i3-wm"
+  echo "$0 install-all            | (sudo) Install packages and more for i3-wm"
+  echo "$0 install-dev            | (sudo) Only install web-developer software"
   echo "$0 update-postman-app     | (sudo) Update to the latest postman api-testing software"
   echo "$0 update-php-composer    | (sudo) Update to the latest php-composer package-manager"
   echo "$0 update-docker-compose  | (sudo) Update to the latest docker-compose file from @github"
@@ -262,8 +263,12 @@ function print_usage() {
 ############
 case "$1" in
 
-install)
+install-all)
   install_all
+  ;;
+
+install-dev)
+  install_developer_software
   ;;
 
 update-postman-app)
