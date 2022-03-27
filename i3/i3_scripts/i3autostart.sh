@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Autostart applications
 
 tmp_directory="/tmp/i3autostart"
