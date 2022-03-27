@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 i3_confid_file="/mnt/data/fredrik/Projects/fredrik.linux.files/i3/configs/config-i3-xfce-v3.txt"
-i3_output_path="$HOME/.config/i3/i3_docs"
+i3_output_path="$HOME/.config/i3/docs"
 
 if [ -f "$i3_output_path/lock" ]; then exit; fi
 
