@@ -16,7 +16,6 @@ i3_temp_keybindings_file="/tmp/i3keybindings.txt"
 cat $i3_confid_file | grep ^bindsym | cut -d" " -f2- >$i3_temp_keybindings_file
 cat $i3_confid_file | grep ^set | cut -d" " -f2- >$i3_temp_variables_file
 
-cp $PWD/i3keybindings.css $i3_output_path/i3keybindings.css
 i3_output_markdown_file="$i3_output_path/i3keybindings.md"
 i3_output_html_file="$i3_output_path/i3keybindings.html"
 
