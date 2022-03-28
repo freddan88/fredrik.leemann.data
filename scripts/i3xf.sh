@@ -143,7 +143,7 @@ function install_essential_software() {
   echo " "
   echo "INSTALLING ESSENTIAL SOFTWARE" && sleep 2
   echo " "
-  apt install i3 i3status suckless-tools nitrogen picom rofi playerctl xbacklight numlockx xterm screen members onboard spice-vdagent -y
+  apt install i3 i3status nitrogen picom rofi playerctl xbacklight numlockx xterm screen members onboard spice-vdagent -y
   apt install zsh ssh ftp tftp htop pwgen net-tools fail2ban dos2unix nano vim ntfs-3g exfat-utils dosfstools exo-utils blueman -y
   apt install colord xiccd xarchiver ufw gufw tftpd-hpa menulibre mugshot ffmpeg cutecom minicom cups system-config-printer -y
   apt install lightdm slick-greeter catfish xfce4-appmenu-plugin xfce4-screenshooter gparted gnome-software synaptic stacer -y
