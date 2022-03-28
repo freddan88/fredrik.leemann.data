@@ -18,6 +18,7 @@ cat $i3_confid_file | grep ^set | cut -d" " -f2- >$i3_temp_variables_file
 
 i3_output_markdown_file="$i3_output_path/i3keybindings.md"
 i3_output_html_file="$i3_output_path/i3keybindings.html"
+rm -f $i3_output_markdown_file
 
 echo "<link rel='stylesheet' href='i3keybindings.css'>" >$i3_output_html_file
 echo "<table class='i3-keybindings'>" >>$i3_output_html_file
