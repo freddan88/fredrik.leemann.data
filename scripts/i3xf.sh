@@ -1,28 +1,15 @@
 #!/usr/bin/env bash
 
-url_zsh_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/shell/zshrc.txt"
-url_i3_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config-i3-xfce-v3.txt"
-url_i3status_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config_i3status"
-url_mongodb_compass="https://github.com/mongodb-js/compass/releases/download/v1.30.1/mongodb-compass_1.30.1_amd64.deb"
+url_zsh_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/home/.zshrc"
+url_i3_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/home/.config/i3/config_i3xf.txt"
+url_i3status_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/home/.config/i3/config_i3status"
 url_xfce_panel_profiles="http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb"
 url_jetbrains_mono_fonts="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip"
+url_mongodb_compass="https://downloads.mongodb.com/compass/mongodb-compass_1.30.1_amd64.deb"
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
-
-# https://gist.github.com/keeferrourke/d29bf364bd292c78cf774a5c37a791db
-# sudo apt install fonts-cantarell fonts-cascadia-code ttf-ubuntu-font-family -y
-# wget $url_google_fonts
-# tar -zxvf main.tar.gz
-# sudo mkdir -p /usr/share/fonts/truetype/google-fonts
-# ls
-# ls fonts-main/
-# find $PWD/fonts-main/ -name "*.ttf" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/
-# find $PWD/fonts-main/ -name "*.ttf" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \;
-# cd ..
-# rm -rf fonts/
-# fc-cache -f
 
 # When using i3-wm you can not use everything in xfce4-settings-manager so we hide those options
 unhandled_settings=(
