@@ -148,7 +148,7 @@ bindsym Ctrl+$alt+a exec --no-startup-id mousepad $HOME/.config/i3/scripts/i3aut
 bindsym Ctrl+$alt+g exec --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
 
 # Open the generated webpage in google-chrome and read i3-wm keybindings
-bindsym Ctrl+$alt+k exec --no-startup-id $HOME/.config/i3/docs/i3keybindings.html
+bindsym Ctrl+$alt+k exec --no-startup-id google-chrome $HOME/.config/i3/docs/i3keybindings.html
 
 # Kill focused window
 bindsym $mod+q kill
