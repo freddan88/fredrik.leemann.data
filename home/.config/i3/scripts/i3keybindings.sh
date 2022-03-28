@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-i3_confid_file="/mnt/data/fredrik/Projects/fredrik.linux.files/i3/configs/config-i3-xfce-v3.txt"
-i3_output_path="$HOME/.config/i3/docs"
+i3_confid_file="$HOME/.config/i3/config"
+i3_output_path="$HOME/.config/i3/docs/"
 
 if [ -f "$i3_output_path/lock" ]; then exit; fi
 
 echo " "
 echo "GENERATING A NEW I3 KEYMAP CHEAT-SHEET IN HTML" && sleep 2
 
-rm -rf $i3_output_path && mkdir -p $i3_output_path
+mkdir -p $i3_output_path
 touch $i3_output_path/lock
 
 i3_temp_variables_file="/tmp/i3variables.txt"

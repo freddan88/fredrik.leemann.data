@@ -144,8 +144,11 @@ bindsym Ctrl+$alt+Return exec --no-startup-id mousepad $HOME/.config/i3/config
 # Edit the autostart-configuration file for i3-wm
 bindsym Ctrl+$alt+a exec --no-startup-id mousepad $HOME/.config/i3/scripts/i3autostart.sh
 
-# Generate a new sheet cheat for keybinding in i3-wm
-bindsym Ctrl+$alt+k exec --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
+# Generate a new sheet cheat for keybinding in i3-wm (HTML and MARKDOWN)
+bindsym Ctrl+$alt+g exec --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
+
+# Open the generated webpage in google-chrome and read i3-wm keybindings
+bindsym Ctrl+$alt+k exec --no-startup-id $HOME/.config/i3/docs/i3keybindings.html
 
 # Kill focused window
 bindsym $mod+q kill
