@@ -4,6 +4,10 @@
 tmp_directory="/tmp/i3autostart"
 mkdir -p $tmp_directory
 
+if [ -f "$HOME/.config/i3/scripts/i3keybindings.sh" ]; then
+  $HOME/.config/i3/scripts/i3keybindings.sh
+fi
+
 if [[ $(systemd-detect-virt) == "kvm" ]]; then
   flock -xn $tmp_directory/00 -c "/usr/bin/spice-vdagent" &
 fi
