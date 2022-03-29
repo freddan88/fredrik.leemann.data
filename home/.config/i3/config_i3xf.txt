@@ -133,7 +133,7 @@ bindsym $mod+Return exec --no-startup-id xfce4-terminal
 bindsym $mod+BackSpace exec --no-startup-id catfish
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Ctrl+$alt+Delete restart
+bindsym Ctrl+$alt+0 restart
 
 # Reload the configuration file for i3-wm
 bindsym Ctrl+$alt+BackSpace reload
