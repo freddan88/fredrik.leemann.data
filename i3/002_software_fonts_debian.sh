@@ -27,3 +27,4 @@ cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz && fc-cache -sv
 
 echo " "
 echo "DONE!"
+echo " "

@@ -20,3 +20,4 @@ apt update -qq && apt install xorg i3 i3status slim lxappearance arandr pulseaud
 
 echo " "
 echo "DONE!"
+echo " "
