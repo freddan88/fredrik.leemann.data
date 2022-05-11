@@ -3,26 +3,26 @@ Styles from Creating beautiful HTML tables with CSS by: Dom(dcode)
 https://dev.to/dcodeyt/creating-beautiful-html-tables-with-css-428l
 */
 
+body {
+  display: grid;
+  column-gap: 2rem;
+  align-items: start;
+  justify-content: center;
+  font-family: sans-serif;
+  grid-template-columns: max-content max-content;
+}
+
 p {
   font-size: 0.9rem;
   padding: 0;
   margin: 0;
 }
 
-body {
-  display: grid;
-  grid-template-columns: max-content max-content;
-  justify-content: center;
-  align-items: start;
-  column-gap: 2rem;
-}
-
 table {
-  border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  font-family: sans-serif;
   min-width: 400px;
+  border-collapse: collapse;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 table thead tr {
