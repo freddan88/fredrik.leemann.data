@@ -15,7 +15,7 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
 fi
 
 echo "INITIALIZE" && sleep 2
-apt update -qq && apt install lsb-release curl wget git gzip bzip2 unzip zip tar ssh zsh xss-lock -y
+apt update -qq && apt install lsb-release curl wget git gzip bzip2 unzip zip tar ssh zsh xss-lock cups system-config-printer blueman -y
 apt install htop pwgen ftp tftp sudo picom rofi screen xterm members net-tools playerctl xbacklight numlockx nano vim fail2ban dos2unix vlc colord xiccd neofetch -y
 apt install ghostscript cmatrix xarchiver exo-utils ufw gufw minicom ffmpeg cutecom gparted synaptic stacer gimp mirage typecatcher baobab samba util-linux onboard screenkey openssl -y
 apt install libpcre3 cpuid cpuidtool cpuinfo lshw pandoc gthumb catfish network-manager-openvpn nitrogen mousepad ntfs-3g exfat-utils tftpd-hpa dosfstools cifs-utils nfs-common spice-vdagent -y
