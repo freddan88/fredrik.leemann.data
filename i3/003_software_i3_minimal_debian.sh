@@ -17,3 +17,6 @@ fi
 echo " "
 echo "INSTALLING SOFTWARE" && sleep 2
 apt install xorg i3 i3status slim lxappearance arandr pulseaudio alsa-utils pavucontrol debian-edu-artwork gvfs gvfs-backends gvfs-fuse -y
+
+echo " "
+echo "DONE!"

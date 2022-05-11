@@ -24,3 +24,6 @@ cd /tmp && wget -q $url_google_fonts && tar -zxvf main.tar.gz
 cd /tmp && mkdir -p /usr/share/fonts/truetype/google-fonts
 cd /tmp && find $PWD/fonts-main/ -name "*.ttf" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \;
 cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz && fc-cache -f
+
+echo " "
+echo "DONE!"

@@ -45,3 +45,6 @@ echo " "
 echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
 systemctl disable tftpd-hpa.service
 systemctl stop tftpd-hpa.service
+
+echo " "
+echo "DONE!"
