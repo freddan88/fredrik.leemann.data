@@ -9,7 +9,7 @@ url_jetbrains_mono_fonts="https://github.com/JetBrains/JetBrainsMono/releases/do
 
 if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   echo " "
-  echo "PLEASE RUN THIS COMMAND AS A SUDO-USER"
+  echo "PLEASE RUN THIS SCRIPT AS A SUDO-USER"
   echo " "
   exit
 fi

@@ -9,7 +9,7 @@ url_google_chrome_browser="https://dl.google.com/linux/direct/google-chrome-stab
 
 if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   echo " "
-  echo "PLEASE RUN THIS COMMAND AS A SUDO-USER"
+  echo "PLEASE RUN THIS SCRIPT AS A SUDO-USER"
   echo " "
   exit
 fi
