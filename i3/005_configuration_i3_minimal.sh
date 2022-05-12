@@ -16,8 +16,14 @@ fi
 
 echo " "
 echo "UPDATING i3 CONFIG" && sleep 2
+echo " "
 rm -rf $HOME/.config/i3 && mkdir -p $HOME/.config/i3 && cd $HOME/.config/i3
-wget -O config $url_i3_config && wget -O config_i3_status $url_i3status_config
+wget -O config $url_i3_config && wget -O config_i3_status $url_i3_status_config
+
+echo " "
+echo "NEW i3 CONFIG-FILES IN $HOME/.config/i3" && sleep 2
+echo " "
+ls -al $HOME/.config/i3
 
 echo " "
 echo "DONE!"

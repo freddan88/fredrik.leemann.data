@@ -14,7 +14,9 @@ if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
   exit
 fi
 
+echo " "
 echo "INITIALIZE" && sleep 2
+echo " "
 apt update -qq && apt install lsb-release curl wget git gzip bzip2 unzip zip tar ssh zsh xss-lock cups system-config-printer -y
 apt install htop pwgen ftp tftp sudo picom rofi screen xterm members net-tools playerctl xbacklight numlockx nano vim fail2ban dos2unix vlc colord xiccd neofetch -y
 apt install ghostscript cmatrix xarchiver exo-utils ufw gufw minicom ffmpeg cutecom gparted synaptic stacer gimp mirage typecatcher baobab samba util-linux onboard screenkey openssl -y
@@ -36,6 +38,7 @@ cd /tmp && wget $url_linux_wallpaper && mv -f LEps6S.jpg /usr/share/wallpapers/l
 
 echo " "
 echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
+echo " "
 systemctl disable smbd.service
 systemctl disable nmbd.service
 systemctl stop smbd.service
@@ -43,6 +46,7 @@ systemctl stop nmbd.service
 
 echo " "
 echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
+echo " "
 systemctl disable tftpd-hpa.service
 systemctl stop tftpd-hpa.service
 

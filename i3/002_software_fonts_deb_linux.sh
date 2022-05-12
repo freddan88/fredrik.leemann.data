@@ -16,6 +16,7 @@ fi
 
 echo " "
 echo "INSTALLING FONTS" && sleep 2
+echo " "
 apt update -qq && apt install fonts-cascadia-code fonts-cantarell -y
 cd /tmp && wget $url_jetbrains_mono_fonts && unzip -o JetBrainsMono*.zip
 cd /tmp && mkdir -p /usr/share/fonts/truetype/jetbrains-mono
@@ -27,6 +28,7 @@ cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz
 
 echo " "
 echo "UPDATING FONT-CACHE" && sleep 2
+echo " "
 fc-cache -sv
 
 echo " "
