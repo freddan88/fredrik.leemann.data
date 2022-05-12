@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+url_i3_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config_i3_minimal.txt"
+url_i3_status_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config_i3_status.txt"
+
+################################
+# DO NOT EDIT BELOW THIS LINE! #
+################################
+
+if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
+  echo " "
+  echo "PLEASE RUN THIS COMMAND AS A SUDO-USER"
+  echo " "
+  exit
+fi
+
+echo " "
+echo "UPDATING i3 CONFIG" && sleep 2
+rm -rf $HOME/.config/i3 && mkdir -p $HOME/.config/i3 && cd $HOME/.config/i3
+wget -O config $url_i3_config && wget -O config_i3_status $url_i3status_config
+
+echo " "
+echo "DONE!"
+echo " "
