@@ -26,6 +26,7 @@ echo " "
 ls -al $HOME/.config/i3
 
 # i3-msg restart 1>/dev/null
+# i3-msg reload 1>/dev/null
 
 echo " "
 echo "DONE!"
