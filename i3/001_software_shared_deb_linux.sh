@@ -28,6 +28,10 @@ apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.spotify.Client --noninteractive -y
 
+apt install libavcodec-extra ttf-mscorefonts-installer unrar gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
+
+apt autoremove -y && apt update
+
 chown -R tftp:nogroup /srv/tftp 2>/dev/null
 cd /tmp && wget $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
 cd /tmp && rm -f google-chrome-stable_current_amd64.deb
