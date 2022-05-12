@@ -36,6 +36,9 @@ cd /tmp && rm -f google-chrome-stable_current_amd64.deb
 cd /tmp && mkdir -p /usr/share/wallpapers
 cd /tmp && wget $url_linux_wallpaper && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
 
+# Link ifconfig to another path so we don´t need sudo to execute it
+sudo ln -s /sbin/ifconfig /bin/ifconfig
+
 echo " "
 echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
 echo " "
