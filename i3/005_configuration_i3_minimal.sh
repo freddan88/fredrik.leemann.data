@@ -16,7 +16,8 @@ fi
 
 echo " "
 echo "UPDATING i3 CONFIG" && sleep 2
-echo " "
+echo " fredrik
+"
 rm -rf $HOME/.config/i3 && mkdir -p $HOME/.config/i3 && cd $HOME/.config/i3
 wget -O config $url_i3_config && wget -O config_i3_status $url_i3_status_config
 
