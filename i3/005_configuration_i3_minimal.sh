@@ -7,9 +7,9 @@ url_i3_status_config="https://raw.githubusercontent.com/freddan88/fredrik.linux.
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
-if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
+if [ -n "$SUDO_USER" ]; then
   echo " "
-  echo "PLEASE RUN THIS COMMAND AS A SUDO-USER"
+  echo "PLEASE DO NOT RUN THIS COMMAND AS A SUDO-USER"
   echo " "
   exit
 fi
