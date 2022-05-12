@@ -22,7 +22,7 @@ cd /tmp && rm -rf master.zip slim_themes-master
 
 slimConfString=$(cat /etc/slim.conf | grep "current_theme")
 slimConfArray=($slimConfString)
-sed -i "s/${myArr[1]}/cayny/g" /etc/slim.conf
+sed -i "s/${slimConfArray[1]}/cayny/g" /etc/slim.conf
 
 echo " "
 echo "DONE!"
