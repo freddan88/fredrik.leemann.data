@@ -27,12 +27,12 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak install flathub com.spotify.Client --noninteractive -y
 
 chown -R tftp:nogroup /srv/tftp 2>/dev/null
-cd /tmp && wget -q $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
+cd /tmp && wget $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
 cd /tmp && rm -f google-chrome-stable_current_amd64.deb
 
 # Download and add linux-penguin wallpaper from wallpapersafari.com
 cd /tmp && mkdir -p /usr/share/wallpapers
-cd /tmp && wget -q $url_linux_wallpaper && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
+cd /tmp && wget $url_linux_wallpaper && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
 
 echo " "
 echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"

@@ -17,10 +17,10 @@ fi
 echo " "
 echo "INSTALLING FONTS" && sleep 2
 apt update -qq && apt install fonts-cascadia-code fonts-cantarell -y
-cd /tmp && wget -q $url_jetbrains_mono_fonts && unzip -qqo JetBrainsMono*.zip
+cd /tmp && wget $url_jetbrains_mono_fonts && unzip -o JetBrainsMono*.zip
 cd /tmp && mkdir -p /usr/share/fonts/truetype/jetbrains-mono
 cd /tmp && find $PWD/fonts/ttf/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/jetbrains-mono/ \;
-cd /tmp && wget -q $url_google_fonts && tar -zxvf main.tar.gz
+cd /tmp && wget $url_google_fonts && tar -zxvf main.tar.gz
 cd /tmp && mkdir -p /usr/share/fonts/truetype/google-fonts
 cd /tmp && find $PWD/fonts-main/ -name "*.ttf" -exec sudo install -m644 {} /usr/share/fonts/truetype/google-fonts/ \;
 cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz
