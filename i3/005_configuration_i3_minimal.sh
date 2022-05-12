@@ -26,7 +26,7 @@ echo "NEW i3 CONFIG-FILES IN $HOME/.config/i3" && sleep 2
 echo " "
 ls -al $HOME/.config/i3
 
-i3-msg restart 1>/dev/null
+# i3-msg restart 1>/dev/null
 
 echo " "
 echo "DONE!"
