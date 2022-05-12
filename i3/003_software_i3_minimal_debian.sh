@@ -16,9 +16,13 @@ echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
 apt update -qq && apt install xorg i3 i3status slim lxappearance arandr pulseaudio alsa-utils pavucontrol debian-edu-artwork gnome-disks gvfs gvfs-backends gvfs-fuse -y
 
-cd /tmp && wget https://github.com/adi1090x/slim_themes/archive/refs/heads/master.zip && unzip -o master.zip
+cd /tmp && wget https://github.com/freddan88/slim_themes/archive/refs/heads/master.zip && unzip -o master.zip
 cd /tmp/slim_themes-master/themes && cp -rfv * /usr/share/slim/themes
 cd /tmp && rm -rf master.zip slim_themes-master
+
+slimConfString=$(cat /etc/slim.conf | grep "current_theme")
+slimConfArray=($slimConfString)
+sed -i "s/${myArr[1]}/cayny/g" /etc/slim.conf
 
 echo " "
 echo "DONE!"
