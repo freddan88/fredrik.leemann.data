@@ -2,6 +2,7 @@
 
 url_linux_wallpaper="https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEps6S.jpg"
 url_google_chrome_browser="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+url_xfce_panel_profiles="http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb"
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -28,7 +29,16 @@ apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub com.spotify.Client --noninteractive -y
 
-apt install libavcodec-extra ttf-mscorefonts-installer unrar gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
+if [[ $(lsb_release -is) == "Debian" ]]; then
+  # Link ifconfig to another path so we don´t need sudo to execute it
+  ln -s /sbin/ifconfig /usr/bin/ifconfigs
+  apt install debian-edu-artwork gnome-disks libavcodec-extra ttf-mscorefonts-installer unrar gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
+fi
+
+if [[ $(lsb_release -is) == "Ubuntu" ]]; then
+  add-apt-repository multiverse
+  apt install gnome-disk-utility ubuntu-restricted-extras -y
+fi
 
 apt autoremove -y && apt update
 
@@ -39,9 +49,6 @@ cd /tmp && rm -f google-chrome-stable_current_amd64.deb
 # Download and add linux-penguin wallpaper from wallpapersafari.com
 cd /tmp && mkdir -p /usr/share/wallpapers
 cd /tmp && wget $url_linux_wallpaper && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
-
-# Link ifconfig to another path so we don´t need sudo to execute it
-sudo ln -fs /sbin/ifconfig /bin/ifconfig
 
 echo " "
 echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
