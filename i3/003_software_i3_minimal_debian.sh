@@ -18,13 +18,15 @@ apt update -qq && apt install xorg xinput i3 i3status slim lxappearance arandr p
 
 apt autoremove -y && apt update
 
-cd /tmp && wget https://github.com/freddan88/slim_themes/archive/refs/heads/master.zip && unzip -o master.zip
-cd /tmp/slim_themes-master/themes && cp -rfv * /usr/share/slim/themes
-cd /tmp && rm -rf master.zip slim_themes-master
+if [ ! -d "/usr/share/slim" ]; then
+  cd /tmp && wget https://github.com/freddan88/slim_themes/archive/refs/heads/master.zip && unzip -o master.zip
+  cd /tmp/slim_themes-master/themes && cp -rfv * /usr/share/slim/themes
+  cd /tmp && rm -rf master.zip slim_themes-master
 
-slimConfString=$(cat /etc/slim.conf | grep "current_theme")
-slimConfArray=($slimConfString)
-sed -i "s/${slimConfArray[1]}/cayny/g" /etc/slim.conf
+  slimConfString=$(cat /etc/slim.conf | grep "current_theme")
+  slimConfArray=($slimConfString)
+  sed -i "s/${slimConfArray[1]}/cayny/g" /etc/slim.conf
+fi
 
 echo " "
 echo "DONE!"
