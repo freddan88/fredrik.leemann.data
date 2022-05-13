@@ -4,7 +4,7 @@
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
-if [ -z "$SUDO_USER" ] || [ "$SUDO_USER" == "root" ]; then
+if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
   echo " "
   echo "PLEASE RUN THIS SCRIPT AS A SUDO-USER"
   echo " "
