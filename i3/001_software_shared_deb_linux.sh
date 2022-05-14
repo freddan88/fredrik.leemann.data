@@ -54,6 +54,7 @@ if [ ! -d "$SUDO_USER_HOME/.config/i3/scripts" ]; then
   mkdir -p $SUDO_USER_HOME/.config/i3/scripts
   cd $SUDO_USER_HOME/.config/i3/scripts
   wget https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/scripts/i3keybindings.sh
+  chmod u+x i3keybindings.sh
 fi
 
 if [ ! -d "$SUDO_USER_HOME/.config/i3/docs" ]; then
