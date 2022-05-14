@@ -39,6 +39,8 @@ if [ $(lsb_release -is) = "Debian" ]; then
   # Link ifconfig to another path so we don´t need sudo to execute it
   ln -s /sbin/ifconfig /usr/bin/ifconfigs
   apt install debian-edu-artwork libavcodec-extra ttf-mscorefonts-installer unrar gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
+  # cd /tmp && wget $url_xfce_panel_profiles && apt install ./xfce4-panel-profiles*.deb
+  # cd /tmp && rm -f xfce4-panel-profiles*.deb
 fi
 
 if [ $(lsb_release -is) = "Ubuntu" ]; then
