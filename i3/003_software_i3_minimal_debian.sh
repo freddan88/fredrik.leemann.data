@@ -21,7 +21,7 @@ apt update -qq && apt install xorg xinput slim lxappearance arandr pulseaudio al
 
 apt autoremove -y && apt update
 
-if [ ! -d "/usr/share/slim" ]; then
+if [ ! -d "/usr/share/slim/themes/cayny" ]; then
   cd /tmp && wget https://github.com/adi1090x/slim_themes/archive/refs/heads/master.zip && unzip -o master.zip
   cd /tmp/slim_themes-master/themes && cp -rfv * /usr/share/slim/themes
   cd /tmp && rm -rf master.zip slim_themes-master
