@@ -3,6 +3,9 @@
 url_config_i3="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config_i3_minimal.txt"
 url_config_i3_status="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config_i3_status.txt"
 
+# Link to file on GitHub
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/005_update_i3_config_minimal.sh
+
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################

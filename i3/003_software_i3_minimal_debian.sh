@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Link to file on GitHub
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/003_software_i3_minimal_debian.sh
+
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################

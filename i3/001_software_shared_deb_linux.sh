@@ -5,6 +5,9 @@ url_google_chrome_browser="https://dl.google.com/linux/direct/google-chrome-stab
 url_xfce_panel_profiles="http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb"
 url_latest_pulseaudio_ctl="https://github.com/graysky2/pulseaudio-ctl/archive/refs/tags/v1.70.zip"
 
+# Link to file on GitHub
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/001_software_shared_deb_linux.sh
+
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################

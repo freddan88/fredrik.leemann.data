@@ -4,6 +4,9 @@ url_google_fonts="https://github.com/google/fonts/archive/main.tar.gz"
 url_jetbrains_mono_fonts="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip"
 url_jetbrains_mono_fonts_nerd="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip"
 
+# Link to file on GitHub
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/002_download_fonts_deb_linux.sh
+
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
