@@ -118,7 +118,7 @@ font pango:JetBrains Mono Bold 10
 
 bindsym Print exec --no-startup-id xfce4-screenshooter
 
-bindsym Ctrl+$alt+m exec --no-startup-id xterm -e cmatrix
+bindsym Ctrl+$alt+x exec --no-startup-id xterm -e cmatrix
 bindsym Ctrl+$alt+Delete --release exec --no-startup-id xkill
 bindsym Ctrl+$alt+Escape exec --no-startup-id gnome-system-monitor
 bindsym Ctrl+$alt+e exec --no-startup-id mousepad $HOME/.config/i3/config
@@ -149,6 +149,12 @@ bindsym Ctrl+$alt+g exec --no-startup-id $HOME/.config/i3/scripts/i3keybindings.
 
 # Open the generated webpage in google-chrome and read i3-wm keybindings
 bindsym Ctrl+$alt+k exec --no-startup-id google-chrome $HOME/.config/i3/docs/i3keybindings.html
+
+# Open the generated webpage in w3m and read i3-wm keybindings using a lightweight terminal browser
+bindsym Ctrl+$alt+i exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e w3m $HOME/.config/i3/docs/i3keybindings.html
+
+# Open the generated markdown file in terminal and read i3-wm keybindings
+bindsym Ctrl+$alt+m exec --no-startup-id xterm -hold -fa 'Monospace' -fs 12 -e pandoc -t plain $HOME/.config/i3/docs/i3keybindings.md
 
 # Kill focused window
 bindsym $mod+q kill
@@ -363,15 +369,15 @@ client.urgent                   $urgent_color             $urgent_color         
 
 # Start i3bar to display a workspace bar and time
 bar {
+    status_command i3status -c $HOME/.config/i3/config_i3_status
+    bindsym --release button3 exec --no-startup-id gnome-calendar
     # bindsym button4 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
     # bindsym button5 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
     # bindsym button2 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-    # font pango:monospace 12
-    status_command i3status -c $HOME/.config/i3/config_i3_status
-    bindsym --release button3 exec --no-startup-id gnome-calendar
     bindsym button2 exec --no-startup-id /usr/bin/pulseaudio-ctl mute
     bindsym button5 exec --no-startup-id /usr/bin/pulseaudio-ctl down
     bindsym button4 exec --no-startup-id /usr/bin/pulseaudio-ctl up
+    # font pango:monospace 12
     font pango:JetBrains Mono Bold 10
     tray_output none
     tray_padding 4px
