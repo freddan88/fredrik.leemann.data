@@ -19,6 +19,8 @@ if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
   exit
 fi
 
+SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
+
 echo " "
 echo "INITIALIZE" && sleep 2
 echo " "
@@ -48,6 +50,18 @@ apt autoremove -y && apt update
 
 chown -R tftp:nogroup /srv/tftp 2>/dev/null
 
+if [ ! -d "$SUDO_USER_HOME/.config/i3/scripts" ]; then
+  mkdir -p $SUDO_USER_HOME/.config/i3/scripts
+  cd $SUDO_USER_HOME/.config/i3/scripts
+fi
+
+if [ ! -d "$SUDO_USER_HOME/.config/i3/docs" ]; then
+  mkdir -p $SUDO_USER_HOME/.config/i3/docs
+  cd $SUDO_USER_HOME/.config/i3/docs
+fi
+
+chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
+
 if [ ! -f "$(command -v google-chrome)" ]; then
   cd /tmp && wget $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
   cd /tmp && rm -f google-chrome-stable_current_amd64.deb
@@ -57,6 +71,11 @@ if [ ! -f "/usr/share/wallpapers/linux-wallpaper-01.jpg" ]; then
   cd /tmp && mkdir -p /usr/share/wallpapers
   # Download and add linux-penguin wallpaper from wallpapersafari.com
   cd /tmp && wget $url_linux_wallpaper && mv -f LEps6S.jpg /usr/share/wallpapers/linux-wallpaper-01.jpg
+fi
+
+if [ ! -f "/usr/bin/pulseaudio-ctl" ]; then
+  cd /tmp && wget -O pulseaudio-ctl.zip $url_latest_pulseaudio_ctl && unzip -o pulseaudio-ctl.zip
+  cd /tmp && cd pulseaudio-ctl-* && make install && cd /tmp && rm -rf pulseaudio-ctl*
 fi
 
 if [ ! -f "/usr/bin/pulseaudio-ctl" ]; then
