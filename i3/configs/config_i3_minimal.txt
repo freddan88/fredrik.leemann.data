@@ -100,8 +100,13 @@ font pango:JetBrains Mono Bold 10
 # bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 
-# Readme: https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
-# Pulse Audio controls
+# Use pulseaudio-ctl to adjust volume in PulseAudio: https://github.com/graysky2/pulseaudio-ctl
+# bindsym XF86AudioMicMute exec --no-startup-id /usr/bin/pulseaudio-ctl mute-input
+# bindsym XF86AudioLowerVolume exec --no-startup-id /usr/bin/pulseaudio-ctl down
+# bindsym XF86AudioRaiseVolume exec --no-startup-id /usr/bin/pulseaudio-ctl up
+# bindsym XF86AudioMute exec --no-startup-id /usr/bin/pulseaudio-ctl mute
+
+# Old Pulse Audio controls - Readme: https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 # bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 # bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
@@ -363,12 +368,18 @@ client.urgent                   $urgent_color             $urgent_color         
 
 # Start i3bar to display a workspace bar and time
 bar {
+    # bindsym button4 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+    # bindsym button5 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+    # bindsym button2 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+    # font pango:monospace 12
     status_command i3status -c $HOME/.config/i3/config_i3_status
     bindsym --release button3 exec --no-startup-id gnome-calendar
-    # font pango:monospace 12
+    bindsym button2 exec --no-startup-id /usr/bin/pulseaudio-ctl mute
+    bindsym button5 exec --no-startup-id /usr/bin/pulseaudio-ctl down
+    bindsym button4 exec --no-startup-id /usr/bin/pulseaudio-ctl up
     font pango:JetBrains Mono Bold 10
-    font pango:JetBrainsMonoMedium Nerd Font Mono Bold 10
     tray_output none
+    tray_padding 4px
 
     colors {
         background $dark_color

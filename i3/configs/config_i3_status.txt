@@ -8,8 +8,15 @@ general {
   interval = 60
 }
 
+order += "volume master"
 order += "tztime local"
 
+volume master {
+  format = "Sound: %volume"
+  format_muted = "Sound: Mute"
+  device = "pulse:0"
+}
+
 tztime local {
-  format = "%F v%V | %R "
+  format = "/ %F v%V | %R "
 }
