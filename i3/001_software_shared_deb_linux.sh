@@ -19,8 +19,6 @@ if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
   exit
 fi
 
-SUDO_USER_HOME=$(getent passwd $SUDO_USER | cut -d: -f6)
-
 echo " "
 echo "INITIALIZE" && sleep 2
 echo " "
@@ -51,21 +49,6 @@ fi
 apt autoremove -y && apt update
 
 chown -R tftp:nogroup /srv/tftp 2>/dev/null
-
-if [ ! -d "$SUDO_USER_HOME/.config/i3/scripts" ]; then
-  mkdir -p $SUDO_USER_HOME/.config/i3/scripts
-  cd $SUDO_USER_HOME/.config/i3/scripts
-  wget https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/scripts/i3keybindings.sh
-  chmod u+x i3keybindings.sh
-fi
-
-if [ ! -d "$SUDO_USER_HOME/.config/i3/docs" ]; then
-  mkdir -p $SUDO_USER_HOME/.config/i3/docs
-  cd $SUDO_USER_HOME/.config/i3/docs
-  wget https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/downloads/i3keybindings.css
-fi
-
-chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
 
 if [ ! -f "$(command -v google-chrome)" ]; then
   cd /tmp && wget $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y

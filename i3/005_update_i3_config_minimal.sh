@@ -23,6 +23,15 @@ echo " "
 rm -rf $HOME/.config/i3 && mkdir -p $HOME/.config/i3 && cd $HOME/.config/i3
 wget -O config $url_config_i3 && wget -O config_i3_status $url_config_i3_status
 
+mkdir -p $HOME/.config/i3/scripts
+cd $HOME/.config/i3/scripts
+wget https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/scripts/i3keybindings.sh
+chmod u+x i3keybindings.sh
+
+mkdir -p $HOME/.config/i3/docs
+cd $HOME/.config/i3/docs
+wget https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/downloads/i3keybindings.css
+
 echo " "
 echo "NEW i3 CONFIG-FILES IN $HOME/.config/i3" && sleep 2
 echo " "
