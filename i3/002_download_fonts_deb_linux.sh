@@ -18,7 +18,7 @@ echo " "
 echo "INSTALLING FONTS" && sleep 2
 echo " "
 
-apt update -qq && apt install fonts-cascadia-code fonts-cantarell -y
+apt update -qq && apt install fonts-cascadia-code fonts-cantarell fonts-font-awesome -y
 
 if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
   cd /tmp && wget $url_jetbrains_mono_fonts && unzip -o JetBrainsMono*.zip
