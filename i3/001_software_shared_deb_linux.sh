@@ -53,11 +53,13 @@ chown -R tftp:nogroup /srv/tftp 2>/dev/null
 if [ ! -d "$SUDO_USER_HOME/.config/i3/scripts" ]; then
   mkdir -p $SUDO_USER_HOME/.config/i3/scripts
   cd $SUDO_USER_HOME/.config/i3/scripts
+  wget https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/scripts/i3keybindings.sh
 fi
 
 if [ ! -d "$SUDO_USER_HOME/.config/i3/docs" ]; then
   mkdir -p $SUDO_USER_HOME/.config/i3/docs
   cd $SUDO_USER_HOME/.config/i3/docs
+  wget https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/downloads/i3keybindings.css
 fi
 
 chown -R $SUDO_USER:$SUDO_USER $SUDO_USER_HOME/.config/i3
