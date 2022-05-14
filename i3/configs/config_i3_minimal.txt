@@ -367,6 +367,7 @@ bar {
     bindsym --release button3 exec --no-startup-id gnome-calendar
     # font pango:monospace 12
     font pango:JetBrains Mono Bold 10
+    font pango:JetBrainsMonoMedium Nerd Font Mono Bold 10
     tray_output none
 
     colors {
