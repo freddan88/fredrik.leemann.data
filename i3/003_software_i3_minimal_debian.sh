@@ -32,6 +32,7 @@ fi
 
 slimConfString=$(cat /etc/slim.conf | grep "current_theme")
 slimConfArray=($slimConfString)
+# read -a slimConfArray <<<"$slimConfString"
 sed -i "s/${slimConfArray[1]}/cayny/g" /etc/slim.conf
 
 echo " "
