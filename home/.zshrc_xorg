@@ -110,8 +110,14 @@ if ((xstarted == 0)); then
   read key
   startx
 else
-  echo " "
-  neofetch
-  echo "Codename: $(lsb_release -cs)"
-  echo " "
+  isXterm=$(ps -e | grep -c xterm) # xterm (terminal emulator)
+  isCode=$(ps -e | grep -c code)   # Microsoft Visual Studio Code
+  if ((isXterm | isCode)); then
+    echo " "
+  else
+    echo " "
+    neofetch
+    echo "Codename: $(lsb_release -cs)"
+    echo " "
+  fi
 fi
