@@ -35,6 +35,8 @@ slimConfArray=($slimConfString)
 # read -a slimConfArray <<<"$slimConfString"
 sed -i "s/${slimConfArray[1]}/cayny/g" /etc/slim.conf
 
+# sudo update-rc.d slim disable
+
 echo " "
 echo "DONE!"
 echo " "
