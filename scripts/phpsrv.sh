@@ -1,7 +1,8 @@
 #!/bin/sh
 #
 # Author: Fredrik Leemann
-# Website: www.leemann.se/fredrik
+# Website: http://www.leemann.se/fredrik
+# GitHub: https://github.com/freddan88
 # Updated: 2022-03-06
 
 network_port=$PHPSRV_NETWORK_PORT
