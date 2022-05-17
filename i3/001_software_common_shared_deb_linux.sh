@@ -6,7 +6,7 @@ url_xfce_panel_profiles="http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-
 url_latest_pulseaudio_ctl="https://github.com/graysky2/pulseaudio-ctl/archive/refs/tags/v1.70.zip"
 
 # Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/001_software_shared_deb_linux.sh
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/001_software_common_shared_deb_linux.sh
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
