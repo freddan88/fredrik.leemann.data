@@ -28,7 +28,7 @@ apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
 
 apt install i3 i3status picom rofi playerctl xbacklight numlockx nano vim xterm screen members dbus-x11 w3m ssh zsh xss-lock htop pwgen openssl lshw ufw gufw -y
 apt install ftp tftp net-tools fail2ban dos2unix colord xiccd neofetch spice-vdagent vlc samba make gcc build-essential minicom cutecom nitrogen thunderbird -y
-apt install ghostscript cmatrix xarchiver exo-utils ffmpeg gparted synaptic stacer gimp mirage typecatcher baobab util-linux onboard screenkey libreoffice -y
+apt install ghostscript cmatrix xarchiver exo-utils ffmpeg gparted synaptic stacer gimp mirage typecatcher baobab util-linux onboard screenkey xdotool libreoffice -y
 apt install xfce4-appfinder xfce4-terminal xfce4-screenshooter xfce4-power-manager policykit-1-gnome gnome-software gnome-system-monitor gnome-calendar network-manager-gnome gnome-disk-utility --no-install-recommends -y
 apt install arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-theme thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman network-manager-openvpn -y
 apt install libpcre3 cpuid cpuidtool cpuinfo pandoc gthumb catfish mousepad ntfs-3g exfat-utils tftpd-hpa dosfstools cifs-utils nfs-common gvfs gvfs-backends gvfs-fuse -y
