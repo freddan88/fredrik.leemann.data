@@ -21,6 +21,9 @@ echo " "
 echo "UPDATING i3 CONFIG" && sleep 2
 echo " "
 
+apt update -qq
+apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
+
 rm -rf $HOME/.config/i3 && mkdir -p $HOME/.config/i3 && cd $HOME/.config/i3
 wget -O config $url_config_i3 && wget -O config_i3_status $url_config_i3_status
 

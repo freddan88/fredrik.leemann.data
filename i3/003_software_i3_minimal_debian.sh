@@ -18,7 +18,9 @@ echo " "
 echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
 
-apt update -qq && apt install xorg xinput slim lxappearance arandr pulseaudio alsa-utils pavucontrol gvfs gvfs-backends gvfs-fuse libnotify-bin -y
+apt update -qq
+apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
+apt install xorg xinput slim lxappearance arandr pulseaudio alsa-utils pavucontrol gvfs gvfs-backends gvfs-fuse libnotify-bin -y
 
 apt autoremove -y && apt update
 
