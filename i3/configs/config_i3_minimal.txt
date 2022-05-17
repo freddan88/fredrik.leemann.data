@@ -37,10 +37,6 @@ exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec_always --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
 # ----------
 # Appereance
 # ----------
