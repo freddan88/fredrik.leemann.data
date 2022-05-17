@@ -47,6 +47,7 @@ cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz jetbrains-mono-nerd
 echo " "
 echo "UPDATING FONT-CACHE" && sleep 2
 echo " "
+
 fc-cache -sv
 
 echo " "

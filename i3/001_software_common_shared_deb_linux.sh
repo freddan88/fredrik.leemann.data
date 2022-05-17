@@ -20,8 +20,9 @@ if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
 fi
 
 echo " "
-echo "INITIALIZE" && sleep 2
+echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
+
 apt update -qq && apt install i3 i3status dbus-x11 lsb-release curl wget git w3m gzip bzip2 unzip zip tar ssh zsh xss-lock cups system-config-printer gnome-disk-utility -y
 apt install htop pwgen ftp tftp picom rofi screen xterm members net-tools playerctl xbacklight numlockx nano vim fail2ban dos2unix vlc colord xiccd neofetch spice-vdagent build-essential -y
 apt install ghostscript cmatrix xarchiver exo-utils ufw gufw minicom ffmpeg cutecom gparted synaptic stacer gimp mirage typecatcher baobab samba util-linux onboard screenkey make gcc -y
@@ -74,6 +75,7 @@ fi
 echo " "
 echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
 echo " "
+
 systemctl disable smbd.service
 systemctl disable nmbd.service
 systemctl stop smbd.service
@@ -82,6 +84,7 @@ systemctl stop nmbd.service
 echo " "
 echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
 echo " "
+
 systemctl disable tftpd-hpa.service
 systemctl stop tftpd-hpa.service
 
