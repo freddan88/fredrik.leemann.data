@@ -4,7 +4,7 @@ url_latest_slim_themes="https://github.com/adi1090x/slim_themes/archive/refs/hea
 url_slim_theme_cayny_background="https://github.com/freddan88/fredrik.linux.files/raw/main/i3/downloads/background.png"
 
 # Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/003_software_i3_minimal_debian.sh
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/003_software_i3_min_debian.sh
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -23,7 +23,7 @@ echo " "
 
 apt update -qq
 apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
-apt install xorg xinput slim lxappearance arandr pulseaudio alsa-utils pavucontrol gvfs gvfs-backends gvfs-fuse libnotify-bin -y
+apt install xorg xinput slim lxappearance arandr pulseaudio alsa-utils pavucontrol libnotify-bin -y
 
 apt autoremove -y && apt update
 

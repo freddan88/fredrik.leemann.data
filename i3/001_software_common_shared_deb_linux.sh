@@ -26,12 +26,12 @@ echo " "
 apt update -qq
 apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
 
-apt install i3 i3status picom rofi xterm screen members dbus-x11 w3m ssh zsh xss-lock cups system-config-printer gnome-disk-utility openssl lshw -y
-apt install htop pwgen ftp tftp net-tools playerctl xbacklight numlockx nano vim fail2ban dos2unix colord xiccd neofetch spice-vdagent make gcc build-essential vlc samba-y
-apt install ghostscript cmatrix xarchiver exo-utils ufw gufw minicom ffmpeg cutecom gparted synaptic stacer gimp mirage typecatcher baobab util-linux onboard screenkey -y
-apt install libpcre3 cpuid cpuidtool cpuinfo pandoc gthumb catfish network-manager-openvpn nitrogen mousepad ntfs-3g exfat-utils tftpd-hpa dosfstools cifs-utils nfs-common -y
+apt install i3 i3status picom rofi playerctl xbacklight numlockx nano vim xterm screen members dbus-x11 w3m ssh zsh xss-lock htop pwgen openssl lshw ufw gufw -y
+apt install ftp tftp net-tools fail2ban dos2unix colord xiccd neofetch spice-vdagent vlc samba make gcc build-essential minicom cutecom nitrogen thunderbird -y
+apt install ghostscript cmatrix xarchiver exo-utils ffmpeg gparted synaptic stacer gimp mirage typecatcher baobab util-linux onboard screenkey libreoffice -y
 apt install xfce4-appfinder xfce4-terminal xfce4-screenshooter xfce4-power-manager policykit-1-gnome gnome-software gnome-system-monitor gnome-calendar network-manager-gnome gnome-disk-utility --no-install-recommends -y
-apt install arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-theme thunderbird libreoffice thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman -y
+apt install arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-theme thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman network-manager-openvpn -y
+apt install libpcre3 cpuid cpuidtool cpuinfo pandoc gthumb catfish mousepad ntfs-3g exfat-utils tftpd-hpa dosfstools cifs-utils nfs-common gvfs gvfs-backends gvfs-fuse -y
 
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
