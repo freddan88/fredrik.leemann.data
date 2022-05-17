@@ -5,7 +5,7 @@ url_latest_vscode="https://code.visualstudio.com/sha/download?build=stable&os=li
 url_latest_dbeaver="https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb"
 
 # Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/005_software_webdev_shared_deb_linux.sh
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/002_software_webdev_shared_deb_linux.sh
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #

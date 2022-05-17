@@ -5,7 +5,7 @@ url_jetbrains_mono_fonts="https://github.com/JetBrains/JetBrainsMono/releases/do
 url_jetbrains_mono_fonts_nerd="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip"
 
 # Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/002_download_fonts_deb_linux.sh
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/005_download_fonts_deb_linux.sh
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
