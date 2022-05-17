@@ -117,14 +117,14 @@ if ((xstarted == 0)); then
   read key
   startx
 else
-  isXterm=$(ps -e | grep -c xterm) # xterm (terminal emulator)
-  isCode=$(ps -e | grep -c code)   # Microsoft Visual Studio Code
-  if ((isXterm | isCode)); then
-    echo " "
-  else
+  currentPid=$(xdotool getactivewindow getwindowpid)
+  currentProgram=$(ps -o command= $currentPid)
+  if [ "$currentProgram" = "xfce4-terminal" ]; then
     echo " "
     neofetch
     echo "Codename: $(lsb_release -cs)"
+    echo " "
+  else
     echo " "
   fi
 fi
