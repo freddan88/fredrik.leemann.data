@@ -1,4 +1,10 @@
-## Links to files on GitHub
+## Links to files to GitHub
+
+<br/>
+
+| Debian i3 Minimal                                                   |                                                                 |
+| ------------------------------------------------------------------- | --------------------------------------------------------------- |
+| ![Minimal i3 Desktop - Debian](pictures-minimal-debian/desktop.jpg) | ![Minimal i3 Login - Debian](pictures-minimal-debian/login.jpg) |
 
 -   https://github.com/freddan88/fredrik.linux.files/blob/main/i3/001_software_common_shared_deb_linux.sh
 -   https://github.com/freddan88/fredrik.linux.files/blob/main/i3/002_software_webdev_shared_deb_linux.sh
