@@ -1,10 +1,8 @@
-## Links to files to GitHub
-
-<br/>
-
 | Debian i3 Minimal - Desktop                                         | Debian i3 Minimal - Login                                       |
 | ------------------------------------------------------------------- | --------------------------------------------------------------- |
 | ![Debian i3 Minimal - Desktop](pictures-minimal-debian/desktop.jpg) | ![Debian i3 Minimal - Login](pictures-minimal-debian/login.jpg) |
+
+#### Links to files to GitHub
 
 -   https://github.com/freddan88/fredrik.linux.files/blob/main/i3/001_software_common_shared_deb_linux.sh
 -   https://github.com/freddan88/fredrik.linux.files/blob/main/i3/002_software_webdev_shared_deb_linux.sh
@@ -13,7 +11,9 @@
 -   https://github.com/freddan88/fredrik.linux.files/blob/main/i3/005_download_fonts_deb_linux.sh
 -   https://github.com/freddan88/fredrik.linux.files/blob/main/i3/006_update_i3_config_minimal.sh
 
-Debian/Ubuntu Min Software i3 installation
+<br/>
+
+#### Debian/Ubuntu Min Software i3 installation
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/001_software_common_shared_deb_linux.sh | sudo sh
@@ -22,7 +22,7 @@ curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/006_update_i3_config_minimal.sh | sh
 ```
 
-Debian/Ubuntu Max Software i3 installation
+#### Debian/Ubuntu Max Software i3 installation
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/001_software_common_shared_deb_linux.sh | sudo sh
@@ -30,7 +30,7 @@ curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/005_download_fonts_deb_linux.sh | sudo sh
 ```
 
-Debian/Ubuntu Web Developer Software
+#### Debian/Ubuntu Web Developer Software
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/002_software_webdev_shared_deb_linux.sh | sudo sh
