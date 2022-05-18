@@ -2,9 +2,9 @@
 
 <br/>
 
-| Debian i3 Minimal - Desktop                                         | Debian i3 Minimal - Login                                       |
-| ------------------------------------------------------------------- | --------------------------------------------------------------- |
-| ![Debian i3 Minimal - Desktop](pictures-minimal-debian/desktop.jpg) | ![Debian i3 Minimal - Login](pictures-minimal-debian/login.jpg) |
+| Debian i3 Minimal - Desktop                                             | Debian i3 Minimal - Login                                           |
+| ----------------------------------------------------------------------- | ------------------------------------------------------------------- |
+| ![Debian i3 Minimal - Desktop](pictures-minimal-debian/desktop_min.jpg) | ![Debian i3 Minimal - Login](pictures-minimal-debian/login_min.jpg) |
 
 -   https://github.com/freddan88/fredrik.linux.files/blob/main/i3/001_software_common_shared_deb_linux.sh
 -   https://github.com/freddan88/fredrik.linux.files/blob/main/i3/002_software_webdev_shared_deb_linux.sh
