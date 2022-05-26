@@ -41,7 +41,14 @@ slimConfArray=($slimConfString)
 # read -a slimConfArray <<<"$slimConfString"
 sed -i "s/${slimConfArray[1]}/cayny/g" /etc/slim.conf
 
-# sudo update-rc.d slim disable
+echo " "
+read -p "Disable graphical login? (y/n) " login_answear
+echo " "
+
+if [[ "${login_answear}" == "y" ]]; then
+  echo "The two strings are the same"
+  update-rc.d slim disable
+fi
 
 echo " "
 echo "DONE!"
