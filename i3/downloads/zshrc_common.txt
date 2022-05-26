@@ -105,14 +105,14 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-autostart_x=1
-
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 if [ -d "$NVM_DIR" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 fi
 
+autostart_x=1
 xstarted=$(ps -e | grep -c Xorg)
+
 if ((xstarted == 0)); then
   echo " "
   if ((autostart_x)); then
