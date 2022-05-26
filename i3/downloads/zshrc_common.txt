@@ -110,8 +110,10 @@ if [ -d "$NVM_DIR" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 fi
 
-autostart_x=0
 xstarted=$(ps -e | grep -c Xorg)
+
+# Change autostart_x to start X automatically 1/0
+autostart_x=0
 
 if ((xstarted == 0)); then
   echo " "
