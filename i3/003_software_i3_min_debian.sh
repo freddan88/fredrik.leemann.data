@@ -43,10 +43,7 @@ sed -i "s/${slimConfArray[1]}/cayny/g" /etc/slim.conf
 
 echo " "
 read -p "Disable graphical login? (y/n) " login_answear
-echo " "
-
-if [[ "${login_answear}" == "y" ]]; then
-  echo "The two strings are the same"
+if [ "${login_answear}" == "y" ]; then
   update-rc.d slim disable
 fi
 
