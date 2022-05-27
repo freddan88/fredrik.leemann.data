@@ -21,7 +21,7 @@
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/001_software_common_shared_deb_linux.sh | sudo sh
 ```
 
-##### Install software for a minimal debian-installation
+##### Install software for a minimal-installation
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/003_software_i3_min_debian.sh | sudo sh
