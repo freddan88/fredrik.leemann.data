@@ -39,7 +39,7 @@ curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/006_update_i3_config_minimal.sh | sh
 ```
 
-##### Disabling the graphical login
+##### Disabling the graphical login (Optional)
 
 ```bash
 sudo update-rc.d slim disable
