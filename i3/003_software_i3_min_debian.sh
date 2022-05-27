@@ -23,7 +23,7 @@ echo " "
 
 apt update -qq
 apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
-apt install xorg xinput slim lxappearance arandr pulseaudio alsa-utils pavucontrol libnotify-bin -y
+apt install xorg xinput slim lxappearance arandr pulseaudio pulseaudio-utils alsa-utils pavucontrol libnotify-bin -y
 
 apt autoremove -y && apt update
 
@@ -37,15 +37,9 @@ if [ ! -d "/usr/share/slim/themes/cayny" ]; then
 fi
 
 slimConfString=$(cat /etc/slim.conf | grep "current_theme")
-slimConfArray=($slimConfString)
-# read -a slimConfArray <<<"$slimConfString"
+# slimConfArray=($slimConfString)
+read -a slimConfArray <<<"$slimConfString"
 sed -i "s/${slimConfArray[1]}/cayny/g" /etc/slim.conf
-
-echo " "
-read -p "Disable graphical login? (y/n) " login_answear
-if [ "${login_answear}" == "y" ]; then
-  update-rc.d slim disable
-fi
 
 echo " "
 echo "DONE!"
