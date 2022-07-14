@@ -31,7 +31,7 @@ apt install ftp tftp net-tools fail2ban dos2unix colord xiccd neofetch spice-vda
 apt install ghostscript cmatrix xarchiver exo-utils ffmpeg gparted synaptic stacer gimp mirage typecatcher baobab util-linux onboard screenkey xdotool libreoffice -y
 apt install xfce4-appfinder xfce4-terminal xfce4-screenshooter xfce4-power-manager policykit-1-gnome gnome-software gnome-system-monitor gnome-calendar network-manager-gnome gnome-disk-utility --no-install-recommends -y
 apt install arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-theme thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman network-manager-openvpn -y
-apt install libpcre3 cpuid cpuidtool cpuinfo pandoc gthumb catfish mousepad ntfs-3g exfat-utils tftpd-hpa dosfstools exfatprogs cifs-utils nfs-common gvfs gvfs-backends gvfs-fuse -y
+apt install libpcre3 cpuid cpuidtool cpuinfo pandoc gthumb catfish mousepad ntfs-3g tftpd-hpa dosfstools exfatprogs cifs-utils nfs-common gvfs gvfs-backends gvfs-fuse eject -y
 
 apt install flatpak gnome-software-plugin-flatpak -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
