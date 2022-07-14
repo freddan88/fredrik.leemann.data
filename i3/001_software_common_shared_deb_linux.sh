@@ -70,11 +70,6 @@ if [ ! -f "/usr/bin/pulseaudio-ctl" ]; then
   cd /tmp && cd pulseaudio-ctl-* && make install && cd /tmp && rm -rf pulseaudio-ctl*
 fi
 
-if [ ! -f "/usr/bin/pulseaudio-ctl" ]; then
-  cd /tmp && wget -O pulseaudio-ctl.zip $url_latest_pulseaudio_ctl && unzip -o pulseaudio-ctl.zip
-  cd /tmp && cd pulseaudio-ctl-* && make install && cd /tmp && rm -rf pulseaudio-ctl*
-fi
-
 echo " "
 echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
 echo " "
