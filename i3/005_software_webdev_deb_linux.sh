@@ -38,9 +38,9 @@ if [ "$linux_distribution" = "Ubuntu" ]; then
 fi
 
 apt update -qq && apt install docker-ce docker-ce-cli containerd.io -y
-apt install apache2 libapache2-mpm-itk libapache2-mod-php libsodium23 sqlite3 sqlitebrowser mariadb-client mariadb-server -y
-apt install php php-{bcmath,cli,common,xdebug,curl,soap,gd,mbstring,mysql,opcache,readline,sqlite3,xml,zip,imagick,pear,cgi,phpseclib} -y
-apt install imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 -y
+apt install apache2 libapache2-mpm-itk libapache2-mod-php libsodium23 sqlite3 sqlitebrowser mariadb-client mariadb-server php php-sqlite3 php-mysql -y
+apt install php-cli php-common php-xdebug php-bcmath php-curl php-soap php-mbstring php-opcache php-readline php-xml php-zip php-pear php-cgi php-phpseclib -y
+apt install php-imagick php-gd imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 -y
 apt install libmagickwand-6.q16-6 libmagickwand-6.q16hdri-6 libmagickcore-6.q16-6-extra libmagickcore-6.q16hdri-3-extra -y
 
 apt install flatpak gnome-software-plugin-flatpak -y
