@@ -25,12 +25,14 @@ echo " "
 apt update -qq
 apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
 
-if [ $(lsb_release -is) == "Debian" ]; then
+linux_distribution=$(lsb_release -is)
+
+if [ "$linux_distribution" = "Debian" ]; then
   curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor --batch --yes --output /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
 fi
 
-if [ $(lsb_release -is) == "Ubuntu" ]; then
+if [ "$linux_distribution" = "Ubuntu" ]; then
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor --batch --yes --output /usr/share/keyrings/docker-archive-keyring.gpg >/dev/null
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
 fi
