@@ -45,7 +45,7 @@ curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/
 ```
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/006_update_webdev_software_deb_linux.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/006_update_webdev_software_bash.sh | sudo sh
 ```
 
 Disabling the graphical login
