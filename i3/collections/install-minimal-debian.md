@@ -9,25 +9,25 @@ sudo apt update && sudo apt install curl -y
 Install fonts
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/001_download_fonts_deb_linux.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/001_download_fonts_deb.sh | sudo sh
 ```
 
 Install software
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/002_software_i3_deb_minimal.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/002_software_i3_deb_min.sh | sudo sh
 ```
 
 Configure system
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/003_configure_system_deb_linux.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/003_configure_system_deb.sh | sudo sh
 ```
 
 Update i3 config
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/004_update_i3_config_minimal.sh | sh
+curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/004_update_i3_config_min.sh | sh
 ```
 
 #### Extra (Optional)
@@ -41,11 +41,11 @@ Ubuntu Medium 11
 Install web-developer software
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/005_software_webdev_deb_linux.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/005_software_webdev_deb.sh | sudo sh
 ```
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/006_update_webdev_software_bash.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/006_update_webdev_files_deb.sh | sudo sh
 ```
 
 Disabling the graphical login

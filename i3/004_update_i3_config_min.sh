@@ -5,9 +5,6 @@ url_config_i3_status="https://raw.githubusercontent.com/freddan88/fredrik.linux.
 url_script_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/scripts/i3keybindings.sh"
 url_styles_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/downloads/i3keybindings.css"
 
-# Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/003_update_i3_config_minimal.sh
-
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################

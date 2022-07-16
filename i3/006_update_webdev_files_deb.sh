@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 
 url_composer_installer="https://getcomposer.org/installer"
-url_docker_compose_github_latest="https://github.com/docker/compose/releases/latest"
-
-# Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/005_software_webdev_deb_linux.sh
+url_docker_compose="https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64"
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -32,15 +29,12 @@ cd /tmp && rm -f installer
 echo " "
 echo "INSTALLED THE COMMAND 'COMPOSER' GLOBALLY IN: /usr/local/bin/composer"
 echo " "
-echo "UPDATING DOCKER COMPOSE" && sleep 2
+echo "DOWNLOADING DOCKER COMPOSE" && sleep 2
 echo " "
 
-latest_docker_compose=$(curl -s $url_docker_compose_github_latest | cut -d'"' -f2)
-latest_docker_compose_version=$(echo $latest_docker_compose | cut -d'/' -f8)
-
 cd /tmp && rm -f /usr/local/bin/docker-compose
-cd /tmp && wget -q https://github.com/docker/compose/releases/download/$latest_docker_compose_version/docker-compose-Linux-x86_64
-cd /tmp && mv -f docker-compose-Linux-x86_64 /usr/local/bin/docker-compose && chmod -f 755 /usr/local/bin/docker-compose
+cd /tmp && wget $url_docker_compose
+cd /tmp && mv -f docker-compose-linux-x86_64 /usr/local/bin/docker-compose && chmod -f 755 /usr/local/bin/docker-compose
 
 echo " "
 echo "INSTALLED THE COMMAND 'DOCKER-COMPOSE' GLOBALLY IN: /usr/local/bin/docker-compose"

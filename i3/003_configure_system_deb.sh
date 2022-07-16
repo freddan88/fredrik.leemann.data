@@ -4,9 +4,6 @@ url_linux_wallpaper="https://img.wallpapersafari.com/desktop/1920/1080/95/51/LEp
 url_latest_slim_themes="https://github.com/adi1090x/slim_themes/archive/refs/heads/master.zip"
 url_slim_custom_background="https://github.com/freddan88/fredrik.linux.files/raw/main/i3/downloads/slim_cayny_background_01.png"
 
-# Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/002_software_minimal_i3_deb_linux.sh
-
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################

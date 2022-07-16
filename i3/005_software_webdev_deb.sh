@@ -4,9 +4,6 @@ url_mongodb_compass="https://downloads.mongodb.com/compass/mongodb-compass_1.30.
 url_latest_vscode="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 url_latest_dbeaver="https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb"
 
-# Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/005_software_webdev_deb_linux.sh
-
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
