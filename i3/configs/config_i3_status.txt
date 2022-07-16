@@ -12,11 +12,11 @@ order += "volume master"
 order += "tztime local"
 
 volume master {
-  format = "Sound: %volume"
-  format_muted = "Sound: Muted"
+  format = "Sound: %volume //"
+  format_muted = "Sound: Muted //"
   device = "pulse:0"
 }
 
 tztime local {
-  format = "// %F v%V | %R "
+  format = "%F v%V | %R "
 }

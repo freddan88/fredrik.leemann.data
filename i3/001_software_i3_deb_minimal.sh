@@ -32,7 +32,7 @@ apt install arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-them
 apt install ghostscript cmatrix xarchiver exo-utils ffmpeg gparted synaptic stacer gimp mirage typecatcher baobab util-linux onboard screenkey xdotool libreoffice -y
 apt install libpcre3 cpuid cpuidtool cpuinfo pandoc gthumb catfish mousepad ntfs-3g tftpd-hpa dosfstools exfatprogs cifs-utils nfs-common gvfs gvfs-backends gvfs-fuse -y
 
-apt install xfce4-panel xfce4-appmenu-plugin xfce4-appfinder xfce4-terminal xfce4-screenshooter xfce4-power-manager xfce4-battery-plugin xfce4-pulseaudio-plugin --no-install-recommends -y
+apt install xfce4-panel xfce4-appmenu-plugin xfce4-appfinder xfce4-terminal xfce4-screenshooter xfce4-power-manager xfce4-pulseaudio-plugin --no-install-recommends -y
 apt install policykit-1-gnome gnome-software gnome-system-monitor gnome-calendar network-manager-gnome network-manager-openvpn gnome-disk-utility --no-install-recommends -y
 
 apt install flatpak gnome-software-plugin-flatpak -y
@@ -41,7 +41,7 @@ flatpak install flathub com.spotify.Client --noninteractive -y
 
 if [ $(lsb_release -is) = "Debian" ]; then
   ln -s /sbin/ifconfig /usr/bin/ifconfig
-  apt install debian-edu-artwork libavcodec-extra ttf-mscorefonts-installer unrar gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
+  apt install debian-edu-artwork libavcodec-extra unrar gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
   cd /tmp && wget $url_xfce_panel_profiles && apt install ./xfce4-panel-profiles*.deb
   cd /tmp && rm -f xfce4-panel-profiles*.deb
 fi

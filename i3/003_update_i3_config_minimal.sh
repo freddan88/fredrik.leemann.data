@@ -6,7 +6,7 @@ url_script_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.l
 url_styles_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/downloads/i3keybindings.css"
 
 # Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/005_update_i3_config_minimal.sh
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/003_update_i3_config_minimal.sh
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -22,9 +22,6 @@ fi
 echo " "
 echo "UPDATING i3 CONFIG" && sleep 2
 echo " "
-
-apt update -qq
-apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
 
 rm -rf $HOME/.config/i3 && mkdir -p $HOME/.config/i3 && cd $HOME/.config/i3
 wget -O config $url_config_i3 && wget -O config_i3_status $url_config_i3_status

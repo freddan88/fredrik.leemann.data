@@ -38,6 +38,10 @@ if [ ! -d "/usr/share/fonts/truetype/google-fonts" ]; then
   cd /tmp && find $PWD/fonts-main/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/google-fonts/ \;
 fi
 
+if [ $(lsb_release -is) = "Debian" ]; then
+  apt install ttf-mscorefonts-installer -y
+fi
+
 # if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono-nerd" ]; then
 #   cd /tmp && mkdir -p jetbrains-mono-nerd && mkdir -p /usr/share/fonts/truetype/jetbrains-mono-nerd
 #   cd /tmp/jetbrains-mono-nerd && wget $url_jetbrains_mono_fonts_nerd && unzip -o JetBrainsMono*.zip

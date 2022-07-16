@@ -5,7 +5,7 @@ url_latest_slim_themes="https://github.com/adi1090x/slim_themes/archive/refs/hea
 url_slim_custom_background="https://github.com/freddan88/fredrik.linux.files/raw/main/i3/downloads/slim_cayny_background_01.png"
 
 # Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/003_software_minimal_i3_deb_linux.sh
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/002_software_minimal_i3_deb_linux.sh
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -36,7 +36,7 @@ if [ ! -d "/usr/share/slim/themes/cayny" ]; then
   cd /tmp && rm -rf master.zip slim_themes-master
   cd /tmp && wget $url_slim_custom_background
   cd /usr/share/slim/themes/cayny && mv background.png background_old_01.png
-  cd /tmp && mv background.png /usr/share/slim/themes/cayny/background.png
+  cd /tmp && mv slim_cayny_background_01.png /usr/share/slim/themes/cayny/background.png
 fi
 
 slimConfString=$(cat /etc/slim.conf | grep "current_theme")
