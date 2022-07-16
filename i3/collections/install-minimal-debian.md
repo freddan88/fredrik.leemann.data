@@ -7,3 +7,9 @@
 ```bash
 sudo update-rc.d slim disable
 ```
+
+Terminal font
+Cascadia Mono SemiBold 12
+
+Default font (system)
+Ubuntu Medium 11
