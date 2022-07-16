@@ -42,7 +42,7 @@ flatpak install flathub com.spotify.Client --noninteractive -y
 if [ $(lsb_release -is) = "Debian" ]; then
   ln -s /sbin/ifconfig /usr/bin/ifconfig
   apt install debian-edu-artwork libavcodec-extra unrar ttf-mscorefonts-installer gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
-  cd /tmp && wget $url_xfce_panel_profiles && apt install ./xfce4-panel-profiles*.deb
+  cd /tmp && wget $url_xfce_panel_profiles && apt install ./xfce4-panel-profiles*.deb -y
   cd /tmp && rm -f xfce4-panel-profiles*.deb
 fi
 
