@@ -44,6 +44,10 @@ Install web-developer software
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/005_software_webdev_deb_linux.sh | sudo sh
 ```
 
+```bash
+curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/006_update_webdev_software_deb_linux.sh | sudo sh
+```
+
 Disabling the graphical login
 
 ```bash
