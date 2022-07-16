@@ -45,6 +45,9 @@ slimConfString=$(cat /etc/slim.conf | grep "current_theme")
 slimConfTheme=$(echo $slimConfString | cut -d' ' -f2)
 sed -i "s/$slimConfTheme/cayny/g" /etc/slim.conf
 
+# Disabling the graphical login
+# sudo update-rc.d slim disable
+
 apt autoremove -y && apt update
 
 echo " "
