@@ -2,9 +2,11 @@
 
 url_config_i3="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config_i3_minimal.txt"
 url_config_i3_status="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/configs/config_i3_status.txt"
+url_script_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/scripts/i3keybindings.sh"
+url_styles_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/downloads/i3keybindings.css"
 
 # Link to file on GitHub
-# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/006_update_i3_config_minimal.sh
+# https://github.com/freddan88/fredrik.linux.files/blob/main/i3/005_update_i3_config_minimal.sh
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -28,11 +30,11 @@ rm -rf $HOME/.config/i3 && mkdir -p $HOME/.config/i3 && cd $HOME/.config/i3
 wget -O config $url_config_i3 && wget -O config_i3_status $url_config_i3_status
 
 mkdir -p $HOME/.config/i3/scripts && cd $HOME/.config/i3/scripts
-wget https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/scripts/i3keybindings.sh
+wget $url_script_i3_keybindings
 chmod u+x i3keybindings.sh
 
 mkdir -p $HOME/.config/i3/docs && cd $HOME/.config/i3/docs
-wget https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/downloads/i3keybindings.css
+wget $url_styles_i3_keybindings
 
 echo " "
 echo "NEW i3 CONFIG-FILES IN $HOME/.config/i3" && sleep 2
