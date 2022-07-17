@@ -2,6 +2,10 @@
 | ------------------------------------------------------------------- | --------------------------------------------------------------- |
 | ![Debian i3 Minimal - Desktop](pictures-minimal-debian/desktop.jpg) | ![Debian i3 Minimal - Login](pictures-minimal-debian/login.jpg) |
 
+Download Debian
+
+https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current/amd64/iso-cd
+
 ```bash
 sudo apt update && sudo apt install curl -y
 ```
@@ -55,4 +59,5 @@ sudo update-rc.d slim disable
 ```
 
 Debian automatically login through cli
+
 https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line
