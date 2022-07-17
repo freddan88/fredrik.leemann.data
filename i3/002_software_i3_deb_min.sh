@@ -16,7 +16,7 @@ if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
 fi
 
 echo " "
-echo "INSTALLING SOFTWARE" && sleep 2
+echo "INSTALLING i3 SOFTWARE" && sleep 2
 echo " "
 
 apt update -qq

@@ -16,7 +16,7 @@ Install fonts
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/001_download_fonts_deb.sh | sudo sh
 ```
 
-Install software
+Install i3 software
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/002_software_i3_deb_min.sh | sudo sh
@@ -48,8 +48,10 @@ Install web-developer software
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/005_software_webdev_deb.sh | sudo sh
 ```
 
+Download web-developer scripts
+
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/006_update_webdev_files_deb.sh | sudo sh
+curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.linux.files/main/i3/006_download_webdev_scripts.sh | sudo sh
 ```
 
 Disabling the graphical login

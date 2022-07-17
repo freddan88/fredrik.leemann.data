@@ -14,11 +14,8 @@ if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
   exit
 fi
 
-apt update -qq
-apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
-
 echo " "
-echo "UPDATING PHP COMPOSER" && sleep 2
+echo "UPDATING WEBDEV SOFTWARE" && sleep 2
 echo " "
 
 cd /tmp && rm -f /usr/local/bin/composer
@@ -29,8 +26,6 @@ cd /tmp && rm -f installer
 echo " "
 echo "INSTALLED THE COMMAND 'COMPOSER' GLOBALLY IN: /usr/local/bin/composer"
 echo " "
-echo "DOWNLOADING DOCKER COMPOSE" && sleep 2
-echo " "
 
 cd /tmp && rm -f /usr/local/bin/docker-compose
 cd /tmp && wget $url_docker_compose
@@ -38,6 +33,7 @@ cd /tmp && mv -f docker-compose-linux-x86_64 /usr/local/bin/docker-compose && ch
 
 echo " "
 echo "INSTALLED THE COMMAND 'DOCKER-COMPOSE' GLOBALLY IN: /usr/local/bin/docker-compose"
+
 echo " "
 echo "DONE!"
 echo " "
