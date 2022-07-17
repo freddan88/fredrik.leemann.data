@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+url_marktext_package="https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd64.deb"
 url_mongodb_compass="https://downloads.mongodb.com/compass/mongodb-compass_1.30.1_amd64.deb"
 url_latest_vscode="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
 url_latest_dbeaver="https://dbeaver.io/files/dbeaver-ce_latest_amd64.deb"
@@ -46,10 +47,12 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak install flathub rest.insomnia.Insomnia --noninteractive -y
 flatpak install flathub com.github.alecaddd.sequeler --noninteractive -y
 
-cd /tmp && wget -q $url_latest_dbeaver && apt install ./dbeaver-ce_*_amd64.deb -y
+cd /tmp && wget -q $url_marktext_package && apt install ./marktext-amd64.deb -y
 cd /tmp && wget -q $url_mongodb_compass && apt install ./mongodb-compass_*_amd64.deb -y
 cd /tmp && wget -q -O vscode_amd64.deb $url_latest_vscode && apt install ./vscode_amd64.deb -y
-cd /tmp && rm -f dbeaver-ce_*_amd64.deb vscode_amd64.deb mongodb-compass_*_amd64.deb
+cd /tmp && wget -q $url_latest_dbeaver && apt install ./dbeaver-ce_*_amd64.deb -y
+
+cd /tmp && rm -f dbeaver-ce_*_amd64.deb vscode_amd64.deb mongodb-compass_*_amd64.deb marktext-amd64.deb
 
 echo " "
 echo "DISABLING APACHE2 HTTP SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
