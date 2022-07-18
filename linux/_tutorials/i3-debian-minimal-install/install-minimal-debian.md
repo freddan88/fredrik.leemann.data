@@ -1,6 +1,6 @@
-| Debian i3 Minimal - Desktop                                         | Debian i3 Minimal - Login                                       |
-| ------------------------------------------------------------------- | --------------------------------------------------------------- |
-| ![Debian i3 Minimal - Desktop](pictures-minimal-debian/desktop.jpg) | ![Debian i3 Minimal - Login](pictures-minimal-debian/login.jpg) |
+| Debian i3 Minimal - Desktop                        | Debian i3 Minimal - Login                      |
+| -------------------------------------------------- | ---------------------------------------------- |
+| ![Debian i3 Minimal - Desktop](images/desktop.jpg) | ![Debian i3 Minimal - Login](images/login.jpg) |
 
 **1 Download Debian**
 

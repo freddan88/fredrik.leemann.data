@@ -12,14 +12,14 @@
 
 Tutorials are tested for:
 
--   Debian Linux 11 (bullseye) 64Bit
+- Debian Linux 11 (bullseye) 64Bit
 
 ### Installation
 
 ##### First download and install Debian Linux from any of the links below:
 
--   [Download Debian Linux ISO (netinst)](https://www.debian.org/download)
--   [Download Debian Linux ISO (nonfree)](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware)
+- [Download Debian Linux ISO (netinst)](https://www.debian.org/download)
+- [Download Debian Linux ISO (nonfree)](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware)
 
 #### 1. Update system, install packages and add your user as a sudo-user (run as root) OBS: Will reboot your computer!
 
@@ -115,13 +115,13 @@ sudo apt install openarena 0ad warzone2100 frozen-bubble hedgewars supertux supe
 
 #### Links
 
--   https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11
--   https://github.com/freddan88/debian-linux-i3-develolper/blob/master/debian_install_i3-2.txt
--   http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html
--   https://github.com/denesb/xfce4-i3-workspaces-plugin
--   https://www.popot.org/get_the_games.php?game=SDLPoP
--   https://itsfoss.com/change-default-terminal-ubuntu
--   https://thevaluable.dev/i3-config-mouseless
--   https://github.com/freddan88/xubuntu-i3wm
--   https://wiki.debian.org/NetworkManager
--   http://www.secretmaryo.org
+- https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11
+- https://github.com/freddan88/debian-linux-i3-develolper/blob/master/debian_install_i3-2.txt
+- http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html
+- https://github.com/denesb/xfce4-i3-workspaces-plugin
+- https://www.popot.org/get_the_games.php?game=SDLPoP
+- https://itsfoss.com/change-default-terminal-ubuntu
+- https://thevaluable.dev/i3-config-mouseless
+- https://github.com/freddan88/xubuntu-i3wm
+- https://wiki.debian.org/NetworkManager
+- http://www.secretmaryo.org
