@@ -14,9 +14,9 @@
 
 ---
 
-**1. Download Debian from this link**
+**1. Download the non edu-version of debian from this link**
 
-https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current/amd64/iso-cd/firmware-11.4.0-amd64-netinst.iso
+[unofficial-non-free-netinst-cd-including-firmware-debian-linux](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current/amd64/iso-cd/)
 
 **2. Install Debian on your computer**
 
