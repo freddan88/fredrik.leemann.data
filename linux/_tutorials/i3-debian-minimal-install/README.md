@@ -10,7 +10,7 @@
 
 **Tested on:**
 
--   Debian Linux 11 (bullseye) 64Bit (nonFree Software)
+- Debian Linux 11 (bullseye) 64Bit (nonFree Software)
 
 ---
 
@@ -20,15 +20,15 @@
 
 **Install Debian on your computer**
 
--   Go with a bare-bone installation with no desktop environment
+- Go with a bare-bone installation with no desktop environment
 
--   Keep the root-password blank. By doing this it will:
+- Keep the root-password blank. By doing this it will:
 
-    -   Add your user to the sudoers-group automatically
+  - Add your user to the sudoers-group automatically
 
-    -   Disable the root-account for the new installation
+  - Disable the root-account for the new installation
 
-    **_Screenshot from the software selection screen during installation_**
+  **_Screenshot from the software selection screen during installation_**
 
 > Select SSH server and standard system utilities or only standard system utilities
 
@@ -189,11 +189,11 @@ sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo
 
 ### Links and resources
 
--   [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
--   [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
--   [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
--   [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
--   [How to Change the Default Terminal in Ubuntu - FOSS](https://itsfoss.com/change-default-terminal-ubuntu)
--   [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
--   [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
--   [http://www.secretmaryo.org](http://www.secretmaryo.org)
+- [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
+- [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
+- [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
+- [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
+- [How to Change the Default Terminal in Ubuntu - FOSS](https://itsfoss.com/change-default-terminal-ubuntu)
+- [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
+- [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
+- [http://www.secretmaryo.org](http://www.secretmaryo.org)
