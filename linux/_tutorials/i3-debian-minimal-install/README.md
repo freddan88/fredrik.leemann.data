@@ -106,8 +106,6 @@ Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/
 
 > Tip: You can configure autostart of x in this file by changing: autostart_x to 1
 
----
-
 ### Extra (Optional)
 
 **Install web-developer software**
