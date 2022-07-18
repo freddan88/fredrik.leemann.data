@@ -172,7 +172,7 @@ sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo
 
 ---
 
-#### Example desktop configurations
+### Example desktop configurations
 
 | Fonts     |                           |
 | --------- | ------------------------- |
