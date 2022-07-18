@@ -99,7 +99,7 @@ Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.
 **Download and update your zsh-config**
 
 ```bash
-cd && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/shell/zshrc.txt
+cd && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/shells/zshrc.txt
 ```
 
 Source: 
