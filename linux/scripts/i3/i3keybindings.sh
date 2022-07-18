@@ -72,10 +72,10 @@ rm -f $i3_temp_keybindings_file
 rm -f $i3_temp_variables_file
 rm -f $i3_output_path/lock
 
-if [[ "$1" == "-l" ]]; then
+if [[ "$1" == "-h" ]]; then
   cp -rf $i3_output_path $HOME
 fi
 
 echo "---------------------------------------------------------------------------"
-echo "ADD '-l' AS AN ARGUMENT TO ALSO COPY GENERATED-FILES TO YOUR HOME-DIRECTORY"
+echo "ADD '-h' AS AN ARGUMENT TO ALSO COPY GENERATED-FILES TO YOUR HOME-DIRECTORY"
 echo " "
