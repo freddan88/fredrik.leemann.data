@@ -59,6 +59,9 @@ if [ ! -f "/usr/bin/pulseaudio-ctl" ]; then
 fi
 
 echo " "
+sudo apt remove make gcc build-essential -y
+
+echo " "
 echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
 echo " "
 
