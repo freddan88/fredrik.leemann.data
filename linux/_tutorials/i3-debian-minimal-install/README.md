@@ -10,7 +10,7 @@
 
 **Tested on:**
 
--   Debian Linux 11 (bullseye) 64Bit (nonFree Software)
+- Debian Linux 11 (bullseye) 64Bit (nonFree Software)
 
 ---
 
@@ -20,15 +20,15 @@ https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/cur
 
 **2. Install Debian on your computer**
 
--   Go with a bare-bone installation with no desktop environment
+- Go with a bare-bone installation with no desktop environment
 
--   Keep the root-password blank. By doing this it will:
-
-    -   Add your user to the sudoers-group automatically
-
-    -   Disable the root-account for the new installation
-
-    **_Screenshot from the software selection screen during installation_**
+- Keep the root-password blank. By doing this it will:
+  
+  - Add your user to the sudoers-group automatically
+  
+  - Disable the root-account for the new installation
+  
+  **_Screenshot from the software selection screen during installation_**
 
 > Select SSH and standard system utilities or only standard system utilities
 
@@ -118,3 +118,11 @@ sudo update-rc.d slim disable
 | -------- | ------------------------- |
 | Terminal | Cascadia Mono SemiBold 12 |
 | System   | Ubuntu Medium 11          |
+
+| Debian i3 Minimal - Desktop 01                       | Debian i3 Minimal - Desktop 02                              |
+| ---------------------------------------------------- | ----------------------------------------------------------- |
+| ![](images/i3-debian-minimal-desktop-example-01.png) | ![](images/i3-debian-minimal-software-selection-screen.png) |
+
+| Debian i3 Minimal - Login-screen 01                         | Debian i3 Minimal - Login-screen 02                         |
+| ----------------------------------------------------------- | ----------------------------------------------------------- |
+| ![](images/i3-debian-minimal-software-selection-screen.png) | ![](images/i3-debian-minimal-software-selection-screen.png) |
