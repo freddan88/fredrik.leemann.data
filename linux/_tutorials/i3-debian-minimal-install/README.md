@@ -1,4 +1,4 @@
-## My Debian i3 Minimal Installation
+### My Debian i3 Minimal Installation
 
 [License: MIT](https://choosealicense.com/licenses/mit)
 
@@ -108,7 +108,7 @@ Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/
 
 ----
 
-#### Extra (Optional)
+### Extra (Optional)
 
 **Install web-developer software**
 
@@ -150,7 +150,7 @@ sudo update-rc.d slim disable
 
 [unix.stackexchange.com - automatically-login-on-debian-9-2-1-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
 
-#### My favorite linux games
+**My favorite linux games**
 
 ```bash
 sudo apt install openarena 0ad warzone2100 frozen-bubble hedgewars supertux supertuxkart quadrapassel xmoto pinball pinball-table-gnu pinball-table-hurd gnome-nibbles teeworlds -y
@@ -172,7 +172,7 @@ sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo
 
 ---
 
-#### Example desktop configurations
+### Example desktop configurations
 
 | Fonts     |                           |
 | --------- | ------------------------- |
@@ -187,7 +187,7 @@ sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo
 | ------------------------------------------------- | ----------------------------------------------------------- |
 | ![](images/i3-debian-minimal-graphical-login.png) | ![](images/i3-debian-minimal-software-selection-screen.png) |
 
-#### Links and resources
+### Links and resources
 
 - [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
 - [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
