@@ -24,10 +24,10 @@ apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
 
 apt install xorg i3 i3status picom rofi xinput lxappearance arandr pulseaudio pulseaudio-utils alsa-utils pavucontrol libnotify-bin -y
 apt install playerctl xbacklight numlockx nano vim xterm screen members dbus-x11 w3m ssh zsh xss-lock htop pwgen openssl lshw ufw gufw nitrogen -y
-apt install ftp tftp net-tools fail2ban dos2unix colord xiccd neofetch spice-vdagent vlc samba make gcc build-essential minicom cutecom thunderbird bc -y
+apt install ftp tftp net-tools fail2ban dos2unix colord xiccd neofetch vlc samba make gcc build-essential minicom cutecom thunderbird bc pandoc -y
 apt install arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-theme thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman eject -y
+apt install libpcre3 cpuid cpuidtool cpuinfo gthumb catfish mousepad ntfs-3g tftpd-hpa dosfstools exfatprogs cifs-utils nfs-common gvfs gvfs-backends gvfs-fuse -y
 apt install ghostscript cmatrix xarchiver exo-utils ffmpeg gparted synaptic stacer gimp mirage typecatcher baobab util-linux onboard screenkey xdotool libreoffice -y
-apt install libpcre3 cpuid cpuidtool cpuinfo pandoc gthumb catfish mousepad ntfs-3g tftpd-hpa dosfstools exfatprogs cifs-utils nfs-common gvfs gvfs-backends gvfs-fuse -y
 
 apt install xfce4-panel xfce4-appmenu-plugin xfce4-appfinder xfce4-terminal xfce4-screenshooter xfce4-power-manager xfce4-pulseaudio-plugin xfce4-battery-plugin --no-install-recommends -y
 apt install policykit-1-gnome gnome-software gnome-system-monitor gnome-calendar network-manager-gnome network-manager-openvpn gnome-disk-utility --no-install-recommends -y

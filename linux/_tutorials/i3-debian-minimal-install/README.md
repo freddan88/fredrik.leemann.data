@@ -102,7 +102,9 @@ Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.
 cd && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/shells/zshrc.txt
 ```
 
-Source: 
+Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/configurations/shells/zshrc.txt)
+
+> Tip: You can configure autostart of x in this file by changing: autostart_x to 1
 
 ----
 
@@ -124,6 +126,20 @@ curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main
 
 Source: [006_download_webdev_scripts.sh](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/scripts/i3-debian-minimal-install/006_download_webdev_scripts.sh)
 
+**Install NVM (Node Version Manager)**
+
+```bash
+cd /tmp && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+```
+
+Source: [GitHub - nvm-sh/nvm: Node Version Manager](https://github.com/nvm-sh/nvm)
+
+> Reboot your computer with the command `sudo reboot` and run below after
+
+```bash
+nvm install --lts && nvm alias default node && nvm use node
+```
+
 **Disabling the graphical login**
 
 ```bash
@@ -133,6 +149,26 @@ sudo update-rc.d slim disable
 **Configure Debian to log in automatically through cli**
 
 [unix.stackexchange.com - automatically-login-on-debian-9-2-1-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
+
+#### My favorite linux games
+
+```bash
+sudo apt install openarena 0ad warzone2100 frozen-bubble hedgewars supertux supertuxkart quadrapassel xmoto pinball pinball-table-gnu pinball-table-hurd gnome-nibbles teeworlds -y
+```
+
+**Install virtualbox guest extension if you are using a VM in virtualbox**
+
+> This will only prepare for installation you need to install from media yourself
+
+```bash
+sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
+```
+
+**Install and start spice-vdagent if you are using a VM in example KVM**
+
+```bash
+sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo systemctl start spice-vdagent 
+```
 
 ---
 
