@@ -23,18 +23,18 @@
 - Go with a bare-bone installation with no desktop environment
 
 - Keep the root-password blank. By doing this it will:
-  
+
   - Add your user to the sudoers-group automatically
-  
+
   - Disable the root-account for the new installation
-  
+
   **_Screenshot from the software selection screen during installation_**
 
 > Select SSH server and standard system utilities or only standard system utilities
 
 ![](images/i3-debian-minimal-software-selection-screen.png)
 
- **Check your sources**
+**Check your sources**
 
 > After first boot you may need to append 'main contrib non-free' in sources.list
 
@@ -170,8 +170,10 @@ sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 
 **Install and start spice-vdagent if you are using a VM in example KVM**
 
+> This service needs to autostart through the i3-configuration file
+
 ```bash
-sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo systemctl start spice-vdagent
+sudo apt install spice-vdagent -y && sudo /etc/init.d/spice-vdagent start
 ```
 
 ---
