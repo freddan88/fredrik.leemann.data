@@ -1,4 +1,4 @@
-## My Debian i3 Minimal Installation
+### My Debian i3 Minimal Installation
 
 [License: MIT](https://choosealicense.com/licenses/mit)
 
