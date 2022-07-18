@@ -119,10 +119,10 @@ sudo update-rc.d slim disable
 | Terminal | Cascadia Mono SemiBold 12 |
 | System   | Ubuntu Medium 11          |
 
-| Debian i3 Minimal - Desktop 01                       | Debian i3 Minimal - Desktop 02                              |
-| ---------------------------------------------------- | ----------------------------------------------------------- |
-| ![](images/i3-debian-minimal-desktop-example-01.png) | ![](images/i3-debian-minimal-software-selection-screen.png) |
+| Debian i3 Minimal - Desktop 01                       | Debian i3 Minimal - Desktop 02                       |
+| ---------------------------------------------------- | ---------------------------------------------------- |
+| ![](images/i3-debian-minimal-desktop-example-01.png) | ![](images/i3-debian-minimal-desktop-example-02.png) |
 
-| Debian i3 Minimal - Login-screen 01                         | Debian i3 Minimal - Login-screen 02                         |
-| ----------------------------------------------------------- | ----------------------------------------------------------- |
-| ![](images/i3-debian-minimal-software-selection-screen.png) | ![](images/i3-debian-minimal-software-selection-screen.png) |
+| Debian i3 Minimal - Login-screen 01               | Debian i3 Minimal - Login-screen 02                         |
+| ------------------------------------------------- | ----------------------------------------------------------- |
+| ![](images/i3-debian-minimal-graphical-login.png) | ![](images/i3-debian-minimal-software-selection-screen.png) |
