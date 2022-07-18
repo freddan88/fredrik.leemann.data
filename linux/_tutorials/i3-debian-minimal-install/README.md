@@ -30,7 +30,7 @@ https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/cur
   
   **_Screenshot from the software selection screen during installation_**
 
-> Select SSH and standard system utilities or only standard system utilities
+> Select SSH server and standard system utilities or only standard system utilities
 
 ![](images/i3-debian-minimal-software-selection-screen.png)
 
@@ -39,7 +39,7 @@ https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/cur
 After the installation you shall login through the cli and run the below commands:
 
 ```bash
-sudo apt update && sudo apt install curl sudo -y
+sudo apt update && sudo apt install curl sudo wget -y
 ```
 
 > If sudo ain´t working you need to login as root and add your user to the group
@@ -80,7 +80,31 @@ curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main
 
 Source: [004_update_i3_config_min.sh](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/scripts/i3-debian-minimal-install/004_update_i3_config_min.sh)
 
----
+**Install Oh My Zsh**
+
+```bash
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+```
+
+Source: [https://ohmyz.sh](https://ohmyz.sh)
+
+**Install Extension for Oh My Zsh**
+
+```bash
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+```
+
+Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.com/zsh-users/zsh-autosuggestions)
+
+**Download and update your zsh-config**
+
+```bash
+cd $HOME && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/shell/zshrc.txt
+```
+
+Source: 
+
+----
 
 #### Extra (Optional)
 
@@ -114,10 +138,10 @@ sudo update-rc.d slim disable
 
 #### Example desktop configurations
 
-| Fonts    |                           |
-| -------- | ------------------------- |
-| Terminal | Cascadia Mono SemiBold 12 |
-| System   | Ubuntu Medium 11          |
+| Fonts     |                           |
+| --------- | ------------------------- |
+| Terminal: | Cascadia Mono SemiBold 12 |
+| System:   | Ubuntu Medium 11          |
 
 | Debian i3 Minimal - Desktop 01                       | Debian i3 Minimal - Desktop 02                       |
 | ---------------------------------------------------- | ---------------------------------------------------- |
