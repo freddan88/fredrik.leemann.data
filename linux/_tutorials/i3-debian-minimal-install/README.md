@@ -23,16 +23,22 @@
 - Go with a bare-bone installation with no desktop environment
 
 - Keep the root-password blank. By doing this it will:
-
+  
   - Add your user to the sudoers-group automatically
-
+  
   - Disable the root-account for the new installation
-
+  
   **_Screenshot from the software selection screen during installation_**
 
 > Select SSH server and standard system utilities or only standard system utilities
 
 ![](images/i3-debian-minimal-software-selection-screen.png)
+
+ **Check your sources**
+
+> After first boot you may need to append 'main contrib non-free' in sources.list
+
+![](images/i3-debian-minimal-apt-sources.png)
 
 ### Install software
 
@@ -181,9 +187,9 @@ sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo
 | ---------------------------------------------------- | ---------------------------------------------------- |
 | ![](images/i3-debian-minimal-desktop-example-01.png) | ![](images/i3-debian-minimal-desktop-example-02.png) |
 
-| Debian i3 Minimal - Login-screen 01               | Debian i3 Minimal - Login-screen 02                         |
-| ------------------------------------------------- | ----------------------------------------------------------- |
-| ![](images/i3-debian-minimal-graphical-login.png) | ![](images/i3-debian-minimal-software-selection-screen.png) |
+| Debian i3 Minimal - Login-screen 01               | Debian i3 Minimal - Login-screen 02         |
+| ------------------------------------------------- | ------------------------------------------- |
+| ![](images/i3-debian-minimal-graphical-login.png) | ![](images/i3-debian-minimal-cli-login.png) |
 
 ### Links and resources
 
