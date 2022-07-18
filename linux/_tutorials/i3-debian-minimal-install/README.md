@@ -1,4 +1,4 @@
-### My Debian i3 Minimal Installation
+## My Debian i3 Minimal Installation
 
 [License: MIT](https://choosealicense.com/licenses/mit)
 
@@ -10,31 +10,31 @@
 
 **Tested on:**
 
-- Debian Linux 11 (bullseye) 64Bit (nonFree Software)
+-   Debian Linux 11 (bullseye) 64Bit (nonFree Software)
 
 ---
 
-**1. Download the non edu-version of debian from this link**
+**Download the non edu-version of debian from this link**
 
 [unofficial-non-free-netinst-cd-including-firmware-debian-linux](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current/amd64/iso-cd/)
 
-**2. Install Debian on your computer**
+**Install Debian on your computer**
 
-- Go with a bare-bone installation with no desktop environment
+-   Go with a bare-bone installation with no desktop environment
 
-- Keep the root-password blank. By doing this it will:
-  
-  - Add your user to the sudoers-group automatically
-  
-  - Disable the root-account for the new installation
-  
-  **_Screenshot from the software selection screen during installation_**
+-   Keep the root-password blank. By doing this it will:
+
+    -   Add your user to the sudoers-group automatically
+
+    -   Disable the root-account for the new installation
+
+    **_Screenshot from the software selection screen during installation_**
 
 > Select SSH server and standard system utilities or only standard system utilities
 
 ![](images/i3-debian-minimal-software-selection-screen.png)
 
-**3. Install software from cli**
+### Install software
 
 After the installation you shall login through the cli and run the below commands:
 
@@ -106,7 +106,7 @@ Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/
 
 > Tip: You can configure autostart of x in this file by changing: autostart_x to 1
 
-----
+---
 
 ### Extra (Optional)
 
@@ -167,7 +167,7 @@ sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 **Install and start spice-vdagent if you are using a VM in example KVM**
 
 ```bash
-sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo systemctl start spice-vdagent 
+sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo systemctl start spice-vdagent
 ```
 
 ---
@@ -189,11 +189,11 @@ sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo
 
 ### Links and resources
 
-- [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
-- [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
-- [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
-- [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
-- [How to Change the Default Terminal in Ubuntu - FOSS](https://itsfoss.com/change-default-terminal-ubuntu)
-- [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
-- [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
-- [http://www.secretmaryo.org](http://www.secretmaryo.org)
+-   [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
+-   [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
+-   [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
+-   [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
+-   [How to Change the Default Terminal in Ubuntu - FOSS](https://itsfoss.com/change-default-terminal-ubuntu)
+-   [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
+-   [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
+-   [http://www.secretmaryo.org](http://www.secretmaryo.org)
