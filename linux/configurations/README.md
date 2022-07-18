@@ -1,1 +1,1 @@
-#### Configurations for various linux distributions
+#### This folder contains configurations for various linux software

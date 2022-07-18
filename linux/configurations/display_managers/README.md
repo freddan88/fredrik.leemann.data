@@ -1,1 +1,1 @@
-#### Configurations and other files for display managers (login screens) in linux
+#### This folder contains configurations and other files for display managers (login screens) in linux

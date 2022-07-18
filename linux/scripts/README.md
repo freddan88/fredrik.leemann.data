@@ -1,1 +1,1 @@
-#### Scripts for various linux distributions
+#### This folder contains scripts for various linux distributions
