@@ -186,3 +186,14 @@ sudo apt install spice-vdagent -y && sudo systemctl enable spice-vdagent && sudo
 | Debian i3 Minimal - Login-screen 01               | Debian i3 Minimal - Login-screen 02                         |
 | ------------------------------------------------- | ----------------------------------------------------------- |
 | ![](images/i3-debian-minimal-graphical-login.png) | ![](images/i3-debian-minimal-software-selection-screen.png) |
+
+#### Links and resources
+
+- [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
+- [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
+- [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
+- [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
+- [How to Change the Default Terminal in Ubuntu - FOSS](https://itsfoss.com/change-default-terminal-ubuntu)
+- [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
+- [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
+- [http://www.secretmaryo.org](http://www.secretmaryo.org)
