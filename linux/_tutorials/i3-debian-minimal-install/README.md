@@ -83,7 +83,7 @@ Source: [004_update_i3_config_min.sh](https://github.com/freddan88/fredrik.leema
 **Install Oh My Zsh**
 
 ```bash
-curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh | sh
 ```
 
 Source: [https://ohmyz.sh](https://ohmyz.sh)
