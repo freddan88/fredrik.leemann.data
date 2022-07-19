@@ -4,6 +4,7 @@ url_config_i3="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/
 url_config_i3_status="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/i3/i3_status_configuration.txt"
 url_styles_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3/i3keybindings.css"
 url_script_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3/i3keybindings.sh"
+url_xfce4_configurations="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/configurations/xfce4.zip"
 url_home_templates="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip"
 
 ################################
@@ -51,8 +52,17 @@ cd "$dir_home_templates" && unzip -o templates.zip
 cd "$dir_home_templates" && rm -f templates.zip
 
 echo " "
-
 ls -al "$dir_home_templates"
+
+rm -rf $HOME/.config/xfce4
+cd $HOME/.config
+
+echo " "
+wget $url_xfce4_configurations
+
+echo " "
+unzip -o xfce4.zip
+rm -f xfce4.zip
 
 echo " "
 echo "DONE!"
