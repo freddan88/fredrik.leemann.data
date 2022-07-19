@@ -45,6 +45,7 @@ echo " "
 echo "DOWNLOADING AND INSTALLING TEMPLATES FOR THE FILEBROWSER"
 echo " "
 
+cd $HOME
 dir_home_templates=$(xdg-user-dir TEMPLATES)
 
 cd $dir_home_templates && wget $url_home_templates
