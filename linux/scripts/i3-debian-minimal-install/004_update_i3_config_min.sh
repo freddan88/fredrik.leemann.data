@@ -47,22 +47,24 @@ echo " "
 
 dir_home_templates=$(xdg-user-dir TEMPLATES)
 
-cd "$dir_home_templates" && wget "$url_home_templates"
-cd "$dir_home_templates" && unzip -o templates.zip
-cd "$dir_home_templates" && rm -f templates.zip
+cd $dir_home_templates && wget $url_home_templates
+cd $dir_home_templates && unzip -o templates.zip
+cd $dir_home_templates && rm -f templates.zip
 
 echo " "
-ls -al "$dir_home_templates"
-
-rm -rf $HOME/.config/xfce4
-cd $HOME/.config
+ls -al $dir_home_templates
 
 echo " "
-wget $url_xfce4_configurations
+echo "DOWNLOADING AND INSTALLING CONFIGURATION FOR XFCE4"
+echo " "
+
+cd $HOME/.config && rm -rf xfce4
+cd $HOME/.config && wget $url_xfce4_configurations
+cd $HOME/.config && unzip -o xfce4.zip
+cd $HOME/.config && rm -f xfce4.zip
 
 echo " "
-unzip -o xfce4.zip
-rm -f xfce4.zip
+ls -al $HOME/.config/xfce4
 
 echo " "
 echo "DONE!"
