@@ -216,12 +216,12 @@ _i3keybindings.sh will automaticaly run on every login and restart_
 
 _Please read the source of the scripts above to get a full list of programs_
 
-- [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
-- [xfce4-panel-profiles](http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb)
+- [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb "Latest Stable Build of Google's Web Browser for deb-linux 64Bit")
+- [xfce4-panel-profiles](http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb "Save/restore xfce4-panel Configurations")
 - [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl "Control pulseaudio volume from the shell or keyboard")
 - [marktext](https://github.com/marktext/marktext "Edit and Create Markdown-documents")
 - [mongodb-compass](https://www.mongodb.com/try/download/compass "Manage MongoDB Databases")
-- [Visual Studio Code](https://code.visualstudio.com)
+- [Visual Studio Code](https://code.visualstudio.com "My Preferred Code Editor")
 - [DBeaver](https://dbeaver.io/download "Universal Database Management Tool")
 
 ### Links and resources
