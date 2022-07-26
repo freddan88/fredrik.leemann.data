@@ -212,17 +212,17 @@ _i3keybindings.sh will automaticaly run on every login and restart_
 | <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>p</kbd> | poweroff          | Shutdown system                |
 | <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd> | reboot            | Reboot system                  |
 
-### ### Some of the programs
+### Some of the programs
 
 _Please read the source of the scripts above to get a full list of programs_
 
 - [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
 - [xfce4-panel-profiles](http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb)
-- [pulseaudio-ctl]([Control pulseaudio volume from the shell or keyboard](https://github.com/graysky2/pulseaudio-ctl))
-- [marktext]([Edit and Create Markdown-documents](https://github.com/marktext/marktext))
-- [mongodb-compass]([Manage MongoDB Databases](https://www.mongodb.com/try/download/compass))
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [DBeaver]([Universal Database Management Tool](https://dbeaver.io/download/))
+- [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl "Control pulseaudio volume from the shell or keyboard")
+- [marktext](https://github.com/marktext/marktext "Edit and Create Markdown-documents")
+- [mongodb-compass](https://www.mongodb.com/try/download/compass "Manage MongoDB Databases")
+- [Visual Studio Code](https://code.visualstudio.com)
+- [DBeaver](https://dbeaver.io/download "Universal Database Management Tool")
 
 ### Links and resources
 
