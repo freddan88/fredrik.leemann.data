@@ -149,11 +149,11 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -theme $rofiTheme
 bindsym $mod+Return exec --no-startup-id xfce4-terminal
 bindsym $mod+BackSpace exec --no-startup-id catfish
 
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Ctrl+$alt+0 restart
-
 # Reload the configuration file for i3-wm
-bindsym Ctrl+$alt+BackSpace reload
+bindsym Ctrl+$alt+0 reload
+
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym Ctrl+$alt+BackSpace restart
 
 # Edit the configuration file for i3-wm
 bindsym Ctrl+$alt+Return exec --no-startup-id mousepad $HOME/.config/i3/config
