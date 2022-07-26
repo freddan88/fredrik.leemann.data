@@ -176,6 +176,10 @@ sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 sudo apt install spice-vdagent -y && sudo /etc/init.d/spice-vdagent start
 ```
 
+**Speed up apt-package-manager using the nala-project**
+
+Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
+
 ---
 
 ### Example desktop configurations
@@ -192,6 +196,33 @@ sudo apt install spice-vdagent -y && sudo /etc/init.d/spice-vdagent start
 | Debian i3 Minimal - Login-screen 01               | Debian i3 Minimal - Login-screen 02         |
 | ------------------------------------------------- | ------------------------------------------- |
 | ![](images/i3-debian-minimal-graphical-login.png) | ![](images/i3-debian-minimal-cli-login.png) |
+
+### Important keybindings
+
+_i3keybindings.sh will automaticaly run on every login or restart_
+
+| Keybinding                                      | Program / Scriipt | Description                    |
+| ----------------------------------------------- | ----------------- | ------------------------------ |
+| <kbd>super</kbd> + <kbd>enter</kbd>             | Xfce4 terminal    | Open a new terminal-window     |
+| <kbd>super</kbd> + <kbd>space</kbd>             | xfce4-appfinder   | Search for applications        |
+| <kbd>super</kbd> + <kbd>q</kbd>                 | kill              | Close focused window           |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>g</kbd> | i3keybindings.sh  | Generate a list of keybindings |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>k</kbd> | google-chrome     | Read all i3 keybindings        |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> | slimlock          | Logout from system             |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>p</kbd> | poweroff          | Shutdown system                |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd> | reboot            | Reboot system                  |
+
+### ### Some of the programs
+
+_Please read the source of the scripts above to get a full list of programs_
+
+- [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
+- [xfce4-panel-profiles](http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb)
+- [pulseaudio-ctl]([Control pulseaudio volume from the shell or keyboard](https://github.com/graysky2/pulseaudio-ctl))
+- [marktext]([Edit and Create Markdown-documents](https://github.com/marktext/marktext))
+- [mongodb-compass]([Manage MongoDB Databases](https://www.mongodb.com/try/download/compass))
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [DBeaver]([Universal Database Management Tool](https://dbeaver.io/download/))
 
 ### Links and resources
 
