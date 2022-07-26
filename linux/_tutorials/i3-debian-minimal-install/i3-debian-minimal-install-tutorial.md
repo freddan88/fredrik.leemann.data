@@ -208,9 +208,9 @@ _i3keybindings.sh will automaticaly run on every login and restart_
 | <kbd>super</kbd> + <kbd>q</kbd>                 | kill              | Close focused window           |
 | <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>g</kbd> | i3keybindings.sh  | Generate a list of keybindings |
 | <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>k</kbd> | google-chrome     | Read all i3 keybindings        |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> | slimlock          | Logout from system             |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>p</kbd> | poweroff          | Shutdown system                |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd> | reboot            | Reboot system                  |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> | slimlock          | Logout from the system         |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>p</kbd> | poweroff          | Shutdown the system            |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd> | reboot            | Reboot the system              |
 
 ### Some of the programs
 
