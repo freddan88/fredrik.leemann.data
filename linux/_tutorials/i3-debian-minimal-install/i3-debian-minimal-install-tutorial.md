@@ -199,7 +199,7 @@ Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 
 ### Important keybindings
 
-_i3keybindings.sh will automaticaly run on every login or restart_
+_i3keybindings.sh will automaticaly run on every login and restart_
 
 | Keybinding                                      | Program / Scriipt | Description                    |
 | ----------------------------------------------- | ----------------- | ------------------------------ |
