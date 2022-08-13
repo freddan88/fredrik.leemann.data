@@ -9,7 +9,8 @@
   </resistance>
   <focus>
     <focusNew>yes</focusNew>
-    <!-- always try to focus new windows when they appear. other rules do apply -->
+    <!-- always try to focus new windows when they appear. other rules do
+       apply -->
     <followMouse>no</followMouse>
     <!-- move focus to a window when you move the mouse into it -->
     <focusLast>yes</focusLast>
@@ -158,7 +159,7 @@
      cases. -->
   <margins>
     <top>0</top>
-    <bottom>26</bottom>
+    <bottom>27</bottom>
     <left>0</left>
     <right>0</right>
   </margins>
@@ -182,115 +183,53 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <!-- Keybindings for system-actions -->
-    <keybind key="C-A-p">
-      <action name="Execute">
-        <command>systemctl poweroff</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-r">
-      <action name="Execute">
-        <command>systemctl reboot</command>
-      </action>
-    </keybind>
-    <keybind key="C-A-l">
-      <action name="Execute">
-        <command>slimlock</command>
-      </action>
-    </keybind>
     <!-- Keybindings for desktop switching -->
-    <keybind key="W-C-Left">
+    <keybind key="C-A-Left">
       <action name="GoToDesktop">
         <to>left</to>
         <wrap>yes</wrap>
       </action>
     </keybind>
-    <keybind key="W-C-Right">
+    <keybind key="C-A-Right">
       <action name="GoToDesktop">
         <to>right</to>
         <wrap>yes</wrap>
       </action>
     </keybind>
-    <keybind key="W-C-Up">
+    <keybind key="C-A-Up">
       <action name="GoToDesktop">
         <to>up</to>
         <wrap>yes</wrap>
       </action>
     </keybind>
-    <keybind key="W-C-Down">
+    <keybind key="C-A-Down">
       <action name="GoToDesktop">
         <to>down</to>
         <wrap>yes</wrap>
       </action>
     </keybind>
-    <keybind key="W-A-Left">
+    <keybind key="S-A-Left">
       <action name="SendToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-A-Right">
+    <keybind key="S-A-Right">
       <action name="SendToDesktop">
         <to>right</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-A-Up">
+    <keybind key="S-A-Up">
       <action name="SendToDesktop">
         <to>up</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-A-Down">
+    <keybind key="S-A-Down">
       <action name="SendToDesktop">
         <to>down</to>
         <wrap>no</wrap>
-      </action>
-    </keybind>
-    <!-- move window to workspace 1 through 9-->
-    <keybind key="W-C-1">
-      <action name="Execute">
-        <command>wmctrl -r :ACTIVE: -t 0</command>
-      </action>
-    </keybind>
-    <keybind key="W-C-2">
-      <action name="Execute">
-        <command>wmctrl -r :ACTIVE: -t 1</command>
-      </action>
-    </keybind>
-    <keybind key="W-C-3">
-      <action name="Execute">
-        <command>wmctrl -r :ACTIVE: -t 2</command>
-      </action>
-    </keybind>
-    <keybind key="W-C-4">
-      <action name="Execute">
-        <command>wmctrl -r :ACTIVE: -t 3</command>
-      </action>
-    </keybind>
-    <keybind key="W-C-5">
-      <action name="Execute">
-        <command>wmctrl -r :ACTIVE: -t 4</command>
-      </action>
-    </keybind>
-    <keybind key="W-C-6">
-      <action name="Execute">
-        <command>wmctrl -r :ACTIVE: -t 5</command>
-      </action>
-    </keybind>
-    <keybind key="W-C-7">
-      <action name="Execute">
-        <command>wmctrl -r :ACTIVE: -t 6</command>
-      </action>
-    </keybind>
-    <keybind key="W-C-8">
-      <action name="Execute">
-        <command>wmctrl -r :ACTIVE: -t 7</command>
-      </action>
-    </keybind>
-    <keybind key="W-C-9">
-      <action name="Execute">
-        <command>wmctrl -r :ACTIVE: -t 8</command>
       </action>
     </keybind>
     <keybind key="W-1">
@@ -338,12 +277,17 @@
         <to>9</to>
       </action>
     </keybind>
-    <keybind key="W-0">
+    <keybind key="W-d">
       <action name="ToggleShowDesktop" />
     </keybind>
     <!-- Keybindings for windows -->
     <keybind key="A-F4">
       <action name="Close" />
+    </keybind>
+    <keybind key="A-Escape">
+      <action name="Lower" />
+      <action name="FocusToBottom" />
+      <action name="Unfocus" />
     </keybind>
     <keybind key="A-space">
       <action name="ShowMenu">
@@ -351,11 +295,6 @@
       </action>
     </keybind>
     <!-- Keybindings for window switching -->
-    <keybind key="W-Tab">
-      <action name="Execute">
-        <command>rofi -show window -theme /usr/share/rofi/themes/Pop-Dark.rasi</command>
-      </action>
-    </keybind>
     <keybind key="A-Tab">
       <action name="NextWindow">
         <finalactions>
@@ -406,7 +345,17 @@
         <direction>down</direction>
       </action>
     </keybind>
-    <!-- Launch xfce4-screenshooter when Print is pressed -->
+    <!-- Keybindings for running applications -->
+    <keybind key="W-e">
+      <action name="Execute">
+        <startupnotify>
+          <enabled>true</enabled>
+          <name>Konqueror</name>
+        </startupnotify>
+        <command>kfmclient openProfile filemanagement</command>
+      </action>
+    </keybind>
+    <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
         <command>xfce4-screenshooter</command>
@@ -423,21 +372,6 @@
     <keybind key="W-space">
       <action name="Execute">
         <command>xfce4-appfinder</command>
-      </action>
-    </keybind>
-    <keybind key="W-f">
-      <action name="Execute">
-        <command>thunar</command>
-      </action>
-    </keybind>
-    <keybind key="W-w">
-      <action name="Execute">
-        <command>google-chrome</command>
-      </action>
-    </keybind>
-    <keybind key="W-c">
-      <action name="Execute">
-        <command>mousepad $HOME/.config/openbox/rc.xml</command>
       </action>
     </keybind>
     <keybind key="W-Left">
