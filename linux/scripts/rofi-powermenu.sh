@@ -4,7 +4,9 @@ option=$(printf "Logout\nReboot\nShutdown" | rofi -dmenu -i -theme /usr/share/ro
 
 case "$option" in
 "Logout")
-  openbox --exit
+  # openbox --exit
+  # systemctl restart display-manager
+  pkill x
   ;;
 "Reboot")
   systemctl reboot
