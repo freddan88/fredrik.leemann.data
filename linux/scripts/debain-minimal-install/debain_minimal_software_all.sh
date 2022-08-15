@@ -84,7 +84,7 @@ systemctl stop tftpd-hpa.service
 chown -R tftp:nogroup /srv/tftp 2>/dev/null
 
 echo " "
-echo "INSTALLING FONTS" && sleep 2
+echo "INSTALLING EXTRA FONTS" && sleep 2
 echo " "
 
 apt install fonts-cascadia-code fonts-cantarell -y
