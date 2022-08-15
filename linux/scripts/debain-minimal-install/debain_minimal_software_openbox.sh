@@ -19,3 +19,7 @@ apt update -qq
 apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
 
 apt install openbox obconf -y
+
+echo " "
+echo "DONE!"
+echo " "

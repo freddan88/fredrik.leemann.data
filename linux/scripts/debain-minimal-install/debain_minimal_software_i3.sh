@@ -19,3 +19,7 @@ apt update -qq
 apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
 
 apt install i3 i3status -y
+
+echo " "
+echo "DONE!"
+echo " "
