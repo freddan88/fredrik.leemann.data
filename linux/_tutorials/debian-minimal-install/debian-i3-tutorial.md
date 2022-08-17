@@ -58,7 +58,7 @@ usermod -aG sudo <YOUR_USER_NAME> && reboot
 
 ```bash
 url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debain-minimal-install"
-cd /tmp && wget $url/debian_root_minimal_software_all.sh
+cd /tmp && wget $url/debian_root_minimal_install_all.sh
 cd /tmp && wget $url/debian_user_update_config_all.sh
 cd /tmp && wget $url/debian_user_update_config_i3.sh
 ```
