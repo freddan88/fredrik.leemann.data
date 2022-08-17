@@ -65,7 +65,7 @@ cd /tmp && wget $url/debian_update_config_i3.sh
 
 Sources: [debain-minimal-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debain-minimal-install)
 
-**Run scripts to set-up base for minimal Debian installation**
+**Run scripts to install minimal Debian installation**
 
 ```bash
 cd /tmp && sudo chmod 764 debian*.sh && sudo ./debain_minimal_software_all.sh && sudo ./debian_update_config_all.sh && ./debian_update_config_i3.sh
