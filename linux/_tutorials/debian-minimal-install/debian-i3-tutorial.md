@@ -68,7 +68,7 @@ Sources: [debain-minimal-install-github](https://github.com/freddan88/fredrik.le
 **Run scripts to install minimal Debian installation**
 
 ```bash
-cd /tmp && sudo chmod 764 debian*.sh && sudo ./debian_root*.sh && ./debian_user*.sh
+cd /tmp && sudo chmod 764 debian*.sh && sudo ./debian_root*all.sh && ./debian_user*all.sh && ./debian_user*i3.sh
 ```
 
 **Install i3 window-manager on Debian**
