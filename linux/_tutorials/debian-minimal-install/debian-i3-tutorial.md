@@ -58,7 +58,7 @@ usermod -aG sudo <YOUR_USER_NAME> && reboot
 
 ```bash
 url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debain-minimal-install"
-cd /tmp && wget $url/debain_minimal_software_all.sh
+cd /tmp && wget $url/debian_minimal_software_all.sh
 cd /tmp && wget $url/debian_update_config_all.sh
 cd /tmp && wget $url/debian_update_config_i3.sh
 ```
@@ -68,7 +68,7 @@ Sources: [debain-minimal-install-github](https://github.com/freddan88/fredrik.le
 **Run scripts to install minimal Debian installation**
 
 ```bash
-cd /tmp && sudo chmod 764 debian*.sh && sudo ./debain_minimal_software_all.sh && ./debian_update_config*.sh
+cd /tmp && sudo chmod 764 debian*.sh && sudo ./debian_minimal_software_all.sh && ./debian_update_config*.sh
 ```
 
 **Install i3 window-manager on Debian**
