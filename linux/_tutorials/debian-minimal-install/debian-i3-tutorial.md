@@ -80,7 +80,7 @@ sudo apt install i3 i3status -y
 **Install Oh My Zsh**
 
 ```bash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cd /tmp && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 Source: [https://ohmyz.sh](https://ohmyz.sh)
@@ -105,13 +105,20 @@ Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/
 
 ### Extra (Optional)
 
-**Install web-developer software**
+<!-- **Download scripts to set-up webdev-software for Debian**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3-debian-minimal-install/005_software_webdev_deb.sh | sudo sh
+url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debain-minimal-install"
+cd /tmp && wget $url/debian_root_minimal_install_all.sh
 ```
 
-Source: [005_software_webdev_deb.sh](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/scripts/i3-debian-minimal-install/005_software_webdev_deb.sh)
+Sources: [debain-minimal-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debain-minimal-install)
+
+**Run scripts to install webdev-software for Debian**
+
+```bash
+cd /tmp && sudo chmod 764 debian*.sh && sudo ./debian_root*.sh && ./debian_user*.sh
+```
 
 **Download web-developer scripts**
 
@@ -119,7 +126,7 @@ Source: [005_software_webdev_deb.sh](https://github.com/freddan88/fredrik.leeman
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3-debian-minimal-install/006_download_webdev_scripts.sh | sudo sh
 ```
 
-Source: [006_download_webdev_scripts.sh](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/scripts/i3-debian-minimal-install/006_download_webdev_scripts.sh)
+Source: [006_download_webdev_scripts.sh](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/scripts/i3-debian-minimal-install/006_download_webdev_scripts.sh) -->
 
 **Install NVM (Node Version Manager)**
 
