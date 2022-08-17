@@ -57,7 +57,7 @@ usermod -aG sudo <YOUR_USER_NAME> && reboot
 **Download scripts to set-up base for minimal Debian installation**
 
 ```bash
-url='https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debain-minimal-install'
+url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debain-minimal-install"
 cd /tmp && wget $url/debain_minimal_software_all.sh
 cd /tmp && wget $url/debian_update_config_all.sh
 cd /tmp && wget $url/debian_update_config_i3.sh
