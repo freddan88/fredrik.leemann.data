@@ -22,6 +22,8 @@ echo " "
 echo "DOWNLOADING AND INSTALLING TEMPLATES FOR THE FILEBROWSER"
 echo " "
 
+/usr/bin/xdg-user-dirs-update
+
 cd $HOME
 dir_home_templates=$(xdg-user-dir TEMPLATES)
 
