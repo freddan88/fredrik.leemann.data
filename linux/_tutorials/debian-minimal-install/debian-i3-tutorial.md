@@ -74,6 +74,8 @@ cd /tmp && ./debian_user_update_config_all.sh
 cd /tmp && ./debian_user_update_config_i3.sh
 ```
 
+You can run `debian_user_update_config_all.sh` and `debian_user_update_config_i3.sh` again to update configurations
+
 **Install i3 window-manager on Debian**
 
 ```bash
