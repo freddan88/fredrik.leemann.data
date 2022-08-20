@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+url_nitrogen_config_wallpaper="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/nitrogen/bg-saved.cfg"
 url_xfce4_configurations="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/configurations/xfce4.zip"
 url_home_templates="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip"
 
@@ -13,6 +14,9 @@ if [ "$SUDO_USER" ]; then
   echo " "
   exit
 fi
+
+mkdir -p $HOME/.config/nitrogen && cd $HOME/.config/nitrogen
+wget -O bg-saved.cfg $url_nitrogen_config_wallpaper
 
 echo " "
 echo "DOWNLOADING AND ADDING TEMPLATES FOR THE FILEBROWSER" && sleep 2
