@@ -139,7 +139,7 @@ bindsym Ctrl+$alt+Delete --release exec --no-startup-id xkill
 bindsym Ctrl+$alt+Escape exec --no-startup-id gnome-system-monitor
 bindsym Ctrl+$alt+c exec --no-startup-id mousepad $HOME/.config/i3/config
 bindsym Ctrl+$alt+q exec --no-startup-id i3lock -c 000000
-bindsym Ctrl+$alt+l exec --no-startup-id slimlock
+bindsym Ctrl+$alt+l exec --no-startup-id dm-tool lock
 bindsym Ctrl+$alt+e exec --no-startup-id i3-msg exit
 bindsym Ctrl+$alt+p exec systemctl poweroff
 bindsym Ctrl+$alt+r exec systemctl reboot
