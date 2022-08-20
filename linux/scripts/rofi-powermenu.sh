@@ -1,16 +1,24 @@
 #!/usr/bin/env sh
 
-option=$(printf "Logout\nReboot\nShutdown" | rofi -dmenu -i -theme /usr/share/rofi/themes/Pop-Dark.rasi)
+option=$(printf "Lock\nLogout\nReboot\nShutdown" | rofi -dmenu -i -theme /usr/share/rofi/themes/Pop-Dark.rasi)
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
 case "$option" in
+"Lock")
+  dm-tool lock
+  ;;
 "Logout")
-  # openbox --exit
-  # systemctl restart display-manager
-  pkill x
+  wm=$(wmctrl -m | grep 'Name' | cut -d":" -f2)
+  if [[ "${wm}" == "Openbox" ]]; then
+    openbox --exit
+  elif [[ "${wm}" == "i3" ]]; then
+    i3-msg exit
+  else
+    pkill x
+  fi
   ;;
 "Reboot")
   systemctl reboot
