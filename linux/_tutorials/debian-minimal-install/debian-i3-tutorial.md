@@ -104,7 +104,7 @@ cd && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann
 
 Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/configurations/shells/zshrc.txt)
 
-> Tip: You can configure autostart of x in this file by changing: autostart_x to 1
+> If the x-server ain´t running you can configure it to autostart in this file by changing: autostart_x to 1
 
 ### Extra (Optional)
 
