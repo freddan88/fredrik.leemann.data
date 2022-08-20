@@ -68,7 +68,10 @@ Sources: [debain-minimal-install-github](https://github.com/freddan88/fredrik.le
 **Run scripts to install minimal Debian installation**
 
 ```bash
-cd /tmp && sudo chmod 764 debian*.sh && sudo ./debian_root*all.sh && ./debian_user*all.sh && ./debian_user*i3.sh
+cd /tmp && sudo chmod 764 debian*.sh
+cd /tmp && sudo ./debain_root_webdev_scripts_all.sh
+cd /tmp && ./debian_user_update_config_all.sh
+cd /tmp && ./debian_user_update_config_i3.sh
 ```
 
 **Install i3 window-manager on Debian**
@@ -105,7 +108,7 @@ Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/
 
 ### Extra (Optional)
 
-<!-- **Download scripts to set-up webdev-software for Debian**
+**Download scripts to set-up webdev-software for Debian**
 
 ```bash
 url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debain-minimal-install"
@@ -126,7 +129,7 @@ cd /tmp && sudo chmod 764 debian*.sh && sudo ./debian_root*.sh && ./debian_user*
 curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3-debian-minimal-install/006_download_webdev_scripts.sh | sudo sh
 ```
 
-Source: [006_download_webdev_scripts.sh](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/scripts/i3-debian-minimal-install/006_download_webdev_scripts.sh) -->
+Source: [006_download_webdev_scripts.sh](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/scripts/i3-debian-minimal-install/006_download_webdev_scripts.sh)
 
 **Install NVM (Node Version Manager)**
 
