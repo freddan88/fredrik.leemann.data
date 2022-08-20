@@ -193,9 +193,14 @@
         <command>systemctl reboot</command>
       </action>
     </keybind>
+    <keybind key="C-A-e">
+      <action name="Execute">
+        <command>openbox --exit</command>
+      </action>
+    </keybind>
     <keybind key="C-A-l">
       <action name="Execute">
-        <command>slimlock</command>
+        <command>dm-tool lock</command>
       </action>
     </keybind>
     <!-- Keybindings for desktop switching -->
