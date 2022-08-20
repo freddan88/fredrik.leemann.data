@@ -6,4 +6,4 @@
 /usr/bin/nm-applet &
 nitrogen --restore &
 picom -b &
-xfce4-panel-profiles load "$HOME"/.local/share/xfce4-panel-profiles/openbox-xfce4-panel-01.tar.bz2
+xfce4-panel-profiles load "$HOME"/.local/share/xfce4-panel-profiles/openbox-xfce4-panel.tar.bz2
