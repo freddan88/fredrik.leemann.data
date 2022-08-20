@@ -39,6 +39,7 @@ exec_always --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
 exec_always --no-startup-id /usr/bin/xfce4-panel
 exec --no-startup-id /usr/bin/xfce4-power-manager
 exec --no-startup-id /usr/bin/nm-applet
+exec --no-startup-id xfce4-panel-profiles load $HOME/.local/share/xfce4-panel-profiles/i3-xfce4-panel-01.tar.bz2
 
 # ----------
 # Appereance
