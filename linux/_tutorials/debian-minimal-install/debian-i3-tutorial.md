@@ -108,28 +108,25 @@ Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/
 
 ### Extra (Optional)
 
-**Download scripts to set-up webdev-software for Debian**
+**Download scripts to set-up webdev-utilities for Debian**
 
 ```bash
-url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debain-minimal-install"
-cd /tmp && wget $url/debian_root_minimal_install_all.sh
+url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debian-webdev-install"
+cd /tmp && wget $url/debian_root_webdev_install_all.sh
+cd /tmp && wget $url/debain_root_webdev_scripts_all.sh
 ```
 
-Sources: [debain-minimal-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debain-minimal-install)
+Sources: [debian-webdev-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debian-webdev-install)
 
-**Run scripts to install webdev-software for Debian**
+**Run scripts to install webdev-utilities for Debian**
 
 ```bash
-cd /tmp && sudo chmod 764 debian*.sh && sudo ./debian_root*.sh && ./debian_user*.sh
+cd /tmp && sudo chmod 764 debian*.sh
+cd /tmp && sudo ./debian_root_webdev_install_all.sh
+cd /tmp && sudo ./debain_root_webdev_scripts_all.sh
 ```
 
-**Download web-developer scripts**
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3-debian-minimal-install/006_download_webdev_scripts.sh | sudo sh
-```
-
-Source: [006_download_webdev_scripts.sh](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/scripts/i3-debian-minimal-install/006_download_webdev_scripts.sh)
+You can run `debain_root_webdev_scripts_all.sh` again to update those scripts
 
 **Install NVM (Node Version Manager)**
 
@@ -145,23 +142,13 @@ Source: [GitHub - nvm-sh/nvm: Node Version Manager](https://github.com/nvm-sh/nv
 nvm install --lts && nvm alias default node && nvm use node
 ```
 
-**Disabling the graphical login**
-
-```bash
-sudo update-rc.d slim disable
-```
-
-**Configure Debian to log in automatically through cli**
-
-[unix.stackexchange.com - automatically-login-on-debian-9-2-1-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
-
 **My favorite linux games**
 
 ```bash
 sudo apt install openarena 0ad warzone2100 frozen-bubble hedgewars supertux supertuxkart quadrapassel xmoto pinball pinball-table-gnu pinball-table-hurd gnome-nibbles teeworlds -y
 ```
 
-**Install virtualbox guest extension if you are using a VM in virtualbox**
+**Install virtualbox guest extension if you are using a VM through virtualbox**
 
 > This will only prepare for installation you need to install from media yourself
 
@@ -185,6 +172,11 @@ Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 
 ### Example desktop configurations
 
+| Theme   |                      |
+| ------- | -------------------- |
+| Icons:  | elementary Xfce dark |
+| System: | Arc-Dark             |
+
 | Fonts     |                           |
 | --------- | ------------------------- |
 | Terminal: | Cascadia Mono SemiBold 12 |
@@ -194,24 +186,20 @@ Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 | ---------------------------------------------------- | ---------------------------------------------------- |
 | ![](images/i3-debian-minimal-desktop-example-01.png) | ![](images/i3-debian-minimal-desktop-example-02.png) |
 
-| Debian i3 Minimal - Login-screen 01               | Debian i3 Minimal - Login-screen 02         |
-| ------------------------------------------------- | ------------------------------------------- |
-| ![](images/i3-debian-minimal-graphical-login.png) | ![](images/i3-debian-minimal-cli-login.png) |
-
 ### Important keybindings
 
-_i3keybindings.sh will automaticaly run on every login and restart_
+_i3keybindings.sh will automatically run on every login and restart_
 
-| Keybinding                                      | Program / Scriipt | Description                    |
-| ----------------------------------------------- | ----------------- | ------------------------------ |
-| <kbd>super</kbd> + <kbd>enter</kbd>             | Xfce4 terminal    | Open a new terminal-window     |
-| <kbd>super</kbd> + <kbd>space</kbd>             | xfce4-appfinder   | Search for applications        |
-| <kbd>super</kbd> + <kbd>q</kbd>                 | kill              | Close focused window           |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>g</kbd> | i3keybindings.sh  | Generate a list of keybindings |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>k</kbd> | google-chrome     | Read all i3 keybindings        |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> | slimlock          | Logout from the system         |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>p</kbd> | poweroff          | Shutdown the system            |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd> | reboot            | Reboot the system              |
+| Keybinding                                      | Program / Scriipt    | Description                    |
+| ----------------------------------------------- | -------------------- | ------------------------------ |
+| <kbd>super</kbd> + <kbd>enter</kbd>             | Xfce4 terminal       | Open a new terminal-window     |
+| <kbd>super</kbd> + <kbd>space</kbd>             | xfce4-appfinder      | Search for applications        |
+| <kbd>super</kbd> + <kbd>q</kbd>                 | kill                 | Close focused window           |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>g</kbd> | i3keybindings.sh     | Generate a list of keybindings |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>k</kbd> | google-chrome + keys | Read all i3 keybindings        |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> | slimlock             | Logout from the system         |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>p</kbd> | poweroff             | Shutdown the system            |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd> | reboot               | Reboot the system              |
 
 ### Some of the programs
 
@@ -227,6 +215,7 @@ _Please read the source of the scripts above to get a full list of programs_
 
 ### Links and resources
 
+- [unix.stackexchange.com - automatically-login-on-debian-9-2-1-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
 - [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
 - [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
 - [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
