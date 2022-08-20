@@ -11,6 +11,8 @@ if [ "$SUDO_USER" ]; then
   exit
 fi
 
+# apt install openbox obconf -y
+
 echo " "
 echo "UPDATING OPENBOX CONFIGS" && sleep 2
 echo " "

@@ -5,6 +5,7 @@ url_xfce_panel_profiles="http://ftp.ports.debian.org/debian-ports/pool/main/x/xf
 url_pulseaudio_ctl="https://github.com/graysky2/pulseaudio-ctl/archive/refs/tags/v1.70.zip"
 url_jetbrains_mono_fonts="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip"
 url_jetbrains_mono_fonts_nerd="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip"
+url_lightdm_slick_config="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/slick-greeter.conf"
 url_google_fonts="https://github.com/google/fonts/archive/main.tar.gz"
 
 ################################
@@ -66,7 +67,7 @@ echo " "
 sudo apt remove make gcc build-essential -y
 
 echo " "
-echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
+echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
 echo " "
 
 systemctl disable smbd.service
@@ -75,7 +76,7 @@ systemctl stop smbd.service
 systemctl stop nmbd.service
 
 echo " "
-echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS"
+echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
 echo " "
 
 systemctl disable tftpd-hpa.service
@@ -110,6 +111,13 @@ fi
 cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz jetbrains-mono-nerd
 
 fc-cache -sv && apt autoremove -y
+
+if [ ! -f "/etc/lightdm/slick-greeter.conf" ]; then
+  echo " "
+  echo "DOWNLOADING AND CONFIGURING LIGHTDM LOGIN MANAGER" && sleep 2
+  echo " "
+  cd /etc/lightdm && wget $url_lightdm_slick_config
+fi
 
 echo " "
 echo "DONE!"

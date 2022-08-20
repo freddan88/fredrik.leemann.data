@@ -16,6 +16,8 @@ if [ "$SUDO_USER" ]; then
   exit
 fi
 
+# apt install i3 i3status -y
+
 echo " "
 echo "UPDATING i3 CONFIGS" && sleep 2
 echo " "
