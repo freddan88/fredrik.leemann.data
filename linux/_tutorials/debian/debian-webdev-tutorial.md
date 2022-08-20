@@ -53,3 +53,12 @@ sudo reboot
 ```bash
 nvm install --lts && nvm alias default node && nvm use node
 ```
+
+### Some of the programs
+
+_Please read the source of the scripts above to get a full list of programs_
+
+- [marktext](https://github.com/marktext/marktext "Edit and Create Markdown-documents")
+- [mongodb-compass](https://www.mongodb.com/try/download/compass "Manage MongoDB Databases")
+- [Visual Studio Code](https://code.visualstudio.com "My Preferred Code Editor")
+- [DBeaver](https://dbeaver.io/download "Universal Database Management Tool")
