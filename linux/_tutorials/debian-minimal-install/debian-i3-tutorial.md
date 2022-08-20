@@ -106,6 +106,12 @@ Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/
 
 > If the x-server ain´t running you can configure it to autostart in this file by changing: autostart_x to 1
 
+**Reboot your computer to apply new configurations and load the gui**
+
+```bash
+sudo reboot
+```
+
 ### Extra (Optional)
 
 **Download scripts to set-up webdev-utilities for Debian**
@@ -136,7 +142,13 @@ cd /tmp && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/instal
 
 Source: [GitHub - nvm-sh/nvm: Node Version Manager](https://github.com/nvm-sh/nvm)
 
-> Reboot your computer with the command `sudo reboot` and run below after
+**Reboot your computer to apply new configurations and settings**
+
+```bash
+sudo reboot
+```
+
+> After a successful reboot you shall be able to install node using nvm
 
 ```bash
 nvm install --lts && nvm alias default node && nvm use node
