@@ -49,10 +49,27 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
 flatpak install flathub rest.insomnia.Insomnia --noninteractive -y
 flatpak install flathub com.github.alecaddd.sequeler --noninteractive -y
 
-cd /tmp && wget $url_marktext_package && apt install ./marktext-amd64.deb -y
-cd /tmp && wget $url_mongodb_compass && apt install ./mongodb-compass_*_amd64.deb -y
-cd /tmp && wget -O vscode_amd64.deb $url_latest_vscode && apt install ./vscode_amd64.deb -y
-cd /tmp && wget $url_latest_dbeaver && apt install ./dbeaver-ce_*_amd64.deb -y
+usermod -aG docker $SUDO_USER
+
+if [ ! -f "/usr/bin/marktext" ]; then
+  cd /tmp && wget $url_marktext_package
+  apt install ./marktext-amd64.deb -y
+fi
+
+if [ ! -f "/usr/bin/mongodb-compass" ]; then
+  cd /tmp && wget $url_mongodb_compass
+  apt install ./mongodb-compass_*_amd64.deb -y
+fi
+
+if [ ! -f "/usr/bin/code" ]; then
+  cd /tmp && wget -O vscode_amd64.deb $url_latest_vscode
+  apt install ./vscode_amd64.deb -y
+fi
+
+if [ ! -f "/usr/bin/dbeaver-ce" ]; then
+  cd /tmp && wget $url_latest_dbeaver
+  apt install ./dbeaver-ce_*_amd64.deb -y
+fi
 
 cd /tmp && rm -f dbeaver-ce_*_amd64.deb vscode_amd64.deb mongodb-compass_*_amd64.deb marktext-amd64.deb
 
@@ -69,8 +86,6 @@ echo " "
 
 systemctl disable mariadb.service
 systemctl stop mariadb.service
-
-usermod -aG docker $SUDO_USER
 
 echo " "
 echo "DONE!"
