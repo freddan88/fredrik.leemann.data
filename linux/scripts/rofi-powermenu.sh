@@ -12,9 +12,9 @@ case "$option" in
   ;;
 "Logout")
   wm=$(wmctrl -m | grep 'Name' | cut -d":" -f2 | xargs)
-  if [ "${wm}" = "Openbox" ]; then
+  if [ "$wm" = "Openbox" ]; then
     openbox --exit
-  elif [ "${wm}" = "i3" ]; then
+  elif [ "$wm" = "i3" ]; then
     i3-msg exit
   else
     pkill x
