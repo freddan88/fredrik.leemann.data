@@ -42,11 +42,17 @@ if [ "$kubernetes_kubectl_version" = "stable" ]; then
   kubectl_version="$(curl -L -s https://dl.k8s.io/release/stable.txt)"
 fi
 
+echo "DOWNLOADING KUBECTL: $kubectl_version (Kubernetes cli-tool)" && sleep 2
+echo " "
+
 cd /usr/local/bin || exit
 rm -f /usr/local/bin/kubectl
 curl -LO "https://dl.k8s.io/release/$kubectl_version/bin/linux/amd64/kubectl"
 chmod -f 755 /usr/local/bin/kubectl
 
 echo " "
+echo "INSTALLED THE COMMAND 'KUBECTL' GLOBALLY IN: /usr/local/bin/kubectl"
+echo " "
+
 echo "DONE!"
 echo " "
