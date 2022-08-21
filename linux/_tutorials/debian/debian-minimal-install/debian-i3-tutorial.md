@@ -68,8 +68,8 @@ Sources: [debain-minimal-install-github](https://github.com/freddan88/fredrik.le
 **Run scripts to install minimal Debian installation**
 
 ```bash
-cd /tmp && sudo chmod 764 debian*.sh
-cd /tmp && sudo ./debain_root_webdev_scripts_all.sh
+cd /tmp && sudo chmod 754 debian*.sh
+cd /tmp && sudo ./debian_root_minimal_install_all.sh
 cd /tmp && ./debian_user_update_config_all.sh
 cd /tmp && ./debian_user_update_config_i3.sh
 ```
