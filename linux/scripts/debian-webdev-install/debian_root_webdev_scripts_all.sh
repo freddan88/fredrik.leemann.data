@@ -34,6 +34,7 @@ cd /tmp && mv -f docker-compose-linux-x86_64 /usr/local/bin/docker-compose && ch
 
 echo " "
 echo "INSTALLED THE COMMAND 'DOCKER-COMPOSE' GLOBALLY IN: /usr/local/bin/docker-compose"
+echo " "
 
 kubectl_version="$kubernetes_kubectl_version"
 
