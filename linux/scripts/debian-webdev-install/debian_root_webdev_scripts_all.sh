@@ -2,6 +2,7 @@
 
 url_composer_installer="https://getcomposer.org/installer"
 url_docker_compose="https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64"
+kubernetes_kubectl_version="stable"
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -33,6 +34,17 @@ cd /tmp && mv -f docker-compose-linux-x86_64 /usr/local/bin/docker-compose && ch
 
 echo " "
 echo "INSTALLED THE COMMAND 'DOCKER-COMPOSE' GLOBALLY IN: /usr/local/bin/docker-compose"
+
+kubectl_version="$kubernetes_kubectl_version"
+
+if [ "$kubernetes_kubectl_version" = "stable" ]; then
+  kubectl_version="$(curl -L -s https://dl.k8s.io/release/stable.txt)"
+fi
+
+cd /usr/local/bin || exit
+rm -f /usr/local/bin/kubectl
+curl -LO "https://dl.k8s.io/release/$kubectl_version/bin/linux/amd64/kubectl"
+chmod -f 755 /usr/local/bin/kubectl
 
 echo " "
 echo "DONE!"
