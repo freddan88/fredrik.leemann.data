@@ -20,6 +20,7 @@
 url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debian-webdev-install"
 cd /tmp && wget $url/debian_root_webdev_install_all.sh
 cd /tmp && wget $url/debain_root_webdev_scripts_all.sh
+cd /tmp && wget $url/debian_user_webdev_scripts_all.sh
 ```
 
 Sources: [debian-webdev-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debian-webdev-install)
@@ -29,10 +30,11 @@ Sources: [debian-webdev-install-github](https://github.com/freddan88/fredrik.lee
 ```bash
 cd /tmp && sudo chmod 764 debian*.sh
 cd /tmp && sudo ./debian_root_webdev_install_all.sh
-cd /tmp && sudo ./debain_root_webdev_scripts_all.sh
+cd /tmp && sudo ./debian_root_webdev_scripts_all.sh
+cd /tmp && ./debian_user_webdev_scripts_all.sh
 ```
 
-You can run `debain_root_webdev_scripts_all.sh` again to update those scripts
+You can run `debain_root_webdev_scripts_all.sh` and `debian_user_webdev_scripts_all.sh` again to update those scripts
 
 **Install NVM (Node Version Manager)**
 

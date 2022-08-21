@@ -16,7 +16,7 @@ if [ "$SUDO_USER" ]; then
   exit
 fi
 
-mkdir -p $HOME/.config/nitrogen && cd $HOME/.config/nitrogen
+mkdir -p "$HOME"/.config/nitrogen && cd "$HOME"/.config/nitrogen || exit
 wget -O bg-saved.cfg $url_nitrogen_config_wallpaper
 
 echo " "
@@ -26,36 +26,39 @@ echo " "
 /usr/bin/xdg-user-dirs-update
 xdg-mime default thunar.desktop inode/directory
 
-cd $HOME
+cd "$HOME" || exit
 dir_home_templates=$(xdg-user-dir TEMPLATES)
 
-cd $dir_home_templates && rm -f *
-cd $dir_home_templates && wget $url_home_templates
-cd $dir_home_templates && unzip -o templates.zip
-cd $dir_home_templates && rm -f templates.zip
+cd "$dir_home_templates" && rm -f ./*
+cd "$dir_home_templates" && wget $url_home_templates
+cd "$dir_home_templates" && unzip -o templates.zip
+cd "$dir_home_templates" && rm -f templates.zip
 
 echo " "
-pwd && ls -al $dir_home_templates
+pwd && ls -al "$dir_home_templates"
 
 echo " "
 echo "DOWNLOADING AND INSTALLING CONFIGURATION FOR XFCE4" && sleep 2
 echo " "
 
-cd $HOME/.config && rm -rf xfce4
-cd $HOME/.config && wget $url_xfce4_configurations
-cd $HOME/.config && unzip -o xfce4.zip
-cd $HOME/.config && rm -f xfce4.zip
+cd "$HOME"/.config && rm -rf xfce4
+cd "$HOME"/.config && wget $url_xfce4_configurations
+cd "$HOME"/.config && unzip -o xfce4.zip
+cd "$HOME"/.config && rm -f xfce4.zip
 
 echo " "
-ls -al $HOME/.config/xfce4
+ls -al "$HOME"/.config/xfce4
 
 echo " "
 echo "DOWNLOADING LOCAL UTILITY-SCRIPTS" && sleep 2
 echo " "
 
-mkdir -p $HOME/.local/bin && cd $HOME/.local/bin
+mkdir -p "$HOME"/.local/bin && cd "$HOME"/.local/bin || exit
 wget -O rofi-powermenu $url_utility_script_powermenu
-chmod -R 754 $HOME/.local/bin
+chmod -R 754 "$HOME"/.local/bin
+
+echo " "
+ls -al "$HOME"/.local/bin
 
 echo " "
 echo "DONE!"
