@@ -3,6 +3,7 @@
 url_nitrogen_config_wallpaper="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/wallpapers/debian-nitrogen-bg-saved.cfg"
 url_xfce4_configurations="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/configurations/xfce4.zip"
 url_home_templates="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip"
+url_utility_script_powermenu="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/rofi-powermenu.sh"
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -47,6 +48,14 @@ cd $HOME/.config && rm -f xfce4.zip
 
 echo " "
 ls -al $HOME/.config/xfce4
+
+echo " "
+echo "DOWNLOADING LOCAL UTILITY-SCRIPTS" && sleep 2
+echo " "
+
+mkdir -p $HOME/.local/bin && cd $HOME/.local/bin
+wget -O rofi-powermenu $url_utility_script_powermenu
+chmod -R 754 $HOME/.local/bin
 
 echo " "
 echo "DONE!"

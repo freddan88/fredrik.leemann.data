@@ -15,7 +15,7 @@ shutdown_option="Shutdown"
 print_usage() {
   echo " "
   echo "Usage:"
-  echo " - Running this script with no arguments will show menu (Requires rofi to be installed)"
+  echo " - Running this script with no arguments will show a menu (Requires rofi to be installed)"
   echo " - Arguments: $lock_option | $logout_option | $reboot_option | $shutdown_option"
   echo " - Example: $0 $lock_option"
   echo " "
