@@ -386,7 +386,7 @@ client.urgent                   $urgent_color             $urgent_color         
 
 # Start i3bar to display a workspace bar and time
 bar {
-    status_command i3status -c $HOME/.config/i3/config_i3_status
+    status_command i3status -c $HOME/.config/i3/config_i3status
     bindsym --release button3 exec --no-startup-id gnome-calendar
     # bindsym button4 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
     # bindsym button5 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status

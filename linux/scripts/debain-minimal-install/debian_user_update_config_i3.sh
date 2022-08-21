@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-url_config_i3="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/i3/i3_minimal_configuration.txt"
-url_config_i3_status="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/i3/i3_status_configuration.txt"
+url_config_i3="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/i3/i3-minimal-config.txt"
+url_config_i3_status="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/i3/i3-status-config.txt"
 url_config_i3_xfce4_panel="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/configurations/i3/i3-xfce4-panel.tar.bz2"
 url_styles_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3/i3keybindings.css"
 url_script_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3/i3keybindings.sh"
@@ -24,7 +24,7 @@ echo "UPDATING i3 CONFIGS" && sleep 2
 echo " "
 
 rm -rf $HOME/.config/i3 && mkdir -p $HOME/.config/i3 && cd $HOME/.config/i3
-wget -O config $url_config_i3 && wget -O config_i3_status $url_config_i3_status
+wget -O config $url_config_i3 && wget -O config_i3status $url_config_i3_status
 
 mkdir -p $HOME/.config/i3/scripts && cd $HOME/.config/i3/scripts
 wget $url_script_i3_keybindings
