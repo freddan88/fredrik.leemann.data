@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+url_gtk3_theme_config="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/themes/gtk3-settings.ini"
 url_nitrogen_config_wallpaper="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/wallpapers/debian-nitrogen-bg-saved.cfg"
 url_xfce4_configurations="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/configurations/xfce4.zip"
 url_home_templates="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip"
@@ -39,6 +40,17 @@ cd "$dir_home_templates" && rm -f templates.zip
 
 echo " "
 pwd && ls -al "$dir_home_templates"
+
+echo " "
+echo "DOWNLOADING AND INSTALLING CONFIGURATION FOR GTK-THEME" && sleep 2
+echo " "
+
+mkdir -p "$HOME"/.config/gtk-3.0
+cd "$HOME"/.config/gtk-3.0 || exit
+wget -O settings.ini $url_gtk3_theme_config
+
+echo " "
+pwd && ls -al "$HOME"/.config/gtk-3.0
 
 echo " "
 echo "DOWNLOADING AND INSTALLING CONFIGURATION FOR XFCE4" && sleep 2
