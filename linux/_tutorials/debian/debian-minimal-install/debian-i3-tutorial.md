@@ -38,6 +38,12 @@
 
 > After first boot you may need to append 'main contrib non-free' in sources.list
 
+Example
+
+```bash
+sudo nano /etc/apt/sources.list
+```
+
 ![](images/i3-debian-minimal-apt-sources.png)
 
 ### Install software
@@ -194,3 +200,7 @@ _Please read the source of the scripts above to get a full list of programs_
 - [i3 improved tiling wm - user’s Guide](https://i3wm.org/docs/userguide.html)
 - [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
 - [http://www.secretmaryo.org](http://www.secretmaryo.org)
+
+```
+
+```
