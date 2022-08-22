@@ -100,7 +100,7 @@ apt install fonts-cascadia-code fonts-cantarell -y
 if [ ! -d "/usr/share/fonts/truetype/google-fonts" ]; then
   cd /tmp && wget $url_google_fonts && tar -zxvf main.tar.gz
   cd /tmp && mkdir -p /usr/share/fonts/truetype/google-fonts
-  cd /tmp && find $PWD/fonts-main/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/google-fonts/ \;
+  cd /tmp && find "$PWD"/fonts-main/ -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/google-fonts/ \;
 fi
 
 # if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono-nerd" ]; then
