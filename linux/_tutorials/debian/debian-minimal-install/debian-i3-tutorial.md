@@ -169,7 +169,7 @@ Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 
 _i3keybindings.sh will automatically run on every login and restart_
 
-| Keybinding                                      | Program / Scriipt    | Description                    |
+| Keybinding                                      | Program / Script     | Description                    |
 | ----------------------------------------------- | -------------------- | ------------------------------ |
 | <kbd>super</kbd> + <kbd>enter</kbd>             | Xfce4 terminal       | Open a new terminal-window     |
 | <kbd>super</kbd> + <kbd>space</kbd>             | xfce4-appfinder      | Search for applications        |
@@ -190,7 +190,7 @@ _Please read the source of the scripts above to get a full list of programs_
 
 ### Links and resources
 
-- [unix.stackexchange.com - automatically-login-on-debian-9-2-1-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
+- [unix.stackexchange.com - automatically-login-via-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
 - [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
 - [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
 - [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
