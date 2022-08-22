@@ -136,7 +136,7 @@ sudo reboot
 
 ```bash
 sudo apt install openarena nexuiz alien-arena alienblaster sauerbraten 0ad warzone2100 frozen-bubble gnome-nibbles xmoto -y
-sudo apt install hedgewars teeworlds supertux supertuxkart quadrapassel pinball pinball-table-gnu pinball-table-hurd -y
+sudo apt install hedgewars teeworlds supertux supertuxkart extremetuxracer quadrapassel pinball pinball-table-gnu pinball-table-hurd -y
 ```
 
 **Install virtualbox guest-additions if you are using a VM through virtualbox**
