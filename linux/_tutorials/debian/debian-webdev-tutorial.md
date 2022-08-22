@@ -4,7 +4,7 @@
 
 | My Links  |                                                                                      |
 | --------- | ------------------------------------------------------------------------------------ |
-| WebPage:  | [leemann.se/fredrik](http://www.leemann.se/fredrik)                                  |
+| WebPage:  | [fredrik.leemann.se](https://fredrik.leemann.se)                                     |
 | LinkedIn: | [linkedin.com/fredrik-leemann](https://se.linkedin.com/in/fredrik-leemann-821b19110) |
 | GitHub:   | [github.com/freddan88](https://github.com/freddan88)                                 |
 
