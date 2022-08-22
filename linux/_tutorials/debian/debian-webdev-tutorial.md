@@ -34,7 +34,7 @@ cd /tmp && sudo ./debian_root_webdev_scripts_all.sh
 cd /tmp && ./debian_user_webdev_scripts_all.sh
 ```
 
-You can run `debain_root_webdev_scripts_all.sh` and `debian_user_webdev_scripts_all.sh` again to update those scripts
+You can run `debian_root_webdev_scripts_all.sh` and `debian_user_webdev_scripts_all.sh` again to update those scripts
 
 **Install NVM (Node Version Manager)**
 
