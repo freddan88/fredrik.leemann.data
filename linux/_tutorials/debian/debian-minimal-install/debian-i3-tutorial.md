@@ -110,7 +110,7 @@ Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.
 cd && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/shells/zshrc.sh
 ```
 
-Source: [zshrc-shell-script-github](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/configurations/shells/zshrc.txt)
+Source: [zshrc-shell-script-github](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/configurations/shells/zshrc.sh)
 
 > If the x-server ain´t running you can configure it to autostart in this file by changing: autostart_x to 1
 
