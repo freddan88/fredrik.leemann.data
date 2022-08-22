@@ -20,6 +20,9 @@ mkdir -p "$HOME"/.config/nitrogen && cd "$HOME"/.config/nitrogen || exit
 wget -O bg-saved.cfg $url_nitrogen_config_wallpaper
 
 echo " "
+pwd && ls -al "$HOME"/.config/nitrogen
+
+echo " "
 echo "DOWNLOADING AND ADDING TEMPLATES FOR THE FILEBROWSER" && sleep 2
 echo " "
 
@@ -47,7 +50,7 @@ cd "$HOME"/.config && unzip -o xfce4.zip
 cd "$HOME"/.config && rm -f xfce4.zip
 
 echo " "
-ls -al "$HOME"/.config/xfce4
+pwd && ls -al "$HOME"/.config/xfce4
 
 echo " "
 echo "DOWNLOADING LOCAL UTILITY-SCRIPTS" && sleep 2
@@ -58,7 +61,7 @@ wget -O rofi-powermenu $url_utility_script_powermenu
 chmod -R 754 "$HOME"/.local/bin
 
 echo " "
-ls -al "$HOME"/.local/bin
+pwd && ls -al "$HOME"/.local/bin
 
 echo " "
 echo "DONE!"
