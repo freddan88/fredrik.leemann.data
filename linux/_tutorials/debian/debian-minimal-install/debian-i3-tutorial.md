@@ -163,19 +163,7 @@ Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 | Terminal:                     | Cascadia Mono SemiBold 12 |
 | System:                       | Ubuntu Medium 11          |
 
-| Theme   |                      |
-| ------- | -------------------- |
-| Icons:  | elementary Xfce dark |
-| System: | Arc-Dark             |
-
-| Fonts     |                           |
-| --------- | ------------------------- |
-| Terminal: | Cascadia Mono SemiBold 12 |
-| System:   | Ubuntu Medium 11          |
-
-| Debian i3 Minimal - Desktop 01                       | Debian i3 Minimal - Desktop 02                       |
-| ---------------------------------------------------- | ---------------------------------------------------- |
-| ![](images/i3-debian-minimal-desktop-example-01.png) | ![](images/i3-debian-minimal-desktop-example-02.png) |
+![](images/i3-debian-minimal-desktop-example-01.png)
 
 ### Important keybindings
 
