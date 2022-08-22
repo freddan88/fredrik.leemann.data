@@ -47,7 +47,7 @@ sudo nano /etc/apt/sources.list
 > If sudo ain´t working you need to login as root and add your user to the group
 
 ```bash
-usermod -aG sudo <YOUR_USER_NAME> && reboot
+apt install sudo && usermod -aG sudo <YOUR_USER_NAME> && reboot
 ```
 
 ![](images/i3-debian-minimal-apt-sources.png)
@@ -57,7 +57,7 @@ usermod -aG sudo <YOUR_USER_NAME> && reboot
 After the installation you shall login through the cli and run the below commands:
 
 ```bash
-sudo apt update && sudo apt install curl sudo wget -y
+sudo apt update && sudo apt install wget curl git -y
 ```
 
 **Download scripts to set-up base for minimal Debian installation**
