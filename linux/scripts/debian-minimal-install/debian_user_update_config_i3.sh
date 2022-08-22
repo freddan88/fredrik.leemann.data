@@ -17,31 +17,39 @@ if [ "$SUDO_USER" ]; then
   exit
 fi
 
-# apt install i3 i3status -y
-
 echo " "
 echo "UPDATING i3 CONFIGS" && sleep 2
 echo " "
 
-rm -rf $HOME/.config/i3 && mkdir -p $HOME/.config/i3 && cd $HOME/.config/i3
+rm -rf "$HOME"/.config/i3
+mkdir -p "$HOME"/.config/i3
+cd "$HOME"/.config/i3 || exit
 wget -O config $url_config_i3 && wget -O config_i3status $url_config_i3_status
 
-mkdir -p $HOME/.config/i3/scripts && cd $HOME/.config/i3/scripts
+mkdir -p "$HOME"/.config/i3/scripts
+cd "$HOME"/.config/i3/scripts || exit
 wget $url_script_i3_keybindings
 chmod u+x i3keybindings.sh
 
-mkdir -p $HOME/.config/i3/docs && cd $HOME/.config/i3/docs
+mkdir -p "$HOME"/.config/i3/docs
+cd "$HOME"/.config/i3/docs || exit
 wget $url_styles_i3_keybindings
 
 echo " "
 echo "NEW i3 CONFIG-FILES IN $HOME/.config/i3" && sleep 2
 echo " "
 
-ls -al $HOME/.config/i3
+pwd && ls -al "$HOME"/.config/i3
 
-cd $HOME/.local/share/xfce4-panel-profiles
-rm -f i3-xfce4-panel-01.tar.bz2
+echo " "
+
+rm -rf "$HOME"/.local/share/xfce4-panel-profiles
+mkdir -p "$HOME"/.local/share/xfce4-panel-profiles
+cd "$HOME"/.local/share/xfce4-panel-profiles || exit
+rm -f i3-xfce4-panel.tar.bz2
 wget $url_config_i3_xfce4_panel
+
+pwd && ls -al "$HOME"/.local/share/xfce4-panel-profiles
 
 # i3-msg restart 1>/dev/null
 # i3-msg reload 1>/dev/null
