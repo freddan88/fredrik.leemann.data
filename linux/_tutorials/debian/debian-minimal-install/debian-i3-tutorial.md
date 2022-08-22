@@ -114,6 +114,14 @@ Source: [zshrc-shell-script-github](https://github.com/freddan88/fredrik.leemann
 
 > If the x-server ain´t running you can configure it to autostart in this file by changing: autostart_x to 1
 
+**Comment all network-interfaces that you would like network-manager to manage**
+
+```bash
+sudo nano /etc/network/interfaces
+```
+
+![](images/debian-minimal-install-network.png)
+
 **Reboot your computer to apply new configurations and load the gui**
 
 ```bash
