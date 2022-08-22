@@ -16,7 +16,7 @@ if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
 fi
 
 echo " "
-echo "UPDATING WEBDEV SOFTWARE" && sleep 2
+echo "UPDATING WEBDEV SCRIPTS" && sleep 2
 echo " "
 
 cd /tmp && rm -f /usr/local/bin/composer
