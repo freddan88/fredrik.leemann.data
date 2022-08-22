@@ -139,7 +139,7 @@ sudo apt install openarena nexuiz alien-arena alienblaster sauerbraten 0ad warzo
 sudo apt install hedgewars teeworlds supertux supertuxkart quadrapassel pinball pinball-table-gnu pinball-table-hurd -y
 ```
 
-**Install virtualbox guest extension if you are using a VM through virtualbox**
+**Install virtualbox guest-additions if you are using a VM through virtualbox**
 
 > This will only prepare for installation you need to install from media yourself
 
