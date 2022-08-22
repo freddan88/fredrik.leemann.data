@@ -181,18 +181,16 @@ _i3keybindings.sh will automatically run on every login and restart_
 
 _Please read the source of the scripts above to get a full list of programs_
 
-- [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb "Link to download the Latest Stable Build of Google's Web Browser for deb-linux 64Bit")
-- [xfce4-panel-profiles](http://ftp.ports.debian.org/debian-ports/pool/main/x/xfce4-panel-profiles/ "Save/restore xfce4-panel-configurations")
-- [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl "Control pulseaudio volume from the shell or keyboard")
+- [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
+- [xfce4-panel-profiles](http://ftp.ports.debian.org/debian-ports/pool/main/x/xfce4-panel-profiles)
+- [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl)
 
 ### Links and resources
 
 - [unix.stackexchange.com - automatically-login-on-debian-9-2-1-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
-- [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
-- [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
 - [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
 - [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
-- [How to Change the Default Terminal in Ubuntu - FOSS](https://itsfoss.com/change-default-terminal-ubuntu)
 - [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
+- [i3 improved tiling wm - user’s Guide](https://i3wm.org/docs/userguide.html)
 - [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
 - [http://www.secretmaryo.org](http://www.secretmaryo.org)
