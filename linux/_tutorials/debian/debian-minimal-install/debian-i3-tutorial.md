@@ -152,7 +152,14 @@ Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 
 ---
 
-### Example desktop configurations
+| Example desktop configuration |                           |
+| ----------------------------- | ------------------------- |
+| **Theme**                     |                           |
+| Icons:                        | elementary Xfce dark      |
+| System:                       | Arc-Dark                  |
+| **Fonts**                     |                           |
+| Terminal:                     | Cascadia Mono SemiBold 12 |
+| System:                       | Ubuntu Medium 11          |
 
 | Theme   |                      |
 | ------- | -------------------- |
