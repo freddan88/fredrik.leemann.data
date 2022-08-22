@@ -113,12 +113,18 @@ cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz jetbrains-mono-nerd
 
 fc-cache -sv && apt autoremove -y
 
+if [ ! -f "/etc/lightdm/lightdm.conf" ]; then
+  echo " "
+  echo "DOWNLOADING MAIN-CONFIGURATION FOR LIGHTDM LOGIN MANAGER" && sleep 2
+  echo " "
+  cd /etc/lightdm && wget $url_lightdm_config
+fi
+
 if [ ! -f "/etc/lightdm/slick-greeter.conf" ]; then
   echo " "
-  echo "DOWNLOADING CONFIGURATION FOR LIGHTDM LOGIN MANAGER" && sleep 2
+  echo "DOWNLOADING GREETER-CONFIGURATION FOR LIGHTDM LOGIN MANAGER" && sleep 2
   echo " "
   cd /etc/lightdm && wget $url_lightdm_slick_config
-  cd /etc/lightdm && wget $url_lightdm_config
 fi
 
 echo " "
