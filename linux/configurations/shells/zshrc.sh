@@ -122,26 +122,29 @@ if [ -d "$NVM_DIR" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 fi
 
+isRemote=$(loginctl show-session "$XDG_SESSION_ID" -P Remote)
 xstarted=$(ps -e | grep -c Xorg)
 
-if ((xstarted == 0)); then
-  echo " "
-  if ((autostart_x)); then
-    startx
+if ((isRemote == 'no')); then
+  if ((xstarted == 0)); then
+    echo " "
+    if ((autostart_x)); then
+      startx
+    else
+      echo "PRESS ENTER TO START X OR CTRL+C TO EXIT - YOU CAN START X WITH THE COMMAND: startx"
+      read -r
+      startx
+    fi
   else
-    echo "PRESS ENTER TO START X OR CTRL+C TO EXIT - YOU CAN START X WITH THE COMMAND: startx"
-    read key
-    startx
-  fi
-else
-  echo " "
-  if [ "$(command -v xdotool)" ] && [ "$(command -v neofetch)" ]; then
-    currentPid=$(xdotool getactivewindow getwindowpid)
-    currentProgram=$(ps -o command= $currentPid)
-    if [ "$currentProgram" = "xfce4-terminal" ]; then
-      neofetch
-      echo "Codename: $(lsb_release -cs)"
-      echo " "
+    echo " "
+    if [ "$(command -v xdotool)" ] && [ "$(command -v neofetch)" ]; then
+      currentPid=$(xdotool getactivewindow getwindowpid)
+      currentProgram=$(ps -o command= $currentPid)
+      if [ "$currentProgram" = "xfce4-terminal" ]; then
+        neofetch
+        echo "Codename: $(lsb_release -cs)"
+        echo " "
+      fi
     fi
   fi
 fi
