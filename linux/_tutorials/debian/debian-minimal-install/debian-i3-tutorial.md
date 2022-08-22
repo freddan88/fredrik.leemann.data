@@ -69,7 +69,7 @@ cd /tmp && wget $url/debian_user_update_config_all.sh
 cd /tmp && wget $url/debian_user_update_config_i3.sh
 ```
 
-Sources: [debain-minimal-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debain-minimal-install)
+Sources: [debian-minimal-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debian-minimal-install)
 
 **Run scripts to install minimal Debian installation**
 
@@ -110,7 +110,7 @@ Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.
 cd && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/shells/zshrc.sh
 ```
 
-Source: [fredrik.leemann.data/zshrc.txt at GitHub](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/configurations/shells/zshrc.txt)
+Source: [zshrc-shell-script-github](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/configurations/shells/zshrc.txt)
 
 > If the x-server ain´t running you can configure it to autostart in this file by changing: autostart_x to 1
 
