@@ -44,6 +44,12 @@ Example
 sudo nano /etc/apt/sources.list
 ```
 
+> If sudo ain´t working you need to login as root and add your user to the group
+
+```bash
+usermod -aG sudo <YOUR_USER_NAME> && reboot
+```
+
 ![](images/i3-debian-minimal-apt-sources.png)
 
 ### Install software
@@ -52,12 +58,6 @@ After the installation you shall login through the cli and run the below command
 
 ```bash
 sudo apt update && sudo apt install curl sudo wget -y
-```
-
-> If sudo ain´t working you need to login as root and add your user to the group
-
-```bash
-usermod -aG sudo <YOUR_USER_NAME> && reboot
 ```
 
 **Download scripts to set-up base for minimal Debian installation**
