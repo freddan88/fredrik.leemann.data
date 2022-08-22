@@ -163,10 +163,7 @@ Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 | Terminal:                     | Cascadia Mono SemiBold 12 |
 | System:                       | Ubuntu Medium 11          |
 
-|     |                                                      |     |
-| --- | ---------------------------------------------------- | --- |
-|     | ![](images/i3-debian-minimal-desktop-example-01.png) |     |
-|     |                                                      |     |
+![](images/i3-debian-minimal-desktop-example-01.png)
 
 ### Important keybindings
 
