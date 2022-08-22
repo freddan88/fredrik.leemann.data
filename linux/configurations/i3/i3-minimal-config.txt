@@ -200,8 +200,8 @@ bindsym $mod+g exec --no-startup-id google-chrome
 bindsym $mod+b exec --no-startup-id google-chrome
 
 bindsym $mod+y exec --no-startup-id nm-connection-editor
-bindsym $mod+h exec --no-startup-id nmtui
-bindsym $mod+n exec --no-startup-id nmtui
+bindsym $mod+h exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e nmtui
+bindsym $mod+n exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e nmtui
 
 bindsym $mod+u exec --no-startup-id gnome-system-monitor
 bindsym $mod+m exec --no-startup-id gnome-power-statistics
