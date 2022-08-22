@@ -125,9 +125,9 @@ fi
 isRemote=$(loginctl show-session "$XDG_SESSION_ID" -P Remote)
 xstarted=$(ps -e | grep -c Xorg)
 
-if ((isRemote == 'no')); then
+echo " "
+if [ "$isRemote" = "no" ]; then
   if ((xstarted == 0)); then
-    echo " "
     if ((autostart_x)); then
       startx
     else
@@ -136,7 +136,6 @@ if ((isRemote == 'no')); then
       startx
     fi
   else
-    echo " "
     if [ "$(command -v xdotool)" ] && [ "$(command -v neofetch)" ]; then
       currentPid=$(xdotool getactivewindow getwindowpid)
       currentProgram=$(ps -o command= $currentPid)
