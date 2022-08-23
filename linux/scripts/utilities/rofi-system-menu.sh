@@ -65,6 +65,7 @@ case "$option" in
   pkexec lightdm-settings
   ;;
 *)
+  echo " "
   exit 0
   ;;
 esac

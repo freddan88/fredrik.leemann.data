@@ -37,7 +37,18 @@ if [[ -n "$1" ]]; then
     ;;
   esac
 else
-  option=$(printf "%s\n%s\n%s\n%s\n%s" "$exit_option" "$lock_option" "$logout_option" "$reboot_option" "$shutdown_option" | rofi -dmenu -i -theme $rofiTheme)
+  option=$(
+    printf "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s" \
+      "System Power Menu" \
+      "-----------------" \
+      "$lock_option" \
+      "$logout_option" \
+      "$reboot_option" \
+      "$shutdown_option" \
+      " " \
+      "$exit_option" |
+      rofi -dmenu -i -theme $rofiTheme
+  )
 fi
 
 case "$option" in
