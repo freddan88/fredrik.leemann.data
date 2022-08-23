@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+  <menu id="root-menu" label="Openbox 3">
+    <item label="Terminal emulator">
+      <action name="Execute">
+        <execute>x-terminal-emulator</execute>
+      </action>
+    </item>
+    <item label="Web Browser">
+      <action name="Execute">
+        <execute>x-www-browser</execute>
+      </action>
+    </item>
+    <item label="File Browser">
+      <action name="Execute">
+        <execute>thunar</execute>
+      </action>
+    </item>
+    <!-- This requires the presence of the 'obamenu' package to work -->
+    <menu id="/Debian" />
+    <separator />
+    <menu id="applications-menu" label="Applications" execute="/usr/bin/obamenu"/>
+    <separator />
+    <item label="Config openbox-text">
+      <action name="Execute">
+        <execute>mousepad .config/openbox/rc.xml</execute>
+      </action>
+    </item>
+    <item label="Config openbox-gui">
+      <action name="Execute">
+        <execute>obconf</execute>
+      </action>
+    </item>
+    <item label="Restart openbox">
+      <action name="Restart" />
+    </item>
+    <item label="Reload openbox">
+      <action name="Reconfigure" />
+    </item>
+    <separator />
+    <item label="Logout">
+      <action name="Exit" />
+    </item>
+    <item label="Lock">
+      <action name="Execute">
+        <execute>dm-tool lock</execute>
+      </action>
+    </item>
+  </menu>
+
+</openbox_menu>
