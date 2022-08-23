@@ -32,7 +32,7 @@
 
 > Select SSH server and standard system utilities or only standard system utilities
 
-![](images/i3-debian-minimal-software-selection-screen.png)
+![](images/debian-minimal-software-selection-screen.png)
 
 **Check your sources**
 
@@ -50,7 +50,7 @@ sudo nano /etc/apt/sources.list
 apt install sudo && usermod -aG sudo <YOUR_USER_NAME> && reboot
 ```
 
-![](images/i3-debian-minimal-apt-sources.png)
+![](images/debian-minimal-apt-sources.png)
 
 ### Install software
 
@@ -172,7 +172,7 @@ Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 | Terminal:                     | Cascadia Mono SemiBold 12 |
 | System:                       | Ubuntu Medium 11          |
 
-![](images/i3-debian-minimal-desktop-example-01.png)
+![](images/debian-minimal-install-i3-01.png)
 
 ### Important keybindings
 
