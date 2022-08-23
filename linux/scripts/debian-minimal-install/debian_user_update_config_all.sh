@@ -4,7 +4,9 @@ url_gtk3_theme_config="https://raw.githubusercontent.com/freddan88/fredrik.leema
 url_nitrogen_config_wallpaper="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/wallpapers/debian-nitrogen-bg-saved.cfg"
 url_xfce4_configurations="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/configurations/xfce4.zip"
 url_home_templates="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip"
-url_utility_script_powermenu="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/rofi-powermenu.sh"
+url_utility_script_power_menu="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/rofi-power-menu.sh"
+url_utility_script_system_menu=""
+url_utility_script_keyboard=""
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -69,7 +71,7 @@ echo "DOWNLOADING LOCAL UTILITY-SCRIPTS" && sleep 2
 echo " "
 
 mkdir -p "$HOME"/.local/bin && cd "$HOME"/.local/bin || exit
-wget -O rofi-powermenu $url_utility_script_powermenu
+wget -O rofi-power-menu $url_utility_script_power_menu
 chmod -R 754 "$HOME"/.local/bin
 
 echo " "
