@@ -5,8 +5,8 @@ url_nitrogen_config_wallpaper="https://raw.githubusercontent.com/freddan88/fredr
 url_xfce4_configurations="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/configurations/xfce4.zip"
 url_home_templates="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip"
 url_utility_script_power_menu="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/rofi-power-menu.sh"
-url_utility_script_system_menu=""
-url_utility_script_keyboard=""
+url_utility_script_system_menu="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/rofi-system-menu.sh"
+url_utility_script_keyboard="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/minimal-keyboard-configuration.sh"
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -71,6 +71,8 @@ echo "DOWNLOADING LOCAL UTILITY-SCRIPTS" && sleep 2
 echo " "
 
 mkdir -p "$HOME"/.local/bin && cd "$HOME"/.local/bin || exit
+wget -O minimal-keyboard-configuration $url_utility_script_keyboard
+wget -O rofi-system-menu $url_utility_script_system_menu
 wget -O rofi-power-menu $url_utility_script_power_menu
 chmod -R 754 "$HOME"/.local/bin
 
