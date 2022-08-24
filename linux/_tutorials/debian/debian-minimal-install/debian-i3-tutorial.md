@@ -36,7 +36,7 @@
 
 **Check your sources**
 
-> After first boot you may need to append 'main contrib non-free' in sources.list
+> After first boot you may need to append `main contrib non-free` in sources.list
 
 Example
 
@@ -130,7 +130,7 @@ sudo reboot
 
 ### Extra (Optional)
 
-> Tutorial: ["Linux Debian web-developer utilities" install webdev software and scripts](../debian-webdev-tutorial.md)
+> Tutorial: [Linux Debian web-developer utilities - Install webdev software and scripts](../debian-webdev-tutorial.md)
 
 **My favorite linux games**
 
