@@ -5,6 +5,7 @@ url_xfce_panel_profiles="http://ftp.ports.debian.org/debian-ports/pool/main/x/xf
 url_pulseaudio_ctl="https://github.com/graysky2/pulseaudio-ctl/archive/refs/tags/v1.70.zip"
 url_jetbrains_mono_fonts="https://github.com/JetBrains/JetBrainsMono/releases/download/v2.242/JetBrainsMono-2.242.zip"
 url_jetbrains_mono_fonts_nerd="https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/JetBrainsMono.zip"
+url_grub_minimal_config="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/bootloaders/minimal-grub.cfg"
 url_lightdm_slick_config="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/slick-greeter.conf"
 url_lightdm_config="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf"
 url_google_fonts="https://github.com/google/fonts/archive/main.tar.gz"
@@ -116,8 +117,17 @@ fc-cache -sv && apt autoremove -y
 echo " "
 echo "DOWNLOADING CONFIGURATIONS FOR LIGHTDM LOGIN MANAGER" && sleep 2
 echo " "
+
 cd /etc/lightdm && wget -O lightdm.conf $url_lightdm_config
 cd /etc/lightdm && wget -O slick-greeter.conf $url_lightdm_slick_config
+
+echo " "
+echo "DOWNLOADING CONFIGURATION FOR GRUB BOOTLOADER" && sleep 2
+echo " "
+
+cd /etc/default/grub || exit
+wget -O grub $url_grub_minimal_config
+update-grub2
 
 echo " "
 echo "DONE!"
