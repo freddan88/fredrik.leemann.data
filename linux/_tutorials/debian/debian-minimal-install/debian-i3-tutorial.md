@@ -112,7 +112,7 @@ cd && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann
 
 > Source: [zshrc-shell-script-github](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/configurations/shells/zshrc.sh)
 
-> If the x-server ain´t running you can configure it to autostart in this file by changing: autostart_x to 1
+_If the x-server ain´t running you can configure it to autostart in this file by changing: autostart_x to 1_
 
 **Comment all network-interfaces that you would like network-manager to manage**
 
