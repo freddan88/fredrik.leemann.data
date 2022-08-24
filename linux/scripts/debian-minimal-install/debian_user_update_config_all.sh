@@ -78,6 +78,11 @@ chmod -R 754 "$HOME"/.local/bin
 
 echo " "
 pwd && ls -al "$HOME"/.local/bin
+echo " "
+
+mkdir -p "$HOME"/.config/rofi
+cd "$HOME"/.config/rofi || exit
+echo "rofi.theme: /usr/share/rofi/themes/Pop-Dark.rasi" >config
 
 echo " "
 echo "DONE!"
