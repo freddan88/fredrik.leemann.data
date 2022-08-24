@@ -165,9 +165,7 @@ For Debian Linux 11 (bullseye) 64Bit
 1. Add Custom Repository
 2. Install the legacy-package
 
-_Project:_
-
-[Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
+> Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 
 ---
 
