@@ -69,7 +69,7 @@ cd /tmp && wget $url/debian_user_update_config_all.sh
 cd /tmp && wget $url/debian_user_update_config_i3.sh
 ```
 
-Sources: [debian-minimal-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debian-minimal-install)
+> Sources: [debian-minimal-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debian-minimal-install)
 
 **Run scripts to install minimal Debian installation**
 
@@ -80,7 +80,7 @@ cd /tmp && ./debian_user_update_config_all.sh
 cd /tmp && ./debian_user_update_config_i3.sh
 ```
 
-You can run `debian_user_update_config_all.sh` and `debian_user_update_config_i3.sh` again to update configurations
+> You can run `debian_user_update_config_all.sh` and `debian_user_update_config_i3.sh` again to update configurations
 
 **Install i3 window-manager on Debian**
 
@@ -94,7 +94,7 @@ sudo apt install i3 i3status -y
 cd /tmp && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-Source: [https://ohmyz.sh](https://ohmyz.sh)
+> Source: [https://ohmyz.sh](https://ohmyz.sh)
 
 **Install Extension for Oh My Zsh**
 
@@ -102,7 +102,7 @@ Source: [https://ohmyz.sh](https://ohmyz.sh)
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.com/zsh-users/zsh-autosuggestions)
+> Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.com/zsh-users/zsh-autosuggestions)
 
 **Download and update your zsh-config**
 
@@ -110,7 +110,7 @@ Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.
 cd && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/shells/zshrc.sh
 ```
 
-Source: [zshrc-shell-script-github](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/configurations/shells/zshrc.sh)
+> Source: [zshrc-shell-script-github](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/configurations/shells/zshrc.sh)
 
 > If the x-server ain´t running you can configure it to autostart in this file by changing: autostart_x to 1
 
@@ -130,7 +130,7 @@ sudo reboot
 
 ### Extra (Optional)
 
-[Tutorial: "Linux Debian web-developer utilities" install webdev software and scripts](../debian-webdev-tutorial.md)
+> Tutorial: ["Linux Debian web-developer utilities" install webdev software and scripts](../debian-webdev-tutorial.md)
 
 **My favorite linux games**
 
