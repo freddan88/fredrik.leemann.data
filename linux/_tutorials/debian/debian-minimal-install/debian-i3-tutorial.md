@@ -135,8 +135,9 @@ sudo reboot
 **My favorite linux games**
 
 ```bash
-sudo apt install openarena nexuiz alien-arena alienblaster sauerbraten 0ad warzone2100 frozen-bubble gnome-nibbles xmoto -y
-sudo apt install hedgewars teeworlds supertux supertuxkart extremetuxracer quadrapassel pinball pinball-table-gnu pinball-table-hurd -y
+sudo apt install openarena nexuiz alien-arena alienblaster sauerbraten 0ad warzone2100 frozen-bubble -y
+sudo apt install hedgewars teeworlds supertux supertuxkart extremetuxracer quadrapassel -y
+sudo apt install pinball pinball-table-gnu pinball-table-hurd xmoto gnome-nibbles -y
 ```
 
 **Install virtualbox guest-additions if you are using a VM through virtualbox**
