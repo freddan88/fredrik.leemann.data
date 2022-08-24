@@ -23,7 +23,7 @@ cd /tmp && wget $url/debian_root_webdev_scripts_all.sh
 cd /tmp && wget $url/debian_user_webdev_scripts_all.sh
 ```
 
-Sources: [debian-webdev-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debian-webdev-install)
+> Sources: [debian-webdev-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debian-webdev-install)
 
 **Run scripts to install webdev-utilities for Debian**
 
@@ -34,7 +34,7 @@ cd /tmp && sudo ./debian_root_webdev_scripts_all.sh
 cd /tmp && ./debian_user_webdev_scripts_all.sh
 ```
 
-You can run `debian_root_webdev_scripts_all.sh` and `debian_user_webdev_scripts_all.sh` again to update those scripts
+> You can run `debian_root_webdev_scripts_all.sh` and `debian_user_webdev_scripts_all.sh` again to update those scripts
 
 **Install NVM (Node Version Manager)**
 
@@ -42,7 +42,7 @@ You can run `debian_root_webdev_scripts_all.sh` and `debian_user_webdev_scripts_
 cd /tmp && wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 ```
 
-Source: [GitHub - nvm-sh/nvm: Node Version Manager](https://github.com/nvm-sh/nvm)
+> Source: [GitHub - nvm-sh/nvm: Node Version Manager](https://github.com/nvm-sh/nvm)
 
 **Reboot your computer to apply new configurations and settings**
 
