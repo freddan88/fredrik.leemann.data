@@ -127,7 +127,7 @@ echo " "
 
 cd /etc/default/grub || exit
 wget -O grub $url_grub_minimal_config
-update-grub2
+/usr/sbin/update-grub
 
 echo " "
 echo "DONE!"
