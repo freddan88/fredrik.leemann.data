@@ -157,7 +157,17 @@ sudo apt install spice-vdagent -y && sudo /etc/init.d/spice-vdagent start
 
 **Speed up apt-package-manager using the nala-project**
 
-Project: [Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
+[Nala package manager installation - Tutorial by: Jake Redfield](https://trendoceans.com/nala-package-manager)
+
+[Nala package manager installation - Official tutorial](https://gitlab.com/volian/nala/-/wikis/Installation)
+
+For Debian Linux 11 (bullseye) 64Bit
+
+1. Add Custom Repository
+2. Install the legacy-package
+
+Project:
+[Volian Linux / nala · GitLab](https://gitlab.com/volian/nala)
 
 ---
 
