@@ -210,6 +210,7 @@ _Please read the source of the scripts above to get a full list of programs_
 
 - [unix.stackexchange.com - automatically-login-via-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
 - [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
+- [Rofi command/application-launcher Tutorial](https://linuxconfig.org/how-to-use-and-install-rofi-on-linux-tutorial)
 - [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
 - [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
 - [i3 improved tiling wm - user’s Guide](https://i3wm.org/docs/userguide.html)
