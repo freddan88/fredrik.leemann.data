@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-rofiTheme="/usr/share/rofi/themes/Pop-Dark.rasi"
-
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
@@ -18,8 +16,8 @@ app_software="Configure Software Sources"
 
 option=$(
   printf "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s" \
-    "System Controll Panel" \
-    "---------------------" \
+    "System Configuration Menu" \
+    "-------------------------" \
     "$app_theme" \
     "$app_wallpaper" \
     " " \
@@ -32,8 +30,7 @@ option=$(
     "$app_networking_cli" \
     "$app_keyboard_cli" \
     " " \
-    "Exit" |
-    rofi -dmenu -i -theme $rofiTheme
+    "Exit" | rofi -dmenu
 )
 
 case "$option" in

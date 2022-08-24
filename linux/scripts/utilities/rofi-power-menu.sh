@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-rofiTheme="/usr/share/rofi/themes/Pop-Dark.rasi"
-
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
@@ -46,8 +44,7 @@ else
       "$reboot_option" \
       "$shutdown_option" \
       " " \
-      "$exit_option" |
-      rofi -dmenu -i -theme $rofiTheme
+      "$exit_option" | rofi -dmenu
   )
 fi
 
