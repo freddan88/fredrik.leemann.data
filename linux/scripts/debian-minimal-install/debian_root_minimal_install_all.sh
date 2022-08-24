@@ -33,7 +33,7 @@ apt install arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-them
 apt install ghostscript cmatrix xarchiver exo-utils ffmpeg gparted synaptic stacer gimp mirage typecatcher baobab util-linux onboard screenkey xdotool libreoffice bc -y
 apt install playerctl xterm screen members w3m ssh zsh xss-lock htop pwgen openssl lshw ufw gufw nitrogen wmctrl dos2unix colord xiccd acpi acpid avahi-daemon samba -y
 apt install ftp tftp tftpd-hpa net-tools fail2ban neofetch make gcc build-essential minicom cutecom pandoc network-manager appmenu-gtk2-module appmenu-gtk3-module -y
-apt install lightdm slick-greeter lightdm-settings orca dunst vlc -y
+apt install lightdm slick-greeter lightdm-settings orca dunst vlc fzf -y
 
 apt install xfce4-panel xfce4-appmenu-plugin xfce4-appfinder xfce4-terminal xfce4-screenshooter xfce4-power-manager xfce4-pulseaudio-plugin xfce4-battery-plugin --no-install-recommends -y
 apt install policykit-1-gnome gnome-software gnome-system-monitor gnome-calendar network-manager-gnome network-manager-openvpn gnome-disk-utility --no-install-recommends -y
