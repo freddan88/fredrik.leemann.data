@@ -105,7 +105,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 > Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.com/zsh-users/zsh-autosuggestions)
 
 ```bash
-cd && git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
 ```
 
 > Source: [zsh-git-open: Open remote repository from zsh-terminal](https://github.com/paulirish/git-open)
