@@ -96,13 +96,19 @@ cd /tmp && sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/too
 
 > Source: [https://ohmyz.sh](https://ohmyz.sh)
 
-**Install Extension for Oh My Zsh**
+**Install Extensions for Oh My Zsh**
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 > Source: [zsh-autosuggestions: Fish-like autosuggestions for zsh](https://github.com/zsh-users/zsh-autosuggestions)
+
+```bash
+cd && git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+```
+
+> Source: [zsh-git-open: Open remote repository from zsh-terminal](https://github.com/paulirish/git-open)
 
 **Download and update your zsh-config**
 
