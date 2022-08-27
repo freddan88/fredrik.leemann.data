@@ -154,9 +154,19 @@ sudo apt install pinball pinball-table-gnu pinball-table-hurd xmoto gnome-nibble
 sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 ```
 
+**Example on how to install virtualbox guest-additions from CLI**
+
+```bash
+sudo mkdir -p /tmp/vbox
+sudo mount /dev/cdrom /tmp/vbox
+sudo ./VBoxLinuxAdditions.run
+```
+
+> OBS! You need to `insert the Guest Additions CD image` before running those commands
+
 **Install and start spice-vdagent if you are using a VM in example KVM**
 
-> This service needs to autostart through the i3-configuration file
+> This service needs to autostart through some configuration file
 
 ```bash
 sudo apt install spice-vdagent -y && sudo /etc/init.d/spice-vdagent start
