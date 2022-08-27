@@ -125,7 +125,7 @@ echo " "
 echo "DOWNLOADING CONFIGURATION FOR GRUB BOOTLOADER" && sleep 2
 echo " "
 
-cd /etc/default/grub || exit
+cd /etc/default || exit
 wget -O grub $url_grub_minimal_config
 /usr/sbin/update-grub
 
