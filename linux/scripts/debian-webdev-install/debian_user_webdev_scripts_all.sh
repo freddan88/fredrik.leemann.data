@@ -13,6 +13,8 @@ if [ "$SUDO_USER" ]; then
   exit
 fi
 
+mkdir -p "$HOME"/Apps/{www,scripts}
+
 echo " "
 echo "DOWNLOADING LOCAL UTILITY-SCRIPTS" && sleep 2
 echo " "
