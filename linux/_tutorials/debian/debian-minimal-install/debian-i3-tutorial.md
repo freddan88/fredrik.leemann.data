@@ -89,8 +89,6 @@ cd /tmp && ./debian_user_update_config_i3.sh
 > cd /tmp && debian_user_update_config_i3.sh
 > cd /tmp && debian_user_update_config_openbox.sh
 > ```
->
-> ---
 
 **Install i3 window-manager on Debian**
 
