@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-url_composer_installer="https://getcomposer.org/installer"
-url_docker_compose="https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64"
 url_marktext_package="https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd64.deb"
 url_mongodb_compass="https://downloads.mongodb.com/compass/mongodb-compass_1.30.1_amd64.deb"
 url_latest_vscode="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
