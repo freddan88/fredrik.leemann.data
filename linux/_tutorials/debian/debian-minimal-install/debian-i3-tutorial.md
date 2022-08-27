@@ -167,7 +167,7 @@ cd /tmp && sudo umount -f vbox && rm -rf vbox
 
 **Install and start spice-vdagent if you are using a VM in example KVM**
 
-> This service needs to autostart through some configuration file
+> This service needs to autostart through some configuration-file
 
 ```bash
 sudo apt install spice-vdagent -y && sudo /etc/init.d/spice-vdagent start
