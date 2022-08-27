@@ -138,9 +138,10 @@ bindsym Ctrl+$alt+x exec --no-startup-id xterm -e cmatrix
 bindsym Ctrl+$alt+Delete --release exec --no-startup-id xkill
 bindsym Ctrl+$alt+Escape exec --no-startup-id gnome-system-monitor
 bindsym Ctrl+$alt+c exec --no-startup-id mousepad $HOME/.config/i3/config
-bindsym Ctrl+$alt+q exec --no-startup-id i3lock -c 000000
+bindsym Ctrl+$alt+i exec --no-startup-id i3lock -c 000000
 bindsym Ctrl+$alt+l exec --no-startup-id dm-tool lock
 bindsym Ctrl+$alt+e exec --no-startup-id i3-msg exit
+bindsym Ctrl+$alt+q exec --no-startup-id rofi-power-menu.sh
 bindsym Ctrl+$alt+p exec systemctl poweroff
 bindsym Ctrl+$alt+r exec systemctl reboot
 
@@ -179,6 +180,10 @@ bindsym $mod+q kill
 # ----------------------
 # KEYBINDINGS: SUPER-KEY
 # ----------------------
+
+# bindsym $mod+e exec --no-startup-id thunar
+# bindsym $mod+w exec --no-startup-id google-chrome
+# bindsym $mod+r exec --no-startup-id rofi-system-menu.sh
 
 bindsym $mod+w exec --no-startup-id nitrogen
 bindsym $mod+e exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e sudo dpkg-reconfigure keyboard-configuration
