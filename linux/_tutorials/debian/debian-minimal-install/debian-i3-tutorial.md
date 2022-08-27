@@ -160,7 +160,7 @@ sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 cd /tmp && mkdir -p vbox
 cd /tmp && sudo mount /dev/cdrom vbox
 cd /tmp/vbox && sudo ./VBoxLinuxAdditions.run
-cd /tmp && sudo umount vbox
+cd /tmp && sudo umount -f vbox && rm -rf vbox
 ```
 
 > OBS! You need to `insert the Guest Additions CD image` before running those commands
