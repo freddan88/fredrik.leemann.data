@@ -157,9 +157,10 @@ sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 **Example on how to install virtualbox guest-additions from CLI**
 
 ```bash
-sudo mkdir -p /tmp/vbox
-sudo mount /dev/cdrom /tmp/vbox
-sudo ./VBoxLinuxAdditions.run
+cd /tmp && mkdir -p vbox
+cd /tmp && sudo mount /dev/cdrom vbox
+cd /tmp/vbox && sudo ./VBoxLinuxAdditions.run
+cd /tmp && sudo umount vbox
 ```
 
 > OBS! You need to `insert the Guest Additions CD image` before running those commands
