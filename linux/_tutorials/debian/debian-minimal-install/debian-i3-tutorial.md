@@ -16,7 +16,7 @@
 
 **Download the non-free version of debian from this link**
 
-[unofficial-non-free-netinst-cd-including-firmware-debian-linux](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current/amd64/iso-cd/)
+> Download: [unofficial-debian-linux-iso-including-firmware](https://cdimage.debian.org/cdimage/unofficial/non-free/cd-including-firmware/current/amd64/iso-cd)
 
 **Install Debian on your computer**
 
