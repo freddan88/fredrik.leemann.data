@@ -156,10 +156,10 @@ bindsym $alt+Tab exec --no-startup-id rofi -show window
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # Generate a new sheet-cheat for keybinding in i3-wm (HTML and MARKDOWN)
-bindsym $mod+j exec --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
+bindsym $mod+v exec --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
 
 # Open the generated webpage in google-chrome and read i3-wm keybindings
-bindsym $mod+k exec --no-startup-id google-chrome $HOME/.config/i3/docs/i3keybindings.html
+bindsym $mod+b exec --no-startup-id google-chrome $HOME/.config/i3/docs/i3keybindings.html
 
 # Open the generated webpage in w3m and read i3-wm keybindings using a lightweight terminal browser
 bindsym $mod+n exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e w3m $HOME/.config/i3/docs/i3keybindings.html

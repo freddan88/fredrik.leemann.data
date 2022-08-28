@@ -224,8 +224,8 @@ _i3keybindings.sh will automatically run on every login and restart_
 | <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>q</kbd>   | rofi-power-menu      | Lock/Logout/Shutdown/Reboot              |
 |                                                   |                      |                                          |
 | **Keybindings specific to the i3 window manager** |                      |                                          |
-| <kbd>super</kbd> + <kbd>k</kbd>                   | google-chrome + keys | Read all keybindings in i3 using chrome  |
-| <kbd>super</kbd> + <kbd>j</kbd>                   | i3keybindings.sh     | Generate a new list of keybindings in i3 |
+| <kbd>super</kbd> + <kbd>b</kbd>                   | google-chrome + keys | Read all keybindings in i3 using chrome  |
+| <kbd>super</kbd> + <kbd>v</kbd>                   | i3keybindings.sh     | Generate a new list of keybindings in i3 |
 
 ### Some of the programs
 
