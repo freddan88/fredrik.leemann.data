@@ -157,7 +157,7 @@ bindsym $mod+space exec --no-startup-id xfce4-appfinder
 bindsym $alt+Tab exec --no-startup-id rofi -show window
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
-# Generate a new sheet cheat for keybinding in i3-wm (HTML and MARKDOWN)
+# Generate a new sheet-cheat for keybinding in i3-wm (HTML and MARKDOWN)
 bindsym $mod+j exec --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
 
 # Open the generated webpage in google-chrome and read i3-wm keybindings
