@@ -167,9 +167,9 @@ bindsym $mod+n exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e w3m $HOME/.c
 # Open the generated markdown file in terminal and read i3-wm keybindings
 bindsym $mod+m exec --no-startup-id xterm -hold -fa 'Monospace' -fs 12 -e pandoc -t plain $HOME/.config/i3/docs/i3keybindings.md
 
-# -------------------------------------
-# KEYBINDINGS: SUPER-KEY (APPLICATIONS)
-# -------------------------------------
+# ----------------------
+# KEYBINDINGS: SUPER-KEY
+# ----------------------
 
 bindsym $mod+Return exec --no-startup-id xfce4-terminal
 
