@@ -31,10 +31,10 @@ apt install curl wget git gzip bzip2 unzip zip tar lsb-release -y
 apt install xorg xbacklight xbindkeys xvkbd xinput numlockx dbus-x11 picom rofi lxappearance arandr pulseaudio pulseaudio-utils alsa-utils pavucontrol libnotify-bin -y
 apt install libpcre3 cpuid cpuidtool cpuinfo gthumb catfish mousepad ntfs-3g mtools dosfstools exfatprogs cifs-utils nfs-common gvfs gvfs-backends gvfs-fuse nano vim -y
 apt install arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-theme thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman eject thunderbird -y
-apt install ghostscript cmatrix xarchiver exo-utils ffmpeg gparted synaptic stacer gimp mirage typecatcher baobab util-linux onboard screenkey xdotool libreoffice bc -y
-apt install playerctl xterm screen members w3m ssh zsh xss-lock htop pwgen openssl lshw ufw gufw nitrogen wmctrl dos2unix colord orca vlc fzf xiccd avahi-daemon samba -y
+apt install ghostscript cmatrix xarchiver exo-utils ffmpeg gparted synaptic stacer gimp mirage baobab util-linux onboard screenkey xdotool libreoffice cpufreqd samba -y
+apt install playerctl xterm screen members w3m ssh zsh xss-lock htop pwgen openssl lshw ufw gufw nitrogen wmctrl dos2unix colord orca vlc fzf xiccd avahi-daemon bc -y
 apt install ftp tftp tftpd-hpa net-tools fail2ban neofetch make gcc build-essential minicom cutecom pandoc network-manager appmenu-gtk2-module appmenu-gtk3-module -y
-apt install lightdm slick-greeter lightdm-settings dunst v4l-utils acpi-support acpid acpi linux-cpupower cpufrequtils powertop cpulimit policykit-1-gnome cpufreqd -y
+apt install lightdm slick-greeter lightdm-settings dunst v4l-utils acpi-support acpid acpi linux-cpupower cpufrequtils powertop cpulimit policykit-1-gnome -y
 
 apt install xfce4-panel xfce4-appfinder xfce4-terminal xfce4-screenshooter xfce4-power-manager --no-install-recommends -y
 apt install xfce4-appmenu-plugin xfce4-cpufreq-plugin xfce4-pulseaudio-plugin xfce4-battery-plugin --no-install-recommends -y

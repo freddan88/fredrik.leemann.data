@@ -213,16 +213,19 @@ For Debian Linux 11 (bullseye) 64Bit
 
 _i3keybindings.sh will automatically run on every login and restart_
 
-| Keybinding                                      | Program / Script     | Description                    |
-| ----------------------------------------------- | -------------------- | ------------------------------ |
-| <kbd>super</kbd> + <kbd>enter</kbd>             | Xfce4 terminal       | Open a new terminal-window     |
-| <kbd>super</kbd> + <kbd>space</kbd>             | xfce4-appfinder      | Search for applications        |
-| <kbd>super</kbd> + <kbd>q</kbd>                 | kill                 | Close focused window           |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>g</kbd> | i3keybindings.sh     | Generate a list of keybindings |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>k</kbd> | google-chrome + keys | Read all i3 keybindings        |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>l</kbd> | slimlock             | Logout from the system         |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>p</kbd> | poweroff             | Shutdown the system            |
-| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>r</kbd> | reboot               | Reboot the system              |
+| Keybinding                                        | Program / Script     | Description                              |
+| ------------------------------------------------- | -------------------- | ---------------------------------------- |
+| <kbd>super</kbd> + <kbd>q</kbd>                   | kill                 | Close focused window                     |
+| <kbd>super</kbd> + <kbd>enter</kbd>               | Xfce4 terminal       | Open a new terminal-window               |
+| <kbd>super</kbd> + <kbd>space</kbd>               | xfce4-appfinder      | Search for applications                  |
+| <kbd>super</kbd> + <kbd>w</kbd>                   | google-chrome        | Open the web-browser google-chrome       |
+| <kbd>super</kbd> + <kbd>e</kbd>                   | thunar               | Open the file-browser thunar             |
+| <kbd>super</kbd> + <kbd>s</kbd>                   | rofi-system-menu     | Open the system menu for configurations  |
+| <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>q</kbd>   | rofi-power-menu      | Lock/Logout/Shutdown/Reboot              |
+|                                                   |                      |                                          |
+| **Keybindings specific to the i3 window manager** |                      |                                          |
+| <kbd>super</kbd> + <kbd>k</kbd>                   | google-chrome + keys | Read all keybindings in i3 using chrome  |
+| <kbd>super</kbd> + <kbd>j</kbd>                   | i3keybindings.sh     | Generate a new list of keybindings in i3 |
 
 ### Some of the programs
 

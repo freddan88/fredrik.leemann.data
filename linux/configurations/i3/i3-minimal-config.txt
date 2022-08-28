@@ -133,83 +133,56 @@ font pango:monospace 0
 # bindsym XF86AudioPrev exec playerctl previous
 
 bindsym Print exec --no-startup-id xfce4-screenshooter
-
-bindsym Ctrl+$alt+x exec --no-startup-id xterm -e cmatrix
 bindsym Ctrl+$alt+Delete --release exec --no-startup-id xkill
 bindsym Ctrl+$alt+Escape exec --no-startup-id gnome-system-monitor
-bindsym Ctrl+$alt+c exec --no-startup-id mousepad $HOME/.config/i3/config
-# bindsym Ctrl+$alt+i exec --no-startup-id i3lock -c 000000
+
+# System Power controls
+bindsym Ctrl+$alt+q exec --no-startup-id $HOME/.local/bin/rofi-power-menu
 bindsym Ctrl+$alt+l exec --no-startup-id dm-tool lock
 bindsym Ctrl+$alt+e exec --no-startup-id i3-msg exit
-bindsym Ctrl+$alt+q exec --no-startup-id $HOME/.local/bin/rofi-power-menu
 bindsym Ctrl+$alt+p exec systemctl poweroff
 bindsym Ctrl+$alt+r exec systemctl reboot
 
-bindsym $mod+Ctrl+space exec --no-startup-id catfish
-bindsym $mod+space exec --no-startup-id xfce4-appfinder
-bindsym $mod+$alt+space exec --no-startup-id rofi -show run -theme $rofiTheme
-bindsym $mod+Tab exec --no-startup-id rofi -show window -theme $rofiTheme
-bindsym $mod+Return exec --no-startup-id xfce4-terminal
-bindsym $mod+BackSpace exec --no-startup-id catfish
-
-# Reload the configuration file for i3-wm
+# i3-wm configuration-actions
+bindsym Ctrl+$alt+Return exec --no-startup-id mousepad $HOME/.config/i3/config
+bindsym Ctrl+$alt+BackSpace restart
 bindsym Ctrl+$alt+0 reload
 
-# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Ctrl+$alt+BackSpace restart
+# Search applications and files
+bindsym $mod+Ctrl+space exec --no-startup-id catfish
+bindsym $mod+$alt+space exec --no-startup-id rofi -show run
+bindsym $mod+space exec --no-startup-id xfce4-appfinder
 
-# Edit the configuration file for i3-wm
-bindsym Ctrl+$alt+Return exec --no-startup-id mousepad $HOME/.config/i3/config
-bindsym $mod+0 exec --no-startup-id mousepad $HOME/.config/i3/config
+# Switch between open windows
+bindsym $alt+Tab exec --no-startup-id rofi -show window
+bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # Generate a new sheet cheat for keybinding in i3-wm (HTML and MARKDOWN)
-bindsym Ctrl+$alt+g exec --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
+bindsym $mod+j exec --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
 
 # Open the generated webpage in google-chrome and read i3-wm keybindings
-bindsym Ctrl+$alt+k exec --no-startup-id google-chrome $HOME/.config/i3/docs/i3keybindings.html
+bindsym $mod+k exec --no-startup-id google-chrome $HOME/.config/i3/docs/i3keybindings.html
 
 # Open the generated webpage in w3m and read i3-wm keybindings using a lightweight terminal browser
-bindsym Ctrl+$alt+i exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e w3m $HOME/.config/i3/docs/i3keybindings.html
+bindsym $mod+n exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e w3m $HOME/.config/i3/docs/i3keybindings.html
 
 # Open the generated markdown file in terminal and read i3-wm keybindings
-bindsym Ctrl+$alt+m exec --no-startup-id xterm -hold -fa 'Monospace' -fs 12 -e pandoc -t plain $HOME/.config/i3/docs/i3keybindings.md
+bindsym $mod+m exec --no-startup-id xterm -hold -fa 'Monospace' -fs 12 -e pandoc -t plain $HOME/.config/i3/docs/i3keybindings.md
+
+# -------------------------------------
+# KEYBINDINGS: SUPER-KEY (APPLICATIONS)
+# -------------------------------------
+
+bindsym $mod+Return exec --no-startup-id xfce4-terminal
 
 # Kill focused window
 bindsym $mod+q kill
+bindsym $mod+w exec --no-startup-id google-chrome
+bindsym $mod+e exec --no-startup-id thunar
 
-# ----------------------
-# KEYBINDINGS: SUPER-KEY
-# ----------------------
-
-# bindsym $mod+e exec --no-startup-id thunar
-# bindsym $mod+w exec --no-startup-id google-chrome
-bindsym $mod+r exec --no-startup-id $HOME/.local/bin/rofi-system-menu
-
-bindsym $mod+w exec --no-startup-id nitrogen
-bindsym $mod+e exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e sudo dpkg-reconfigure keyboard-configuration
-
-bindsym $mod+a exec --no-startup-id lxappearance
-bindsym $mod+s exec --no-startup-id pavucontrol
-bindsym $mod+d exec --no-startup-id arandr
-
-bindsym $mod+z exec --no-startup-id gnome-system-monitor
-bindsym $mod+x exec --no-startup-id gnome-disks
-bindsym $mod+c exec --no-startup-id baobab
-
-# bindsym $mod+r exec --no-startup-id gnome-software
-bindsym $mod+f exec --no-startup-id thunar
-bindsym $mod+v exec --no-startup-id synaptic-pkexec
-
-bindsym $mod+t exec --no-startup-id stacer
-bindsym $mod+g exec --no-startup-id google-chrome
-bindsym $mod+b exec --no-startup-id google-chrome
-
-bindsym $mod+y exec --no-startup-id nm-connection-editor
-bindsym $mod+h exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e nmtui
-bindsym $mod+n exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e nmtui
-
-bindsym $mod+u exec --no-startup-id gnome-system-monitor
-bindsym $mod+m exec --no-startup-id gnome-power-statistics
+bindsym $mod+a exec --no-startup-id stacer
+bindsym $mod+s exec --no-startup-id $HOME/.local/bin/rofi-system-menu
+bindsym $mod+d exec --no-startup-id baobab
 
 # Change focus
 bindsym $mod+l focus right
@@ -299,17 +272,17 @@ bindsym $mod+$alt+$numlock_on+KP_4 layout splitv
 bindsym $mod+$alt+$numlock_on+KP_6 layout splith
 
 # Enter fullscreen mode for the focused container
-bindsym $mod+$alt+f fullscreen toggle
-bindsym $mod+$alt+0 fullscreen toggle
+bindsym $mod+$alt+Return fullscreen toggle
 
 # Enter fullscreen mode for the focused container using keypad when numlock is on
-bindsym $mod+$alt+$numlock_on+KP_0 fullscreen toggle
+bindsym $mod+$alt+$numlock_on+KP_Enter fullscreen toggle
 
 # Toggle tiling / floating
-bindsym $mod+$alt+Return floating toggle
+bindsym $mod+$alt+BackSpace floating toggle
 
 # Change focus between tiling / floating windows
-bindsym $mod+$alt+BackSpace focus mode_toggle
+bindsym $mod+$alt+$numlock_on+KP_0 focus mode_toggle
+bindsym $mod+$alt+0 focus mode_toggle
 
 mode "resize" {
   ## These bindings trigger as soon as you enter the resize mode
