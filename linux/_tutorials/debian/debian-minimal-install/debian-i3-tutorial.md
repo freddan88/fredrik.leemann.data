@@ -183,6 +183,7 @@ sudo apt install spice-vdagent -y && sudo /etc/init.d/spice-vdagent start
 
 **Speed up apt-package-manager using the nala-project**
 
+- [Nala package manager installation and usage - Tutorial by: Chris Titus Tech](https://christitus.com/stop-using-apt)
 - [Nala package manager installation - Tutorial by: Jake Redfield](https://trendoceans.com/nala-package-manager)
 - [Nala package manager installation - Official tutorial](https://gitlab.com/volian/nala/-/wikis/Installation)
 
