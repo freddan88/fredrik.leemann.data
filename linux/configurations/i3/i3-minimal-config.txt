@@ -141,7 +141,7 @@ bindsym Ctrl+$alt+c exec --no-startup-id mousepad $HOME/.config/i3/config
 # bindsym Ctrl+$alt+i exec --no-startup-id i3lock -c 000000
 bindsym Ctrl+$alt+l exec --no-startup-id dm-tool lock
 bindsym Ctrl+$alt+e exec --no-startup-id i3-msg exit
-bindsym Ctrl+$alt+q exec --no-startup-id rofi-power-menu.sh
+bindsym Ctrl+$alt+q exec --no-startup-id $HOME/.local/bin/rofi-power-menu
 bindsym Ctrl+$alt+p exec systemctl poweroff
 bindsym Ctrl+$alt+r exec systemctl reboot
 
@@ -183,7 +183,7 @@ bindsym $mod+q kill
 
 # bindsym $mod+e exec --no-startup-id thunar
 # bindsym $mod+w exec --no-startup-id google-chrome
-# bindsym $mod+r exec --no-startup-id rofi-system-menu.sh
+bindsym $mod+r exec --no-startup-id $HOME/.local/bin/rofi-system-menu
 
 bindsym $mod+w exec --no-startup-id nitrogen
 bindsym $mod+e exec --no-startup-id xterm -fa 'Monospace' -fs 12 -e sudo dpkg-reconfigure keyboard-configuration
@@ -196,7 +196,7 @@ bindsym $mod+z exec --no-startup-id gnome-system-monitor
 bindsym $mod+x exec --no-startup-id gnome-disks
 bindsym $mod+c exec --no-startup-id baobab
 
-bindsym $mod+r exec --no-startup-id gnome-software
+# bindsym $mod+r exec --no-startup-id gnome-software
 bindsym $mod+f exec --no-startup-id thunar
 bindsym $mod+v exec --no-startup-id synaptic-pkexec
 

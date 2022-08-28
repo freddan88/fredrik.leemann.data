@@ -50,7 +50,7 @@ case "$option" in
   xterm -fa 'Monospace' -fs 12 -e nmtui
   ;;
 "$app_keyboard_cli")
-  xterm -fa 'Monospace' -fs 12 -e minimal-keyboard-configuration
+  xterm -fa 'Monospace' -fs 12 -e "$HOME"/.local/bin/minimal-keyboard-configuration
   ;;
 "$app_firewall")
   gufw
