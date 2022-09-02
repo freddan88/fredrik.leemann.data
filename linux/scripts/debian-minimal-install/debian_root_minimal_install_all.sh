@@ -8,6 +8,7 @@ url_pulseaudio_ctl="https://github.com/graysky2/pulseaudio-ctl/archive/refs/tags
 url_grub_minimal_config="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/bootloaders/minimal-grub.cfg"
 url_lightdm_slick_config="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/slick-greeter.conf"
 url_lightdm_config="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf"
+url_latest_deb_get="https://raw.githubusercontent.com/wimpysworld/deb-get/main/deb-get"
 url_google_fonts="https://github.com/google/fonts/archive/main.tar.gz"
 
 ################################
@@ -114,6 +115,12 @@ fi
 cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz jetbrains-mono-nerd
 
 fc-cache -sv && apt autoremove -y
+
+echo " "
+echo "DOWNLOADING AND INSTALLING LATEST DEB-GET FROM GITHUB" && sleep 2
+echo " "
+
+curl -sL $url_latest_deb_get | bash -s install deb-get
 
 echo " "
 echo "DOWNLOADING CONFIGURATIONS FOR LIGHTDM LOGIN MANAGER" && sleep 2
