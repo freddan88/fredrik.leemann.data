@@ -48,7 +48,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githu
 wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc >/dev/null
 sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
 
-apt update -qq && apt install docker-ce docker-ce-cli containerd.io ghostscript pwgen openssl bat jq pandoc redis gh github-desktop -y
+apt update -qq && apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin ghostscript pwgen openssl bat jq pandoc redis gh github-desktop -y
 apt install apache2 libapache2-mpm-itk libapache2-mod-php libsodium23 sqlite3 sqlitebrowser mariadb-client mariadb-server php php-sqlite3 php-mysql -y
 apt install php-cli php-common php-xdebug php-bcmath php-curl php-soap php-mbstring php-opcache php-readline php-xml php-zip php-pear php-cgi php-phpseclib -y
 apt install php-imagick php-gd imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 -y

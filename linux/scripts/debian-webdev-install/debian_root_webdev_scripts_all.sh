@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 url_composer_installer="https://getcomposer.org/installer"
-url_docker_compose="https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64"
+# url_docker_compose="https://github.com/docker/compose/releases/download/v2.6.1/docker-compose-linux-x86_64"
 kubernetes_kubectl_version="stable"
 
 ################################
@@ -28,13 +28,13 @@ echo " "
 echo "INSTALLED THE COMMAND 'COMPOSER' GLOBALLY IN: /usr/local/bin/composer"
 echo " "
 
-cd /tmp && rm -f /usr/local/bin/docker-compose
-cd /tmp && wget $url_docker_compose
-cd /tmp && mv -f docker-compose-linux-x86_64 /usr/local/bin/docker-compose && chmod -f 755 /usr/local/bin/docker-compose
+# cd /tmp && rm -f /usr/local/bin/docker-compose
+# cd /tmp && wget $url_docker_compose
+# cd /tmp && mv -f docker-compose-linux-x86_64 /usr/local/bin/docker-compose && chmod -f 755 /usr/local/bin/docker-compose
 
-echo " "
-echo "INSTALLED THE COMMAND 'DOCKER-COMPOSE' GLOBALLY IN: /usr/local/bin/docker-compose"
-echo " "
+# echo " "
+# echo "INSTALLED THE COMMAND 'DOCKER-COMPOSE' GLOBALLY IN: /usr/local/bin/docker-compose"
+# echo " "
 
 kubectl_version="$kubernetes_kubectl_version"
 
