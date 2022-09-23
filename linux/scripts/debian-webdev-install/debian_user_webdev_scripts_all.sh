@@ -24,6 +24,9 @@ wget -O phpsrv $url_utility_script_phpsrv
 chmod -R 754 "$HOME"/.local/bin
 
 echo " "
+echo "Content in: $HOME/.local/bin"
+echo " "
+
 ls -al "$HOME"/.local/bin
 
 echo " "
