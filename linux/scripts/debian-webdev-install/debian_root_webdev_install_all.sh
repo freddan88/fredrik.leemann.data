@@ -35,7 +35,14 @@ if [ "$linux_distribution" = "Ubuntu" ]; then
   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list >/dev/null
 fi
 
-apt update -qq && apt install docker-ce docker-ce-cli containerd.io ghostscript pwgen openssl bat jq pandoc redis -y
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list >/dev/null
+
+wget -qO - https://packagecloud.io/shiftkey/desktop/gpgkey | sudo tee /etc/apt/trusted.gpg.d/shiftkey-desktop.asc >/dev/null
+sh -c 'echo "deb [arch=amd64] https://packagecloud.io/shiftkey/desktop/any/ any main" > /etc/apt/sources.list.d/packagecloud-shiftky-desktop.list'
+
+apt update -qq && apt install docker-ce docker-ce-cli containerd.io ghostscript pwgen openssl bat jq pandoc redis gh github-desktop -y
 apt install apache2 libapache2-mpm-itk libapache2-mod-php libsodium23 sqlite3 sqlitebrowser mariadb-client mariadb-server php php-sqlite3 php-mysql -y
 apt install php-cli php-common php-xdebug php-bcmath php-curl php-soap php-mbstring php-opcache php-readline php-xml php-zip php-pear php-cgi php-phpseclib -y
 apt install php-imagick php-gd imagemagick imagemagick-common imagemagick-6-common imagemagick-6.q16 imagemagick-6.q16hdri libmagickcore-6.q16-6 -y

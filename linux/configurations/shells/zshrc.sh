@@ -106,6 +106,17 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+gac() {
+  git add .
+  git commit -m "$1"
+}
+
+gacp() {
+  git add .
+  git commit -m "$1"
+  git push
+}
+
 #########################
 # CONFIGURATION SECTION #
 #########################
