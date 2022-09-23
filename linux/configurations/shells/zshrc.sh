@@ -113,7 +113,8 @@ gac() {
     echo ''
   else
     echo ''
-    echo 'THIS COMMAND WILL ADD ALL CHANGES AND COMMIT WITH YOUR MESSAGE'
+    echo 'THIS COMMAND WILL ADD ALL CHANGES AND COMMIT WITH YOUR PROVIDED MESSAGE'
+    echo ''
     git add .
     git commit -m "$1"
     echo ''
@@ -127,7 +128,8 @@ gacp() {
     echo ''
   else
     echo ''
-    echo 'THIS COMMAND WILL ADD ALL CHANGES, COMMIT AND PUSH WITH YOUR MESSAGE'
+    echo 'THIS COMMAND WILL ADD ALL CHANGES, COMMIT AND PUSH WITH YOUR PROVIDED MESSAGE'
+    echo ''
     git add .
     git commit -m "$1"
     git push
