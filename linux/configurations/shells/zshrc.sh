@@ -107,14 +107,30 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 gac() {
-  git add .
-  git commit -m "$1"
+  if [ -z "$1" ]; then
+    echo ''
+    echo 'No message provided - Example: gac "first commit"'
+    echo ''
+  else
+    echo ''
+    git add .
+    git commit -m "$1"
+    echo ''
+  fi
 }
 
 gacp() {
-  git add .
-  git commit -m "$1"
-  git push
+  if [ -z "$1" ]; then
+    echo ''
+    echo 'No message provided - Example: gacp "first commit"'
+    echo ''
+  else
+    echo ''
+    git add .
+    git commit -m "$1"
+    git push
+    echo ''
+  fi
 }
 
 #########################
