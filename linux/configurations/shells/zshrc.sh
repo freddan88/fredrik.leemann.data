@@ -109,10 +109,11 @@ fi
 gac() {
   if [ -z "$1" ]; then
     echo ''
-    echo 'No message provided - Example: gac "first commit"'
+    echo 'NO MESSAGE PROVIDED - EXAMPLE: gac "first commit"'
     echo ''
   else
     echo ''
+    echo 'THIS COMMAND WILL ADD ALL CHANGES AND COMMIT WITH YOUR MESSAGE'
     git add .
     git commit -m "$1"
     echo ''
@@ -122,10 +123,11 @@ gac() {
 gacp() {
   if [ -z "$1" ]; then
     echo ''
-    echo 'No message provided - Example: gacp "first commit"'
+    echo 'NO MESSAGE PROVIDED - EXAMPLE: gacp "first commit"'
     echo ''
   else
     echo ''
+    echo 'THIS COMMAND WILL ADD ALL CHANGES, COMMIT AND PUSH WITH YOUR MESSAGE'
     git add .
     git commit -m "$1"
     git push
