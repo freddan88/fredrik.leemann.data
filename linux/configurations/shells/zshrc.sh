@@ -106,6 +106,7 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Function: Git-add and commit all changes - Example: gac "first commit"
 gac() {
   if [ -z "$1" ]; then
     echo ''
@@ -121,6 +122,7 @@ gac() {
   fi
 }
 
+# Function: Git-add, commit and push all changes - Example: gacp "first commit"
 gacp() {
   if [ -z "$1" ]; then
     echo ''
@@ -135,6 +137,22 @@ gacp() {
     git push
     echo ''
   fi
+}
+
+# Function: Update all software - Example: sudo upas
+upas() {
+  echo ''
+  echo 'THIS COMMAND WILL UPDATE ALL SOFTWARE'
+  echo ''
+  if [ -f "$(command -v nala)" ]; then
+    sudo nala upgrade -y
+  else
+    sudo apt update && sudo apt upgrade -y
+  fi
+  if [ -f "$(command -v flatpak)" ]; then
+    sudo flatpak update -y
+  fi
+  echo ''
 }
 
 #########################
