@@ -55,17 +55,23 @@
     </item>
     <separator />
     <item label="Shutdown">
-      <action name="systemctl poweroff" />
+      <action name="Execute">
+        <execute>.local/bin/rofi-power-menu Shutdown</execute>
+      </action>
     </item>
     <item label="Reboot">
-      <action name="systemctl reboot" />
+      <action name="Execute">
+        <execute>.local/bin/rofi-power-menu Reboot</execute>
+      </action>
     </item>
     <item label="Logout">
-      <action name="Exit" />
+      <action name="Execute">
+        <execute>.local/bin/rofi-power-menu Logout</execute>
+      </action>
     </item>
     <item label="Lock">
       <action name="Execute">
-        <execute>dm-tool lock</execute>
+        <execute>.local/bin/rofi-power-menu Lock</execute>
       </action>
     </item>
   </menu>
