@@ -20,10 +20,22 @@
         <execute>thunar</execute>
       </action>
     </item>
-    <!-- This requires the presence of the 'obamenu' package to work -->
-    <menu id="/Debian" />
     <separator />
-    <menu id="applications-menu" label="Applications" execute="/usr/bin/obamenu"/>
+    <item label="Change wallpaper">
+      <action name="Execute">
+        <execute>nitrogen</execute>
+      </action>
+    </item>
+    <item label="Change System Theme">
+      <action name="Execute">
+        <execute>lxappearance</execute>
+      </action>
+    </item>
+    <item label="System Menu">
+      <action name="Execute">
+        <execute>.local/bin/rofi-system-menu</execute>
+      </action>
+    </item>
     <separator />
     <item label="Config openbox-text">
       <action name="Execute">
@@ -42,6 +54,12 @@
       <action name="Reconfigure" />
     </item>
     <separator />
+    <item label="Shutdown">
+      <action name="systemctl poweroff" />
+    </item>
+    <item label="Reboot">
+      <action name="systemctl reboot" />
+    </item>
     <item label="Logout">
       <action name="Exit" />
     </item>
