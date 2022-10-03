@@ -531,7 +531,7 @@
     </keybind>
     <keybind key="W-Return">
       <action name="Execute">
-        <command>xfce4-terminal -e 'sh -c "echo '';neofetch;echo Codename: $(lsb_release -cs);$SHELL"' --maximize</command>
+        <command>xfce4-terminal -e 'sh -c "echo '';neofetch;$SHELL"' --maximize</command>
       </action>
     </keybind>
     <keybind key="W-space">

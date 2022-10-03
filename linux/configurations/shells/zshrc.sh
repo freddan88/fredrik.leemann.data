@@ -168,8 +168,6 @@ autostart_x=0
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
-echo " "
-
 isRemote=$(loginctl show-session "$XDG_SESSION_ID" -P Remote)
 
 if [ "$isRemote" = "no" ]; then
@@ -193,4 +191,12 @@ export NVM_DIR
 
 if [ -d "$NVM_DIR" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+fi
+
+echo " "
+
+if [ -f "/etc/os-release" ]; then
+  os_codenames=$(grep CODENAME /etc/os-release)
+  echo "$os_codenames"
+  echo " "
 fi
