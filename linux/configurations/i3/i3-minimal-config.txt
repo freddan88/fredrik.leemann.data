@@ -171,7 +171,7 @@ bindsym $mod+m exec --no-startup-id xterm -hold -fa 'Monospace' -fs 12 -e pandoc
 # KEYBINDINGS: SUPER-KEY
 # ----------------------
 
-bindsym $mod+Return exec --no-startup-id xfce4-terminal
+bindsym $mod+Return exec --no-startup-id xfce4-terminal -e 'sh -c "neofetch; $SHELL"' --maximize
 
 # Kill focused window
 bindsym $mod+q kill

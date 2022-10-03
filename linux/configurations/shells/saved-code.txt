@@ -1,0 +1,9 @@
+if [ "$(command -v xdotool)" ] && [ "$(command -v neofetch)" ]; then
+  currentPid=$(xdotool getactivewindow getwindowpid)
+  currentProgram=$(ps -o command= $currentPid)
+  if [ "$currentProgram" = "xfce4-terminal" ]; then
+    neofetch
+    echo "Codename: $(lsb_release -cs)"
+    echo " "
+  fi
+fi
