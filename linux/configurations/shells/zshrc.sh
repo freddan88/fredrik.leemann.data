@@ -168,9 +168,10 @@ autostart_x=0
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
+echo " "
+
 isRemote=$(loginctl show-session "$XDG_SESSION_ID" -P Remote)
 
-echo " "
 if [ "$isRemote" = "no" ]; then
   if [ -f "/bin/Xorg" ]; then
     xstarted=$(ps -e | grep -c Xorg)
