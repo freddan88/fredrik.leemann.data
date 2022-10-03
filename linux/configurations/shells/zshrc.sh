@@ -105,6 +105,8 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias zconf='nano -l $HOME/.zshrc'
+alias nano="nano -l"
 
 # Function: Git-add and commit all changes - Example: gac "first commit"
 gac() {
@@ -167,17 +169,19 @@ autostart_x=0
 ################################
 
 isRemote=$(loginctl show-session "$XDG_SESSION_ID" -P Remote)
-xstarted=$(ps -e | grep -c Xorg)
 
 echo " "
 if [ "$isRemote" = "no" ]; then
-  if ((xstarted == 0)); then
-    if ((autostart_x)); then
-      startx
-    else
-      echo "PRESS ENTER TO START X OR CTRL+C TO EXIT - YOU CAN START X WITH THE COMMAND: startx"
-      read -r
-      startx
+  if [ -f "/bin/Xorg" ]; then
+    xstarted=$(ps -e | grep -c Xorg)
+    if ((xstarted == 0)); then
+      if ((autostart_x)); then
+        startx
+      else
+        echo "PRESS ENTER TO START X OR CTRL+C TO EXIT - YOU CAN START X WITH THE COMMAND: startx"
+        read -r
+        startx
+      fi
     fi
   fi
 fi
