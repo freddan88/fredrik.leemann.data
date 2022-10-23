@@ -63,38 +63,26 @@ sudo apt update && sudo apt install wget curl git -y
 **Download scripts to set-up base for minimal Debian installation**
 
 ```bash
-url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debian-minimal-install"
-cd /tmp && wget $url/debian_root_minimal_install_all.sh
-cd /tmp && wget $url/debian_user_update_config_all.sh
-cd /tmp && wget $url/debian_user_update_config_i3.sh
+url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/universal"
+cd /tmp && wget $url/debian-based/debian-minimal-install/root_debian_minimal_install_all.sh
+cd /tmp && wget $url/debian-based/debian-minimal-install/user_debian_update_config_all.sh
+cd /tmp && wget $url/debian-based/debian-minimal-install/user_debian_update_config_i3.sh
+cd /tmp && wget $url/root_linux_fonts_install_all.sh
 ```
 
-> Sources: [debian-minimal-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debian-minimal-install)
+> Sources: [linux-scripts-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts)
 
 **Run scripts to install minimal Debian installation**
 
 ```bash
-cd /tmp && sudo chmod 754 debian*.sh
-cd /tmp && sudo ./debian_root_minimal_install_all.sh
-cd /tmp && ./debian_user_update_config_all.sh
-cd /tmp && ./debian_user_update_config_i3.sh
+cd /tmp && sudo chmod 754 root_*.sh user_*.sh
+cd /tmp && sudo ./root_debian_minimal_install_all.sh
+cd /tmp && sudo ./root_linux_fonts_install_all.sh
+cd /tmp && ./user_debian_update_config_all.sh
+cd /tmp && ./user_debian_update_config_i3.sh
 ```
 
-> You can run `debian_user_update_config_all.sh` and `debian_user_update_config_i3.sh` again to update configurations
-
-<!-- > You can run below scripts again to update user-configurations
->
-> ```bash
-> cd /tmp && debian_user_update_config_all.sh
-> cd /tmp && debian_user_update_config_i3.sh
-> cd /tmp && debian_user_update_config_openbox.sh
-> ``` -->
-
-**Install i3 window-manager on Debian**
-
-```bash
-sudo apt install i3 i3status -y
-```
+> You can run `user_debian_update_config_all.sh` and `user_debian_update_config_i3.sh` again to update configurations
 
 **Install Oh My Zsh**
 

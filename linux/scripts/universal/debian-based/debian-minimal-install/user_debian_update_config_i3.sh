@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-url_config_i3="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/i3/i3-minimal-config.txt"
-url_config_i3_status="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/i3/i3-status-config.txt"
+url_styles_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/i3/i3keybindings.css"
+url_script_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/i3/i3keybindings.sh"
 url_config_i3_xfce4_panel="https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/configurations/i3/i3-xfce4-panel.tar.bz2"
-url_styles_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3/i3keybindings.css"
-url_script_i3_keybindings="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/i3/i3keybindings.sh"
+url_config_i3_status="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/i3/i3-status-config.txt"
+url_config_i3="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/i3/i3-minimal-config.txt"
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #

@@ -17,24 +17,24 @@
 **Download scripts to set-up webdev-utilities for Debian**
 
 ```bash
-url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/debian-webdev-install"
-cd /tmp && wget $url/debian_root_webdev_install_all.sh
-cd /tmp && wget $url/debian_root_webdev_scripts_all.sh
-cd /tmp && wget $url/debian_user_webdev_scripts_all.sh
+url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/universal"
+cd /tmp && wget $url/debian-based/debian-webdev-install/root_debian_webdev_install_all.sh
+cd /tmp && wget $url/debian-based/debian-webdev-install/root_debian_webdev_scripts_all.sh
+cd /tmp && wget $url/debian-based/debian-webdev-install/user_debian_webdev_scripts_all.sh
 ```
 
-> Sources: [debian-webdev-install-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts/debian-webdev-install)
+> Sources: [linux-scripts-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/scripts)
 
 **Run scripts to install webdev-utilities for Debian**
 
 ```bash
-cd /tmp && sudo chmod 754 debian*.sh
-cd /tmp && sudo ./debian_root_webdev_install_all.sh
-cd /tmp && sudo ./debian_root_webdev_scripts_all.sh
-cd /tmp && ./debian_user_webdev_scripts_all.sh
+cd /tmp && sudo chmod 754 root_*.sh user_*.sh
+cd /tmp && sudo ./root_debian_webdev_install_all.sh
+cd /tmp && sudo ./root_debian_webdev_scripts_all.sh
+cd /tmp && ./user_debian_webdev_scripts_all.sh
 ```
 
-> You can run `debian_root_webdev_scripts_all.sh` and `debian_user_webdev_scripts_all.sh` again to update those scripts
+> You can run `root_debian_webdev_scripts_all.sh` and `user_debian_webdev_scripts_all.sh` again to update those scripts
 
 **Install NVM (Node Version Manager)**
 

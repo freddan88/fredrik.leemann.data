@@ -1,5 +1,11 @@
 ## Linux Debian i3 Minimal Installation
 
+#### THIS GUIDE IS OUTDATED - YOU SHALL READ THE NEW AT:
+
+https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/_tutorials/debian/debian-minimal-install/debian-i3-tutorial.md
+
+---
+
 [License: MIT](https://choosealicense.com/licenses/mit)
 
 | My Links  |                                                                                      |
