@@ -114,7 +114,7 @@ fi
 
 cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz jetbrains-mono-nerd
 
-fc-cache -sv && apt autoremove -y
+fc-cache -s && apt autoremove -y
 
 echo " "
 echo "DOWNLOADING AND INSTALLING LATEST DEB-GET FROM GITHUB" && sleep 2
