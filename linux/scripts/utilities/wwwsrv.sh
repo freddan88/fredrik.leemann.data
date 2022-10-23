@@ -21,6 +21,7 @@ echo "  CustomLog $www_path/logs/apache_access.log combined" | sudo tee -a $vhos
 echo "</VirtualHost>" | sudo tee -a $vhost_file >/dev/null
 
 echo " " | sudo tee -a $hosts_file >/dev/null
+echo "wwwsrv" | sudo tee -a $hosts_file >/dev/null
 echo "127.0.0.1 $www_name" | sudo tee -a $hosts_file >/dev/null
 
 sudo systemctl restart apache2.service
