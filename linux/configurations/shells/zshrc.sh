@@ -170,6 +170,8 @@ autostart_x=0
 
 isRemote=$(loginctl show-session "$XDG_SESSION_ID" -P Remote)
 
+echo " "
+
 if [ "$isRemote" = "no" ]; then
   if [ -f "/bin/Xorg" ]; then
     xstarted=$(ps -e | grep -c Xorg)
@@ -181,6 +183,16 @@ if [ "$isRemote" = "no" ]; then
         read -r
         startx
       fi
+    else
+      currentProgram=$(xprop -id "$(xprop -root _NET_ACTIVE_WINDOW | cut -d ' ' -f 5)" WM_CLASS | cut -d'"' -f2)
+      if [ "$currentProgram" = "xfce4-terminal" ]; then
+        neofetch
+        if [ -f "/etc/os-release" ]; then
+          os_codenames=$(grep CODENAME /etc/os-release)
+          echo "$os_codenames"
+          echo " "
+        fi
+      fi
     fi
   fi
 fi
@@ -191,12 +203,4 @@ export NVM_DIR
 
 if [ -d "$NVM_DIR" ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-fi
-
-echo " "
-
-if [ -f "/etc/os-release" ]; then
-  os_codenames=$(grep CODENAME /etc/os-release)
-  echo "$os_codenames"
-  echo " "
 fi
