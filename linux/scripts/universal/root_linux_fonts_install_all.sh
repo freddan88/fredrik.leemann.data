@@ -42,3 +42,7 @@ fi
 cd /tmp && rm -rf fonts* JetBrainsMono*.zip main.tar.gz jetbrains-mono-nerd
 
 fc-cache -s && apt autoremove -y
+
+echo " "
+echo "DONE!"
+echo " "

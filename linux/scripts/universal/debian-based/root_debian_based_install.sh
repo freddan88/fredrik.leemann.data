@@ -17,3 +17,7 @@ fi
 echo " "
 echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
+
+echo " "
+echo "DONE!"
+echo " "

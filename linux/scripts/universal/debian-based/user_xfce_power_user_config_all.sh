@@ -17,3 +17,7 @@ fi
 echo " "
 echo "CONFIGURING" && sleep 2
 echo " "
+
+echo " "
+echo "DONE!"
+echo " "
