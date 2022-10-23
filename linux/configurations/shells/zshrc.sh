@@ -164,6 +164,9 @@ upas() {
 # Change autostart_x to start X automatically (1/0)
 autostart_x=0
 
+# Terminal that will display system-info
+terminal_program='xfce4-terminal'
+
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
@@ -185,7 +188,7 @@ if [ "$isRemote" = "no" ]; then
       fi
     else
       currentProgram=$(xprop -id "$(xprop -root _NET_ACTIVE_WINDOW | cut -d ' ' -f 5)" WM_CLASS | cut -d'"' -f2)
-      if [ "$currentProgram" = "xfce4-terminal" ]; then
+      if [ "$currentProgram" = "$terminal_program" ]; then
         neofetch
         if [ -f "/etc/os-release" ]; then
           os_codenames=$(grep CODENAME /etc/os-release)
