@@ -16,7 +16,7 @@ set $ws9 "9"
 set $dark_color   #383c4a
 set $light_color  #7c818c
 set $active_color #5294e2
-set $urgent_color #5294e2
+set $urgent_color #f57900
 
 # Run: 'xmodmap' in terminal to find modifiers
 # Mod4 = Windows or super key
