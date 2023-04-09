@@ -16,7 +16,7 @@ interval=300
 # DO NOT EDIT BELOW THIS LINE
 #############################
 
-# kill %1 1>/dev/null 2>/dev/null
+# pgrep -f feh-wallpaper-randomizer.sh | xargs -r kill -9
 
 echo ""
 if [ "$(command -v feh)" ]; then
