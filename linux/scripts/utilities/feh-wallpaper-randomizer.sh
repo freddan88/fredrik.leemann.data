@@ -16,7 +16,8 @@ interval=300
 # DO NOT EDIT BELOW THIS LINE
 #############################
 
-# pgrep -f feh-wallpaper-randomizer.sh | xargs -r kill -9
+# pids=$(pgrep -f feh-wallpaper-randomizer.sh)
+# $pids | xargs -r kill -9
 
 echo ""
 if [ "$(command -v feh)" ]; then
