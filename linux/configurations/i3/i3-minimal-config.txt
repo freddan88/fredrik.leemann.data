@@ -30,14 +30,16 @@ set $alt Mod1
 # AUTOSTART
 # ---------
 
-exec_always --no-startup-id /usr/bin/xdg-user-dirs-update
-exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
-exec_always --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
-exec_always --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
+exec_always --no-startup-id /usr/bin/picom -b
+exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id /usr/bin/xfce4-panel
+exec_always --no-startup-id /usr/bin/xdg-user-dirs-update
+# exec_always --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
+exec_always --no-startup-id /home/fredrik/.local/bin/feh-wallpaper-randomizer.sh
+exec_always --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id xfce4-panel-profiles load $HOME/.local/share/xfce4-panel-profiles/i3-xfce4-panel.tar.bz2
 exec --no-startup-id /usr/bin/xfce4-power-manager
 exec --no-startup-id /usr/bin/nm-applet
-exec --no-startup-id xfce4-panel-profiles load $HOME/.local/share/xfce4-panel-profiles/i3-xfce4-panel.tar.bz2
 
 # ----------
 # Appereance
