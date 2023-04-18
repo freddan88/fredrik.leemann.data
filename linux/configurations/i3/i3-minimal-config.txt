@@ -31,11 +31,11 @@ set $alt Mod1
 # ---------
 
 exec_always --no-startup-id /usr/bin/picom -b
-exec_always --no-startup-id nitrogen --restore
 exec_always --no-startup-id /usr/bin/xfce4-panel
 exec_always --no-startup-id /usr/bin/xdg-user-dirs-update
-# exec_always --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
-exec_always --no-startup-id /home/fredrik/.local/bin/feh-wallpaper-randomizer.sh
+# exec_always --no-startup-id nitrogen --restore; sleep 1; picom -b
+exec_always --no-startup-id $HOME/.config/i3/scripts/i3keybindings.sh
+exec_always --no-startup-id $HOME/.local/bin/feh-wallpaper-randomizer.sh start
 exec_always --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id xfce4-panel-profiles load $HOME/.local/share/xfce4-panel-profiles/i3-xfce4-panel.tar.bz2
 exec --no-startup-id /usr/bin/xfce4-power-manager
@@ -173,7 +173,7 @@ bindsym $mod+m exec --no-startup-id xterm -hold -fa 'Monospace' -fs 12 -e pandoc
 # KEYBINDINGS: SUPER-KEY
 # ----------------------
 
-bindsym $mod+Return exec --no-startup-id xfce4-terminal --maximize
+bindsym $mod+Return exec --no-startup-id xfce4-terminal
 
 # Kill focused window
 bindsym $mod+q kill
@@ -223,10 +223,10 @@ bindsym $mod+$numlock_on+KP_9 workspace $ws9
 # ---------------------------------
 
 # Split in horizontal orientation
-bindsym $mod+$alt+h split h
+bindsym $mod+$alt+Up split r
 
 # Split in vertical orientation
-bindsym $mod+$alt+v split v
+bindsym $mod+$alt+Down split f
 
 # Split in horizontal orientation using keypad when numlock is on
 bindsym $mod+$alt+$numlock_on+KP_7 split h
@@ -242,20 +242,24 @@ bindsym $mod+$alt+j move left
 bindsym $mod+$alt+k move down
 bindsym $mod+$alt+l move up
 
-# Alternatively, you can use the cursor keys:
-bindsym $mod+$alt+Right move right
-bindsym $mod+$alt+Left move left
-bindsym $mod+$alt+Down move down
-bindsym $mod+$alt+Up move up
+# Alternatively: Move focused window
+bindsym $mod+$alt+d move right
+bindsym $mod+$alt+a move left
+bindsym $mod+$alt+s move down
+bindsym $mod+$alt+w move up
+
+# Move focused window to next/previous workspace
+bindsym $mod+$alt+Right move to workspace prev
+bindsym $mod+$alt+Left  move to workspace next
 
 # Change container layout: tabbed | stacked | toggle | splith | splitv
 bindsym $mod+$alt+Tab layout toggle
 bindsym $mod+$alt+q layout toggle
 bindsym $mod+$alt+e layout toggle
-bindsym $mod+$alt+w layout tabbed
-bindsym $mod+$alt+s layout stacking
-bindsym $mod+$alt+d layout splitv
-bindsym $mod+$alt+a layout splith
+bindsym $mod+$alt+v layout tabbed
+bindsym $mod+$alt+c layout stacking
+bindsym $mod+$alt+z layout splitv
+bindsym $mod+$alt+x layout splith
 
 # Change container layout using number-keys
 bindsym $mod+$alt+5 layout toggle
