@@ -16,6 +16,12 @@ mkdir -p logs
 www_path=$(pwd)
 www_name="$(basename "$PWD").local"
 
+# host_file='/etc/hosts'
+# new_alias='docker-webdock.se'
+# current_host=$(cat $host_file | grep 127.0.0.1 | grep localhost)
+# sed -i "s/$current_host/127.0.0.1 localhost $new_alias/g" $host_file
+# cat $host_file
+
 if [ -f "$hosts_file_bak" ]; then
     sudo cp -f $hosts_file_bak $hosts_file
 fi
