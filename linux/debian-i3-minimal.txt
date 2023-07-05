@@ -1,0 +1,34 @@
+// gnupg ca-certificates
+apt install xorg i3 i3lock i3status suckless-tools lightdm slick-greeter lightdm-settings lxappearance nitrogen pulseaudio alsa-utils pavucontrol zsh ssh pwgen net-tools htop ufw gufw gimp openssl neofetch lshw -y
+apt install picom rofi playerctl xbacklight numlockx xterm screen members lsb-release curl wget git gzip bzip2 unzip zip tar xarchiver ffmpeg vlc gparted gnome-software synaptic stacer mirage lxrand -y
+apt install xfce4-appfinder xfce4-terminal xfce4-screenshooter gnome-system-monitor gnome-calendar gthumb policykit-1-gnome network-manager-gnome gnome-disk-utility --no-install-recommends -y
+apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme baobab cmatrix samba cifs-utils nfs-common util-linux xterm exo-utils debian-edu-artwork sudo gvfs gvfs-backends gvfs-fuse -y
+apt install zsh ssh ftp tftp htop pwgen net-tools dos2unix nano vim ntfs-3g exfat-utils dosfstools exo-utils mousepad thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman network-manager-openvpn -y
+
+fonts-font-awesome
+
+cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb -y
+  
+systemctl disable smbd.service && systemctl stop smbd.service
+systemctl disable nmbd.service && systemctl stop nmbd.service
+
+usermod -aG sudo fredrik && apt upgrade -y && reboot
+
+xrandr -s 1440x900
+
+apt update && apt install ssh neofetch htop curl wget git gzip bzip2 unzip zip tar sudo
+
+Openbox:
+sudo apt install xorg openbox obconf obsession lightdm slick-greeter lightdm-settings nitrogen pulseaudio alsa-utils pavucontrol rofi playerctl xbacklight numlockx net-tools ufw gufw neofetch htop lshw -y
+sudo apt install xfce4-panel xfce4-appfinder xfce4-terminal xfce4-screenshooter policykit-1-gnome network-manager-gnome gnome-disk-utility --no-install-recommends -y
+
+DEBIAN MINIMAL - 2022-05-09:
+apt install xorg i3 i3lock i3status suckless-tools slim sudo picom rofi playerctl xbacklight numlockx lxappearance nitrogen pulseaudio alsa-utils pavucontrol net-tools htop lshw ufw gufw openssl pwgen nano vim -y
+apt install screen members lsb-release curl wget git zsh ssh tar gzip bzip2 unzip zip xarchiver ffmpeg vlc gparted synaptic stacer mirage gimp arandr baobab xterm cmatrix neofetch ftp tftp dos2unix mousepad -y
+apt install arc-theme gnome-icon-theme lxde-icon-theme elementary-xfce-icon-theme exo-utils debian-edu-artwork samba cifs-utils nfs-common util-linux gvfs gvfs-backends gvfs-fuse dosfstools ntfs-3g exfat-utils -y
+apt install xfce4-appfinder xfce4-terminal xfce4-screenshooter policykit-1-gnome gnome-software gnome-system-monitor gnome-calendar gthumb network-manager-gnome gnome-disk-utility --no-install-recommends -y
+apt install thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman network-manager-openvpn -y
+
+// -
+

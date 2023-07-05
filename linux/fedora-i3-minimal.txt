@@ -1,0 +1,5 @@
+sudo dnf install lightdm-gtk-greeter lightdm slick-greeter lightdm-settings @base-x
+sudo dnf install i3 i3status nitrogen picom rofi playerctl xbacklight numlockx xkill xrandr
+
+sudo dnf install i3 i3status nitrogen picom rofi playerctl xbacklight numlockx xterm screen members zsh ssh net-tools dos2unix nano vim ntfs-3g exfat-utils dosfstools exo-utils htop vlc neofetch 
+sudo dnf install ffmpeg lightdm slick-greeter catfish xfce4-screenshooter gparted mirage thunar thunar-archive-plugin arc-theme elementary-xfce-icon-theme baobab cmatrix cifs-utils nfs-common util-linux -y
