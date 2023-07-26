@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 lan_port=8000
-lan_interface=enp0s3
+lan_interface=enp6s0
 browser=google-chrome
 # browser=firefox
 
@@ -9,15 +9,18 @@ browser=google-chrome
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
+soc1="$(ip addr | grep $lan_interface | grep inet | xargs | cut -d"/" -f1 | cut -d" " -f2):$lan_port"
+soc2=127.0.0.1:"$lan_port"
+soc3=localhost:"$lan_port"
+
+php -S 0.0.0.0:$lan_port >/dev/null &
+php_server_pid=$!
+
 echo " "
 echo "PHP Server version 2.2.5 Linux"
 echo " "
 echo "Server listening on:"
 echo "--------------------"
-# soc1="$(ip addr | grep $lan_interface | sed -En -e 's/.*inet ([0-9.]+).*/\1/p'):$lan_port"
-soc1="$(ip addr | grep $lan_interface | grep inet | xargs | cut -d"/" -f1 | cut -d" " -f2):$lan_port"
-soc2=127.0.0.1:"$lan_port"
-soc3=localhost:"$lan_port"
 
 echo " "
 echo "$soc1"
@@ -25,8 +28,7 @@ echo "$soc2"
 echo "$soc3"
 echo " "
 
-php -S 0.0.0.0:$lan_port >/dev/null &
-php_server_pid=$!
+echo "Server started on pid: $php_server_pid"
+echo " "
 
 $browser http://"$soc1" 2>/dev/null
-kill -9 $php_server_pid
