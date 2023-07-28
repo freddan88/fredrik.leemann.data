@@ -35,12 +35,11 @@ apt install cpuid cpuidtool cpuinfo lshw ghostscript v4l-utils fzf jq net-tools 
 apt install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer catfish perl baobab -y
 apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic snapd -y
 apt install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick mugshot exiftool -y
+apt install network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
 apt install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
 
 ln -s /etc/profile.d/apps-bin-path.sh /etc/X11/Xsession.d/99snap
 
-# snap install core
-# snap install core20
 snap install spotify
 
 if [ ! -f "$(command -v google-chrome)" ]; then
@@ -69,7 +68,7 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfc
 unzip -oq debian_xfce_xpu_home.zip
 rm -f debian_xfce_xpu_home.zip
 
-chown -R "$SUDO_USER:$SUDO_USER" .configs
+chown -R "$SUDO_USER:$SUDO_USER" .config
 
 # apt install sqlite3
 
@@ -85,15 +84,13 @@ if [ ! -f "$(command -v mongodb-compass)" ]; then
 fi
 
 if [ -f "/etc/network/interfaces" ]; then
-  mv /etc/network/interfaces /etc/network/interfaces.bak
+  cp /etc/network/interfaces /etc/network/interfaces.bak
 fi
 
 cd /
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_root.zip
 unzip -oq debian_xfce_xpu_root.zip
 rm -f debian_xfce_xpu_root.zip
-
-# apt install network-manager*
 
 echo " "
 echo "DONE"
