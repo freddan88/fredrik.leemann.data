@@ -99,6 +99,8 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfc
 unzip -oq debian_xfce_xpu_root.zip
 rm -f debian_xfce_xpu_root.zip
 
+fc-cache -s && apt update && apt upgrade -y && apt autoremove -y
+
 echo " "
 echo "DONE"
 echo " "
