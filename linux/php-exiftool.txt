@@ -1,0 +1,19 @@
+$directoryFiles = scandir('.');
+$directoryFiles = preg_grep('/^([^.])/', $directoryFiles);
+print_r($directoryFiles);
+
+// filectime('fileName.jpg'): when created
+// filemtime('fileName.jpg'): last modified
+// fileatime('fileName.jpg'): last accessed
+
+$randomHex = bin2hex(random_bytes(2));
+
+echo mime_content_type('20230527200912-20230607-000905.jpg');
+
+$dateTimeCreated = shell_exec('B:\Media\Album\$Sort_files\bin\exiftool -T -createDate -d "%Y%m%d_%H%M%S" 20230527200912-20230607-000905.jpg');
+
+$newFileName = trim($dateTimeCreated) . '_' . $randomHex . '_' . $seq . '.jpg';
+
+echo $newFileName;
+
+rename('Sample_abc.jpg', $newFileName);

@@ -1,0 +1,5 @@
+# seq=$(cat sequence_number.log)
+# echo $((seq+1)) > sequence_number.log
+# create_date=$(exiftool Sample_abc.jpg | grep -i "create date" | awk '{print $4}' | tr : -)
+# mime_type=$(exiftool Sample_abc.jpg | grep -i 'mime type' | awk '{print $4}')
+# echo "new filename: ${create_date}_${$(openssl rand -hex 3)}_${seq}.jpg"
