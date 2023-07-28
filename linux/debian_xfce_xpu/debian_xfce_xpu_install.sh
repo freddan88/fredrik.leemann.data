@@ -5,7 +5,6 @@
 # https://www.mongodb.com/docs/compass/master/install
 
 url_mongo_db_compass="https://downloads.mongodb.com/compass/mongodb-compass_1.39.0_amd64.deb"
-url_google_chrome_browser="https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
 url_fonts_cascadia_code="https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip"
 url_fonts_ubuntu="https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip"
 
@@ -45,8 +44,9 @@ ln -s /etc/profile.d/apps-bin-path.sh /etc/X11/Xsession.d/99snap
 snap install spotify
 
 if [ ! -f "$(command -v google-chrome)" ]; then
-  cd /tmp && wget $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
-  cd /tmp && rm -f google-chrome-stable_current_amd64.deb
+  cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  apt install ./google-chrome-stable_current_amd64.deb -y
+  rm -f google-chrome-stable_current_amd64.deb
 fi
 
 if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
@@ -54,14 +54,14 @@ if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
   wget $url_fonts_cascadia_code && unzip CascadiaCode-*.zip
   mkdir -p /usr/share/fonts/truetype/cascadia-code && cd /tmp/cascadia-code/ttf || exit
   find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/cascadia-code \;
-  cd /tmp && rm -rf cascadia-code
+  rm -rf cascadia-code
 fi
 
 if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
   cd /tmp && wget $url_fonts_ubuntu -O ubuntu-font-family.zip && unzip ubuntu-font-family.zip
   mkdir -p /usr/share/fonts/truetype/ubuntu-font-family && cd /tmp/ubuntu-font-family-* || exit
   find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/ubuntu-font-family \;
-  cd /tmp && rm -rf __MACOSX ubuntu-font-family*
+  rm -rf __MACOSX ubuntu-font-family*
 fi
 
 if [ -f "/etc/network/interfaces" ]; then
@@ -71,6 +71,11 @@ if [ -f "/etc/network/interfaces" ]; then
   echo "iface lo inet loopback" >>/etc/network/interfaces
 fi
 
+cd "/home/$SUDO_USER" || exit
+wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
+unzip -oq debian_xfce_xpu_home.zip
+rm -f debian_xfce_xpu_home.zip
+
 # apt install sqlite3
 
 snap install insomnia
@@ -79,9 +84,15 @@ snap install sqlitebrowser
 snap install mysql-workbench-community
 
 if [ ! -f "$(command -v mongodb-compass)" ]; then
-  cd /tmp && wget $url_mongo_db_compass && apt install ./mongodb-compass*amd64.deb -y
-  cd /tmp && rm -f mongodb-compass*amd64.deb
+  cd /tmp && wget $url_mongo_db_compass
+  apt install ./mongodb-compass*amd64.deb -y
+  rm -f mongodb-compass*amd64.deb
 fi
+
+cd /
+wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_root.zip
+unzip -oq debian_xfce_xpu_root.zip
+rm -f debian_xfce_xpu_root.zip
 
 echo " "
 echo "DONE"
