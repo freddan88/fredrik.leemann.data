@@ -33,9 +33,9 @@ apt update && apt upgrade -y
 apt install xfce4 xfce4-goodies xfce4-panel-profiles slick-greeter lightdm-settings numlockx xinput xdotool wmctrl rofi screen members neofetch pwgen htop w3m -y
 apt install cpuid cpuidtool cpuinfo lshw ghostscript v4l-utils fzf jq net-tools fail2ban cmatrix screenkey orca onboard minicom cutecom pandoc powertop lrzsz -y
 apt install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer catfish perl baobab -y
-apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility network-manager* remmina synaptic snapd -y
+apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic snapd -y
 apt install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick mugshot exiftool -y
-apt install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi openssl libpcre3 -y
+apt install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
 
 ln -s /etc/profile.d/apps-bin-path.sh /etc/X11/Xsession.d/99snap
 
@@ -92,6 +92,8 @@ cd /
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_root.zip
 unzip -oq debian_xfce_xpu_root.zip
 rm -f debian_xfce_xpu_root.zip
+
+# apt install network-manager*
 
 echo " "
 echo "DONE"
