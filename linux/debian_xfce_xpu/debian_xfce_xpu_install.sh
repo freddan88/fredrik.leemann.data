@@ -45,7 +45,7 @@ if [ $download_snaps ]; then
   ln -s /etc/profile.d/apps-bin-path.sh /etc/X11/Xsession.d/99snap
 fi
 
-if [ ! -f "$(command -v google-chrome)" ]; then
+if [ ! -f "$(command -v google-chrome-stable)" ]; then
   cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   apt install ./google-chrome-stable_current_amd64.deb -y
   rm -f google-chrome-stable_current_amd64.deb
@@ -71,7 +71,7 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfc
 unzip -oq debian_xfce_xpu_home.zip
 rm -f debian_xfce_xpu_home.zip
 
-chown -R "$SUDO_USER:$SUDO_USER" .config
+chown -R "$SUDO_USER:$SUDO_USER" .config/{rofi,xfce4}
 
 # apt install sqlite3
 
