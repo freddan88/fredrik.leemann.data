@@ -86,6 +86,10 @@ if [ ! -f "$(command -v mongodb-compass)" ]; then
   rm -f mongodb-compass*amd64.deb
 fi
 
+if [ -f "/sbin/ifconfig" ]; then
+  ln -s /sbin/ifconfig /bin/ifconfig
+fi
+
 if [ -f "/etc/network/interfaces" ]; then
   cp /etc/network/interfaces /etc/network/interfaces.bak
 fi
