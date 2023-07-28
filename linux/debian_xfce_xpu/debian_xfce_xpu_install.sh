@@ -64,17 +64,12 @@ if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
   rm -rf __MACOSX ubuntu-font-family*
 fi
 
-if [ -f "/etc/network/interfaces" ]; then
-  mv /etc/network/interfaces /etc/network/interfaces.bak
-  echo "source /etc/network/interfaces.d/*" >/etc/network/interfaces
-  echo "auto lo" >>/etc/network/interfaces
-  echo "iface lo inet loopback" >>/etc/network/interfaces
-fi
-
 cd "/home/$SUDO_USER" || exit
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
 unzip -oq debian_xfce_xpu_home.zip
 rm -f debian_xfce_xpu_home.zip
+
+chown -R "$SUDO_USER:$SUDO_USER" .configs
 
 # apt install sqlite3
 
@@ -87,6 +82,10 @@ if [ ! -f "$(command -v mongodb-compass)" ]; then
   cd /tmp && wget $url_mongo_db_compass
   apt install ./mongodb-compass*amd64.deb -y
   rm -f mongodb-compass*amd64.deb
+fi
+
+if [ -f "/etc/network/interfaces" ]; then
+  mv /etc/network/interfaces /etc/network/interfaces.bak
 fi
 
 cd /
