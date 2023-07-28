@@ -14,17 +14,17 @@ url_fonts_ubuntu="https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.
 ################################
 
 if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
-    echo " "
-    echo "PLEASE RUN THIS SCRIPT AS A SUDO-USER"
-    echo " "
-    exit
+  echo " "
+  echo "PLEASE RUN THIS SCRIPT AS A SUDO-USER"
+  echo " "
+  exit
 fi
 
 echo " "
 echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
 
-# sudo apt install ssh zsh git curl wget tar zip unzip lrzip gzip bzip2 bzip3 nano vim ca-certificates software-properties-common gnupg nala -y
+# sudo apt install ssh zsh git curl wget tar zip unzip 7zip p7zip-full xzip fastjar lrzip gzip bzip2 bzip3 nano vim ca-certificates software-properties-common gnupg nala -y
 
 # Debian-packages from the non-free repos (contrib non-free):
 apt-add-repository contrib non-free -y
@@ -45,30 +45,30 @@ ln -s /etc/profile.d/apps-bin-path.sh /etc/X11/Xsession.d/99snap
 snap install spotify
 
 if [ ! -f "$(command -v google-chrome)" ]; then
-    cd /tmp && wget $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
-    cd /tmp && rm -f google-chrome-stable_current_amd64.deb
+  cd /tmp && wget $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
+  cd /tmp && rm -f google-chrome-stable_current_amd64.deb
 fi
 
 if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
-    mkdir /tmp/cascadia-code && cd /tmp/cascadia-code || exit
-    wget $url_fonts_cascadia_code && unzip CascadiaCode-*.zip
-    mkdir -p /usr/share/fonts/truetype/cascadia-code && cd /tmp/cascadia-code/ttf || exit
-    find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/cascadia-code \;
-    cd /tmp && rm -rf cascadia-code
+  mkdir /tmp/cascadia-code && cd /tmp/cascadia-code || exit
+  wget $url_fonts_cascadia_code && unzip CascadiaCode-*.zip
+  mkdir -p /usr/share/fonts/truetype/cascadia-code && cd /tmp/cascadia-code/ttf || exit
+  find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/cascadia-code \;
+  cd /tmp && rm -rf cascadia-code
 fi
 
 if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
-    cd /tmp && wget $url_fonts_ubuntu -O ubuntu-font-family.zip && unzip ubuntu-font-family.zip
-    mkdir -p /usr/share/fonts/truetype/ubuntu-font-family && cd /tmp/ubuntu-font-family-* || exit
-    find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/ubuntu-font-family \;
-    cd /tmp && rm -rf __MACOSX ubuntu-font-family*
+  cd /tmp && wget $url_fonts_ubuntu -O ubuntu-font-family.zip && unzip ubuntu-font-family.zip
+  mkdir -p /usr/share/fonts/truetype/ubuntu-font-family && cd /tmp/ubuntu-font-family-* || exit
+  find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/ubuntu-font-family \;
+  cd /tmp && rm -rf __MACOSX ubuntu-font-family*
 fi
 
 if [ -f "/etc/network/interfaces" ]; then
-    mv /etc/network/interfaces /etc/network/interfaces.bak
-    echo "source /etc/network/interfaces.d/*" >/etc/network/interfaces
-    echo "auto lo" >>/etc/network/interfaces
-    echo "iface lo inet loopback" >>/etc/network/interfaces
+  mv /etc/network/interfaces /etc/network/interfaces.bak
+  echo "source /etc/network/interfaces.d/*" >/etc/network/interfaces
+  echo "auto lo" >>/etc/network/interfaces
+  echo "iface lo inet loopback" >>/etc/network/interfaces
 fi
 
 # apt install sqlite3
@@ -79,8 +79,8 @@ snap install sqlitebrowser
 snap install mysql-workbench-community
 
 if [ ! -f "$(command -v mongodb-compass)" ]; then
-    cd /tmp && wget $url_mongo_db_compass && apt install ./mongodb-compass*amd64.deb -y
-    cd /tmp && rm -f mongodb-compass*amd64.deb
+  cd /tmp && wget $url_mongo_db_compass && apt install ./mongodb-compass*amd64.deb -y
+  cd /tmp && rm -f mongodb-compass*amd64.deb
 fi
 
 echo " "
