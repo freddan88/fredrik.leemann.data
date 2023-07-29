@@ -18,6 +18,7 @@ echo " "
 cd "$HOME" || exit
 
 mkdir Apps
+mkdir .local/bin
 
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
 unzip -oq debian_xfce_xpu_home.zip
