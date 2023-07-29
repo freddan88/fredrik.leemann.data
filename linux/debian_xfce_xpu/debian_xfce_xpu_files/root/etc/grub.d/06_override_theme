@@ -1,0 +1,11 @@
+# This file shall be owned by root with permissions: 755
+
+# Include the GRUB helper library for grub-mkconfig.
+. /usr/share/grub/grub-mkconfig_lib
+
+# We want to work in /boot/grub/ only.
+test -d /boot/grub; cd /boot/grub
+
+# Set a monochromatic theme for grub-terminal.
+echo "${1}set menu_color_normal=white/black"
+echo "${1}set menu_color_highlight=black/light-gray"
