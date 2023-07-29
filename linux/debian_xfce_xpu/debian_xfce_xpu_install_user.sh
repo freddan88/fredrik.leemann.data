@@ -20,3 +20,10 @@ cd "$HOME" || exit
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
 unzip -oq debian_xfce_xpu_home.zip
 rm -f debian_xfce_xpu_home.zip
+
+dir_home_templates=$(xdg-user-dir TEMPLATES)
+
+cd "$dir_home_templates" && rm -f ./*
+wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip
+unzip -o templates.zip
+rm -f templates.zip
