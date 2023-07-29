@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# Version manager for node.js
+# https://github.com/nvm-sh/nvm
+
+url_latest_nvm=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh
+
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
@@ -19,6 +24,8 @@ cd "$HOME" || exit
 
 mkdir Apps
 mkdir .local/bin
+
+wget -qO- $url_latest_nvm | bash
 
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
 unzip -oq debian_xfce_xpu_home.zip
