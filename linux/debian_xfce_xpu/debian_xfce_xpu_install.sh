@@ -41,7 +41,9 @@ apt install network-manager network-manager-gnome network-manager-openvpn networ
 apt install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
 
 if [ $download_snaps ]; then
-  apt install snapd && snap install spotify
+  apt install snapd
+  snap install spotify
+  snap install keepassxc
   ln -s /etc/profile.d/apps-bin-path.sh /etc/X11/Xsession.d/99snap
 fi
 
