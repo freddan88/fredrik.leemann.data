@@ -10,10 +10,10 @@ url_latest_deb_get="https://raw.githubusercontent.com/wimpysworld/deb-get/main/d
 ################################
 
 if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
-    echo " "
-    echo "PLEASE RUN THIS SCRIPT AS A SUDO-USER"
-    echo " "
-    exit
+  echo " "
+  echo "PLEASE RUN THIS SCRIPT AS A SUDO-USER"
+  echo " "
+  exit
 fi
 
 echo " "
@@ -35,17 +35,17 @@ snap install spotify
 # make gcc build-essential
 
 if [ ! -f "$(command -v google-chrome)" ]; then
-    cd /tmp && wget $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
-    cd /tmp && rm -f google-chrome-stable_current_amd64.deb
+  cd /tmp && wget $url_google_chrome_browser && apt install ./google-chrome-stable_current_amd64.deb -y
+  cd /tmp && rm -f google-chrome-stable_current_amd64.deb
 fi
 
 if [ ! -f "$(command -v deb-get)" ]; then
-    cd /tmp && curl -sL $url_latest_deb_get | bash -s install deb-get
+  cd /tmp && curl -sL $url_latest_deb_get | bash -s install deb-get
 fi
 
 if [ ! -f "$(command -v mongodb-compass)" ]; then
-    cd /tmp && wget $url_mongo_db_compass && apt install ./mongodb-compass*amd64.deb -y
-    cd /tmp && rm -f mongodb-compass*amd64.deb
+  cd /tmp && wget $url_mongo_db_compass && apt install ./mongodb-compass*amd64.deb -y
+  cd /tmp && rm -f mongodb-compass*amd64.deb
 fi
 
 snap install insomnia dbeaver-ce mysql-workbench-community sqlitebrowser
