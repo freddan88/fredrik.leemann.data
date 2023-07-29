@@ -30,3 +30,7 @@ cd "$dir_home_templates" && rm -f ./*
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip
 unzip -o templates.zip
 rm -f templates.zip
+
+echo " "
+echo "DONE"
+echo " "
