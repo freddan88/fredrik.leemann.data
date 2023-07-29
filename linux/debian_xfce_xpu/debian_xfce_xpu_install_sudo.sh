@@ -181,6 +181,20 @@ systemctl disable apache2.service
 systemctl stop apache2.service
 
 echo " "
+echo "Content in: /usr/local/bin"
+echo " "
+
+cd /usr/local/bin || exit
+
+echo " "
+echo "DOWNLOADING UTILITY-SCRIPTS TO /USR/LOCAL/BIN" && sleep 2
+echo " "
+
+wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
+
+chmod -R 755 && ls -al /usr/local/bin
+
+echo " "
 echo "DONE"
 echo " "
 
