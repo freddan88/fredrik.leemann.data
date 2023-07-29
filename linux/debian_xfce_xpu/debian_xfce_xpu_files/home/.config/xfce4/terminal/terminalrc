@@ -1,11 +1,11 @@
 [Configuration]
-FontName=Ubuntu Mono Bold 12
+FontName=Ubuntu Mono Bold 13
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBellUrgent=FALSE
 MiscBordersDefault=TRUE
 MiscCursorBlinks=TRUE
-MiscCursorShape=TERMINAL_CURSOR_SHAPE_IBEAM
+MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
 MiscDefaultGeometry=130x30
 MiscInheritGeometry=FALSE
 MiscMenubarDefault=TRUE
