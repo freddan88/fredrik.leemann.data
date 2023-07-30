@@ -112,15 +112,20 @@ if [ -d "/srv/tftp" ]; then
   chown -R tftp:nogroup /srv/tftp 2>/dev/null
 fi
 
+# Install docker for debian-linux
+# https://docs.docker.com/engine/install/debian
+
 debian_codename=$(lsb_release -cs)
+
 docker_url="https://download.docker.com/linux/debian"
+docker_apt="/etc/apt/sources.list.d/docker.list"
 docker_gpg="/etc/apt/keyrings/docker.gpg"
 
 install -m 0755 -d /etc/apt/keyrings
-curl -fsSL $docker_url/gpg | sudo gpg --dearmor -o $docker_gpg
-chmod a+r /etc/apt/keyrings/docker.gpg
+curl -fsSL $docker_url/gpg | gpg --dearmor --batch --yes --output $docker_gpg
+chmod a+r $docker_gpg
 
-echo "deb [arch=$(dpkg --print-architecture) signed-by=$docker_gpg] $docker_url $debian_codename stable" | sudo tee text.txt >/dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=$docker_gpg] $docker_url $debian_codename stable" | tee $docker_apt >/dev/null
 
 apt update
 apt install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 -y
@@ -131,7 +136,15 @@ apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-co
 # https://christitus.com/vm-setup-in-linux
 apt install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
 
+virsh net-start default
+virsh net-autostart default
+
 usermod -aG docker "$SUDO_USER"
+usermod -aG libvirt-qemu "$SUDO_USER"
+usermod -aG libvirt "$SUDO_USER"
+usermod -aG input "$SUDO_USER"
+usermod -aG disk "$SUDO_USER"
+usermod -aG kvm "$SUDO_USER"
 
 $download_snaps && snap install insomnia
 $download_snaps && snap install dbeaver-ce
@@ -211,7 +224,8 @@ echo " "
 
 wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
 
-chmod -R 755 && ls -al /usr/local/bin
+chmod -Rf 755 /usr/local/bin/*
+ls -al /usr/local/bin
 
 echo " "
 echo "DONE"
