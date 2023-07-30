@@ -77,12 +77,13 @@ fi
 echo "ENABLING FIREWALL AND SETTING NEW RULES" && sleep 2
 echo " "
 
-# ufw limit 22/tcp
-# ufw allow 80/tcp
-# ufw allow 443/tcp
+ufw limit 22/tcp
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw allow 8000/tcp
 ufw default deny incoming
 ufw default allow outgoing
-ufw enable
+ufw --force enable
 
 echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
 echo " "
@@ -262,3 +263,4 @@ echo " "
 #
 # Workaround for problems with underscores in vscode
 # https://github.com/microsoft/vscode/issues/38133
+#
