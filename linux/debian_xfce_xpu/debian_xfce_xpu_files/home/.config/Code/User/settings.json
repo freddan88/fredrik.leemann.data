@@ -1,0 +1,15 @@
+{
+  "editor.fontFamily": "'Cascadia Code'",
+  "editor.fontWeight": "500",
+  "editor.fontLigatures": false,
+  "editor.formatOnSave": true,
+  "explorer.compactFolders": false,
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "zenMode.hideLineNumbers": false,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "workbench.colorTheme": "Arc+ (Dark Monochrome)"
+  // "workbench.sideBar.location": "right",
+  // "editor.minimap.side": "left",
+}
