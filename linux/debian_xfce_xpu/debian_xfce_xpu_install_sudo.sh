@@ -43,9 +43,8 @@ apt install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
 apt install ttf-mscorefonts-installer unrar -y
-apt update && apt upgrade -y
 
-if [ "$download_snaps" ]; then
+if $download_snaps; then
   apt install snapd -y
   snap install spotify
   snap install keepassxc
@@ -72,18 +71,6 @@ if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
   find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/ubuntu-font-family \;
   rm -rf __MACOSX ubuntu-font-family*
 fi
-
-# https://christitus.com/linux-security-mistakes
-echo "ENABLING FIREWALL AND SETTING NEW RULES" && sleep 2
-echo " "
-
-ufw limit 22/tcp
-ufw allow 80/tcp
-ufw allow 443/tcp
-ufw allow 8000/tcp
-ufw default deny incoming
-ufw default allow outgoing
-ufw --force enable
 
 echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
 echo " "
@@ -202,9 +189,9 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfc
 unzip -oq debian_xfce_xpu_root.zip
 rm -f debian_xfce_xpu_root.zip
 
-grub-update && echo " "
-fc-cache -s && echo " "
-apt update && apt upgrade -y && apt autoremove -y
+grub-update
+fc-cache -s
+apt autoremove -y
 
 echo " "
 echo "DISABLING APACHE2 HTTP SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
@@ -264,3 +251,10 @@ echo " "
 # Workaround for problems with underscores in vscode
 # https://github.com/microsoft/vscode/issues/38133
 #
+# https://christitus.com/linux-security-mistakes
+# ufw limit 22/tcp
+# ufw allow 80/tcp
+# ufw allow 443/tcp
+# ufw default deny incoming
+# ufw default allow outgoing
+# ufw enable
