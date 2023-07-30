@@ -73,6 +73,11 @@ if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
   rm -rf __MACOSX ubuntu-font-family*
 fi
 
+echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
+echo " "
+
+sudo systemctl disable fail2ban.service
+
 echo "DISABLING SSH-SERVER FROM AUTO STARTING AT BOOT" && sleep 2
 echo " "
 
