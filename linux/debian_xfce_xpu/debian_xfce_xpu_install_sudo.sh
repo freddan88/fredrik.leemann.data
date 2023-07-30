@@ -259,3 +259,6 @@ echo " "
 # ENV_PATH PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 #
 # google-chrome --password-store=basic
+#
+# Workaround for problems with underscores in vscode
+# https://github.com/microsoft/vscode/issues/38133
