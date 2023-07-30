@@ -45,6 +45,8 @@ echo " "
 echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
 echo " "
 
+/usr/bin/xdg-user-dirs-update
+xdg-mime default thunar.desktop inode/directory
 dir_home_templates=$(xdg-user-dir TEMPLATES)
 
 cd "$dir_home_templates" && rm -f ./*

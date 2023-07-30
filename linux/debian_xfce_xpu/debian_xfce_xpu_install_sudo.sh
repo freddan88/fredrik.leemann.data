@@ -72,6 +72,7 @@ if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
   rm -rf __MACOSX ubuntu-font-family*
 fi
 
+echo " "
 echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
 echo " "
 
@@ -99,6 +100,10 @@ systemctl stop tftpd-hpa.service
 if [ -d "/srv/tftp" ]; then
   chown -R tftp:nogroup /srv/tftp 2>/dev/null
 fi
+
+# Debian Warning: The home dir /var/lib/tpm
+# Probably a warning displayed when KVM is installed
+mkdir /var/lib/tpm
 
 # INSTALL DOCKER FOR DEBIAN-LINUX
 # https://docs.docker.com/engine/install/debian
@@ -200,10 +205,6 @@ echo " "
 systemctl disable apache2.service
 systemctl stop apache2.service
 
-echo " "
-echo "Content in: /usr/local/bin"
-echo " "
-
 cd /usr/local/bin || exit
 
 echo " "
@@ -211,6 +212,10 @@ echo "DOWNLOADING UTILITY-SCRIPTS TO /USR/LOCAL/BIN" && sleep 2
 echo " "
 
 wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
+
+echo " "
+echo "Content in: /usr/local/bin"
+echo " "
 
 chmod -Rf 755 /usr/local/bin/*
 ls -al /usr/local/bin
