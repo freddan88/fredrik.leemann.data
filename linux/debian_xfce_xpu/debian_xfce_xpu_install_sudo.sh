@@ -31,11 +31,6 @@ echo " "
 
 # sudo apt install git zsh vim nano zip unzip curl wget -y
 
-# DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
-apt-add-repository contrib non-free -y
-apt install ttf-mscorefonts-installer unrar -y
-apt update && apt upgrade -y
-
 apt install ssh tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common gnupg dpkg bat gh -y
 apt install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings numlockx xinput xdotool wmctrl members neofetch -y
 apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic nala rofi -y
@@ -44,6 +39,11 @@ apt install cpuid cpuidtool lshw ghostscript v4l-utils fzf jq net-tools fail2ban
 apt install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
 apt install pwgen libsodium23 network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
 apt install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
+
+# DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
+apt-add-repository contrib non-free -y
+apt install ttf-mscorefonts-installer unrar -y
+apt update && apt upgrade -y
 
 if [ $download_snaps ]; then
   apt install snapd -y
