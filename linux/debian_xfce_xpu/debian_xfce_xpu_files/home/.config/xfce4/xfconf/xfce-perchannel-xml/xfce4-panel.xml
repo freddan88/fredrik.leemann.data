@@ -30,7 +30,7 @@
       </property>
       <property name="position" type="string" value="p=10;x=0;y=0"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="24"/>
+      <property name="size" type="uint" value="26"/>
       <property name="background-rgba" type="array">
         <value type="double" value="0.2196078431372549"/>
         <value type="double" value="0.23529411764705882"/>
