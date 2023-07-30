@@ -237,7 +237,7 @@ ls -al /usr/local/bin
 # https://answers.microsoft.com/en-us/windows/forum/all/how-to-force-windows-10-time-to-synch-with-a-time/20f3b546-af38-42fb-a2d0-d4df13cc8f43
 # https://askubuntu.com/questions/946516/how-to-tell-ubuntu-that-hardware-clock-is-local-time
 # https://www.makeuseof.com/fix-dual-booting-linux-wrong-windows-time
-sudo timedatectl set-local-rtc 1 --adjust-system-clock
+timedatectl set-local-rtc 1 --adjust-system-clock
 
 echo " "
 echo "DONE"
