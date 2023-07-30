@@ -31,7 +31,7 @@ echo " "
 
 # sudo apt install git zsh vim nano zip unzip curl wget -y
 
-# Debian-packages from the non-free repos (contrib non-free):
+# DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
 apt install ttf-mscorefonts-installer unrar -y
 apt update && apt upgrade -y
@@ -112,7 +112,7 @@ if [ -d "/srv/tftp" ]; then
   chown -R tftp:nogroup /srv/tftp 2>/dev/null
 fi
 
-# Install docker for debian-linux
+# INSTALL DOCKER FOR DEBIAN-LINUX
 # https://docs.docker.com/engine/install/debian
 
 debian_codename=$(lsb_release -cs)
@@ -226,6 +226,11 @@ wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/
 
 chmod -Rf 755 /usr/local/bin/*
 ls -al /usr/local/bin
+
+# FIX ISSUES WITH THE TIME WHEN DUAL-BOOTING WINDOWS AND LINUX
+# https://askubuntu.com/questions/946516/how-to-tell-ubuntu-that-hardware-clock-is-local-time
+# https://www.makeuseof.com/fix-dual-booting-linux-wrong-windows-time
+sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
 echo " "
 echo "DONE"
