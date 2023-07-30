@@ -31,6 +31,19 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfc
 unzip -oq debian_xfce_xpu_home.zip
 rm -f debian_xfce_xpu_home.zip
 
+if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
+  echo " "
+  echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
+  echo " "
+
+  chmod 754 .config/Code/vscode_extensions_install_user.sh
+  .config/Code/vscode_extensions_install_user.sh
+fi
+
+echo " "
+echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
+echo " "
+
 dir_home_templates=$(xdg-user-dir TEMPLATES)
 
 cd "$dir_home_templates" && rm -f ./*
