@@ -22,7 +22,7 @@ function start_new_instance {
   soc2="localhost:$lan_port"
 
   echo " "
-  echo "PHP Server version 2.5.2 Linux"
+  echo "PHP Server version 2.5.4 Linux"
   echo " "
   echo "Server listening on all interfaces including:"
   echo "---------------------------------------------"
@@ -39,8 +39,6 @@ function start_new_instance {
   echo " "
 
   xdg-open http://"$soc1" 2>/dev/null
-
-  trap stop_previous_instance EXIT
 }
 
 case $1 in
