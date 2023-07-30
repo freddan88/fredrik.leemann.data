@@ -228,6 +228,12 @@ chmod -Rf 755 /usr/local/bin/*
 ls -al /usr/local/bin
 
 # FIX ISSUES WITH THE TIME WHEN DUAL-BOOTING WINDOWS AND LINUX
+# ON WINDOWS YOU CAN FIX THOSE PROBLEMS USING BELOW COMMANDS IN AN ELEVATED CMD-WINDOW
+# - net start w32time
+# - w32tm /resync
+# YOU CAN SCHEDULE A TASK IN TASKMANAGER TO HAVE THIS COMMAND RUN WHEN YOU LoG IN TO WINDOWS
+# SE LINKS FOR MORE SOLUTIONS:
+# https://answers.microsoft.com/en-us/windows/forum/all/how-to-force-windows-10-time-to-synch-with-a-time/20f3b546-af38-42fb-a2d0-d4df13cc8f43
 # https://askubuntu.com/questions/946516/how-to-tell-ubuntu-that-hardware-clock-is-local-time
 # https://www.makeuseof.com/fix-dual-booting-linux-wrong-windows-time
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
