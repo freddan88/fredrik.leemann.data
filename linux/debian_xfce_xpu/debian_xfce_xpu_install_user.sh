@@ -27,6 +27,14 @@ mkdir .local/bin
 
 wget -qO- $url_latest_nvm | bash
 
+# https://ohmyz.sh
+# https://github.com/paulirish/git-open
+# https://github.com/zsh-users/zsh-autosuggestions
+#
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
 unzip -oq debian_xfce_xpu_home.zip
 rm -f debian_xfce_xpu_home.zip
