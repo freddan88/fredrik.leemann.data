@@ -154,6 +154,9 @@ upas() {
   if [ -f "$(command -v flatpak)" ]; then
     sudo flatpak update -y
   fi
+  if [ -f "$(command -v snap)" ]; then
+    sudo snap refresh
+  fi
   echo ''
 }
 
