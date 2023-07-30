@@ -73,10 +73,21 @@ if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
   rm -rf __MACOSX ubuntu-font-family*
 fi
 
+# https://christitus.com/linux-security-mistakes
+echo "ENABLING FIREWALL AND SETTING NEW RULES" && sleep 2
+echo " "
+
+# ufw limit 22/tcp
+# ufw allow 80/tcp
+# ufw allow 443/tcp
+ufw default deny incoming
+ufw default allow outgoing
+ufw enable
+
 echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
 echo " "
 
-sudo systemctl disable fail2ban.service
+systemctl disable fail2ban.service
 
 echo "DISABLING SSH-SERVER FROM AUTO STARTING AT BOOT" && sleep 2
 echo " "
@@ -116,6 +127,9 @@ apt install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 -y
 apt install php php-cli php-common php-xdebug php-mysql php-mbstring php-curl php-soap php-readline -y
 apt install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
 apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+# https://christitus.com/vm-setup-in-linux
+apt install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
 
 usermod -aG docker "$SUDO_USER"
 
