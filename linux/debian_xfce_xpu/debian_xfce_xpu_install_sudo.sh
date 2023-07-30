@@ -45,7 +45,7 @@ apt-add-repository contrib non-free -y
 apt install ttf-mscorefonts-installer unrar -y
 apt update && apt upgrade -y
 
-if [ $download_snaps ]; then
+if [ "$download_snaps" ]; then
   apt install snapd -y
   snap install spotify
   snap install keepassxc
