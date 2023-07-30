@@ -38,6 +38,7 @@ if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
 
   chmod 754 .config/Code/vscode_extensions_install_user.sh
   .config/Code/vscode_extensions_install_user.sh
+  rm -f .config/Code/vscode_extensions_install_user.sh
 fi
 
 echo " "
