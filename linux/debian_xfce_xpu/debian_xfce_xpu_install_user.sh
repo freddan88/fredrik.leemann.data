@@ -22,8 +22,12 @@ echo " "
 
 cd "$HOME" || exit
 
-mkdir Apps
-mkdir .local/bin
+/usr/bin/xdg-user-dirs-update
+xdg-mime default thunar.desktop inode/directory
+dir_home_templates=$(xdg-user-dir TEMPLATES)
+
+mkdir -p Apps
+mkdir -p .local/bin
 
 wget -qO- $url_latest_nvm | bash
 
@@ -52,10 +56,6 @@ fi
 echo " "
 echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
 echo " "
-
-/usr/bin/xdg-user-dirs-update
-xdg-mime default thunar.desktop inode/directory
-dir_home_templates=$(xdg-user-dir TEMPLATES)
 
 cd "$dir_home_templates" && rm -f ./*
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip

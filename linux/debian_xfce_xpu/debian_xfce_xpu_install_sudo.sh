@@ -58,7 +58,7 @@ if [ ! -f "$(command -v google-chrome-stable)" ]; then
 fi
 
 if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
-  mkdir /tmp/cascadia-code && cd /tmp/cascadia-code || exit
+  mkdir -p /tmp/cascadia-code && cd /tmp/cascadia-code || exit
   wget $url_fonts_cascadia_code && unzip CascadiaCode-*.zip
   mkdir -p /usr/share/fonts/truetype/cascadia-code && cd /tmp/cascadia-code/ttf || exit
   find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/cascadia-code \;
@@ -103,7 +103,7 @@ fi
 
 # Debian Warning: The home dir /var/lib/tpm
 # Probably a warning displayed when KVM is installed
-mkdir /var/lib/tpm
+mkdir -p /var/lib/tpm
 
 # INSTALL DOCKER FOR DEBIAN-LINUX
 # https://docs.docker.com/engine/install/debian
