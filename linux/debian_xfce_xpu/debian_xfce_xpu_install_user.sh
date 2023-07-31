@@ -20,11 +20,11 @@ echo " "
 echo "INSTALLING CONFIGURATIONS" && sleep 2
 echo " "
 
-cd "$HOME" || exit
-
 /usr/bin/xdg-user-dirs-update
 xdg-mime default thunar.desktop inode/directory
 dir_home_templates=$(xdg-user-dir TEMPLATES)
+
+cd "$HOME" || exit
 
 mkdir -p Apps
 mkdir -p .local/bin
