@@ -101,11 +101,6 @@ if [ -d "/srv/tftp" ]; then
   chown -R tftp:nogroup /srv/tftp 2>/dev/null
 fi
 
-# Debian Warning: The home dir /var/lib/tpm
-# Probably a warning displayed when KVM is installed
-# This code may fix the warning-message
-mkdir -p /var/lib/tpm
-
 # INSTALL DOCKER FOR DEBIAN-LINUX
 # https://docs.docker.com/engine/install/debian
 
@@ -126,6 +121,11 @@ apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 -y
 apt-get install php php-cli php-common php-xdebug php-mysql php-mbstring php-curl php-soap php-readline -y
 apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
 apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+# Debian Warning: The home dir /var/lib/tpm
+# Probably a warning displayed when KVM is installed
+# This code may fix the warning-message
+mkdir -p /var/lib/tpm
 
 # https://christitus.com/vm-setup-in-linux
 apt-get install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
