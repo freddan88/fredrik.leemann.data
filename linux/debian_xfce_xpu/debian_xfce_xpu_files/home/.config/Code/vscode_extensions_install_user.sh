@@ -14,7 +14,6 @@ code --install-extension esbenp.prettier-vscode
 code --install-extension file-icons.file-icons
 code --install-extension formulahendry.auto-rename-tag
 code --install-extension foxundermoon.shell-format
-code --install-extension iocave.monkey-patch
 code --install-extension mads-hartmann.bash-ide-vscode
 code --install-extension mikestead.dotenv
 code --install-extension ms-azuretools.vscode-docker
@@ -23,7 +22,6 @@ code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension naumovs.color-highlight
 code --install-extension neilbrayfield.php-docblocker
-code --install-extension OfHumanBondage.react-proptypes-intellisense
 code --install-extension onecentlin.laravel5-snippets
 code --install-extension pgl.laravel-jump-controller
 code --install-extension ph-hawkins.arc-plus
@@ -32,7 +30,6 @@ code --install-extension ritwickdey.LiveServer
 code --install-extension rogalmic.bash-debug
 code --install-extension rpinski.shebang-snippets
 code --install-extension sleistner.vscode-fileutils
-code --install-extension snlbaral.express-mongo-snippets
 code --install-extension streetsidesoftware.code-spell-checker
 code --install-extension timonwong.shellcheck
 code --install-extension wayou.vscode-todo-highlight
