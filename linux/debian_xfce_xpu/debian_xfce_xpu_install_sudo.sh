@@ -195,7 +195,9 @@ unzip -oq debian_xfce_xpu_root.zip
 rm -f debian_xfce_xpu_root.zip
 
 update-grub
+
 fc-cache -s
+
 apt autoremove -y
 
 echo " "
