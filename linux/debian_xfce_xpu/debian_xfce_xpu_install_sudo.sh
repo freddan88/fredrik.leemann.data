@@ -37,7 +37,7 @@ apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-syst
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer perl baobab -y
 apt-get install cpuid cpuidtool lshw ghostscript v4l-utils fzf jq net-tools fail2ban cmatrix screenkey orca onboard minicom cutecom screen lrzsz pandoc -y
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
-apt-get install pwgen libsodium23 network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
+apt-get install pwgen libsodium23 dbus-x11 network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
 apt-get install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
