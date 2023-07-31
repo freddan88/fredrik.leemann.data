@@ -63,6 +63,9 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.
 unzip -o templates.zip
 rm -f templates.zip
 
+pactl set-sink-volume @DEFAULT_SINK@ 100%
+pactl set-sink-mute @DEFAULT_SINK@ false
+
 echo " "
 echo "DONE"
 echo " "
