@@ -5,7 +5,7 @@
 # https://www.mongodb.com/docs/compass/master/install
 # https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
 
-download_snaps=false
+download_snaps=true
 
 kubernetes_kubectl_version="stable"
 
