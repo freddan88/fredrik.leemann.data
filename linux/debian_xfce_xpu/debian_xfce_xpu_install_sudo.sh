@@ -103,6 +103,7 @@ fi
 
 # Debian Warning: The home dir /var/lib/tpm
 # Probably a warning displayed when KVM is installed
+# This code may fix the warning-message
 mkdir -p /var/lib/tpm
 
 # INSTALL DOCKER FOR DEBIAN-LINUX
@@ -233,7 +234,7 @@ echo " "
 # - net start w32time
 # - w32tm /resync
 # - net stop w32time
-# YOU CAN SCHEDULE A TASK IN TASKMANAGER TO RUN THOSE COMMANDS AT START OR WHEN YOU LOG IN TO WINDOWS
+# YOU CAN POSSIBLY SCHEDULE A TASK IN TASKMANAGER TO RUN THOSE COMMANDS AT START OR WHEN YOU LOG IN TO WINDOWS
 #
 # ON LINUX YOU SHALL BE ABLE TO FIX THIS PROBLEM USING THE BELOW COMMAND (NOT WORKING)
 # timedatectl set-local-rtc 1 --adjust-system-clock
