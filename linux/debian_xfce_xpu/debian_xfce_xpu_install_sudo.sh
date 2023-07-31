@@ -29,23 +29,23 @@ echo " "
 echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
 
-# sudo apt install git zsh vim nano zip unzip curl wget -y
+# sudo apt-get install git zsh vim nano zip unzip curl wget -y
 
-apt install ssh tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common gnupg dpkg bat gh -y
-apt install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings numlockx xinput xdotool wmctrl members neofetch -y
-apt install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic nala rofi -y
-apt install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer perl baobab -y
-apt install cpuid cpuidtool lshw ghostscript v4l-utils fzf jq net-tools fail2ban cmatrix screenkey orca onboard minicom cutecom screen lrzsz pandoc -y
-apt install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
-apt install pwgen libsodium23 network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
-apt install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
+apt-get install ssh tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common gnupg dpkg bat gh -y
+apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings numlockx xinput xdotool wmctrl members neofetch -y
+apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic nala rofi -y
+apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer perl baobab -y
+apt-get install cpuid cpuidtool lshw ghostscript v4l-utils fzf jq net-tools fail2ban cmatrix screenkey orca onboard minicom cutecom screen lrzsz pandoc -y
+apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
+apt-get install pwgen libsodium23 network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
+apt-get install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
-apt install ttf-mscorefonts-installer unrar -y
+apt-get install ttf-mscorefonts-installer unrar -y
 
 if $download_snaps; then
-  apt install snapd -y
+  apt-get install snapd -y
   snap install spotify
   snap install keepassxc
   ln -s /etc/profile.d/apps-bin-path.sh /etc/X11/Xsession.d/99snap
@@ -53,7 +53,7 @@ fi
 
 if [ ! -f "$(command -v google-chrome-stable)" ]; then
   cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  apt install ./google-chrome-stable_current_amd64.deb -y
+  apt-get install ./google-chrome-stable_current_amd64.deb -y
   rm -f google-chrome-stable_current_amd64.deb
 fi
 
@@ -121,14 +121,14 @@ chmod a+r $docker_gpg
 
 echo "deb [arch=$(dpkg --print-architecture) signed-by=$docker_gpg] $docker_url $debian_codename stable" | tee $docker_apt >/dev/null
 
-apt update
-apt install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 -y
-apt install php php-cli php-common php-xdebug php-mysql php-mbstring php-curl php-soap php-readline -y
-apt install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
-apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+apt-get update
+apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 -y
+apt-get install php php-cli php-common php-xdebug php-mysql php-mbstring php-curl php-soap php-readline -y
+apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
+apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # https://christitus.com/vm-setup-in-linux
-apt install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
+apt-get install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
 
 virsh net-start default
 virsh net-autostart default
@@ -148,19 +148,19 @@ $download_snaps && snap install mysql-workbench-community
 if [ ! -f "$(command -v code)" ]; then
   url_latest_vscode="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
   cd /tmp && wget -O vscode_amd64.deb "$url_latest_vscode"
-  apt install ./vscode_amd64.deb -y
+  apt-get install ./vscode_amd64.deb -y
   rm -f vscode_amd64.deb
 fi
 
 if [ ! -f "$(command -v mongodb-compass)" ]; then
   cd /tmp && wget $url_mongo_db_compass
-  apt install ./mongodb-compass*amd64.deb -y
+  apt-get install ./mongodb-compass*amd64.deb -y
   rm -f mongodb-compass*amd64.deb
 fi
 
 if [ ! -f "$(command -v marktext)" ]; then
   cd /tmp && wget $url_marktext_package
-  apt install ./marktext-amd64.deb -y
+  apt-get install ./marktext-amd64.deb -y
   rm -f marktext-amd64.deb
 fi
 
@@ -246,9 +246,9 @@ echo " "
 #
 # chromium-codecs-ffmpeg-extra // Unable to locate package
 #
-# apt install <package> --dry-run
-# apt install cpufreqd cpufrequtils acpi cpulimit
-# apt install make gcc build-essential linux-headers-$(uname-r)
+# apt-get install <package> --dry-run
+# apt-get install cpufreqd cpufrequtils acpi cpulimit
+# apt-get install make gcc build-essential linux-headers-$(uname-r)
 #
 # open file /etc/login.defs // Not needed
 # add in line ENV_PATH PATH= ?
