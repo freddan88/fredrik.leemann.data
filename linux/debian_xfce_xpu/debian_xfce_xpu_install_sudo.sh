@@ -140,6 +140,8 @@ usermod -aG input "$SUDO_USER"
 usermod -aG disk "$SUDO_USER"
 usermod -aG kvm "$SUDO_USER"
 
+usermod -s /bin/zsh "$SUDO_USER"
+
 $download_snaps && snap install insomnia
 $download_snaps && snap install dbeaver-ce
 $download_snaps && snap install sqlitebrowser
