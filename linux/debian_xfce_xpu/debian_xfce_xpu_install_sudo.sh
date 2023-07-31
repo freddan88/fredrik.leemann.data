@@ -53,7 +53,7 @@ fi
 
 if [ ! -f "$(command -v google-chrome-stable)" ]; then
   cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  apt install ./google-chfredrome-stable_current_amd64.deb -y
+  apt install ./google-chrome-stable_current_amd64.deb -y
   rm -f google-chrome-stable_current_amd64.deb
 fi
 
