@@ -5,7 +5,7 @@
 # https://www.mongodb.com/docs/compass/master/install
 # https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
 
-download_snaps=true
+install_snaps=true
 
 kubernetes_kubectl_version="stable"
 
@@ -44,7 +44,7 @@ apt-get install ffmpeg libsodium23 libsecret-tool libavcodec-extra gstreamer1.0-
 apt-add-repository contrib non-free -y
 apt-get install ttf-mscorefonts-installer unrar -y
 
-if $download_snaps; then
+if $install_snaps; then
   apt-get install snapd -y
   snap install spotify
   snap install keepassxc
@@ -142,10 +142,10 @@ usermod -aG kvm "$SUDO_USER"
 
 usermod -s /bin/zsh "$SUDO_USER"
 
-$download_snaps && snap install insomnia
-$download_snaps && snap install dbeaver-ce
-$download_snaps && snap install sqlitebrowser
-$download_snaps && snap install mysql-workbench-community
+$install_snaps && snap install insomnia
+$install_snaps && snap install dbeaver-ce
+$install_snaps && snap install sqlitebrowser
+$install_snaps && snap install mysql-workbench-community
 
 if [ ! -f "$(command -v code)" ]; then
   url_latest_vscode="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
