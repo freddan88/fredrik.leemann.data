@@ -33,11 +33,11 @@ echo " "
 
 apt-get install ssh tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common gnupg dpkg bat gh -y
 apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings numlockx xinput xdotool wmctrl members neofetch -y
-apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic nala rofi -y
-apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer perl baobab -y
 apt-get install cpuid cpuidtool lshw ghostscript v4l-utils fzf jq net-tools fail2ban cmatrix screenkey orca onboard minicom cutecom screen lrzsz pandoc -y
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
-apt-get install pwgen libsodium23 dbus-x11 network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
+apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic rofi -y
+apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer baobab -y
+apt-get install pwgen perl libsodium23 dbus-x11 network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
 apt-get install ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
@@ -271,3 +271,14 @@ echo " "
 # ufw default deny incoming
 # ufw default allow outgoing
 # ufw enable
+#
+# Nala frontend for apt allowing parallel-downloads
+#
+# sudo apt install nala
+# sudo nala fetch (set repositories)
+# sudo nala install <package>
+# sudo nala upgrade // update + upgrade + autoremove
+#
+# https://christitus.com/stop-using-apt
+# https://trendoceans.com/nala-package-manager
+# https://gitlab.com/volian/nala/-/wikis/Installation
