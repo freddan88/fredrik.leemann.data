@@ -29,16 +29,16 @@ echo " "
 echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
 
-# sudo apt install git zsh vim nano zip unzip curl wget -y
+# sudo apt install git gh zsh vim nano zip unzip curl wget -y
 
-apt-get install ssh tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common gnupg dpkg bat gh -y
+apt-get install ssh tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common apt-transport-https -y
 apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings numlockx xinput xdotool wmctrl members neofetch -y
 apt-get install cpuid cpuidtool lshw ghostscript v4l-utils fzf jq net-tools fail2ban cmatrix screenkey orca onboard minicom cutecom screen lrzsz pandoc -y
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
-apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic rofi -y
+apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic dpkg -y
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer baobab -y
 apt-get install pwgen perl dbus-x11 libnss3 firefox-esr network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
-apt-get install ffmpeg libsodium23 libsecret-tool libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
+apt-get install libsodium23 libsecret-tool gnupg rofi bat ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
