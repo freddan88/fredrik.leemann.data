@@ -68,6 +68,8 @@ rm -f templates.zip
 pactl set-sink-volume @DEFAULT_SINK@ 100%
 pactl set-sink-mute @DEFAULT_SINK@ false
 
+rm -rf .config/google-chrome
+
 echo " "
 echo "DONE"
 echo " "
