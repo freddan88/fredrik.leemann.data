@@ -55,8 +55,9 @@ if $install_vscode_extensions; then
     chmod 754 .config/Code/vscode_extensions_install_user.sh
     .config/Code/vscode_extensions_install_user.sh
   fi
-  rm -f .config/Code/vscode_extensions_install_user.sh
 fi
+
+rm -f .config/Code/vscode_extensions_install_user.sh
 
 echo " "
 echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
