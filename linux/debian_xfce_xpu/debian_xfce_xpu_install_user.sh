@@ -30,6 +30,8 @@ mkdir -p .local/bin
 
 wget -qO- $url_latest_nvm | bash
 
+nvm install --lts
+
 # https://ohmyz.sh
 # https://github.com/paulirish/git-open
 # https://github.com/zsh-users/zsh-autosuggestions
