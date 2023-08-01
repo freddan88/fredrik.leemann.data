@@ -3,6 +3,8 @@
 # Version manager for node.js
 # https://github.com/nvm-sh/nvm
 
+install_vscode_extensions=true
+
 url_latest_nvm=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh
 
 ################################
@@ -44,13 +46,15 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfc
 unzip -oq debian_xfce_xpu_home.zip
 rm -f debian_xfce_xpu_home.zip
 
-if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
-  echo " "
-  echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
-  echo " "
+if $install_vscode_extensions; then
+  if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
+    echo " "
+    echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
+    echo " "
 
-  chmod 754 .config/Code/vscode_extensions_install_user.sh
-  .config/Code/vscode_extensions_install_user.sh
+    chmod 754 .config/Code/vscode_extensions_install_user.sh
+    .config/Code/vscode_extensions_install_user.sh
+  fi
   rm -f .config/Code/vscode_extensions_install_user.sh
 fi
 
