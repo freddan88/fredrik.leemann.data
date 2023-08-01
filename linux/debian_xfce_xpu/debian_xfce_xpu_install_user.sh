@@ -32,8 +32,6 @@ mkdir -p .local/bin
 
 wget -qO- $url_latest_nvm | bash
 
-nvm install --lts
-
 # https://ohmyz.sh
 # https://github.com/paulirish/git-open
 # https://github.com/zsh-users/zsh-autosuggestions
@@ -58,6 +56,8 @@ if $install_vscode_extensions; then
 fi
 
 rm -f .config/Code/vscode_extensions_install_user.sh
+
+nvm install --lts
 
 echo " "
 echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
