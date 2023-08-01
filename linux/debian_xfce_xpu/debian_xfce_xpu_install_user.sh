@@ -69,8 +69,8 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.
 unzip -o templates.zip
 rm -f templates.zip
 
-pactl set-sink-volume @DEFAULT_SINK@ 100%
-pactl set-sink-mute @DEFAULT_SINK@ false
+pactl set-sink-volume @DEFAULT_SINK@ 100% 2>/dev/null
+pactl set-sink-mute @DEFAULT_SINK@ false 2>/dev/null
 
 rm -rf .config/google-chrome
 
