@@ -213,6 +213,9 @@ echo " "
 systemctl disable apache2.service
 systemctl stop apache2.service
 
+cd /usr/share/icons || exit
+wget -O incognito-circle-01.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
+
 cd /usr/local/bin || exit
 
 echo " "
