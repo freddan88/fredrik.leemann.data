@@ -284,3 +284,7 @@ echo " "
 # https://christitus.com/stop-using-apt
 # https://trendoceans.com/nala-package-manager
 # https://gitlab.com/volian/nala/-/wikis/Installation
+#
+# cd /usr/share/icons
+# wget -O incognito-circle-01.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
+# wget -O incognito-circle-02.png https://www.iconarchive.com/download/i125711/pictogrammers/material/incognito-circle.512.png
