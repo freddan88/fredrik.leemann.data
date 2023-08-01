@@ -279,6 +279,7 @@ echo " "
 # sudo nala install <package>
 # sudo nala upgrade // update + upgrade + autoremove
 #
+# https://phoenixnap.com/kb/nala-apt
 # https://christitus.com/stop-using-apt
 # https://trendoceans.com/nala-package-manager
 # https://gitlab.com/volian/nala/-/wikis/Installation
