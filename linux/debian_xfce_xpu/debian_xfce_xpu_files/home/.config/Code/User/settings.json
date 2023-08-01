@@ -9,6 +9,7 @@
   "zenMode.hideLineNumbers": false,
   "files.insertFinalNewline": true,
   "files.eol": "\n",
+  "workbench.iconTheme": "file-icons",
   "workbench.colorTheme": "Arc+ (Dark Monochrome)"
   // "workbench.sideBar.location": "right",
   // "editor.minimap.side": "left",
