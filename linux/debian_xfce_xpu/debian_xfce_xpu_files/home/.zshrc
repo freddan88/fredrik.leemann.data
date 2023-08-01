@@ -141,7 +141,7 @@ gacp() {
   fi
 }
 
-# Function: Update all software - Example: sudo upas
+# Function: Update all software - Example: upas
 upas() {
   echo ''
   echo 'THIS COMMAND WILL UPDATE ALL SOFTWARE'
