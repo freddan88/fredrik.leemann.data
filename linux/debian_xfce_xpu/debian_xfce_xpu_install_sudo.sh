@@ -38,7 +38,7 @@ apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreof
 apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic rofi -y
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer baobab -y
 apt-get install pwgen perl dbus-x11 libnss3 firefox-esr network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
-apt-get install ffmpeg libsodium23 libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
+apt-get install ffmpeg libsodium23 libsecret-tool libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
@@ -203,6 +203,7 @@ update-grub
 
 fc-cache -s
 
+apt upgrade -y
 apt autoremove -y
 
 echo " "
