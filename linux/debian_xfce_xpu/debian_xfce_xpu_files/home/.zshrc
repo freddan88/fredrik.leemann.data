@@ -110,34 +110,38 @@ alias nano="nano -l"
 
 # Function: Git-add and commit all changes - Example: gac "first commit"
 gac() {
-  if [ -z "$1" ]; then
-    echo ''
-    echo 'NO MESSAGE PROVIDED - EXAMPLE: gac "first commit"'
-    echo ''
-  else
-    echo ''
-    echo 'THIS COMMAND WILL ADD ALL CHANGES AND COMMIT WITH YOUR PROVIDED MESSAGE'
-    echo ''
-    git add .
-    git commit -m "$1"
-    echo ''
+  if [ -f "$(command -v git)" ]; then
+    if [ -z "$1" ]; then
+      echo ''
+      echo 'NO MESSAGE PROVIDED - EXAMPLE: gac "first commit"'
+      echo ''
+    else
+      echo ''
+      echo 'THIS COMMAND WILL ADD ALL CHANGES AND COMMIT WITH YOUR PROVIDED MESSAGE'
+      echo ''
+      git add .
+      git commit -m "$1"
+      echo ''
+    fi
   fi
 }
 
 # Function: Git-add, commit and push all changes - Example: gacp "first commit"
 gacp() {
-  if [ -z "$1" ]; then
-    echo ''
-    echo 'NO MESSAGE PROVIDED - EXAMPLE: gacp "first commit"'
-    echo ''
-  else
-    echo ''
-    echo 'THIS COMMAND WILL ADD ALL CHANGES, COMMIT AND PUSH WITH YOUR PROVIDED MESSAGE'
-    echo ''
-    git add .
-    git commit -m "$1"
-    git push
-    echo ''
+  if [ -f "$(command -v git)" ]; then
+    if [ -z "$1" ]; then
+      echo ''
+      echo 'NO MESSAGE PROVIDED - EXAMPLE: gacp "first commit"'
+      echo ''
+    else
+      echo ''
+      echo 'THIS COMMAND WILL ADD ALL CHANGES, COMMIT AND PUSH WITH YOUR PROVIDED MESSAGE'
+      echo ''
+      git add .
+      git commit -m "$1"
+      git push
+      echo ''
+    fi
   fi
 }
 
