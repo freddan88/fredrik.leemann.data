@@ -192,6 +192,10 @@ if [ -f "/etc/network/interfaces" ]; then
   cp /etc/network/interfaces /etc/network/interfaces.bak
 fi
 
+cd /usr/share/icons || exit
+wget -O google_chrome_incognito.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
+wget -O firefox_private.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
+
 cd /
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_root.zip
 unzip -oq debian_xfce_xpu_root.zip
@@ -212,9 +216,6 @@ echo " "
 
 systemctl disable apache2.service
 systemctl stop apache2.service
-
-cd /usr/share/icons || exit
-wget -O incognito-circle-01.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
 
 cd /usr/local/bin || exit
 
