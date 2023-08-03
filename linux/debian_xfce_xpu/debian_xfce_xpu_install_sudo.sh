@@ -49,6 +49,16 @@ if $install_snaps; then
   ln -s /etc/profile.d/apps-bin-path.sh /etc/X11/Xsession.d/99snap
 fi
 
+if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
+  # https://design.ubuntu.com/font
+  font_name="ubuntu-font-family"
+  font_install_dir="/usr/share/fonts/truetype/$font_name"
+  font_url=$(curl -s https://api.github.com/repos/canonical/Ubuntu-fonts/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip && cd Ubuntu-fonts-* || exit
+  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+  cd /tmp && rm -rf $font_name
+fi
+
 if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
   # https://github.com/microsoft/cascadia-code/releases
   font_name="cascadia-code"
@@ -68,24 +78,6 @@ if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
   mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
   cd /tmp && rm -rf $font_name
 fi
-
-if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
-  # https://design.ubuntu.com/font
-  font_name="ubuntu-font-family"
-  font_install_dir="/usr/share/fonts/truetype/$font_name"
-  font_url=$(curl -s https://api.github.com/repos/canonical/Ubuntu-fonts/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
-  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip && cd Ubuntu-fonts-* || exit
-  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
-  cd /tmp && rm -rf $font_name
-fi
-
-# if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
-#   url_fonts_ubuntu="https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip"
-#   cd /tmp && wget $url_fonts_ubuntu -O ubuntu-font-family.zip && unzip ubuntu-font-family.zip
-#   mkdir -p /usr/share/fonts/truetype/ubuntu-font-family && cd /tmp/ubuntu-font-family-* || exit
-#   find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/ubuntu-font-family \;
-#   rm -rf __MACOSX ubuntu-font-family*
-# fi
 
 if [ ! -f "/opt/firefox/firefox" ]; then
   # Download-page: https://www.mozilla.org/sv-SE/firefox/all/#product-desktop-developer
