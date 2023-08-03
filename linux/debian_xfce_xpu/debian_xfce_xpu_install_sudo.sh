@@ -36,6 +36,7 @@ apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-g
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer baobab -y
 apt-get install pwgen perl dbus-x11 libnss3 firefox-esr network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
+apt-get install trash-cli ranger thefuck tldr -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
