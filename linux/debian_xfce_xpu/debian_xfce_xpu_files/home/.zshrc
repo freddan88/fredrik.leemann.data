@@ -113,7 +113,7 @@ alias nano="nano -l"
 
 alias lf="exa"
 alias ld="exa --tree"
-alias llf="exa -alhb"
+alias llf="exa -alhbg"
 
 alias bat="batcat"
 
