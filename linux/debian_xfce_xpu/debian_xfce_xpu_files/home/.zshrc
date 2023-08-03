@@ -108,6 +108,15 @@ fi
 alias zconf='nano -l $HOME/.zshrc'
 alias nano="nano -l"
 
+# Thanks to Tech Craft - YouTube
+# https://www.youtube.com/watch?v=2OHrTQVlRMg
+
+alias ls="exa"
+alias ll="exa -alhb"
+alias tree="exa --tree"
+
+alias bat="batcat"
+
 # Function: Git-add and commit all changes - Example: gac "first commit"
 gac() {
   if [ -f "$(command -v git)" ]; then
