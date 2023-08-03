@@ -28,15 +28,15 @@ echo " "
 
 # sudo apt install git gh zsh vim nano zip unzip curl wget -y
 
-apt-get install ssh fail2ban tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common apt-transport-https -y
-apt-get install libsodium23 libsecret-tool gnupg rofi ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi v4l-utils pandoc -y
-apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic dpkg tmux tree -y
-apt-get install exa bat ripgrep fzf zoxide entr mc jq lrzsz minicom cutecom screen net-tools nmap lshw cpuid cpuidtool numlockx xinput xdotool wmctrl members -y
-apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings neofetch ghostscript cmatrix screenkey orca onboard -y
-apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
-apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer baobab -y
-apt-get install pwgen perl dbus-x11 libnss3 firefox-esr network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
-apt-get install trash-cli ranger thefuck tldr -y
+apt-get install ssh fail2ban tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common -y
+apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings apt-transport-https libsodium23 pandoc -y
+apt-get install libsecret-tool gnupg v4l-utils ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi htop powertop -y
+apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic dpkg -y
+apt-get install lrzsz minicom cutecom numlockx net-tools network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
+apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client pwgen gparted -y
+apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc jq screen nmap lshw -y
+apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool -y
+apt-get install perl dbus-x11 libnss3 xinput cpuid cpuidtool stacer baobab neofetch ghostscript cmatrix screenkey orca onboard -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
@@ -87,12 +87,6 @@ fi
 #   rm -rf __MACOSX ubuntu-font-family*
 # fi
 
-if [ ! -f "$(command -v google-chrome-stable)" ]; then
-  cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  apt-get install ./google-chrome-stable_current_amd64.deb -y
-  rm -f google-chrome-stable_current_amd64.deb
-fi
-
 if [ ! -f "/opt/firefox/firefox" ]; then
   # Download-page: https://www.mozilla.org/sv-SE/firefox/all/#product-desktop-developer
   # Installation-guide: https://dev.to/harrsh2124/how-to-setup-firefox-developer-edition-on-ubuntu-4inp
@@ -100,6 +94,12 @@ if [ ! -f "/opt/firefox/firefox" ]; then
   cd /opt && wget -O firefox_developer_edition.tar.bz2 "$firefox_developer_url"
   tar xjfv firefox_developer_edition.tar.bz2
   rm -f firefox_developer_edition.tar.bz2
+fi
+
+if [ ! -f "$(command -v google-chrome-stable)" ]; then
+  cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  apt-get install ./google-chrome-stable_current_amd64.deb -y
+  rm -f google-chrome-stable_current_amd64.deb
 fi
 
 cd /usr/share/icons || exit
