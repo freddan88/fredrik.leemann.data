@@ -1,0 +1,10 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Exec=/opt/firefox/firefox --private-window %u
+Categories=Network;WebBrowser;
+Name=Firefox Developer Edition Private Browsing
+Icon=/usr/share/icons/firefox_developer_edition_private.png
+StartupWMClass=firefox-developer-edition-private
+Comment=Access the Internet in Privacy
+GenericName=Web Browser

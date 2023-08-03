@@ -1,0 +1,10 @@
+[Desktop Entry]
+Terminal=false
+Type=Application
+Exec=/opt/firefox/firefox %u
+Categories=Network;WebBrowser;
+Name=Firefox Developer Edition
+Icon=/opt/firefox/browser/chrome/icons/default/default128.png
+StartupWMClass=firefox-developer-edition
+Comment=Access the Internet
+GenericName=Web Browser
