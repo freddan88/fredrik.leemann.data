@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-# https://design.ubuntu.com/font
-# https://github.com/microsoft/cascadia-code/releases
-# https://www.mongodb.com/docs/compass/master/install
 # https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
+# https://www.mongodb.com/docs/compass/master/install
+# https://github.com/marktext/marktext/releases
 
 install_snaps=true
 
@@ -50,6 +49,7 @@ if $install_snaps; then
 fi
 
 if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
+  # https://github.com/microsoft/cascadia-code/releases
   font_name="cascadia-code"
   font_install_dir="/usr/share/fonts/truetype/$font_name"
   font_url=$(curl -s https://api.github.com/repos/microsoft/cascadia-code/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
@@ -69,6 +69,7 @@ if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
 fi
 
 if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
+  # https://design.ubuntu.com/font
   font_name="ubuntu-font-family"
   font_install_dir="/usr/share/fonts/truetype/$font_name"
   font_url=$(curl -s https://api.github.com/repos/canonical/Ubuntu-fonts/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
