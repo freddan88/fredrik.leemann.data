@@ -1,6 +1,7 @@
 {
-  "editor.fontFamily": "'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace",
-  "editor.fontWeight": "500",
+  "editor.fontFamily": "'JetBrains Mono', 'Cascadia Code', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontWeight": "600",
+  "editor.fontSize": 14,
   "editor.fontLigatures": false,
   "editor.formatOnSave": true,
   "explorer.compactFolders": false,
@@ -10,7 +11,7 @@
   "files.insertFinalNewline": true,
   "files.eol": "\n",
   "workbench.iconTheme": "file-icons",
-  "workbench.colorTheme": "Arc+ (Dark Monochrome)"
+  "workbench.colorTheme": "Arc+ (Dark Monochrome)",
   // "workbench.sideBar.location": "right",
   // "editor.minimap.side": "left",
 }
