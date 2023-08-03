@@ -11,8 +11,6 @@ kubernetes_kubectl_version="stable"
 
 url_mongo_db_compass="https://downloads.mongodb.com/compass/mongodb-compass_1.39.0_amd64.deb"
 url_marktext_package="https://github.com/marktext/marktext/releases/download/v0.17.1/marktext-amd64.deb"
-url_fonts_cascadia_code="https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip"
-url_fonts_ubuntu="https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip"
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -35,8 +33,8 @@ apt-get install ssh fail2ban tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar l
 apt-get install libsodium23 libsecret-tool gnupg rofi ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi v4l-utils pandoc -y
 apt-get install exa bat ripgrep fzf zoxide entr mc jq lrzsz minicom cutecom screen net-tools nmap lshw cpuid cpuidtool numlockx xinput xdotool wmctrl members -y
 apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings neofetch ghostscript cmatrix screenkey orca onboard -y
+apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic dpkg tmux -y
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
-apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic dpkg -y
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer baobab -y
 apt-get install pwgen perl dbus-x11 libnss3 firefox-esr network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
 
@@ -52,19 +50,40 @@ if $install_snaps; then
 fi
 
 if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
-  mkdir -p /tmp/cascadia-code && cd /tmp/cascadia-code || exit
-  wget $url_fonts_cascadia_code && unzip CascadiaCode-*.zip
-  mkdir -p /usr/share/fonts/truetype/cascadia-code && cd /tmp/cascadia-code/ttf || exit
-  find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/cascadia-code \;
-  rm -rf cascadia-code
+  font_name="cascadia-code"
+  font_install_dir="/usr/share/fonts/truetype/$font_name"
+  font_url=$(curl -s https://api.github.com/repos/microsoft/cascadia-code/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+  # font_url="https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip"
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip
+  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+  cd /tmp && rm -rf $font_name
+fi
+
+if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
+  font_name="jetbrains-mono"
+  font_install_dir="/usr/share/fonts/truetype/$font_name"
+  font_url=$(curl -s https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip
+  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+  cd /tmp && rm -rf $font_name
 fi
 
 if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
-  cd /tmp && wget $url_fonts_ubuntu -O ubuntu-font-family.zip && unzip ubuntu-font-family.zip
-  mkdir -p /usr/share/fonts/truetype/ubuntu-font-family && cd /tmp/ubuntu-font-family-* || exit
-  find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/ubuntu-font-family \;
-  rm -rf __MACOSX ubuntu-font-family*
+  font_name="ubuntu-font-family"
+  font_install_dir="/usr/share/fonts/truetype/$font_name"
+  font_url=$(curl -s https://api.github.com/repos/canonical/Ubuntu-fonts/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip && cd Ubuntu-fonts-* || exit
+  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+  cd /tmp && rm -rf $font_name
 fi
+
+# if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
+#   url_fonts_ubuntu="https://assets.ubuntu.com/v1/0cef8205-ubuntu-font-family-0.83.zip"
+#   cd /tmp && wget $url_fonts_ubuntu -O ubuntu-font-family.zip && unzip ubuntu-font-family.zip
+#   mkdir -p /usr/share/fonts/truetype/ubuntu-font-family && cd /tmp/ubuntu-font-family-* || exit
+#   find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/ubuntu-font-family \;
+#   rm -rf __MACOSX ubuntu-font-family*
+# fi
 
 if [ ! -f "$(command -v google-chrome-stable)" ]; then
   cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
