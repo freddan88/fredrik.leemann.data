@@ -33,8 +33,8 @@ echo " "
 
 apt-get install ssh fail2ban tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common apt-transport-https -y
 apt-get install libsodium23 libsecret-tool gnupg rofi ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi v4l-utils pandoc -y
+apt-get install exa bat ripgrep fzf zoxide entr mc jq lrzsz minicom cutecom screen net-tools nmap lshw cpuid cpuidtool numlockx xinput xdotool wmctrl members -y
 apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings neofetch ghostscript cmatrix screenkey orca onboard -y
-apt-get install exa bat ripgrep fzf zoxide entr mc jq lrzsz minicom cutecom screen net-tools lshw cpuid cpuidtool numlockx xinput xdotool wmctrl members -y
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool htop powertop -y
 apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic dpkg -y
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted stacer baobab -y
@@ -223,6 +223,10 @@ echo " "
 echo "DOWNLOADING UTILITY-SCRIPTS TO /USR/LOCAL/BIN" && sleep 2
 echo " "
 
+# Network Scanner From Linux Command Line (smnetscanner)
+# https://www.youtube.com/watch?v=4hjskxkapYo
+# https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG
+wget -O smnetscanner https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG/download/smnetscanner.sh
 wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
 
 echo " "
