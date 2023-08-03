@@ -111,9 +111,9 @@ alias nano="nano -l"
 # Thanks to Tech Craft - YouTube
 # https://www.youtube.com/watch?v=2OHrTQVlRMg
 
-alias ls="exa"
-alias ll="exa -alhb"
-alias tree="exa --tree"
+alias lf="exa"
+alias ld="exa --tree"
+alias llf="exa -alhb"
 
 alias bat="batcat"
 
