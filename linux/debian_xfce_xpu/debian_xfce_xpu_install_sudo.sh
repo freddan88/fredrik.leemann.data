@@ -51,12 +51,6 @@ if $install_snaps; then
   ln -s /etc/profile.d/apps-bin-path.sh /etc/X11/Xsession.d/99snap
 fi
 
-if [ ! -f "$(command -v google-chrome-stable)" ]; then
-  cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  apt-get install ./google-chrome-stable_current_amd64.deb -y
-  rm -f google-chrome-stable_current_amd64.deb
-fi
-
 if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
   mkdir -p /tmp/cascadia-code && cd /tmp/cascadia-code || exit
   wget $url_fonts_cascadia_code && unzip CascadiaCode-*.zip
@@ -71,6 +65,25 @@ if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
   find . -name "*.ttf" -exec install -m644 {} /usr/share/fonts/truetype/ubuntu-font-family \;
   rm -rf __MACOSX ubuntu-font-family*
 fi
+
+if [ ! -f "$(command -v google-chrome-stable)" ]; then
+  cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  apt-get install ./google-chrome-stable_current_amd64.deb -y
+  rm -f google-chrome-stable_current_amd64.deb
+fi
+
+if [ ! -f "/opt/firefox/firefox" ]; then
+  # Download-page: https://www.mozilla.org/sv-SE/firefox/all/#product-desktop-developer
+  # Installation-guide: https://dev.to/harrsh2124/how-to-setup-firefox-developer-edition-on-ubuntu-4inp
+  firefox_developer_url="https://download.mozilla.org/?product=firefox-devedition-latest-ssl&os=linux64&lang=en-US&_gl=1*nm7b4v*_ga*MTExMjY4MTY4My4xNjkxMDQ1Nzc0*_ga_MQ7767QQQW*MTY5MTA1MTcwMC4yLjAuMTY5MTA1MTc1Ny4wLjAuMA.."
+  cd /opt && wget -O firefox_developer_edition.tar.bz2 "$firefox_developer_url"
+  tar xjfv firefox_developer_edition.tar.bz2
+  rm -f firefox_developer_edition.tar.bz2
+fi
+
+cd /usr/share/icons || exit
+wget -O google_chrome_incognito.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
+wget -O firefox_developer_edition_private.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
 
 echo " "
 echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
@@ -192,10 +205,6 @@ if [ -f "/etc/network/interfaces" ]; then
   cp /etc/network/interfaces /etc/network/interfaces.bak
 fi
 
-cd /usr/share/icons || exit
-wget -O google_chrome_incognito.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
-wget -O firefox_developer_private.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
-
 cd /
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_root.zip
 unzip -oq debian_xfce_xpu_root.zip
@@ -205,7 +214,7 @@ chmod 755 /etc/grub.d/06_override_theme
 
 update-grub
 
-fc-cache -s
+fc-cache -f -v
 
 apt upgrade -y
 apt autoremove -y
@@ -223,7 +232,7 @@ echo " "
 echo "DOWNLOADING UTILITY-SCRIPTS TO /USR/LOCAL/BIN" && sleep 2
 echo " "
 
-# Network Scanner From Linux Command Line (smnetscanner)
+# Network Scanner For Linux Command Line (smnetscanner)
 # https://www.youtube.com/watch?v=4hjskxkapYo
 # https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG
 wget -O smnetscanner https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG/download/smnetscanner.sh
@@ -294,5 +303,34 @@ echo " "
 # https://gitlab.com/volian/nala/-/wikis/Installation
 #
 # cd /usr/share/icons
-# wget -O incognito-circle-01.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
-# wget -O incognito-circle-02.png https://www.iconarchive.com/download/i125711/pictogrammers/material/incognito-circle.512.png
+# wget -O google_chrome_incognito_01.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
+# wget -O google_chrome_incognito_02.png https://www.iconarchive.com/download/i125711/pictogrammers/material/incognito-circle.512.png
+#
+# font_name="jetbrains-mono"
+# font_install_dir="/usr/share/fonts/truetype/$font_name"
+# font_url=$(curl -s https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+# cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip
+# mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+# cd /tmp && rm -rf $font_name
+#
+# font_name="cascadia-code"
+# font_install_dir="/usr/share/fonts/truetype/$font_name"
+# font_url=$(curl -s https://api.github.com/repos/microsoft/cascadia-code/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+# cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip
+# mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+# cd /tmp && rm -rf $font_name
+#
+# font_name="ubuntu-font-family"
+# font_install_dir="/usr/share/fonts/truetype/$font_name"
+# font_url=$(curl -s https://api.github.com/repos/canonical/Ubuntu-fonts/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+# cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip && cd Ubuntu-fonts-*
+# mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+# cd /tmp && rm -rf $font_name
+#
+# List installed fonts
+# fc-list | grep "cascadia-code"
+# fc-list | grep "jetbrains-mono"
+# fc-list | grep "ubuntu-font-family"
+#
+# Install fonts manually on linux
+# https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0
