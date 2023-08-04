@@ -152,6 +152,7 @@ mkdir -p /var/lib/tpm
 # https://christitus.com/vm-setup-in-linux
 apt-get install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
 
+echo " "
 virsh net-start default
 virsh net-autostart default
 
@@ -221,10 +222,13 @@ rm -f debian_xfce_xpu_root.zip
 
 chmod 755 /etc/grub.d/06_override_theme
 
+echo " "
 update-grub
 
+echo " "
 fc-cache -f -v
 
+echo " "
 apt upgrade -y
 apt autoremove -y
 
