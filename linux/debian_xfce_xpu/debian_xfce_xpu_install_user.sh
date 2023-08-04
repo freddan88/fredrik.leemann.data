@@ -49,7 +49,7 @@ git clone https://github.com/paulirish/git-open.git .oh-my-zsh/custom/plugins/gi
 rm -rf .config/xfce4
 
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
-unzip -oq debian_xfce_xpu_home.zip
+unzip -o debian_xfce_xpu_home.zip
 rm -f debian_xfce_xpu_home.zip
 
 if $install_vscode_extensions; then

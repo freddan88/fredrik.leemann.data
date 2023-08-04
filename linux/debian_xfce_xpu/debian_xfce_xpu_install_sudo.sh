@@ -220,7 +220,7 @@ fi
 
 cd /
 wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_root.zip
-unzip -oq debian_xfce_xpu_root.zip
+unzip -o debian_xfce_xpu_root.zip
 rm -f debian_xfce_xpu_root.zip
 
 chmod 755 /etc/grub.d/06_override_theme
