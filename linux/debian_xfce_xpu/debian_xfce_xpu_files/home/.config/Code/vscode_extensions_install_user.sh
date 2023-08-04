@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-code --install-extension amiralizadeh9480.laravel-extra-intellisense
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension DEVSENSE.composer-php-vscode
@@ -22,8 +21,6 @@ code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension naumovs.color-highlight
 code --install-extension neilbrayfield.php-docblocker
-code --install-extension onecentlin.laravel5-snippets
-code --install-extension pgl.laravel-jump-controller
 code --install-extension ph-hawkins.arc-plus
 code --install-extension Remisa.shellman
 code --install-extension ritwickdey.LiveServer
@@ -35,4 +32,3 @@ code --install-extension timonwong.shellcheck
 code --install-extension wayou.vscode-todo-highlight
 code --install-extension xabikos.JavaScriptSnippets
 code --install-extension yoavbls.pretty-ts-errors
-code --install-extension Yseop.vscode-yseopml
