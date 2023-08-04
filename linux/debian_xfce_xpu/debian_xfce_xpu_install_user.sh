@@ -54,6 +54,10 @@ rm -f debian_xfce_xpu_home.zip
 
 xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/debian_xfce_xpu_panel_01.tar.bz2
 
+if [ ! -f "$(command -v xfce4-panel)" ]; then
+  xfce4-panel --restart
+fi
+
 if $install_vscode_extensions; then
   if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
     echo " "
