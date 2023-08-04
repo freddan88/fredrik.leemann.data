@@ -88,7 +88,7 @@ if [ ! -f "/opt/firefox/firefox" ]; then
   rm -f firefox_developer_edition.tar.bz2
 fi
 
-if [ ! -f "$(command -v google-chrome-stable)" ]; then
+if [ ! "$(command -v google-chrome-stable)" ]; then
   cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   apt-get install ./google-chrome-stable_current_amd64.deb -y
   rm -f google-chrome-stable_current_amd64.deb
@@ -169,20 +169,20 @@ $install_snaps && snap install dbeaver-ce
 $install_snaps && snap install sqlitebrowser
 $install_snaps && snap install mysql-workbench-community
 
-if [ ! -f "$(command -v code)" ]; then
+if [ ! "$(command -v code)" ]; then
   url_latest_vscode="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
   cd /tmp && wget -O vscode_amd64.deb "$url_latest_vscode"
   apt-get install ./vscode_amd64.deb -y
   rm -f vscode_amd64.deb
 fi
 
-if [ ! -f "$(command -v mongodb-compass)" ]; then
+if [ ! "$(command -v mongodb-compass)" ]; then
   cd /tmp && wget $url_mongo_db_compass
   apt-get install ./mongodb-compass*amd64.deb -y
   rm -f mongodb-compass*amd64.deb
 fi
 
-if [ ! -f "$(command -v marktext)" ]; then
+if [ ! "$(command -v marktext)" ]; then
   cd /tmp && wget $url_marktext_package
   apt-get install ./marktext-amd64.deb -y
   rm -f marktext-amd64.deb
