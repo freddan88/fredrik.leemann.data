@@ -153,6 +153,8 @@ mkdir -p /var/lib/tpm
 apt-get install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
 
 echo " "
+echo "HANDLE NETWORKS FOR QEMU-KVM VIRTUAL MACHINES"
+echo " "
 virsh net-start default
 virsh net-autostart default
 
