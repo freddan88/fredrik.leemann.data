@@ -7,6 +7,12 @@
     <property name="dark-mode" type="bool" value="false"/>
     <property name="panel-1" type="empty">
       <property name="autohide-behavior" type="uint" value="0"/>
+      <property name="background-rgba" type="array">
+        <value type="double" value="0.2196078431372549"/>
+        <value type="double" value="0.23529411764705882"/>
+        <value type="double" value="0.29019607843137257"/>
+        <value type="double" value="1"/>
+      </property>
       <property name="background-style" type="uint" value="1"/>
       <property name="disable-struts" type="bool" value="false"/>
       <property name="enter-opacity" type="uint" value="100"/>
@@ -31,47 +37,48 @@
       <property name="position" type="string" value="p=10;x=0;y=0"/>
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="26"/>
-      <property name="background-rgba" type="array">
-        <value type="double" value="0.2196078431372549"/>
-        <value type="double" value="0.23529411764705882"/>
-        <value type="double" value="0.29019607843137257"/>
-        <value type="double" value="1"/>
-      </property>
     </property>
   </property>
   <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="directorymenu">
+      <property name="base-directory" type="string" value="/home/fredrik"/>
+    </property>
     <property name="plugin-10" type="string" value="systray">
       <property name="digital-format" type="string" value="%a %d %b, %R"/>
       <property name="hide-new-items" type="bool" value="false"/>
       <property name="icon-size" type="int" value="16"/>
+      <property name="known-items" type="array">
+        <value type="string" value="remmina-icon"/>
+        <value type="string" value="stacer"/>
+        <value type="string" value="SimpleScreenRecorder"/>
+      </property>
+      <property name="known-legacy-items" type="array">
+        <value type="string" value="networkmanager applet"/>
+        <value type="string" value="ethernet network connection “wired connection 1” active"/>
+      </property>
       <property name="menu-is-primary" type="bool" value="false"/>
       <property name="show-frame" type="bool" value="false"/>
       <property name="single-row" type="bool" value="false"/>
       <property name="size-max" type="uint" value="16"/>
       <property name="square-icons" type="bool" value="true"/>
       <property name="symbolic-icons" type="bool" value="true"/>
-      <property name="known-legacy-items" type="array">
-        <value type="string" value="networkmanager applet"/>
-        <value type="string" value="ethernet network connection “wired connection 1” active"/>
-      </property>
-      <property name="known-items" type="array">
-        <value type="string" value="remmina-icon"/>
-        <value type="string" value="stacer"/>
-        <value type="string" value="SimpleScreenRecorder"/>
-      </property>
     </property>
     <property name="plugin-11" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-12" type="string" value="clock">
-      <property name="show-frame" type="bool" value="false"/>
-      <property name="digital-layout" type="uint" value="2"/>
       <property name="digital-date-font" type="string" value="Ubuntu Bold 9"/>
       <property name="digital-date-format" type="string" value=" %F v%V | %R "/>
-      <property name="timezone" type="string" value="Europe/Stockholm"/>
+      <property name="digital-layout" type="uint" value="2"/>
+      <property name="show-frame" type="bool" value="false"/>
+      <property name="timezone" type="string" value=""/>
     </property>
     <property name="plugin-14" type="string" value="notification-plugin"/>
+    <property name="plugin-2" type="string" value="separator">
+      <property name="expand" type="bool" value="false"/>
+      <property name="style" type="uint" value="2"/>
+    </property>
     <property name="plugin-4" type="string" value="tasklist">
       <property name="flat-buttons" type="bool" value="true"/>
       <property name="grouping" type="uint" value="1"/>
@@ -93,19 +100,12 @@
     </property>
     <property name="plugin-7" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
+      <property name="mpris-players" type="string" value="chromium.instance1590"/>
       <property name="show-frame" type="bool" value="false"/>
       <property name="show-notifications" type="bool" value="true"/>
       <property name="size-max" type="uint" value="16"/>
       <property name="square-icons" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance1590"/>
     </property>
     <property name="plugin-8" type="string" value="power-manager-plugin"/>
-    <property name="plugin-1" type="string" value="directorymenu">
-      <property name="base-directory" type="string" value="/home/fredrik"/>
-    </property>
-    <property name="plugin-2" type="string" value="separator">
-      <property name="style" type="uint" value="2"/>
-      <property name="expand" type="bool" value="false"/>
-    </property>
   </property>
 </channel>
