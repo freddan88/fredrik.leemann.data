@@ -101,25 +101,21 @@ wget -O firefox_developer_edition_private.png https://sandstormit.com/wp-content
 echo " "
 echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
 echo " "
-
 systemctl disable fail2ban.service
 
-echo "DISABLING SSH-SERVER FROM AUTO STARTING AT BOOT" && sleep 2
 echo " "
-
+echo "DISABLING SSH-SERVER FROM AUTO STARTING AT BOOT" && sleep 2
 systemctl disable ssh.service
 
-echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
 echo " "
-
+echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
 systemctl disable smbd.service
 systemctl disable nmbd.service
 systemctl stop smbd.service
 systemctl stop nmbd.service
 
-echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
 echo " "
-
+echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
 systemctl disable tftpd-hpa.service
 systemctl stop tftpd-hpa.service
 
