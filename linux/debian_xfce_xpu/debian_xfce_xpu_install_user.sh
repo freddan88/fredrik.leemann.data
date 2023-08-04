@@ -54,7 +54,7 @@ rm -f debian_xfce_xpu_home.zip
 
 xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/debian_xfce_xpu_panel_01.tar.bz2
 
-if [ ! -f "$(command -v xfce4-panel)" ]; then
+if [ "$(command -v xfce4-panel)" ]; then
   xfce4-panel --restart
 fi
 
