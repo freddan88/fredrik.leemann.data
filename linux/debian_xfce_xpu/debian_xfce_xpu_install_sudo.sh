@@ -231,10 +231,7 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfc
 unzip -o debian_xfce_xpu_root.zip
 rm -f debian_xfce_xpu_root.zip
 
-chmod 755 /etc/grub.d/06_override_theme
-
-echo " "
-update-grub
+chmod 644 /etc/grub.d/06_override_theme
 
 echo " "
 fc-cache -f -v
