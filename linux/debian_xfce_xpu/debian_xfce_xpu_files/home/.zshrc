@@ -117,6 +117,17 @@ alias llf="exa -alhbg"
 
 alias bat="batcat"
 
+# Thanks to warpdotdev
+# https://www.youtube.com/watch?v=6ivti-DfZng
+
+alias fzfdir="fzf"
+alias fzfgit="git branch | fzf"
+alias fzfcmd="history | fzf"
+
+# https://github.com/jesseduffield/lazydocker#usage
+
+alias lzd="lazydocker"
+
 # Function: Git-add and commit all changes - Example: gac "first commit"
 gac() {
   if [ -f "$(command -v git)" ]; then
