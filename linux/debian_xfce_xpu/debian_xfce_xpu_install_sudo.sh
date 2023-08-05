@@ -37,6 +37,7 @@ apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samb
 apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc jq screen nmap lshw -y
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool -y
 apt-get install perl dbus-x11 libnss3 xinput cpuid cpuidtool stacer baobab neofetch ghostscript cmatrix screenkey orca onboard libxext6 -y
+apt-get install httpie httping -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
@@ -252,8 +253,14 @@ systemctl stop apache2.service
 cd /usr/local/bin || exit
 
 echo " "
-echo "DOWNLOADING UTILITY-SCRIPTS TO /USR/LOCAL/BIN" && sleep 2
+echo "DOWNLOADING UTILITY-SCRIPTS AND BINARIES TO /USR/LOCAL/BIN" && sleep 2
 echo " "
+
+if [ ! "$(command -v lazydocker)" ]; then
+  # https://github.com/jesseduffield/lazydocker
+  url=$(curl -s https://api.github.com/repos/jesseduffield/lazydocker/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'Linux_x86_64.tar.gz')
+  wget -O lazydocker.tar.gz "$url" && tar xzvf lazydocker.tar.gz lazydocker && rm -f lazydocker.tar.gz
+fi
 
 # Network Scanner For Linux Command Line (smnetscanner)
 # https://www.youtube.com/watch?v=4hjskxkapYo
@@ -265,6 +272,7 @@ echo " "
 echo "Content in: /usr/local/bin"
 echo " "
 
+chown -R root:root /usr/local/bin
 chmod -Rf 755 /usr/local/bin/*
 ls -al /usr/local/bin
 
