@@ -37,7 +37,7 @@ apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samb
 apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc jq screen nmap lshw -y
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool -y
 apt-get install perl dbus-x11 libnss3 xinput cpuid cpuidtool stacer baobab neofetch ghostscript cmatrix screenkey orca onboard libxext6 -y
-apt-get install httpie httping -y
+apt-get install httpie httping rsync -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
