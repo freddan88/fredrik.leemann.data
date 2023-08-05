@@ -28,6 +28,10 @@ echo " "
 
 # sudo apt install ssh git vim nano zip unzip curl wget -y
 
+# DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
+apt-add-repository contrib non-free -y
+apt-get install ttf-mscorefonts-installer unrar -y
+
 apt-get install gh zsh fail2ban tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common libsodium23 -y
 apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings apt-transport-https pandoc aptitude dpkg tasksel -y
 apt-get install lrzsz minicom cutecom numlockx net-tools network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
@@ -38,10 +42,6 @@ apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdo
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool -y
 apt-get install perl dbus-x11 libnss3 xinput cpuid cpuidtool stacer baobab neofetch ghostscript cmatrix screenkey orca onboard libxext6 -y
 apt-get install httpie httping rsync -y
-
-# DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
-apt-add-repository contrib non-free -y
-apt-get install ttf-mscorefonts-installer unrar -y
 
 if $install_snaps; then
   apt-get install snapd -y
