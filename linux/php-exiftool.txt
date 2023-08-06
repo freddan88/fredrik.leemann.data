@@ -6,14 +6,27 @@ print_r($directoryFiles);
 // filemtime('fileName.jpg'): last modified
 // fileatime('fileName.jpg'): last accessed
 
-$randomHex = bin2hex(random_bytes(2));
+$numberSeq = (int) trim(file_get_contents("seq.log"));
 
-echo mime_content_type('20230527200912-20230607-000905.jpg');
+if ($numberSeq) {
+  file_put_contents("seq.log",$numberSeq++);
 
-$dateTimeCreated = shell_exec('B:\Media\Album\$Sort_files\bin\exiftool -T -createDate -d "%Y%m%d_%H%M%S" 20230527200912-20230607-000905.jpg');
+  $paddedSeq = str_pad($numberSeq, 8, 0, STR_PAD_LEFT); // 00000001
 
-$newFileName = trim($dateTimeCreated) . '_' . $randomHex . '_' . $seq . '.jpg';
+  $randomHex = bin2hex(random_bytes(2));
 
-echo $newFileName;
+  $mimeType = mime_content_type('20230527200912-20230607-000905.jpg'); // image/jpeg
 
-rename('Sample_abc.jpg', $newFileName);
+  $fileExtension = ''
+
+  if ($mimeType === 'image/jpeg') {
+    $dateTimeCreated = shell_exec('B:\Media\Album\$Sort_files\bin\exiftool -T -createDate -d "%Y%m%d_%H%M%S" 20230527200912-20230607-000905.jpg');
+    $fileExtension = '.jpg'
+  }
+
+  $newFileName = trim($dateTimeCreated) . '_' . $randomHex . '_' . $paddedSeq . $fileExtension;
+
+  echo $newFileName;
+
+  rename('Sample_abc.jpg', $newFileName);
+}
