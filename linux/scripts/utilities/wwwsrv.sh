@@ -11,59 +11,73 @@ fi
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
-hosts_file="/etc/hosts"
-vhost_file="/etc/apache2/sites-enabled/wwwsrv_vhost.conf"
+function stop {
+  systemctl stop apache2.service
+}
 
-if [ -f "$hosts_file" ] && [ -f "$vhost_file" ]; then
-  echo "THIS SCRIPT WILL RESTART YOUR WEB-SERVER (APACHE2) PRESS ENTER TO CONTINUE OR CTRL+C TO EXIT"
+function start {
+  hosts_file="/etc/hosts"
 
-  read -r
-  mkdir -p logs
+  if [ -f "$hosts_file" ]; then
+    echo "THIS SCRIPT WILL RESTART YOUR WEB-SERVER (APACHE2) PRESS ENTER TO CONTINUE OR CTRL+C TO EXIT"
 
-  www_path=$(pwd)
-  www_alias=$(basename "$PWD" | tr '[:upper:]' '[:lower:]')
+    read -r
+    mkdir -p logs
 
-  echo "<VirtualHost *:80>" | tee $vhost_file >/dev/null
-  echo "  DocumentRoot $www_path" | tee -a $vhost_file >/dev/null
-  echo "  ServerName $www_alias" | tee -a $vhost_file >/dev/null
-  echo "  ServerAdmin webmaster@localhost" | tee -a $vhost_file >/dev/null
-  echo "  ErrorLog $www_path/logs/apache_error.log" | tee -a $vhost_file >/dev/null
-  echo "  CustomLog $www_path/logs/apache_access.log combined" | tee -a $vhost_file >/dev/null
-  echo "  <Directory $www_path/>" | tee -a $vhost_file >/dev/null
-  echo "    AllowOverride All" | tee -a $vhost_file >/dev/null
-  echo "    Options +Indexes" | tee -a $vhost_file >/dev/null
-  echo "    Require all granted" | tee -a $vhost_file >/dev/null
-  echo " </Directory>" | tee -a $vhost_file >/dev/null
-  echo "</VirtualHost>" | tee -a $vhost_file >/dev/null
+    www_path=$(pwd)
+    www_alias=$(basename "$PWD" | tr '[:upper:]' '[:lower:]')
+    vhost_file="/etc/apache2/sites-enabled/wwwsrv_vhost.conf"
 
-  current_host=$(cat $hosts_file | grep 127.0.0.1 | grep localhost)
+    echo "<VirtualHost *:80>" | tee $vhost_file >/dev/null
+    echo "  DocumentRoot $www_path" | tee -a $vhost_file >/dev/null
+    echo "  ServerName $www_alias" | tee -a $vhost_file >/dev/null
+    echo "  ServerAdmin webmaster@localhost" | tee -a $vhost_file >/dev/null
+    echo "  ErrorLog $www_path/logs/apache_error.log" | tee -a $vhost_file >/dev/null
+    echo "  CustomLog $www_path/logs/apache_access.log combined" | tee -a $vhost_file >/dev/null
+    echo "  <Directory $www_path/>" | tee -a $vhost_file >/dev/null
+    echo "    AllowOverride All" | tee -a $vhost_file >/dev/null
+    echo "    Options +Indexes" | tee -a $vhost_file >/dev/null
+    echo "    Require all granted" | tee -a $vhost_file >/dev/null
+    echo " </Directory>" | tee -a $vhost_file >/dev/null
+    echo "</VirtualHost>" | tee -a $vhost_file >/dev/null
 
-  sed -i "s/$current_host/127.0.0.1 localhost $www_alias/g" $hosts_file
+    current_host=$(cat $hosts_file | grep 127.0.0.1 | grep localhost)
 
-  echo "127.0.0.1 $www_alias" | tee -a $hosts_file >/dev/null
+    sed -i "s/$current_host/127.0.0.1 localhost $www_alias/g" $hosts_file
 
-  echo " "
-  echo "RESTARTING APACHE2 (WEB-SERVER)"
-  echo "-------------------------------"
+    echo "127.0.0.1 $www_alias" | tee -a $hosts_file >/dev/null
 
-  sleep 2 && systemctl restart apache2.service
+    echo "RESTARTING APACHE2 (WEB-SERVER)"
+    echo "-------------------------------"
 
-  echo " "
-  echo "LOGGFILES CAN BE FOUND HERE"
-  echo "---------------------------"
-  cat "$www_path/logs"
+    sleep 1 && systemctl restart apache2.service
 
-  echo " "
-  echo "CONTENTS OF YOUR HOST-FILE"
-  echo "--------------------------"
-  cat "$hosts_file"
+    echo " "
+    echo "LOGGFILES CAN BE FOUND HERE"
+    echo "---------------------------"
+    echo "$www_path/logs"
 
-  echo " "
-  echo "CONTENTS OF APACHE VHOST-FILE"
-  echo "-----------------------------"
-  cat "$vhost_file"
+    echo " "
+    echo "CONTENTS OF YOUR HOSTS-FILE"
+    echo "---------------------------"
+    cat "$hosts_file"
 
-  echo " "
-  echo "YOUR WEB-SITE IS NOW RUNING AND YOU SHALL BE ABLE TO ACCESS IT ON: http://$www_alias"
-  echo " "
-fi
+    echo " "
+    echo "CONTENTS OF APACHE VHOST-FILE"
+    echo "-----------------------------"
+    cat "$vhost_file"
+
+    echo " "
+    echo "YOUR WEB-SITE IS NOW RUNING AND YOU SHALL BE ABLE TO ACCESS IT ON: http://$www_alias"
+    echo " "
+  fi
+}
+
+case $1 in
+stop)
+  stop
+  ;;
+*)
+  start
+  ;;
+esac
