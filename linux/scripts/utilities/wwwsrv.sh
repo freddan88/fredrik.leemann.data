@@ -36,7 +36,7 @@ function start {
     echo "  CustomLog $www_path/logs/apache_access.log combined" | tee -a $vhost_file >/dev/null
     echo "  <Directory $www_path/>" | tee -a $vhost_file >/dev/null
     echo "    AllowOverride All" | tee -a $vhost_file >/dev/null
-    echo "    Options +Indexes" | tee -a $vhost_file >/dev/null
+    echo "    Options Indexes FollowSymLinks" | tee -a $vhost_file >/dev/null
     echo "    Require all granted" | tee -a $vhost_file >/dev/null
     echo " </Directory>" | tee -a $vhost_file >/dev/null
     echo "</VirtualHost>" | tee -a $vhost_file >/dev/null
