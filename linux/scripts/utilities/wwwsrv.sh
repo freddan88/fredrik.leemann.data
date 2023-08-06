@@ -1,59 +1,69 @@
 #!/usr/bin/env bash
 
-vhost_file="/etc/apache2/sites-enabled/wwwsrv_vhost.conf"
-hosts_file_bak="/etc/hosts_bak"
-hosts_file="/etc/hosts"
+if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
+  echo " "
+  echo "PLEASE RUN THIS SCRIPT AS A SUDO-USER"
+  echo " "
+  exit
+fi
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
-echo "WARNING! THIS SCRIPT WILL RESTART YOUR WEB-SERVER (APACHE) PRESS ENTER TO CONTINUE OR CTRL+C TO EXIT"
-read -r
+hosts_file="/etc/hosts"
+vhost_file="/etc/apache2/sites-enabled/wwwsrv_vhost.conf"
 
-mkdir -p logs
+if [ -f "$hosts_file" ] && [ -f "$vhost_file" ]; then
+  echo "THIS SCRIPT WILL RESTART YOUR WEB-SERVER (APACHE2) PRESS ENTER TO CONTINUE OR CTRL+C TO EXIT"
 
-www_path=$(pwd)
-www_name="$(basename "$PWD").local"
+  read -r
+  mkdir -p logs
 
-# host_file='/etc/hosts'
-# new_alias='docker-webdock.se'
-# current_host=$(cat $host_file | grep 127.0.0.1 | grep localhost)
-# sed -i "s/$current_host/127.0.0.1 localhost $new_alias/g" $host_file
-# cat $host_file
+  www_path=$(pwd)
+  www_alias=$(basename "$PWD" | tr '[:upper:]' '[:lower:]')
 
-if [ -f "$hosts_file_bak" ]; then
-  sudo cp -f $hosts_file_bak $hosts_file
+  echo "<VirtualHost *:80>" | tee $vhost_file >/dev/null
+  echo "  DocumentRoot $www_path" | tee -a $vhost_file >/dev/null
+  echo "  ServerName $www_alias" | tee -a $vhost_file >/dev/null
+  echo "  ServerAdmin webmaster@localhost" | tee -a $vhost_file >/dev/null
+  echo "  ErrorLog $www_path/logs/apache_error.log" | tee -a $vhost_file >/dev/null
+  echo "  CustomLog $www_path/logs/apache_access.log combined" | tee -a $vhost_file >/dev/null
+  echo "  <Directory $www_path/>" | tee -a $vhost_file >/dev/null
+  echo "    AllowOverride All" | tee -a $vhost_file >/dev/null
+  echo "    Options +Indexes" | tee -a $vhost_file >/dev/null
+  echo "    Require all granted" | tee -a $vhost_file >/dev/null
+  echo " </Directory>" | tee -a $vhost_file >/dev/null
+  echo "</VirtualHost>" | tee -a $vhost_file >/dev/null
+
+  current_host=$(cat $hosts_file | grep 127.0.0.1 | grep localhost)
+
+  sed -i "s/$current_host/127.0.0.1 localhost $www_alias/g" $hosts_file
+
+  echo "127.0.0.1 $www_alias" | tee -a $hosts_file >/dev/null
+
+  echo " "
+  echo "RESTARTING APACHE2 (WEB-SERVER)"
+  echo "-------------------------------"
+
+  sleep 2 && systemctl restart apache2.service
+
+  echo " "
+  echo "LOGGFILES CAN BE FOUND HERE"
+  echo "---------------------------"
+  cat "$www_path/logs"
+
+  echo " "
+  echo "CONTENTS OF YOUR HOST-FILE"
+  echo "--------------------------"
+  cat "$hosts_file"
+
+  echo " "
+  echo "CONTENTS OF APACHE VHOST-FILE"
+  echo "-----------------------------"
+  cat "$vhost_file"
+
+  echo " "
+  echo "YOUR WEB-SITE IS NOW RUNING AND YOU SHALL BE ABLE TO ACCESS IT ON: http://$www_name"
+  echo " "
 fi
-
-sudo cp -f $hosts_file $hosts_file_bak
-
-echo "<VirtualHost *:80>" | sudo tee $vhost_file >/dev/null
-echo "  DocumentRoot $www_path" | sudo tee -a $vhost_file >/dev/null
-echo "  ServerName $www_name" | sudo tee -a $vhost_file >/dev/null
-echo "  ServerAdmin webmaster@localhost" | sudo tee -a $vhost_file >/dev/null
-echo "  ErrorLog $www_path/logs/apache_error.log" | sudo tee -a $vhost_file >/dev/null
-echo "  CustomLog $www_path/logs/apache_access.log combined" | sudo tee -a $vhost_file >/dev/null
-echo "  <Directory $www_path/>" | sudo tee -a $vhost_file >/dev/null
-echo "    AllowOverride All" | sudo tee -a $vhost_file >/dev/null
-echo "    Options +Indexes" | sudo tee -a $vhost_file >/dev/null
-echo "    Require all granted" | sudo tee -a $vhost_file >/dev/null
-echo " </Directory>" | sudo tee -a $vhost_file >/dev/null
-echo "</VirtualHost>" | sudo tee -a $vhost_file >/dev/null
-
-echo "127.0.0.1 $www_name" | sudo tee -a $hosts_file >/dev/null
-
-sudo systemctl restart apache2.service
-
-echo "CONTENTS OF HOST-FILE"
-echo "---------------------"
-cat "$hosts_file"
-
-echo " "
-echo "CONTENTS OF APACHE VHOST-FILE"
-echo "-----------------------------"
-cat "$vhost_file"
-
-echo " "
-echo "YOUR WEB-SITE IS NOW RUNING AND YOU SHALL BE ABLE TO ACCESS IT ON: http://$www_name"
-echo " "
