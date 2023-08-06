@@ -64,6 +64,6 @@ if [ -f "$hosts_file" ] && [ -f "$vhost_file" ]; then
   cat "$vhost_file"
 
   echo " "
-  echo "YOUR WEB-SITE IS NOW RUNING AND YOU SHALL BE ABLE TO ACCESS IT ON: http://$www_name"
+  echo "YOUR WEB-SITE IS NOW RUNING AND YOU SHALL BE ABLE TO ACCESS IT ON: http://$www_alias"
   echo " "
 fi
