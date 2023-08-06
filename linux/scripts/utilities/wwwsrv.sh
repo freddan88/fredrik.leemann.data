@@ -23,7 +23,7 @@ www_name="$(basename "$PWD").local"
 # cat $host_file
 
 if [ -f "$hosts_file_bak" ]; then
-    sudo cp -f $hosts_file_bak $hosts_file
+  sudo cp -f $hosts_file_bak $hosts_file
 fi
 
 sudo cp -f $hosts_file $hosts_file_bak
