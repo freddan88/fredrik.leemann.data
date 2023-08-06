@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#
+# THIS SCRIPT IS WORK IN PROGRESS
 
 untracked_files=("$(git add -A -n | cut -d" " -f2 | xargs)")
 
