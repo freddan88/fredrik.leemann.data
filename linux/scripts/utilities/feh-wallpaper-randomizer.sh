@@ -13,8 +13,9 @@ mode="scale"
 # WALLPAPER IMAGE CHANGE INTERVAL (SECONDS)
 interval=300
 
-# DO NOT EDIT BELOW THIS LINE
-#############################
+################################
+# DO NOT EDIT BELOW THIS LINE! #
+################################
 
 # GET PID LSOF EXAMPLE
 # lsof | grep $0 | awk '{print $2}'
