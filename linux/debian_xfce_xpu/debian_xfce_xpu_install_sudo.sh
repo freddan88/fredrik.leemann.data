@@ -34,14 +34,14 @@ apt-get install ttf-mscorefonts-installer unrar -y
 
 apt-get install gh zsh fail2ban tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip lsb-release ca-certificates software-properties-common libsodium23 -y
 apt-get install xfce4 xfce4-goodies catfish mugshot xfce4-panel-profiles slick-greeter lightdm-settings apt-transport-https pandoc aptitude dpkg tasksel -y
+apt-get install libsecret-tools gnupg v4l-utils ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi htop powertop -y
 apt-get install lrzsz minicom cutecom numlockx net-tools network-manager network-manager-gnome network-manager-openvpn network-manager-openvpn-gnome -y
-apt-get install libsecret-tool gnupg v4l-utils ffmpeg libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly gstreamer1.0-vaapi htop powertop -y
-apt-get install arc-theme gnome-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina openssl libpcre3 synaptic -y
+apt-get install arc-theme gnome-icon-theme tango-icon-theme elementary-xfce-icon-theme gnome-system-monitor gnome-disk-utility remmina synaptic -y
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client pwgen gparted -y
 apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc jq screen nmap lshw -y
 apt-get install ufw gufw gimp vlc pitivi simplescreenrecorder obs-studio libreoffice mousepad thunderbird galculator imagemagick exiftool -y
 apt-get install perl dbus-x11 libnss3 xinput cpuid cpuidtool stacer baobab neofetch ghostscript cmatrix screenkey orca onboard libxext6 -y
-apt-get install httpie httping rsync dialog unclutter -y
+apt-get install httpie httping rsync dialog unclutter openssl libpcre3 -y
 
 if $install_snaps; then
   apt-get install snapd -y
