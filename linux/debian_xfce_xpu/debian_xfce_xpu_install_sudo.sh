@@ -167,8 +167,8 @@ echo " "
 echo "HANDLE NETWORKS FOR QEMU-KVM VIRTUAL MACHINES"
 echo " "
 
-virsh net-start default
-virsh net-autostart default
+virsh net-start default 2>/dev/null
+virsh net-autostart default 2>/dev/null
 
 usermod -aG docker "$SUDO_USER"
 usermod -aG libvirt-qemu "$SUDO_USER"
