@@ -5,6 +5,7 @@
 # https://github.com/marktext/marktext/releases
 
 install_snaps=true
+install_docker=true
 install_virtualization=true
 
 kubernetes_kubectl_version="stable"
@@ -103,6 +104,17 @@ cd /usr/share/icons || exit
 wget -O google_chrome_incognito.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
 wget -O firefox_developer_edition_private.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
 
+if [ -d "/srv/tftp" ]; then
+  chown -R tftp:nogroup /srv/tftp
+fi
+
+echo " "
+echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
+echo " "
+
+systemctl disable tftpd-hpa.service
+systemctl stop tftpd-hpa.service
+
 echo " "
 echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
 echo " "
@@ -124,37 +136,28 @@ systemctl disable nmbd.service
 systemctl stop smbd.service
 systemctl stop nmbd.service
 
-echo " "
-echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
-echo " "
-
-systemctl disable tftpd-hpa.service
-systemctl stop tftpd-hpa.service
-
-if [ -d "/srv/tftp" ]; then
-  chown -R tftp:nogroup /srv/tftp 2>/dev/null
-fi
-
-# INSTALL DOCKER FOR DEBIAN-LINUX
-# https://docs.docker.com/engine/install/debian
-
-debian_codename=$(lsb_release -cs)
-
-docker_url="https://download.docker.com/linux/debian"
-docker_apt="/etc/apt/sources.list.d/docker.list"
-docker_gpg="/etc/apt/keyrings/docker.gpg"
-
-install -m 0755 -d /etc/apt/keyrings
-curl -fsSL $docker_url/gpg | gpg --dearmor --batch --yes --output $docker_gpg
-chmod a+r $docker_gpg
-
-echo "deb [arch=$(dpkg --print-architecture) signed-by=$docker_gpg] $docker_url $debian_codename stable" | tee $docker_apt >/dev/null
-
-apt-get update
 apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 pre-commit -y
 apt-get install php php-cli php-common php-xdebug php-mysql php-mbstring php-curl php-soap php-readline -y
 apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
-apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+if $install_docker; then
+  # INSTALL DOCKER FOR DEBIAN-LINUX
+  # https://docs.docker.com/engine/install/debian
+
+  debian_codename=$(lsb_release -cs)
+
+  docker_url="https://download.docker.com/linux/debian"
+  docker_apt="/etc/apt/sources.list.d/docker.list"
+  docker_gpg="/etc/apt/keyrings/docker.gpg"
+
+  install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL $docker_url/gpg | gpg --dearmor --batch --yes --output $docker_gpg
+  chmod a+r $docker_gpg
+
+  echo "deb [arch=$(dpkg --print-architecture) signed-by=$docker_gpg] $docker_url $debian_codename stable" | tee $docker_apt >/dev/null
+
+  apt-get update && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+fi
 
 if $install_virtualization; then
   # Debian Warning: Missing home dir /var/lib/tpm
