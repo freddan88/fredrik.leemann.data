@@ -5,6 +5,7 @@
 # https://github.com/marktext/marktext/releases
 
 install_snaps=true
+install_virtualization=true
 
 kubernetes_kubectl_version="stable"
 
@@ -155,29 +156,33 @@ apt-get install php php-cli php-common php-xdebug php-mysql php-mbstring php-cur
 apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
 apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
-# Debian Warning: Missing home dir /var/lib/tpm
-# Probably a warning displayed when KVM is installed
-# This code may fix the warning-message
-mkdir -p /var/lib/tpm
+if $install_virtualization; then
+  # Debian Warning: Missing home dir /var/lib/tpm
+  # Probably a warning displayed when KVM is installed
+  # This code may fix the warning-message
+  mkdir -p /var/lib/tpm
 
-# https://christitus.com/vm-setup-in-linux
-apt-get install qemu-kvm qemu-system qemu-utils python3 python3-pip libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager -y
+  # https://christitus.com/vm-setup-in-linux
+  apt-get install python3 python3-pip virt-manager -y
+  apt-get install qemu-kvm qemu-system qemu-utils libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon -y
 
-echo " "
-echo "HANDLE NETWORKS FOR QEMU-KVM VIRTUAL MACHINES"
-echo " "
+  echo " "
+  echo "HANDLE NETWORKS FOR QEMU-KVM VIRTUAL MACHINES"
+  echo " "
 
-virsh net-start default 2>/dev/null
-virsh net-autostart default 2>/dev/null
+  virsh net-start default 2>/dev/null
+  virsh net-autostart default 2>/dev/null
 
-usermod -aG docker "$SUDO_USER"
-usermod -aG libvirt-qemu "$SUDO_USER"
-usermod -aG libvirt "$SUDO_USER"
-usermod -aG input "$SUDO_USER"
-usermod -aG disk "$SUDO_USER"
-usermod -aG kvm "$SUDO_USER"
+  usermod -aG libvirt-qemu "$SUDO_USER"
+  usermod -aG libvirt "$SUDO_USER"
+  usermod -aG input "$SUDO_USER"
+  usermod -aG disk "$SUDO_USER"
+  usermod -aG kvm "$SUDO_USER"
+fi
 
 usermod -s /bin/zsh "$SUDO_USER"
+
+usermod -aG docker "$SUDO_USER"
 
 $install_snaps && snap install insomnia
 $install_snaps && snap install dbeaver-ce
