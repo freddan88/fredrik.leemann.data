@@ -11,7 +11,13 @@
   "files.insertFinalNewline": true,
   "files.eol": "\n",
   "workbench.iconTheme": "file-icons",
-  "workbench.colorTheme": "Arc+ (Dark Monochrome)",
+  "git.autofetch": true,
+  "git.openRepositoryInParentFolders": "always",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Default Dark+"
   // "workbench.sideBar.location": "right",
   // "editor.minimap.side": "left",
 }
