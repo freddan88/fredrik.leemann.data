@@ -25,7 +25,7 @@ if ($numberSeq) {
     default:
       $fileError = true;
       // $dateTimeCreated = "";
-      // $fileExtension = strtolower(pathinfo($fileNameq, PATHINFO_EXTENSION));
+      // $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
       break;
   }
 
