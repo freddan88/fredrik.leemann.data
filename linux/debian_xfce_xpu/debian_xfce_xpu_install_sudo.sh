@@ -26,7 +26,7 @@ echo " "
 echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
 
-# sudo apt install git wget -y
+# sudo apt install git wget sudo -y
 # sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
@@ -40,7 +40,7 @@ apt-get install gstreamer1.0-vaapi libsodium23 v4l-utils ffmpeg libavcodec-extra
 apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc jq screen lshw cpuid cpuidtool -y
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted httpie httping -y
 apt-get install fail2ban libnss3 pandoc net-tools nmap lrzsz minicom cutecom remmina thunderbird orca onboard screenkey htop powertop -y
-apt-get install elementary-xfce-icon-theme arc-theme ssh vim nano zip unzip curl -y
+apt-get install elementary-xfce-icon-theme arc-theme ssh zip unzip curl vim neovim nano -y
 
 if [ "$(systemd-detect-virt)" == 'kvm' ]; then
   apt-get install spice-vdagent
