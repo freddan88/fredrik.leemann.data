@@ -21,7 +21,6 @@ code --install-extension ms-vscode.vscode-typescript-next
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension naumovs.color-highlight
 code --install-extension neilbrayfield.php-docblocker
-code --install-extension ph-hawkins.arc-plus
 code --install-extension Remisa.shellman
 code --install-extension ritwickdey.LiveServer
 code --install-extension rogalmic.bash-debug
