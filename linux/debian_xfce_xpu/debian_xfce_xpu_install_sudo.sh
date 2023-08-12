@@ -29,7 +29,9 @@ echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
 
 # sudo apt install git curl wget sudo -y
+#
 # sudo apt install debian-goodies -y
+# sudo dpkg-reconfigure popularity-contest
 # sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
@@ -212,13 +214,13 @@ if [ ! "$(command -v marktext)" ]; then
   rm -f marktext-amd64.deb
 fi
 
-if [ ! -d "/usr/local/bin/composer" ]; then
+if [ ! -f "/usr/local/bin/composer" ]; then
   cd /tmp && wget https://getcomposer.org/installer
   php ./installer && mv -f composer.phar /usr/local/bin/composer
   chmod -f 755 /usr/local/bin/composer && rm -f installer
 fi
 
-if [ ! -d "/usr/local/bin/kubectl" ]; then
+if [ ! -f "/usr/local/bin/kubectl" ]; then
   kubectl_version="$kubernetes_kubectl_version"
   if [ "$kubernetes_kubectl_version" = "stable" ]; then
     kubectl_version="$(curl -L -s https://dl.k8s.io/release/stable.txt)"
