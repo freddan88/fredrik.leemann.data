@@ -28,7 +28,7 @@ echo " "
 echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
 
-# sudo apt install git wget sudo -y
+# sudo apt install git curl wget sudo -y
 # sudo apt install debian-goodies -y
 # sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
 
@@ -37,17 +37,19 @@ apt-add-repository contrib non-free -y
 apt-get install ttf-mscorefonts-installer unrar -y
 
 apt-get install task-xfce-desktop task-ssh-server xfce4-panel-profiles network-manager-openvpn-gnome slick-greeter catfish mugshot lsb-release dbus-x11 -y
-apt-get install gh zsh tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip xinput numlockx unclutter aptitude dpkg tasksel synaptic ufw gufw openssl -y
 apt-get install gimp vlc pitivi simplescreenrecorder obs-studio galculator gnome-system-monitor gnome-disk-utility stacer baobab dialog neofetch cmatrix -y
 apt-get install gstreamer1.0-vaapi libsodium23 v4l-utils ffmpeg libavcodec-extra libsecret-tools gnupg pwgen imagemagick exiftool perl ghostscript rsync -y
 apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc jq screen lshw cpuid cpuidtool -y
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted httpie httping -y
+apt-get install zip unzip tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip xinput numlockx unclutter aptitude dpkg tasksel synaptic ufw gufw -y
 apt-get install fail2ban libnss3 pandoc net-tools nmap lrzsz minicom cutecom remmina thunderbird orca onboard screenkey htop powertop -y
-apt-get install arc-theme elementary-xfce-icon-theme debian-edu-artwork ssh zip unzip curl vim neovim nano -y
+apt-get install arc-theme elementary-xfce-icon-theme debian-edu-artwork ssh openssl zsh gh nano vim neovim -y
 
 if [ "$(systemd-detect-virt)" == 'kvm' ]; then
   apt-get install spice-vdagent
 fi
+
+usermod -s /bin/zsh "$SUDO_USER"
 
 if $install_snaps; then
   apt-get install snapd -y
@@ -158,6 +160,8 @@ if $install_docker; then
   echo "deb [arch=$(dpkg --print-architecture) signed-by=$docker_gpg] $docker_url $debian_codename stable" | tee $docker_apt >/dev/null
 
   apt-get update && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+  usermod -aG docker "$SUDO_USER"
 fi
 
 if $install_virtualization; then
@@ -183,10 +187,6 @@ if $install_virtualization; then
   usermod -aG disk "$SUDO_USER"
   usermod -aG kvm "$SUDO_USER"
 fi
-
-usermod -s /bin/zsh "$SUDO_USER"
-
-usermod -aG docker "$SUDO_USER"
 
 $install_snaps && snap install insomnia
 $install_snaps && snap install dbeaver-ce
