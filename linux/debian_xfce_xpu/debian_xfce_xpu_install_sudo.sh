@@ -26,6 +26,8 @@ if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
 fi
 
 function print_user_global_bin_and_exit_script() {
+  apt upgrade -y && apt autoremove -y
+
   echo " "
   echo "Content in: /usr/local/bin"
   echo " "
@@ -33,9 +35,6 @@ function print_user_global_bin_and_exit_script() {
   chown -R root:root /usr/local/bin
   chmod -Rf 755 /usr/local/bin/*
   ls -al /usr/local/bin
-
-  apt upgrade -y
-  apt autoremove -y
 
   echo " "
   echo "DONE"
