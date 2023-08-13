@@ -206,7 +206,6 @@ cd /usr/local/bin || exit
 # https://www.youtube.com/watch?v=4hjskxkapYo
 # https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG
 wget -O smnetscanner https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG/download/smnetscanner.sh
-wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
 
 if [ -f "/sbin/ifconfig" ]; then
   ln -s /sbin/ifconfig /bin/ifconfig
@@ -300,6 +299,8 @@ if [ ! -f "/usr/local/bin/kubectl" ]; then
   curl -LO "https://dl.k8s.io/release/$kubectl_version/bin/linux/amd64/kubectl"
   chmod -f 755 /usr/local/bin/kubectl
 fi
+
+wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
 
 echo " "
 echo "DISABLING APACHE2 HTTP SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
