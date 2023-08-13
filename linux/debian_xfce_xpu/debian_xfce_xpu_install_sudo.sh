@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
-# https://www.mongodb.com/docs/compass/master/install
-# https://github.com/marktext/marktext/releases
-
 install_snaps=true
 install_docker=true
 install_virtualization=true
 install_development_software=true
+
+# https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
+# https://www.mongodb.com/docs/compass/master/install
+# https://github.com/marktext/marktext/releases
 
 kubernetes_kubectl_version="stable"
 
