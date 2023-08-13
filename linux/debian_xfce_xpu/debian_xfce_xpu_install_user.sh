@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Version manager for node.js
-# https://github.com/nvm-sh/nvm
+# Version manager for node.js - Get the latest script-url
+# https://github.com/nvm-sh/nvm#install--update-script
 
 install_latest_node_lts=true
 install_vscode_extensions=true
