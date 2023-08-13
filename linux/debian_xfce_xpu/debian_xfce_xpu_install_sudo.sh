@@ -263,10 +263,6 @@ systemctl stop apache2.service
 
 cd /usr/local/bin || exit
 
-echo " "
-echo "DOWNLOADING UTILITY-SCRIPTS AND BINARIES TO /USR/LOCAL/BIN" && sleep 2
-echo " "
-
 if [ ! "$(command -v lazydocker)" ]; then
   # https://github.com/jesseduffield/lazydocker
   url=$(curl -s https://api.github.com/repos/jesseduffield/lazydocker/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'Linux_x86_64.tar.gz')
