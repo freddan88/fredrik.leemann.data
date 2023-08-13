@@ -90,6 +90,12 @@ if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
   cd /tmp && rm -rf $font_name
 fi
 
+if [ ! "$(command -v google-chrome-stable)" ]; then
+  cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  apt-get install ./google-chrome-stable_current_amd64.deb -y
+  rm -f google-chrome-stable_current_amd64.deb
+fi
+
 if [ ! -f "/opt/firefox/firefox" ]; then
   # Download-page: https://www.mozilla.org/sv-SE/firefox/all/#product-desktop-developer
   # Installation-guide: https://dev.to/harrsh2124/how-to-setup-firefox-developer-edition-on-ubuntu-4inp
@@ -97,12 +103,6 @@ if [ ! -f "/opt/firefox/firefox" ]; then
   cd /opt && wget -O firefox_developer_edition.tar.bz2 "$firefox_developer_url"
   tar xjfv firefox_developer_edition.tar.bz2
   rm -f firefox_developer_edition.tar.bz2
-fi
-
-if [ ! "$(command -v google-chrome-stable)" ]; then
-  cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-  apt-get install ./google-chrome-stable_current_amd64.deb -y
-  rm -f google-chrome-stable_current_amd64.deb
 fi
 
 cd /usr/share/icons || exit
