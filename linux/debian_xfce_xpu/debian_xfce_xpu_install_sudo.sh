@@ -233,7 +233,7 @@ else
 fi
 
 #########################################################################################
-# TO INSTALL WEB_DEVELOPER SOFTWARE: 'install_development_software' MUST BE SET TO TRUE #
+# TO INSTALL WEB-DEVELOPER SOFTWARE: 'install_development_software' MUST BE SET TO TRUE #
 #########################################################################################
 
 apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 mariadb-client jq pre-commit -y
@@ -244,6 +244,9 @@ $install_snaps && snap install insomnia
 $install_snaps && snap install dbeaver-ce
 $install_snaps && snap install sqlitebrowser
 $install_snaps && snap install mysql-workbench-community
+
+cd /usr/share/icons || exit
+wget -O sqlitebrowser.svg https://raw.githubusercontent.com/sqlitebrowser/sqlitebrowser/master/images/logo.svg
 
 if [ ! "$(command -v mongodb-compass)" ]; then
   cd /tmp && wget $url_mongo_db_compass
