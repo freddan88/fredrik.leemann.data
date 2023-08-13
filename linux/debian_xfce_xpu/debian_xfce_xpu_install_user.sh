@@ -3,6 +3,7 @@
 # Version manager for node.js
 # https://github.com/nvm-sh/nvm
 
+install_latest_node_lts=true
 install_vscode_extensions=true
 
 url_latest_nvm=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh
@@ -32,15 +33,17 @@ mkdir -p .local/bin
 
 wget -qO- $url_latest_nvm | bash
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+if $install_latest_node_lts; then
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-echo " "
-echo "INSTALLING LATEST LTS FOR NODE.JS AND NPM"
-echo " "
+  echo " "
+  echo "INSTALLING LATEST LTS FOR NODE.JS AND NPM"
+  echo " "
 
-nvm install --lts
+  nvm install --lts
+fi
 
 # https://ohmyz.sh
 # https://github.com/paulirish/git-open
@@ -62,14 +65,16 @@ rm -f debian_xfce_xpu_home.zip
 
 xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/debian_xfce_xpu_panel_01.tar.bz2
 
-if $install_vscode_extensions; then
-  if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
-    echo " "
-    echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
-    echo " "
+if [ "$(command -v code)" ]; then
+  if $install_vscode_extensions; then
+    if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
+      echo " "
+      echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
+      echo " "
 
-    chmod 754 .config/Code/vscode_extensions_install_user.sh
-    .config/Code/vscode_extensions_install_user.sh
+      chmod 754 .config/Code/vscode_extensions_install_user.sh
+      .config/Code/vscode_extensions_install_user.sh
+    fi
   fi
 fi
 
