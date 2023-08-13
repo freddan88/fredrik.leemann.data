@@ -45,7 +45,7 @@ apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdo
 apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa mariadb-client gparted httpie httping -y
 apt-get install zip unzip tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip xinput numlockx unclutter aptitude dpkg tasksel synaptic ufw gufw -y
 apt-get install fail2ban libnss3 pandoc net-tools nmap lrzsz minicom cutecom remmina thunderbird orca onboard screenkey htop powertop -y
-apt-get install arc-theme elementary-xfce-icon-theme debian-edu-artwork ssh openssl zsh gh nano vim neovim -y
+apt-get install arc-theme elementary-xfce-icon-theme ssh openssl zsh gh nano vim neovim -y
 
 if [ "$(systemd-detect-virt)" == 'kvm' ]; then
   apt-get install spice-vdagent
