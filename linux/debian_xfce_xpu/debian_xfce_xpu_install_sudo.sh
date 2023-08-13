@@ -305,8 +305,9 @@ fi
 
 if [ ! -f "/usr/local/bin/composer" ]; then
   cd /tmp && wget https://getcomposer.org/installer
-  php ./installer && mv -f composer.phar /usr/local/bin/composer
+  php ./installer --quiet && mv -f composer.phar /usr/local/bin/composer
   chmod -f 755 /usr/local/bin/composer && rm -f installer
+  echo "INSTALLED PHP-COMPOSER IN: /usr/local/bin/composer"
 fi
 
 echo " "
@@ -397,3 +398,7 @@ print_user_global_bin_and_exit_script
 #
 # Install fonts manually on linux
 # https://medium.com/source-words/how-to-manually-install-update-and-uninstall-fonts-on-linux-a8d09a3853b0
+#
+# zip-files from terminal
+# zip -r debian_xfce_xpu_home.zip .*
+# zip -r debian_xfce_xpu_root.zip .*
