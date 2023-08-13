@@ -57,7 +57,7 @@ echo " "
 apt-add-repository contrib non-free -y
 apt-get install ttf-mscorefonts-installer unrar -y
 
-apt-get install task-xfce-desktop task-ssh-server xfce4-panel-profiles network-manager-openvpn-gnome slick-greeter catfish mugshot dbus-x11 -y
+apt-get install task-xfce-desktop task-ssh-server git xfce4-panel-profiles network-manager-openvpn-gnome slick-greeter catfish mugshot dbus-x11 -y
 apt-get install gimp vlc pitivi simplescreenrecorder obs-studio galculator gnome-system-monitor gnome-disk-utility stacer baobab dialog rsync -y
 apt-get install gstreamer1.0-vaapi libsodium23 v4l-utils ffmpeg libavcodec-extra libsecret-tools gnupg pwgen imagemagick exiftool ghostscript -y
 apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw cpuid cpuidtool -y
@@ -67,6 +67,36 @@ apt-get install fail2ban libnss3 pandoc net-tools nmap lrzsz minicom cutecom rem
 apt-get install arc-theme elementary-xfce-icon-theme ssh openssl zsh gh nano vim neovim lsb-release neofetch cmatrix screen unclutter -y
 
 usermod -s /bin/zsh "$SUDO_USER"
+
+echo " "
+echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
+echo " "
+
+systemctl disable tftpd-hpa.service
+systemctl stop tftpd-hpa.service
+
+echo " "
+echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
+echo " "
+
+systemctl disable fail2ban.service
+
+echo " "
+echo "DISABLING SSH-SERVER FROM AUTO STARTING AT BOOT" && sleep 2
+echo " "
+
+systemctl disable ssh.service
+
+echo " "
+echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
+echo " "
+
+systemctl disable smbd.service
+systemctl disable nmbd.service
+systemctl stop smbd.service
+systemctl stop nmbd.service
+
+echo " "
 
 if [ "$(systemd-detect-virt)" == 'kvm' ]; then
   apt-get install spice-vdagent
@@ -109,6 +139,13 @@ if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
   cd /tmp && rm -rf $font_name
 fi
 
+if [ ! "$(command -v code)" ]; then
+  url_latest_vscode="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+  cd /tmp && wget -O vscode_amd64.deb "$url_latest_vscode"
+  apt-get install ./vscode_amd64.deb -y
+  rm -f vscode_amd64.deb
+fi
+
 if [ ! "$(command -v google-chrome-stable)" ]; then
   cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   apt-get install ./google-chrome-stable_current_amd64.deb -y
@@ -130,49 +167,25 @@ if [ ! -f "/opt/firefox/firefox" ]; then
   wget -O firefox_developer_edition_private.png https://sandstormit.com/wp-content/uploads/2021/06/incognito-2231825_960_720-1.png
 fi
 
+if [ -f "/sbin/ifconfig" ]; then
+  ln -s /sbin/ifconfig /bin/ifconfig
+fi
+
+if [ -f "/etc/network/interfaces" ]; then
+  cp /etc/network/interfaces /etc/network/interfaces.bak
+fi
+
+if [ ! -f "/usr/local/bin/smnetscanner" ]; then
+  # Network Scanner For Linux Command Line (smnetscanner)
+  # https://www.youtube.com/watch?v=4hjskxkapYo
+  # https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG
+
+  cd /usr/local/bin || exit
+  wget -O smnetscanner https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG/download/smnetscanner.sh
+fi
+
 if [ -d "/srv/tftp" ]; then
   chown -R tftp:nogroup /srv/tftp
-fi
-
-echo " "
-echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
-echo " "
-
-systemctl disable tftpd-hpa.service
-systemctl stop tftpd-hpa.service
-
-echo " "
-echo "DISABLING FAIL2BAN FROM AUTO STARTING AT BOOT" && sleep 2
-echo " "
-
-systemctl disable fail2ban.service
-
-echo " "
-echo "DISABLING SSH-SERVER FROM AUTO STARTING AT BOOT" && sleep 2
-echo " "
-
-systemctl disable ssh.service
-
-echo " "
-echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
-echo " "
-
-systemctl disable smbd.service
-systemctl disable nmbd.service
-systemctl stop smbd.service
-systemctl stop nmbd.service
-
-if [ ! "$(command -v code)" ]; then
-  url_latest_vscode="https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-  cd /tmp && wget -O vscode_amd64.deb "$url_latest_vscode"
-  apt-get install ./vscode_amd64.deb -y
-  rm -f vscode_amd64.deb
-fi
-
-if [ ! "$(command -v marktext)" ]; then
-  cd /tmp && wget $url_marktext_package
-  apt-get install ./marktext-amd64.deb -y
-  rm -f marktext-amd64.deb
 fi
 
 if $install_virtualization; then
@@ -197,21 +210,6 @@ if $install_virtualization; then
   usermod -aG input "$SUDO_USER"
   usermod -aG disk "$SUDO_USER"
   usermod -aG kvm "$SUDO_USER"
-fi
-
-cd /usr/local/bin || exit
-
-# Network Scanner For Linux Command Line (smnetscanner)
-# https://www.youtube.com/watch?v=4hjskxkapYo
-# https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG
-wget -O smnetscanner https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG/download/smnetscanner.sh
-
-if [ -f "/sbin/ifconfig" ]; then
-  ln -s /sbin/ifconfig /bin/ifconfig
-fi
-
-if [ -f "/etc/network/interfaces" ]; then
-  cp /etc/network/interfaces /etc/network/interfaces.bak
 fi
 
 cd /
@@ -249,6 +247,12 @@ if [ ! "$(command -v mongodb-compass)" ]; then
   cd /tmp && wget $url_mongo_db_compass
   apt-get install ./mongodb-compass*amd64.deb -y
   rm -f mongodb-compass*amd64.deb
+fi
+
+if [ ! "$(command -v marktext)" ]; then
+  cd /tmp && wget $url_marktext_package
+  apt-get install ./marktext-amd64.deb -y
+  rm -f marktext-amd64.deb
 fi
 
 if $install_docker; then
@@ -299,7 +303,9 @@ if [ ! -f "/usr/local/bin/kubectl" ]; then
   chmod -f 755 /usr/local/bin/kubectl
 fi
 
-wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
+if [ ! -f "/usr/local/bin/phpsrv" ]; then
+  wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
+fi
 
 echo " "
 echo "DISABLING APACHE2 HTTP SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
