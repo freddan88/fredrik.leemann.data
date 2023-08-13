@@ -32,6 +32,8 @@ if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
 fi
 
 function print_user_global_bin_and_exit_script() {
+  echo " "
+
   apt update && apt upgrade -y && apt autoremove -y
 
   echo " "
@@ -286,12 +288,6 @@ if $install_docker; then
   fi
 fi
 
-if [ ! -f "/usr/local/bin/composer" ]; then
-  cd /tmp && wget https://getcomposer.org/installer
-  php ./installer && mv -f composer.phar /usr/local/bin/composer
-  chmod -f 755 /usr/local/bin/composer && rm -f installer
-fi
-
 if [ ! -f "/usr/local/bin/kubectl" ]; then
   kubectl_version="$kubernetes_kubectl_version"
   if [ "$kubernetes_kubectl_version" = "stable" ]; then
@@ -305,6 +301,12 @@ fi
 
 if [ ! -f "/usr/local/bin/phpsrv" ]; then
   wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
+fi
+
+if [ ! -f "/usr/local/bin/composer" ]; then
+  cd /tmp && wget https://getcomposer.org/installer
+  php ./installer && mv -f composer.phar /usr/local/bin/composer
+  chmod -f 755 /usr/local/bin/composer && rm -f installer
 fi
 
 echo " "
