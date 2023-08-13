@@ -5,6 +5,12 @@ install_docker=true
 install_virtualization=true
 install_development_software=true
 
+# sudo apt install git curl wget sudo -y
+#
+# sudo apt install debian-goodies -y
+# sudo dpkg-reconfigure popularity-contest
+# sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
+#
 # https://kubernetes.io/docs/tasks/tools/install-kubectl-linux
 # https://www.mongodb.com/docs/compass/master/install
 # https://github.com/marktext/marktext/releases
@@ -46,12 +52,6 @@ function print_user_global_bin_and_exit_script() {
 echo " "
 echo "INSTALLING SOFTWARE" && sleep 2
 echo " "
-
-# sudo apt install git curl wget sudo -y
-#
-# sudo apt install debian-goodies -y
-# sudo dpkg-reconfigure popularity-contest
-# sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
 
 # DEBIAN-PACKAGES FROM THE NON-FREE REPOS (CONTRIB NON-FREE):
 apt-add-repository contrib non-free -y
