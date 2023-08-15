@@ -168,20 +168,23 @@ gacp() {
 # Function: Update all software - Example: upas
 upas() {
   echo ''
-  echo 'THIS COMMAND WILL UPDATE ALL SOFTWARE'
+  echo 'THIS COMMAND WILL UPDATE AND UPGRADE ALL SOFTWARE'
   echo ''
   if [ -f "$(command -v nala)" ]; then
     sudo nala upgrade -y
+    echo ''
   else
     sudo apt update && sudo apt upgrade -y
+    echo ''
   fi
   if [ -f "$(command -v flatpak)" ]; then
     sudo flatpak update -y
+    echo ''
   fi
   if [ -f "$(command -v snap)" ]; then
     sudo snap refresh
+    echo ''
   fi
-  echo ''
 }
 
 export NVM_DIR="$HOME/.nvm"
