@@ -68,7 +68,7 @@ apt-get install fail2ban libnss3 pandoc net-tools nmap lrzsz minicom cutecom rem
 apt-get install zip unzip tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip xinput numlockx aptitude dpkg tasksel synaptic ufw gufw -y
 apt-get install arc-theme elementary-xfce-icon-theme ssh openssl zsh git gh nano vim neovim lsb-release neofetch cmatrix screen unclutter -y
 # apt-get install libimobiledevice6 libimobiledevice-utils shotwell gvfs-backends gvfs-fuse ifuse usbmuxd -y
-# apt install ifuse usbmuxd libimobiledevice6 libimobiledevice-utils -y
+# apt-get install ifuse usbmuxd libimobiledevice6 libimobiledevice-utils -y
 # https://community.linuxmint.com/software/view/ifuse
 
 usermod -s /bin/zsh "$SUDO_USER"
