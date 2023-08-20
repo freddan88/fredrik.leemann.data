@@ -23,6 +23,9 @@ echo " "
 echo "INSTALLING CONFIGURATIONS" && sleep 2
 echo " "
 
+# systemctl --user stop gvfs-afc-volume-monitor.service
+# systemctl --user disable gvfs-afc-volume-monitor.service
+
 /usr/bin/xdg-user-dirs-update
 xdg-mime default thunar.desktop inode/directory
 
