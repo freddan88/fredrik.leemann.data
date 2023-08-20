@@ -67,8 +67,8 @@ apt-get install ntfs-3g dosfstools exfatprogs dos2unix cifs-utils smbclient samb
 apt-get install fail2ban libnss3 pandoc net-tools nmap lrzsz minicom cutecom remmina thunderbird orca onboard screenkey htop powertop curl -y
 apt-get install zip unzip tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip xinput numlockx aptitude dpkg tasksel synaptic ufw gufw -y
 apt-get install arc-theme elementary-xfce-icon-theme ssh openssl zsh git gh nano vim neovim lsb-release neofetch cmatrix screen unclutter -y
-# apt-get install libimobiledevice6 libimobiledevice-utils shotwell gvfs-backends gvfs-fuse ifuse usbmuxd -y
-# apt-get install ifuse usbmuxd libimobiledevice6 libimobiledevice-utils gvfs-backends -y
+# apt-get install ifuse usbmuxd libimobiledevice6 libimobiledevice-utils gvfs-backends gvfs-fuse shotwell -y
+# apt-get install ifuse usbmuxd libimobiledevice6 libimobiledevice-utils gvfs-backends gvfs-fuse -y
 # https://community.linuxmint.com/software/view/ifuse
 # https://wiki.archlinux.org/title/IOS
 
