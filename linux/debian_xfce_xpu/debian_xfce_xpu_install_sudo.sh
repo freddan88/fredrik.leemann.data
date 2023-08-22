@@ -131,7 +131,7 @@ if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
   font_install_dir="/usr/share/fonts/truetype/$font_name"
   font_url=$(curl -s https://api.github.com/repos/microsoft/cascadia-code/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
   # font_url="https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip"
-  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
   mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
   cd /tmp && rm -rf $font_name
 fi
@@ -140,7 +140,16 @@ if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
   font_name="jetbrains-mono"
   font_install_dir="/usr/share/fonts/truetype/$font_name"
   font_url=$(curl -s https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
-  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
+  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+  cd /tmp && rm -rf $font_name
+fi
+
+if [ ! -d "/usr/share/fonts/truetype/intel-one-mono" ]; then
+  font_name="intel-one-mono"
+  font_install_dir="/usr/share/fonts/truetype/$font_name"
+  font_url=$(curl -s https://api.github.com/repos/intel/intel-one-mono/releases/latest | grep "browser_download_url" | grep ttf.zip | awk -F '"' '{print $4}')
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
   mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
   cd /tmp && rm -rf $font_name
 fi
