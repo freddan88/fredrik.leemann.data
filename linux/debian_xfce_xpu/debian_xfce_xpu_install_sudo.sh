@@ -59,7 +59,7 @@ echo " "
 apt-add-repository contrib non-free -y
 apt-get install ttf-mscorefonts-installer unrar -y
 
-apt-get install task-xfce-desktop task-ssh-server xfce4-panel-profiles network-manager-openvpn-gnome slick-greeter catfish mugshot dbus-x11 -y
+apt-get install task-xfce-desktop task-ssh-server xfce4-panel-profiles network-manager-openvpn-gnome slick-greeter catfish mugshot dirmngr dbus-x11 -y
 apt-get install gimp vlc pitivi simplescreenrecorder obs-studio galculator gnome-system-monitor gnome-disk-utility stacer baobab dialog rsync -y
 apt-get install gstreamer1.0-vaapi libsodium23 v4l-utils ffmpeg libavcodec-extra libsecret-tools gnupg pwgen imagemagick exiftool ghostscript -y
 apt-get install trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw cpuid cpuidtool -y
