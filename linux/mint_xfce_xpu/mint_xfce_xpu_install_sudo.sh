@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 install_docker=true
-install_virtualization=false
+install_virtualization=true
 install_development_software=true
 
 # Kubernetes kubectl-version for linux
@@ -50,6 +50,13 @@ function print_user_global_bin_and_exit_script() {
 echo "$HOME"
 whoami
 
+mkdir ~/.gnupg
+chmod 700 ~/.gnupg
+chmod 600 ~/.gnupg/*
+chown -R root ~/.gnupg
+
+exit
+
 apt-get update && apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip -y
 apt-get install neofetch trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw -y
 apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa gparted httpie httping perl curl htop powertop nmap -y
@@ -57,11 +64,6 @@ apt-get install spotify-client network-manager-openvpn-gnome catfish mugshot dbu
 apt-get install gnome-system-monitor gnome-disk-utility stacer baobab rsync libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript -y
 apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey xinput numlockx synaptic ufw gufw openssl -y
 apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen lsb-release -y
-
-mkdir ~/.gnupg
-chmod 700 ~/.gnupg
-chmod 600 ~/.gnupg/*
-chown -R root ~/.gnupg
 
 usermod -s /bin/zsh "$SUDO_USER"
 
