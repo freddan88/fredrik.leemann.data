@@ -100,8 +100,7 @@ apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pe
 # Install docker here
 # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
 #
-apt-get update && apt-get install ca-certificates curl
-install -m 0755 -d /etc/apt/keyrings
+apt-get update && apt-get install ca-certificates curl && install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 chmod a+r /etc/apt/keyrings/docker.asc
 
@@ -115,6 +114,8 @@ else
   echo "Name: INSTALL DOCKER FOR UBUNTU"
   echo ""
 fi
+
+apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Install marktext (opensource markdown editor)
 # https://github.com/marktext/marktext/releases
