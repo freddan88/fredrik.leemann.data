@@ -30,7 +30,7 @@ fi
 function print_user_global_bin_and_exit_script() {
   echo " "
 
-  apt update && apt upgrade -y && apt autoremove -y
+  apt-get update && apt-get upgrade -y && apt-get autoremove -y
 
   echo " "
   echo "Content in: /usr/local/bin"
@@ -47,9 +47,40 @@ function print_user_global_bin_and_exit_script() {
   exit
 }
 
+echo "$HOME"
+whoami
+
+mkdir ~/.gnupg
+chmod 700 ~/.gnupg
+chmod 600 ~/.gnupg/*
+chown -R root ~/.gnupg
+
+usermod -s /bin/zsh "$SUDO_USER"
+
 echo " "
-echo "INSTALLING SOFTWARE" && sleep 2
+echo "DISABLING SAMBA FILE SHARE FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
 echo " "
+
+systemctl disable smbd.service
+systemctl disable nmbd.service
+systemctl stop smbd.service
+systemctl stop nmbd.service
+
+echo " "
+echo "DISABLING TFTP-SERVER FROM AUTO STARTING AT BOOT AND STOPPING THE RUNNING PROCESS" && sleep 2
+echo " "
+
+systemctl disable tftpd-hpa.service
+systemctl stop tftpd-hpa.service
+echo " "
+
+if [ -d "/srv/tftp" ]; then
+  chown -R tftp:nogroup /srv/tftp
+fi
+
+if [ "$(systemd-detect-virt)" == 'kvm' ]; then
+  apt-get install spice-vdagent
+fi
 
 if $install_virtualization && [ "$(command -v grep -E 'svm|vmx' /proc/cpuinfo)" ]; then
   # Debian Warning: Missing home dir /var/lib/tpm
@@ -75,6 +106,86 @@ if $install_virtualization && [ "$(command -v grep -E 'svm|vmx' /proc/cpuinfo)" 
   usermod -aG kvm "$SUDO_USER"
 fi
 
+if $install_docker; then
+  # Install docker here
+  # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+  #
+  apt-get update && apt-get install ca-certificates curl && install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  chmod a+r /etc/apt/keyrings/docker.asc
+
+  distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
+  if [ "$distro_name" = '"Linux Mint"' ]; then
+    codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
+    docker_source="deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $codename stable"
+    echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null && apt-get update
+  else
+    echo ""
+    echo "Name: INSTALL DOCKER FOR UBUNTU"
+    echo ""
+  fi
+
+  apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+  usermod -aG docker "$SUDO_USER"
+fi
+
+# Install marktext (opensource markdown editor)
+# https://github.com/marktext/marktext/releases
+# https://github.com/marktext/marktext
+#
+if [ ! "$(command -v marktext)" ]; then
+  base_url="https://api.github.com/repos/marktext/marktext/releases/latest"
+  latest_package=$(curl -s $base_url | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'amd64.deb')
+  wget -O marktext-amd64.deb "$latest_package" && apt-get install ./marktext-amd64.deb -y
+  rm -f marktext-amd64.deb
+fi
+
+if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
+  # https://design.ubuntu.com/font
+  font_name="ubuntu-font-family"
+  font_install_dir="/usr/share/fonts/truetype/$font_name"
+  font_url=$(curl -s https://api.github.com/repos/canonical/Ubuntu-fonts/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip && cd Ubuntu-fonts-* || exit
+  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+  cd /tmp && rm -rf $font_name
+fi
+
+if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
+  # https://github.com/microsoft/cascadia-code/releases
+  font_name="cascadia-code"
+  font_install_dir="/usr/share/fonts/truetype/$font_name"
+  font_url=$(curl -s https://api.github.com/repos/microsoft/cascadia-code/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+  # font_url="https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip"
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
+  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+  cd /tmp && rm -rf $font_name
+fi
+
+if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
+  font_name="jetbrains-mono"
+  font_install_dir="/usr/share/fonts/truetype/$font_name"
+  font_url=$(curl -s https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
+  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+  cd /tmp && rm -rf $font_name
+fi
+
+if [ ! "$(command -v google-chrome-stable)" ]; then
+  cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  apt-get install ./google-chrome-stable_current_amd64.deb -y
+  rm -f google-chrome-stable_current_amd64.deb
+fi
+
+if [ ! -f "/usr/local/bin/smnetscanner" ]; then
+  # Network Scanner For Linux Command Line (smnetscanner)
+  # https://www.youtube.com/watch?v=4hjskxkapYo
+  # https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG
+
+  cd /usr/local/bin || exit
+  wget -O smnetscanner https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG/download/smnetscanner.sh
+fi
+
 if $install_development_software; then
   echo " "
   echo "NOW INSTALLING SOFTWARE FOR WEB-DEVELOPMENT"
@@ -88,46 +199,17 @@ fi
 #########################################################################################
 
 cd /tmp || exit
-mkdir /root/.gnupg
-chmod 700 ~/.gnupg
-chmod 600 ~/.gnupg/*
-chown -R root ~/.gnupg
 
 apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 mariadb-client jq pre-commit -y
 apt-get install php php-cli php-common php-xdebug php-mysql php-mbstring php-curl php-soap php-readline -y
 apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
 
-# Install docker here
-# https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+# Install visual studio code (code-editor from microsoft)
 #
-apt-get update && apt-get install ca-certificates curl && install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-chmod a+r /etc/apt/keyrings/docker.asc
-
-distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
-if [ "$distro_name" = '"Linux Mint"' ]; then
-  codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
-  docker_source="deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $codename stable"
-  echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null && apt-get update
-else
-  echo ""
-  echo "Name: INSTALL DOCKER FOR UBUNTU"
-  echo ""
-fi
-
-apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-usermod -aG docker "$SUDO_USER"
-
-# Install marktext (opensource markdown editor)
-# https://github.com/marktext/marktext/releases
-# https://github.com/marktext/marktext
-#
-if [ ! "$(command -v marktext)" ]; then
-  base_url="https://api.github.com/repos/marktext/marktext/releases/latest"
-  latest_package=$(curl -s $base_url | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'amd64.deb')
-  wget -O marktext-amd64.deb "$latest_package" && apt-get install ./marktext-amd64.deb -y
-  rm -f marktext-amd64.deb
+if [ ! "$(command -v code)" ]; then
+  cd /tmp && wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+  apt-get install ./vscode_amd64.deb -y
+  rm -f vscode_amd64.deb
 fi
 
 # Install beekeeper studio comunity edition (Database management client)
@@ -160,38 +242,51 @@ if [ ! "$(command -v mongodb-compass)" ]; then
   rm -f mongodb-compass_amd64.deb
 fi
 
+########################################################################
+# INSTALLING WEB-DEVELOPER SCRIPTS AND EXECUTABLES TO: /usr/local/bin/ #
+########################################################################
+
+cd /usr/local/bin || exit
+
 if [ ! -f "/usr/local/bin/kubectl" ]; then
   kubectl_version="$kubernetes_kubectl_version"
   if [ "$kubernetes_kubectl_version" = "stable" ]; then
     kubectl_version="$(curl -L -s https://dl.k8s.io/release/stable.txt)"
   fi
-  echo "DOWNLOADING KUBECTL: $kubectl_version (Kubernetes cli-tool)" && sleep 2
+  echo "DOWNLOADING KUBECTL: $kubectl_version (Kubernetes cli-tool)"
   echo " "
   curl -LO "https://dl.k8s.io/release/$kubectl_version/bin/linux/amd64/kubectl"
-  chmod -f 755 /usr/local/bin/kubectl
 fi
 
 if [ ! -f "/usr/local/bin/composer" ]; then
   wget https://getcomposer.org/installer
-  php ./installer --quiet && mv -f composer.phar /usr/local/bin/composer
-  rm -f installer && echo "INSTALLED PHP-COMPOSER IN: /usr/local/bin/composer"
+  php ./installer --quiet && mv -f composer.phar composer
+  rm -f installer
 fi
 
 if [ ! -f "/usr/local/bin/phpsrv" ]; then
   wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
 fi
 
+print_user_global_bin_and_exit_script
+
+# TODO: Add to zshrc
+#
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
 # distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
 # if [ "$distro_name" = '"Linux Mint"' ]; then
 #   codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
 #   mint_version=$(cat /etc/os-release | grep -w VERSION | cut -d"=" -f2 | sed 's/\"//g')
 #   echo ""
-#   echo "Linux Mint: $mint_version"
+#   echo "Distribution: Linux Mint $mint_version"
 #   echo "Ubuntu Codename: $codename"
 #   echo ""
 # else
-#   pretty_name=$(cat /etc/os-release | grep -w PRETTY_NAME | cut -d"=" -f2)
+#   pretty_name=$(cat /etc/os-release | grep -w PRETTY_NAME | cut -d"=" -f2 | sed 's/\"//g')
 #   echo ""
-#   echo "Name: $pretty_name"
+#   echo "Distribution: $pretty_name"
 #   echo ""
 # fi
