@@ -99,6 +99,22 @@ apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pe
 
 # Install docker here
 # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+#
+apt-get update && apt-get install ca-certificates curl
+install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+chmod a+r /etc/apt/keyrings/docker.asc
+
+distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
+if [ "$distro_name" = '"Linux Mint"' ]; then
+  codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
+  docker_source="deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $codename stable"
+  echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null && apt-get update
+else
+  echo ""
+  echo "Name: INSTALL DOCKER FOR UBUNTU"
+  echo ""
+fi
 
 # Install marktext (opensource markdown editor)
 # https://github.com/marktext/marktext/releases
@@ -162,12 +178,17 @@ if [ ! -f "/usr/local/bin/phpsrv" ]; then
   wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
 fi
 
-# TODO: Add to z-shell
-#
-# ubuntu_codename=$(cat /etc/os-release | grep UBUNTU_CODENAME)
-# if [[ -n "${ubuntu_codename}" ]]; then
-#   codename=$(echo "$ubuntu_codename" | cut -d"=" -f2) // Also needed for docker-installation
+# distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
+# if [ "$distro_name" = '"Linux Mint"' ]; then
+#   codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
+#   mint_version=$(cat /etc/os-release | grep -w VERSION | cut -d"=" -f2 | sed 's/\"//g')
 #   echo ""
-#   echo "UBUNTU CODENAME: $codename"
+#   echo "Linux Mint: $mint_version"
+#   echo "Ubuntu Codename: $codename"
+#   echo ""
+# else
+#   pretty_name=$(cat /etc/os-release | grep -w PRETTY_NAME | cut -d"=" -f2)
+#   echo ""
+#   echo "Name: $pretty_name"
 #   echo ""
 # fi
