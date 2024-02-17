@@ -47,15 +47,10 @@ function print_user_global_bin_and_exit_script() {
   exit
 }
 
-echo "$HOME"
-whoami
-
-mkdir ~/.gnupg
-chmod 700 ~/.gnupg
-chmod 600 ~/.gnupg/*
-chown -R root ~/.gnupg
-
-exit
+mkdir -p "$HOME/.gnupg"
+chmod 700 "$HOME/.gnupg"
+chmod 600 "$HOME/.gnupg/*"
+chown -R "$(whoami)" "$HOME/.gnupg"
 
 apt-get update && apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip -y
 apt-get install neofetch trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw -y
