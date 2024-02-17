@@ -117,6 +117,8 @@ fi
 
 apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
+usermod -aG docker "$SUDO_USER"
+
 # Install marktext (opensource markdown editor)
 # https://github.com/marktext/marktext/releases
 # https://github.com/marktext/marktext
