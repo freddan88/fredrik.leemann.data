@@ -18,8 +18,6 @@ url_mongo_db_compass="https://downloads.mongodb.com/compass/mongodb-compass_1.42
 # DO NOT EDIT BELOW THIS LINE! #
 ################################
 
-# sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
-
 if [ ! "$SUDO_USER" ] || [ "$SUDO_USER" = "root" ]; then
   echo " "
   echo "PLEASE RUN THIS SCRIPT AS A SUDO-USER"
@@ -274,6 +272,10 @@ if [ ! -f "/usr/local/bin/phpsrv" ]; then
 fi
 
 print_user_global_bin_and_exit_script
+
+# TODO: Add to readme
+#
+# sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
 
 # TODO: Add to zshrc
 #
