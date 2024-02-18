@@ -146,11 +146,14 @@ if [ ! "$(command -v marktext)" ]; then
   rm -f marktext-amd64.deb
 fi
 
+# Moved to ubuntu-sans-fonts
+# https://github.com/canonical/Ubuntu-Sans-fonts/tree/main
+#
 # if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
 #   # https://design.ubuntu.com/font
 #   font_name="ubuntu-font-family"
 #   font_install_dir="/usr/share/fonts/truetype/$font_name"
-#   font_url=$(curl -s https://api.github.com/repos/canonical/Ubuntu-fonts/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+#   font_url=$(curl -s https://api.github.com/repositories/492578792/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
 #   cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip && cd Ubuntu-fonts-* || exit
 #   mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
 #   cd /tmp && rm -rf $font_name
