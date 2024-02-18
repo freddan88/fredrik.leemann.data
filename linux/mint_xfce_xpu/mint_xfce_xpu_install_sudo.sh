@@ -50,13 +50,16 @@ chmod 700 "$HOME/.gnupg"
 chmod 600 -R "$HOME/.gnupg"
 chown -R "$(whoami)" "$HOME/.gnupg"
 
+curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
+
 apt-get update && apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 7zip p7zip-full xzip fastjar lrzip -y
 apt-get install neofetch trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw -y
 apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa gparted httpie httping perl curl htop powertop nmap -y
 apt-get install spotify-client network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder obs-studio -y
 apt-get install gnome-system-monitor gnome-disk-utility stacer baobab rsync libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript -y
 apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey xinput numlockx synaptic ufw gufw openssl -y
-apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen lsb-release -y
+apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen lsb-release install ca-certificates -y
 
 usermod -s /bin/zsh "$SUDO_USER"
 
@@ -112,7 +115,7 @@ if $install_docker; then
   # Install docker here
   # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
   #
-  apt-get update && apt-get install ca-certificates curl -y && install -m 0755 -d /etc/apt/keyrings
+  install -m 0755 -d /etc/apt/keyrings
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
   chmod a+r /etc/apt/keyrings/docker.asc
 
@@ -143,35 +146,36 @@ if [ ! "$(command -v marktext)" ]; then
   rm -f marktext-amd64.deb
 fi
 
-if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
-  # https://design.ubuntu.com/font
-  font_name="ubuntu-font-family"
-  font_install_dir="/usr/share/fonts/truetype/$font_name"
-  font_url=$(curl -s https://api.github.com/repos/canonical/Ubuntu-fonts/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
-  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip && cd Ubuntu-fonts-* || exit
-  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
-  cd /tmp && rm -rf $font_name
-fi
+# if [ ! -d "/usr/share/fonts/truetype/ubuntu-font-family" ]; then
+#   # https://design.ubuntu.com/font
+#   font_name="ubuntu-font-family"
+#   font_install_dir="/usr/share/fonts/truetype/$font_name"
+#   font_url=$(curl -s https://api.github.com/repos/canonical/Ubuntu-fonts/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+#   cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip $font_url && unzip $font_name.zip && cd Ubuntu-fonts-* || exit
+#   mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+#   cd /tmp && rm -rf $font_name
+# fi
 
-if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
-  # https://github.com/microsoft/cascadia-code/releases
-  font_name="cascadia-code"
-  font_install_dir="/usr/share/fonts/truetype/$font_name"
-  font_url=$(curl -s https://api.github.com/repos/microsoft/cascadia-code/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
-  # font_url="https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip"
-  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
-  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
-  cd /tmp && rm -rf $font_name
-fi
+# if [ ! -d "/usr/share/fonts/truetype/cascadia-code" ]; then
+#   # https://github.com/microsoft/cascadia-code/releases
+#   font_name="cascadia-code"
+#   font_install_dir="/usr/share/fonts/truetype/$font_name"
+#   font_url=$(curl -s https://api.github.com/repos/microsoft/cascadia-code/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+#   # font_url="https://github.com/microsoft/cascadia-code/releases/download/v2111.01/CascadiaCode-2111.01.zip"
+#   cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
+#   mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+#   cd /tmp && rm -rf $font_name
+# fi
 
-if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
-  font_name="jetbrains-mono"
-  font_install_dir="/usr/share/fonts/truetype/$font_name"
-  font_url=$(curl -s https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
-  cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
-  mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
-  cd /tmp && rm -rf $font_name
-fi
+# if [ ! -d "/usr/share/fonts/truetype/jetbrains-mono" ]; then
+#   # https://github.com/JetBrains/JetBrainsMono
+#   font_name="jetbrains-mono"
+#   font_install_dir="/usr/share/fonts/truetype/$font_name"
+#   font_url=$(curl -s https://api.github.com/repos/JetBrains/JetBrainsMono/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}')
+#   cd /tmp && mkdir $font_name && cd $font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
+#   mkdir $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+#   cd /tmp && rm -rf $font_name
+# fi
 
 if [ ! "$(command -v google-chrome-stable)" ]; then
   cd /tmp && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
