@@ -89,6 +89,13 @@ if [ "$(systemd-detect-virt)" == 'kvm' ]; then
   apt-get install spice-vdagent
 fi
 
+# Download new layout for the xfce-panel
+#
+if [ -d "/usr/share/xfce4-panel-profiles/layouts" ]; then
+  cd /usr/share/xfce4-panel-profiles/layouts || exit
+  wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/xfce_xpu_panel_01.tar.bz2
+fi
+
 if $install_virtualization && [ "$(command -v grep -E 'svm|vmx' /proc/cpuinfo)" ]; then
   # Debian Warning: Missing home dir /var/lib/tpm
   # Probably a warning displayed when KVM is installed
@@ -275,6 +282,10 @@ fi
 
 if [ ! -f "/usr/local/bin/phpsrv" ]; then
   wget -O phpsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/phpsrv.sh
+fi
+
+if [ ! -f "/usr/local/bin/wwwsrv" ]; then
+  wget -O wwwsrv https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/scripts/utilities/wwwsrv.sh
 fi
 
 print_user_global_bin_and_exit
