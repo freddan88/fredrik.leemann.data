@@ -75,23 +75,31 @@ fi
 
 echo " "
 
-# TODO: Download the script
 # Install visual studio code (code-editor from microsoft)
 # https://code.visualstudio.com/
 #
-if [ "$(command -v code)" ]; then
-  cd "$HOME" && rm -rf .config/Code/User/snippets
-  # TODO: Dowload snippets and extension file
-  if $install_vscode_extensions && [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
-    echo " "
-    echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
-    echo " "
+if $install_vscode_extensions && [ "$(command -v code)" ]; then
+  echo " "
+  echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
+  echo " "
 
-    chmod 754 .config/Code/vscode_extensions_install_user.sh
-    .config/Code/vscode_extensions_install_user.sh
+  if [ ! -f "/tmp/vscode/extensions.txt" ]; then
+    mkdir -p /tmp/vscode && cd /tmp/vscode || exit
+    wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/vscode/extensions.txt
 
-    rm -f .config/Code/vscode_extensions_install_user.sh
+    while read -r extension; do
+      code --install-extension "$extension"
+    done <extensions.txt
+
+    cd /tmp && rm -rf vscode
   fi
+
+  cd "$HOME"/.config/Code/User || exit
+
+  wget https://github.com/freddan88/fredrik.leemann.data/raw/main/vscode/user_settings.zip
+
+  unzip -o user_settings.zip
+  rm -rf user_settings.zip
 fi
 
 echo " "
