@@ -295,24 +295,3 @@ print_user_global_bin_and_exit
 # TODO: Add to readme
 #
 # sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
-
-# TODO: Add to zshrc
-#
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
-# distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
-# if [ "$distro_name" = '"Linux Mint"' ]; then
-#   codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
-#   mint_version=$(cat /etc/os-release | grep -w VERSION | cut -d"=" -f2 | sed 's/\"//g')
-#   echo ""
-#   echo "Distribution: Linux Mint $mint_version"
-#   echo "Ubuntu Codename: $codename"
-#   echo ""
-# else
-#   pretty_name=$(cat /etc/os-release | grep -w PRETTY_NAME | cut -d"=" -f2 | sed 's/\"//g')
-#   echo ""
-#   echo "Distribution: $pretty_name"
-#   echo ""
-# fi
