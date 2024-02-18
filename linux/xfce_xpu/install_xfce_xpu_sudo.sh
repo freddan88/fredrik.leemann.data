@@ -45,6 +45,7 @@ function print_user_global_bin_and_exit() {
   exit
 }
 
+apt-get update
 mkdir -p "$HOME/.gnupg"
 chmod 700 "$HOME/.gnupg"
 chmod 600 -R "$HOME/.gnupg"
@@ -53,13 +54,13 @@ chown -R "$(whoami)" "$HOME/.gnupg"
 curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
 
-apt-get update && apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 7zip p7zip-full xzip fastjar lrzip -y
+apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 7zip p7zip-full xzip fastjar lrzip -y
+apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen lsb-release ca-certificates xfce4-panel-profiles -y
+apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey xinput numlockx synaptic ufw gufw openssl -y
 apt-get install neofetch trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw -y
 apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa gparted httpie httping perl curl htop powertop nmap -y
 apt-get install spotify-client network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder obs-studio -y
 apt-get install gnome-system-monitor gnome-disk-utility stacer baobab rsync libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript -y
-apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey xinput numlockx synaptic ufw gufw openssl -y
-apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen lsb-release install ca-certificates xfce4-panel-profiles -y
 
 usermod -s /bin/zsh "$SUDO_USER"
 
