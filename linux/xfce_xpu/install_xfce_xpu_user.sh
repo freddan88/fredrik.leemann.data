@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-install_latest_node_lts=true
-install_vscode_extensions=true
+install_latest_node_lts=false
+install_vscode_extensions=false
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -21,9 +21,47 @@ echo " "
 cd "$HOME" && mkdir -p Apps
 cd "$HOME" && mkdir -p .local/bin
 
+# Oh My Zsh is an open source shell-framework
+# https://ohmyz.sh
+# https://github.com/paulirish/git-open
+# https://github.com/zsh-users/zsh-autosuggestions
+#
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+git clone https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/custom/plugins/zsh-autosuggestions
+git clone https://github.com/paulirish/git-open.git .oh-my-zsh/custom/plugins/git-open
+
+echo " "
+
+# Replace old configurations for the user and load keybindings + new desktop-layout
+# https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/debian_xfce_xpu/debian_xfce_xpu_files/home
+#
+cd "$HOME" && rm -rf .config/rofi
+cd "$HOME" && rm -rf .config/xfce4
+
+# wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
+# unzip -o debian_xfce_xpu_home.zip
+# rm -f debian_xfce_xpu_home.zip - TODO: Download
+
+# TODO: Make sure this file is presented on the system befooore trying to load it
+# xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/debian_xfce_xpu_panel_01.tar.bz2
+
 # Version manager for node.js
 # https://github.com/nvm-sh/nvm
 #
+
+echo " "
+echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
+echo " "
+
+dir_home_templates=$(xdg-user-dir TEMPLATES)
+
+cd "$dir_home_templates" && rm -f ./*
+wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip
+unzip -o templates.zip
+rm -f templates.zip
+
+echo " "
+
 if $install_latest_node_lts && [ ! -d "$HOME/.nvm" ]; then
   script_name="nvm-sh"
   script_url=$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep 'zipball_url' | awk -F '"' '{print $4}')
@@ -45,37 +83,14 @@ fi
 
 echo " "
 
-# Oh My Zsh is an open source shell-framework
-# https://ohmyz.sh
-# https://github.com/paulirish/git-open
-# https://github.com/zsh-users/zsh-autosuggestions
-#
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-git clone https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/custom/plugins/zsh-autosuggestions
-git clone https://github.com/paulirish/git-open.git .oh-my-zsh/custom/plugins/git-open
-
-echo " "
-
-# Replace old configurations for the user and load keybindings + new desktop-layout
-# https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/debian_xfce_xpu/debian_xfce_xpu_files/home
-#
-cd "$HOME" && rm -rf .config/rofi
-cd "$HOME" && rm -rf .config/xfce4
-cd "$HOME" && rm -rf .config/Code/User/snippets
-
-# wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
-# unzip -o debian_xfce_xpu_home.zip
-# rm -f debian_xfce_xpu_home.zip - TODO: Download
-
-# TODO: Make sure this file is presented on the system befooore trying to load it
-# xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/debian_xfce_xpu_panel_01.tar.bz2
-
 # TODO: Download the script
 # Install visual studio code (code-editor from microsoft)
 # https://code.visualstudio.com/
 #
-if $install_vscode_extensions && [ "$(command -v code)" ]; then
-  if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
+if [ "$(command -v code)" ]; then
+  cd "$HOME" && rm -rf .config/Code/User/snippets
+  # TODO: Dowload snippets and extension file
+  if $install_vscode_extensions && [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
     echo " "
     echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
     echo " "
@@ -86,17 +101,6 @@ if $install_vscode_extensions && [ "$(command -v code)" ]; then
     rm -f .config/Code/vscode_extensions_install_user.sh
   fi
 fi
-
-echo " "
-echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
-echo " "
-
-dir_home_templates=$(xdg-user-dir TEMPLATES)
-
-cd "$dir_home_templates" && rm -f ./*
-wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.zip
-unzip -o templates.zip
-rm -f templates.zip
 
 echo " "
 echo "DONE"
