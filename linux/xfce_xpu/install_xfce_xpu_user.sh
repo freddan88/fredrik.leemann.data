@@ -113,6 +113,8 @@ wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/templates.
 unzip -o templates.zip
 rm -f templates.zip
 
+xfdesktop --reload
+
 echo " "
 echo "DONE"
 echo " "
