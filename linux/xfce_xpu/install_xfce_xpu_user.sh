@@ -94,7 +94,7 @@ if $install_vscode_extensions && [ "$(command -v code)" ]; then
     cd /tmp && rm -rf vscode
   fi
 
-  cd "$HOME"/.config/Code/User || exit
+  mkdir "$HOME"/.config/Code/User && cd "$HOME"/.config/Code/User || exit
 
   wget https://github.com/freddan88/fredrik.leemann.data/raw/main/vscode/user_settings.zip
 
