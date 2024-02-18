@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 
-# Version manager for node.js - Get the latest script-url
-# https://github.com/nvm-sh/nvm#install--update-script
-
 install_latest_node_lts=true
 install_vscode_extensions=true
-
-url_latest_nvm=https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
@@ -20,21 +15,21 @@ if [ "$SUDO_USER" ]; then
 fi
 
 echo " "
-echo "INSTALLING CONFIGURATIONS" && sleep 2
+echo "INSTALLING SCRIPTS AND CONFIGURATIONS" && sleep 2
 echo " "
 
-# systemctl --user stop gvfs-afc-volume-monitor.service
-# systemctl --user disable gvfs-afc-volume-monitor.service
+cd "$HOME" && mkdir -p Apps
+cd "$HOME" && mkdir -p .local/bin
 
-/usr/bin/xdg-user-dirs-update
-xdg-mime default thunar.desktop inode/directory
-
-cd "$HOME" || exit
-
-mkdir -p Apps
-mkdir -p .local/bin
-
-wget -qO- $url_latest_nvm | bash
+# Version manager for node.js
+# https://github.com/nvm-sh/nvm
+#
+if $install_latest_node_lts && [ ! -d "$HOME/.nvm" ]; then
+  script_name="nvm-sh"
+  script_url=$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep 'zipball_url' | awk -F '"' '{print $4}')
+  mkdir -p /tmp/$script_name && cd /tmp/$script_name && wget -O $script_name.zip "$script_url" && unzip $script_name.zip && cd nvm-sh-nvm-* || exit
+  cd /tmp && rm -rf $script_name
+fi
 
 if $install_latest_node_lts; then
   export NVM_DIR="$HOME/.nvm"
@@ -48,45 +43,47 @@ if $install_latest_node_lts; then
   nvm install --lts
 fi
 
+echo " "
+
+# Oh My Zsh is an open source shell-framework
 # https://ohmyz.sh
 # https://github.com/paulirish/git-open
 # https://github.com/zsh-users/zsh-autosuggestions
-
-echo " "
-
+#
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/paulirish/git-open.git .oh-my-zsh/custom/plugins/git-open
 
-rm -rf .config/xfce4
-
 echo " "
 
-wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
-unzip -o debian_xfce_xpu_home.zip
-rm -f debian_xfce_xpu_home.zip
+# Replace old configurations for the user and load keybindings + new desktop-layout
+# https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/debian_xfce_xpu/debian_xfce_xpu_files/home
+#
+cd "$HOME" && rm -rf .config/rofi
+cd "$HOME" && rm -rf .config/xfce4
+cd "$HOME" && rm -rf .config/Code/User/snippets
+
+# wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/debian_xfce_xpu/debian_xfce_xpu_home.zip
+# unzip -o debian_xfce_xpu_home.zip
+# rm -f debian_xfce_xpu_home.zip - TODO: Download
 
 xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/debian_xfce_xpu_panel_01.tar.bz2
 
-if [ "$(command -v code)" ]; then
-  if $install_vscode_extensions; then
-    if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
-      echo " "
-      echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
-      echo " "
+# Install visual studio code (code-editor from microsoft)
+# https://code.visualstudio.com/
+#
+# if $install_vscode_extensions && [ "$(command -v code)" ]; then
+#   if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
+#     echo " "
+#     echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
+#     echo " "
 
-      chmod 754 .config/Code/vscode_extensions_install_user.sh
-      .config/Code/vscode_extensions_install_user.sh
-    fi
-  fi
-fi
+#     chmod 754 .config/Code/vscode_extensions_install_user.sh
+#     .config/Code/vscode_extensions_install_user.sh
 
-rm -f .config/Code/vscode_extensions_install_user.sh
-
-pactl set-sink-volume @DEFAULT_SINK@ 100% 2>/dev/null
-pactl set-sink-mute @DEFAULT_SINK@ false 2>/dev/null
-
-rm -rf .config/google-chrome
+#     rm -f .config/Code/vscode_extensions_install_user.sh
+#   fi
+# fi - TODO: Make sure the script is downloaded
 
 echo " "
 echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
