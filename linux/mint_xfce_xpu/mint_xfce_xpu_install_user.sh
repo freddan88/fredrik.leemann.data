@@ -67,23 +67,25 @@ cd "$HOME" && rm -rf .config/Code/User/snippets
 # unzip -o debian_xfce_xpu_home.zip
 # rm -f debian_xfce_xpu_home.zip - TODO: Download
 
-xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/debian_xfce_xpu_panel_01.tar.bz2
+# TODO: Make sure this file is presented on the system befooore trying to load it
+# xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/debian_xfce_xpu_panel_01.tar.bz2
 
+# TODO: Download the script
 # Install visual studio code (code-editor from microsoft)
 # https://code.visualstudio.com/
 #
-# if $install_vscode_extensions && [ "$(command -v code)" ]; then
-#   if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
-#     echo " "
-#     echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
-#     echo " "
+if $install_vscode_extensions && [ "$(command -v code)" ]; then
+  if [ -f ".config/Code/vscode_extensions_install_user.sh" ]; then
+    echo " "
+    echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
+    echo " "
 
-#     chmod 754 .config/Code/vscode_extensions_install_user.sh
-#     .config/Code/vscode_extensions_install_user.sh
+    chmod 754 .config/Code/vscode_extensions_install_user.sh
+    .config/Code/vscode_extensions_install_user.sh
 
-#     rm -f .config/Code/vscode_extensions_install_user.sh
-#   fi
-# fi - TODO: Make sure the script is downloaded
+    rm -f .config/Code/vscode_extensions_install_user.sh
+  fi
+fi
 
 echo " "
 echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
