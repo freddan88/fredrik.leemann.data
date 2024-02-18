@@ -47,10 +47,10 @@ function print_user_global_bin_and_exit_script() {
 
 mkdir -p "$HOME/.gnupg"
 chmod 700 "$HOME/.gnupg"
-chmod 600 "$HOME/.gnupg/*"
+chmod 600 -R "$HOME/.gnupg"
 chown -R "$(whoami)" "$HOME/.gnupg"
 
-apt-get update && apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 bzip3 7zip p7zip-full xzip fastjar lrzip -y
+apt-get update && apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 7zip p7zip-full xzip fastjar lrzip -y
 apt-get install neofetch trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw -y
 apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa gparted httpie httping perl curl htop powertop nmap -y
 apt-get install spotify-client network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder obs-studio -y
@@ -211,7 +211,7 @@ apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pe
 #
 if [ ! "$(command -v code)" ]; then
   cd /tmp && wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-  apt-get install ./vscode_amd64.deb -y
+  apt-get update && apt-get install ./vscode_amd64.deb -y
   rm -f vscode_amd64.deb
 fi
 
@@ -221,7 +221,8 @@ fi
 if [ ! "$(command -v beekeeper-studio)" ]; then
   base_url="https://api.github.com/repos/beekeeper-studio/beekeeper-studio/releases/latest"
   latest_package=$(curl -s $base_url | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'amd64.deb')
-  wget -O beekeeper-studio_amd64.deb "$latest_package" && apt-get install ./beekeeper-studio_amd64.deb -y
+  wget -O beekeeper-studio_amd64.deb "$latest_package"
+  apt-get update && apt-get install ./beekeeper-studio_amd64.deb -y
   rm -f beekeeper-studio_amd64.deb
 fi
 
@@ -241,7 +242,7 @@ fi
 #
 if [ ! "$(command -v mongodb-compass)" ]; then
   wget -O mongodb-compass_amd64.deb "$url_mongo_db_compass"
-  apt-get install ./mongodb-compass_amd64.deb -y
+  apt-get update && apt-get install ./mongodb-compass_amd64.deb -y
   rm -f mongodb-compass_amd64.deb
 fi
 
