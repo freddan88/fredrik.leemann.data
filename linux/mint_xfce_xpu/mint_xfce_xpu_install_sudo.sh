@@ -97,7 +97,6 @@ if $install_virtualization && [ "$(command -v grep -E 'svm|vmx' /proc/cpuinfo)" 
 
   echo " "
   echo "HANDLE NETWORKS FOR QEMU-KVM VIRTUAL MACHINES"
-  echo " "
 
   virsh net-start default 2>/dev/null
   virsh net-autostart default 2>/dev/null
@@ -113,7 +112,7 @@ if $install_docker; then
   # Install docker here
   # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
   #
-  apt-get update && apt-get install ca-certificates curl && install -m 0755 -d /etc/apt/keyrings
+  apt-get update && apt-get install ca-certificates curl -y && install -m 0755 -d /etc/apt/keyrings
   curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
   chmod a+r /etc/apt/keyrings/docker.asc
 
@@ -121,14 +120,14 @@ if $install_docker; then
   if [ "$distro_name" = '"Linux Mint"' ]; then
     codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
     docker_source="deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $codename stable"
-    echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null && apt-get update
+    echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null
   else
     echo ""
     echo "Name: INSTALL DOCKER FOR UBUNTU"
     echo ""
   fi
 
-  apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  apt-get update && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
   usermod -aG docker "$SUDO_USER"
 fi
