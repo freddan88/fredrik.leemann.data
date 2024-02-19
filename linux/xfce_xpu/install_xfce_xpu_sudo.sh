@@ -47,6 +47,10 @@ function print_user_global_bin_and_exit() {
   exit
 }
 
+echo " "
+echo "NOW INSTALLING COMMON SOFTWARE" && sleep 2
+echo " "
+
 apt-get update
 mkdir -p "$HOME/.gnupg"
 chmod 700 "$HOME/.gnupg"
@@ -136,7 +140,7 @@ if $install_docker; then
     echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null
   else
     echo ""
-    echo "Name: INSTALL DOCKER FOR UBUNTU"
+    echo "INSTALL DOCKER FOR UBUNTU"
     echo ""
   fi
 
@@ -204,7 +208,7 @@ fi
 
 if $install_development_software; then
   echo " "
-  echo "NOW INSTALLING SOFTWARE FOR WEB-DEVELOPMENT"
+  echo "NOW INSTALLING SOFTWARE FOR WEB-DEVELOPMENT" && sleep 2
   echo " "
 else
   print_user_global_bin_and_exit
