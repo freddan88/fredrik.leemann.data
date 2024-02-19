@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-install_latest_node_lts=false
-install_vscode_extensions=false
+install_latest_node_lts=true
+install_vscode_extensions=true
 
 ################################
 # DO NOT EDIT BELOW THIS LINE! #
