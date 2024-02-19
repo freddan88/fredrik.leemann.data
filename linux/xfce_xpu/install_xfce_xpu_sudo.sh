@@ -60,7 +60,7 @@ chown -R "$(whoami)" "$HOME/.gnupg"
 curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
 
-apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 7zip p7zip-full xzip fastjar lrzip -y
+apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 7zip p7zip-full xzip fastjar lrzip ristretto remmina -y
 apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen lsb-release ca-certificates xfce4-panel-profiles keepassxc -y
 apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey xinput numlockx synaptic ufw gufw openssl -y
 apt-get install neofetch trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw -y
@@ -147,6 +147,12 @@ if $install_docker; then
   apt-get update && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
   usermod -aG docker "$SUDO_USER"
+
+  if [ ! -f "/usr/local/bin/lazydocker" ]; then
+    # https://github.com/jesseduffield/lazydocker
+    url=$(curl -s https://api.github.com/repos/jesseduffield/lazydocker/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'Linux_x86_64.tar.gz')
+    cd /usr/local/bin && wget -O lazydocker.tar.gz "$url" && tar xzvf lazydocker.tar.gz lazydocker && rm -f lazydocker.tar.gz
+  fi
 fi
 
 # Install marktext (opensource markdown editor)
