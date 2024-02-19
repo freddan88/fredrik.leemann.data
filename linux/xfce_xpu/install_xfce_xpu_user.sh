@@ -37,10 +37,13 @@ echo " "
 # Replace old configurations for the user and load keybindings + new desktop-layout
 # https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/debian_xfce_xpu/debian_xfce_xpu_files/home
 #
-rm -f .zshrc
+
+cd "$HOME" && rm -rf .config/rofi
+cd "$HOME" && rm -rf .config/xfce4
+cd "$HOME" && rm -f "$HOME"/.zshrc
 
 cd "$HOME" && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/xfce_xpu/files/dotfiles/zshrc
-cd "$HOME"/.config && wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/dotfiles/config.zip
+cd "$HOME"/.config && wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/dotfiles/config/config.zip
 
 unzip -o config.zip
 rm -f config.zip
