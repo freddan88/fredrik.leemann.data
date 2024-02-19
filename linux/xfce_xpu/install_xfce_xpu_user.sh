@@ -42,10 +42,10 @@ rm -rf .config/rofi
 rm -rf .config/xfce4
 
 wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/xfce_xpu/files/dotfiles/zshrc
-cd "$HOME"/.config && wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/dotfiles/config.zip
+cd "$HOME"/.config && wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/dotfiles/dotfiles.zip
 
-unzip -o config.zip
-rm -f config.zip
+unzip -o dotfiles.zip
+rm -f dotfiles.zip
 
 xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/xfce_xpu_panel_01.tar.bz2
 
