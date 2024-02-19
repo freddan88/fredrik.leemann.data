@@ -58,7 +58,7 @@ if $install_latest_node_lts && [ ! -d "$HOME/.nvm" ]; then
   script_name="nvm-sh"
   script_url=$(curl -s https://api.github.com/repos/nvm-sh/nvm/releases/latest | grep 'zipball_url' | awk -F '"' '{print $4}')
   mkdir -p /tmp/$script_name && cd /tmp/$script_name && wget -O $script_name.zip "$script_url" && unzip $script_name.zip && cd nvm-sh-nvm-* || exit
-  cd /tmp && rm -rf $script_name
+  ./install.sh && cd /tmp && rm -rf $script_name
 fi
 
 if $install_latest_node_lts; then
