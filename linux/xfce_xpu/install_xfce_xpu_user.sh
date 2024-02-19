@@ -38,8 +38,6 @@ echo " "
 # https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/debian_xfce_xpu/debian_xfce_xpu_files/home
 #
 rm -f .zshrc
-rm -rf .config/rofi
-rm -rf .config/xfce4
 
 cd "$HOME" && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/xfce_xpu/files/dotfiles/zshrc
 cd "$HOME"/.config && wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/dotfiles/config.zip
