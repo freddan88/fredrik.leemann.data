@@ -42,7 +42,7 @@ rm -rf .config/rofi
 rm -rf .config/xfce4
 
 wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/xfce_xpu/files/dotfiles/zshrc
-wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/dotfiles/config.zip
+cd "$HOME"/.config && wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/dotfiles/config.zip
 
 unzip -o config.zip
 rm -f config.zip
@@ -94,7 +94,7 @@ if $install_vscode_extensions && [ "$(command -v code)" ]; then
     cd /tmp && rm -rf vscode
   fi
 
-  mkdir "$HOME"/.config/Code/User && cd "$HOME"/.config/Code/User || exit
+  mkdir -p "$HOME"/.config/Code/User && cd "$HOME"/.config/Code/User || exit
 
   wget https://github.com/freddan88/fredrik.leemann.data/raw/main/vscode/user_settings.zip
 
