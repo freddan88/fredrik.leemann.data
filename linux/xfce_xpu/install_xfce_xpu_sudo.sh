@@ -28,8 +28,6 @@ fi
 function print_user_global_bin_and_exit() {
   echo " "
 
-  apt-get update && apt-get upgrade -y && apt-get autoremove -y
-
   fc-cache -f -v
 
   echo " "
