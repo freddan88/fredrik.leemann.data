@@ -59,13 +59,13 @@ echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.
 
 apt-get update
 
-apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 7zip p7zip-full xzip fastjar lrzip ristretto remmina -y
-apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen lsb-release ca-certificates xfce4-panel-profiles keepassxc -y
+apt-get install zsh ssh git nano vim neovim lsb-releasezip ca-certificates unzip tar gzip bzip2 ristretto remmina -y
+apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen xfce4-panel-profiles keepassxc stacer baobab rsync -y
 apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey xinput numlockx synaptic ufw gufw openssl -y
 apt-get install neofetch trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw -y
 apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa gparted httpie httping perl curl htop powertop nmap -y
 apt-get install spotify-client network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder obs-studio -y
-apt-get install gnome-system-monitor gnome-disk-utility stacer baobab rsync libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript -y
+apt-get install gnome-system-monitor gnome-disk-utility libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript -y
 
 usermod -s /bin/zsh "$SUDO_USER"
 
@@ -122,36 +122,6 @@ if $install_virtualization && [ "$(command -v grep -E 'svm|vmx' /proc/cpuinfo)" 
   usermod -aG input "$SUDO_USER"
   usermod -aG disk "$SUDO_USER"
   usermod -aG kvm "$SUDO_USER"
-fi
-
-if $install_docker; then
-  # Install docker here
-  # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
-  #
-  install -m 0755 -d /etc/apt/keyrings
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-  chmod a+r /etc/apt/keyrings/docker.asc
-
-  distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
-  if [ "$distro_name" = '"Linux Mint"' ]; then
-    codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
-    docker_source="deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $codename stable"
-    echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null
-  else
-    echo ""
-    echo "INSTALL DOCKER FOR UBUNTU"
-    echo ""
-  fi
-
-  apt-get update && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
-
-  usermod -aG docker "$SUDO_USER"
-
-  if [ ! -f "/usr/local/bin/lazydocker" ]; then
-    # https://github.com/jesseduffield/lazydocker
-    url=$(curl -s https://api.github.com/repos/jesseduffield/lazydocker/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'Linux_x86_64.tar.gz')
-    cd /usr/local/bin && wget -O lazydocker.tar.gz "$url" && tar xzvf lazydocker.tar.gz lazydocker && rm -f lazydocker.tar.gz
-  fi
 fi
 
 # Install marktext (opensource markdown editor)
@@ -225,9 +195,39 @@ fi
 
 cd /tmp || exit
 
-apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 mariadb-client jq pre-commit -y
+apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 mariadb-client jq pre-commit gh -y
 apt-get install php php-cli php-common php-xdebug php-mysql php-mbstring php-curl php-soap php-readline -y
 apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
+
+if $install_docker; then
+  # Install docker here
+  # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
+  #
+  install -m 0755 -d /etc/apt/keyrings
+  curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  chmod a+r /etc/apt/keyrings/docker.asc
+
+  distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
+  if [ "$distro_name" = '"Linux Mint"' ]; then
+    codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
+    docker_source="deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $codename stable"
+    echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null
+  else
+    echo ""
+    echo "INSTALL DOCKER FOR UBUNTU"
+    echo ""
+  fi
+
+  apt-get update && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+  usermod -aG docker "$SUDO_USER"
+
+  if [ ! -f "/usr/local/bin/lazydocker" ]; then
+    # https://github.com/jesseduffield/lazydocker
+    url=$(curl -s https://api.github.com/repos/jesseduffield/lazydocker/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'Linux_x86_64.tar.gz')
+    cd /usr/local/bin && wget -O lazydocker.tar.gz "$url" && tar xzvf lazydocker.tar.gz lazydocker && rm -f lazydocker.tar.gz
+  fi
+fi
 
 # Install visual studio code (code-editor from microsoft)
 # https://code.visualstudio.com/
@@ -269,9 +269,9 @@ if [ ! "$(command -v mongodb-compass)" ]; then
   rm -f mongodb-compass_amd64.deb
 fi
 
-########################################################################
-# INSTALLING WEB-DEVELOPER SCRIPTS AND EXECUTABLES TO: /usr/local/bin/ #
-########################################################################
+############################################################################
+# INSTALLING MORE WEB-DEVELOPER SCRIPTS AND EXECUTABLES TO: /usr/local/bin #
+############################################################################
 
 cd /usr/local/bin || exit
 
