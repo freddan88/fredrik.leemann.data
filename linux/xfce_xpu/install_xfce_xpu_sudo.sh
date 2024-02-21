@@ -49,7 +49,6 @@ echo " "
 echo "NOW INSTALLING COMMON SOFTWARE" && sleep 2
 echo " "
 
-apt-get update
 mkdir -p "$HOME/.gnupg"
 chmod 700 "$HOME/.gnupg"
 chmod 600 -R "$HOME/.gnupg"
@@ -57,6 +56,8 @@ chown -R "$(whoami)" "$HOME/.gnupg"
 
 curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
+
+apt-get update
 
 apt-get install zsh git gh nano vim neovim ssh zip unzip tar gzip bzip2 7zip p7zip-full xzip fastjar lrzip ristretto remmina -y
 apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen lsb-release ca-certificates xfce4-panel-profiles keepassxc -y
@@ -233,7 +234,7 @@ apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pe
 #
 if [ ! "$(command -v code)" ]; then
   cd /tmp && wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
-  apt-get update && apt-get install ./vscode_amd64.deb -y
+  apt-get install ./vscode_amd64.deb -y
   rm -f vscode_amd64.deb
 fi
 
@@ -244,7 +245,7 @@ if [ ! "$(command -v beekeeper-studio)" ]; then
   base_url="https://api.github.com/repos/beekeeper-studio/beekeeper-studio/releases/latest"
   latest_package=$(curl -s $base_url | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'amd64.deb')
   wget -O beekeeper-studio_amd64.deb "$latest_package"
-  apt-get update && apt-get install ./beekeeper-studio_amd64.deb -y
+  apt-get install ./beekeeper-studio_amd64.deb -y
   rm -f beekeeper-studio_amd64.deb
 fi
 
@@ -264,7 +265,7 @@ fi
 #
 if [ ! "$(command -v mongodb-compass)" ]; then
   wget -O mongodb-compass_amd64.deb "$url_mongo_db_compass"
-  apt-get update && apt-get install ./mongodb-compass_amd64.deb -y
+  apt-get install ./mongodb-compass_amd64.deb -y
   rm -f mongodb-compass_amd64.deb
 fi
 
