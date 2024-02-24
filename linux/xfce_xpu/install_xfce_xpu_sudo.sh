@@ -183,7 +183,8 @@ if [ ! -f "/usr/local/bin/smnetscanner" ]; then
 fi
 
 if [ -d "/etc/lightdm" ]; then
-  cd /etc/lightdm && wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/xfce_xpu/files/slick-greeter.conf
+  cd /etc/lightdm && rm -f /etc/lightdm/slick-greeter.conf
+  wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/xfce_xpu/files/slick-greeter.conf
 fi
 
 if $install_development_software; then
