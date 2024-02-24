@@ -57,17 +57,15 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;Escape" type="string" value="xkill"/>
       <property name="XF86Display" type="string" value="xfce4-display-settings"/>
       <property name="&lt;Super&gt;d" type="string" value="xfce4-display-settings"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;p" type="string" value="xfce4-session-logout --halt"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;r" type="string" value="xfce4-session-logout --reboot"/>
       <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;l" type="string" value="xfce4-session-logout --logout"/>
       <property name="&lt;Super&gt;a" type="string" value="stacer"/>
       <property name="&lt;Super&gt;c" type="string" value="xfce4-settings-manager"/>
       <property name="&lt;Super&gt;s" type="string" value="pavucontrol"/>
       <property name="&lt;Super&gt;Return" type="string" value="xfce4-terminal --maximize -e &quot;bash -c &apos;echo &quot;&quot;;neofetch;zsh&apos;&quot;"/>
       <property name="&lt;Super&gt;t" type="string" value="xfce4-terminal --maximize -e &quot;bash -c &apos;echo &quot;&quot;;neofetch;zsh&apos;&quot;"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;s" type="string" value="xfce4-session-logout"/>
       <property name="&lt;Primary&gt;&lt;Super&gt;space" type="string" value="thunar -B"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;Return" type="string" value="xfce4-session-logout"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;BackSpace" type="string" value="xfce4-session-logout --logout"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
