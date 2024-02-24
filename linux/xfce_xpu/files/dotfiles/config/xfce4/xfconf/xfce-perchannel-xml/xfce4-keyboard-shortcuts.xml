@@ -63,9 +63,10 @@
       <property name="&lt;Super&gt;s" type="string" value="pavucontrol"/>
       <property name="&lt;Super&gt;Return" type="string" value="xfce4-terminal --maximize -e &quot;bash -c &apos;echo &quot;&quot;;neofetch;zsh&apos;&quot;"/>
       <property name="&lt;Super&gt;t" type="string" value="xfce4-terminal --maximize -e &quot;bash -c &apos;echo &quot;&quot;;neofetch;zsh&apos;&quot;"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;space" type="string" value="thunar -B"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;Return" type="string" value="xfce4-session-logout"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;BackSpace" type="string" value="xfce4-session-logout --logout"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;space" type="string" value="catfish"/>
+      <property name="&lt;Shift&gt;&lt;Super&gt;space" type="string" value="thunar -B"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
