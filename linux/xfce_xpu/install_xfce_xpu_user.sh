@@ -76,8 +76,7 @@ fi
 
 echo " "
 
-# Install visual studio code (code-editor from microsoft)
-# https://code.visualstudio.com/
+# Install visual studio code extensions (code-editor from microsoft)
 #
 if $install_vscode_extensions && [ "$(command -v code)" ]; then
   echo " "
