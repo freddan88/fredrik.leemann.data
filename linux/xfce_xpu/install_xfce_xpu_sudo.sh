@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+install_vscode=true
 install_docker=true
 install_virtualization=true
 install_development_software=true
@@ -236,7 +237,7 @@ fi
 # Install visual studio code (code-editor from microsoft)
 # https://code.visualstudio.com/
 #
-if [ ! "$(command -v code)" ]; then
+if $install_vscode && [ ! "$(command -v code)" ]; then
   cd /tmp && wget -O vscode_amd64.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
   apt-get install ./vscode_amd64.deb -y
   rm -f vscode_amd64.deb
