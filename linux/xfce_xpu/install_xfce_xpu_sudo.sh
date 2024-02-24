@@ -181,6 +181,10 @@ if [ ! -f "/usr/local/bin/smnetscanner" ]; then
   cd /usr/local/bin && wget -O smnetscanner https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG/download/smnetscanner.sh
 fi
 
+if [ -d "/etc/lightdm/slick-greeter.conf" ]; then
+  cd /etc/lightdm || exit
+fi
+
 if $install_development_software; then
   echo " "
   echo "NOW INSTALLING SOFTWARE FOR WEB-DEVELOPMENT" && sleep 2
