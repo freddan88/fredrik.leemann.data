@@ -142,8 +142,8 @@ if [ ! -d "/usr/share/fonts/truetype/ubuntu-sans-fonts" ]; then
   font_name="ubuntu-sans-fonts"
   font_install_dir="/usr/share/fonts/truetype/$font_name"
   font_url=$(curl -s https://api.github.com/repositories/492578792/releases/latest | grep 'zipball_url' | awk -F '"' '{print $4}')
-  mkdir -p /tmp/$font_name && cd /tmp/$font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip && cd canonical-Ubuntu-Sans-fonts-* || exit
-  mkdir -p $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
+  mkdir -p /tmp/$font_name && cd /tmp/$font_name && wget -O $font_name.zip "$font_url" && unzip $font_name.zip
+  cd canonical-Ubuntu-Sans-fonts-* && mkdir -p $font_install_dir && find . -name "*.ttf" -exec install -m644 {} $font_install_dir \;
   cd /tmp && rm -rf $font_name
 fi
 
@@ -230,7 +230,8 @@ if $install_docker; then
 
   if [ ! -f "/usr/local/bin/lazydocker" ]; then
     # https://github.com/jesseduffield/lazydocker
-    url=$(curl -s https://api.github.com/repos/jesseduffield/lazydocker/releases/latest | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'Linux_x86_64.tar.gz')
+    api_url="https://api.github.com/repos/jesseduffield/lazydocker/releases/latest"
+    url=$(curl -s $api_url | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'Linux_x86_64.tar.gz')
     cd /usr/local/bin && wget -O lazydocker.tar.gz "$url" && tar xzvf lazydocker.tar.gz lazydocker && rm -f lazydocker.tar.gz
   fi
 fi
