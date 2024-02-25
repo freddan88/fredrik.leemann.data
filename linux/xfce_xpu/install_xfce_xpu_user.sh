@@ -34,21 +34,9 @@ git clone https://github.com/paulirish/git-open.git .oh-my-zsh/custom/plugins/gi
 
 echo " "
 
-# Replace old configurations for the user and load keybindings + new desktop-layout
-# https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/debian_xfce_xpu/debian_xfce_xpu_files/home
-#
-
-cd "$HOME" && rm -rf .config/rofi
-cd "$HOME" && rm -rf .config/xfce4
 cd "$HOME" && rm -f "$HOME"/.zshrc
 
 cd "$HOME" && wget -O .zshrc https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/xfce_xpu/files/dotfiles/zshrc
-cd "$HOME"/.config && wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/dotfiles/config/config.zip
-
-unzip -o config.zip
-rm -f config.zip
-
-xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/xfce_xpu_panel_01.tar.bz2
 
 echo " "
 
@@ -77,6 +65,7 @@ fi
 echo " "
 
 # Install visual studio code extensions (code-editor from microsoft)
+# https://github.com/freddan88/fredrik.leemann.data/blob/main/vscode/extensions.txt
 #
 if $install_vscode_extensions && [ "$(command -v code)" ]; then
   echo " "
@@ -101,6 +90,19 @@ if $install_vscode_extensions && [ "$(command -v code)" ]; then
   unzip -o user_settings.zip
   rm -rf user_settings.zip
 fi
+
+# Replace old configurations for xfce and load keybindings + new desktop-layout
+# https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/xfce_xpu/files/dotfiles/config
+#
+cd "$HOME" && rm -rf .config/rofi
+cd "$HOME" && rm -rf .config/xfce4
+
+cd "$HOME"/.config && wget https://github.com/freddan88/fredrik.leemann.data/raw/main/linux/xfce_xpu/files/dotfiles/config/config.zip
+
+unzip -o config.zip
+rm -f config.zip
+
+xfce4-panel-profiles load /usr/share/xfce4-panel-profiles/layouts/xfce_xpu_panel_01.tar.bz2
 
 echo " "
 echo "ADDING TEMPLATES FOR CONTEXT-MENU" && sleep 2
