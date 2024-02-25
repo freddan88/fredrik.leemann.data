@@ -95,6 +95,11 @@ if [ "$(systemd-detect-virt)" == 'kvm' ]; then
   apt-get install spice-vdagent
 fi
 
+if [ ! -f "/usr/share/backgrounds/xfce/xfce-leaves.svg" ]; then
+  cd /usr/share/backgrounds/xfce || exit
+  wget https://gitlab.xfce.org/xfce/xfdesktop/-/raw/master/backgrounds/xfce-leaves.svg
+fi
+
 # Download new layout for the xfce-panel
 #
 if [ -d "/usr/share/xfce4-panel-profiles/layouts" ]; then
