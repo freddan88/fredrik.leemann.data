@@ -60,12 +60,12 @@ echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.
 
 apt-get update
 
-apt-get install zsh ssh git nano vim neovim lsb-release ca-certificates zip unzip tar gzip bzip2 ristretto remmina -y
-apt-get install arc-theme elementary-xfce-icon-theme cmatrix screen xfce4-panel-profiles keepassxc stacer baobab rsync -y
-apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey xinput numlockx synaptic ufw gufw openssl -y
-apt-get install neofetch trash-cli ranger thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr mc lshw -y
-apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa gparted httpie httping perl curl htop powertop nmap -y
-apt-get install spotify-client network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder obs-studio -y
+apt-get install zsh ssh git zip unzip tar gzip bzip2 rsync nano vim lsb-release ca-certificates xinput numlockx screen -y
+apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey synaptic ufw gufw openssl cmatrix -y
+apt-get install neofetch trash-cli thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr lshw -y
+apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa httpie httping perl curl htop powertop nmap -y
+apt-get install arc-theme elementary-xfce-icon-theme xfce4-panel-profiles keepassxc stacer baobab ristretto gparted obs-studio -y
+apt-get install spotify-client network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder -y
 apt-get install gnome-system-monitor gnome-disk-utility libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript -y
 
 usermod -s /bin/zsh "$SUDO_USER"
@@ -201,7 +201,7 @@ fi
 
 cd /tmp || exit
 
-apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 mariadb-client jq pre-commit gh -y
+apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 mariadb-client pre-commit jq gh -y
 apt-get install php php-cli php-common php-xdebug php-mysql php-mbstring php-curl php-soap php-readline -y
 apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
 
