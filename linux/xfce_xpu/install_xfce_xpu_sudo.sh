@@ -131,7 +131,7 @@ fi
 #
 if [ ! "$(command -v marktext)" ]; then
   base_url="https://api.github.com/repos/marktext/marktext/releases/latest"
-  latest_package=$(curl -s $base_url | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'amd64.deb')
+  latest_package=$(curl -s $base_url | grep 'browser_download_url' | grep 'marktext-amd64.deb' | awk -F '"' '{print $4}')
   wget -O marktext-amd64.deb "$latest_package" && apt-get install ./marktext-amd64.deb -y
   rm -f marktext-amd64.deb
 fi
