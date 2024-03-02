@@ -55,18 +55,13 @@ chmod 700 "$HOME/.gnupg"
 chmod 600 -R "$HOME/.gnupg"
 chown -R "$(whoami)" "$HOME/.gnupg"
 
-curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
-
-apt-get update
-
 apt-get install zsh ssh git zip unzip tar gzip bzip2 rsync nano vim lsb-release ca-certificates xinput numlockx screen -y
 apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey synaptic ufw gufw openssl cmatrix -y
 apt-get install neofetch trash-cli thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr lshw -y
 apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa httpie httping perl curl htop powertop nmap -y
 apt-get install arc-theme elementary-xfce-icon-theme xfce4-panel-profiles keepassxc stacer baobab ristretto gparted obs-studio -y
-apt-get install spotify-client network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder -y
 apt-get install gnome-system-monitor gnome-disk-utility libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript -y
+apt-get install network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder -y
 
 usermod -s /bin/zsh "$SUDO_USER"
 
@@ -232,9 +227,17 @@ if $install_docker; then
   if [ ! -f "/usr/local/bin/lazydocker" ]; then
     # https://github.com/jesseduffield/lazydocker
     api_url="https://api.github.com/repos/jesseduffield/lazydocker/releases/latest"
-    url=$(curl -s $api_url | grep 'browser_download_url' | awk -F '"' '{print $4}' | grep 'Linux_x86_64.tar.gz')
+    url=$(curl -s $api_url | grep 'browser_download_url' | grep 'Linux_x86_64.tar.gz' | awk -F '"' '{print $4}')
     cd /usr/local/bin && wget -O lazydocker.tar.gz "$url" && tar xzvf lazydocker.tar.gz lazydocker && rm -f lazydocker.tar.gz
   fi
+fi
+
+# https://github.com/jesseduffield/lazygit
+#
+if [ ! -f "/usr/local/bin/lazygit" ]; then
+  api_url="https://api.github.com/repos/jesseduffield/lazygit/releases/latest"
+  url=$(curl -s $api_url | grep 'browser_download_url' | grep 'Linux_x86_64.tar.gz' | awk -F '"' '{print $4}')
+  cd /usr/local/bin && wget -O lazygit.tar.gz "$url" && tar xzvf lazygit.tar.gz lazygit && rm -f lazygit.tar.gz
 fi
 
 # Install visual studio code (code-editor from microsoft)
@@ -312,3 +315,12 @@ print_user_global_bin_and_exit
 # TODO: Add to readme
 #
 # sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
+#
+# https://www.spotify.com/se/download/linux/
+# https://flathub.org/apps/com.spotify.Client
+# https://snapcraft.io/spotify
+#
+# curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
+# echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
+# apt-get update && apt install spotify-client
+#
