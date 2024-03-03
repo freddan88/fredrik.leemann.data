@@ -55,6 +55,8 @@ chmod 700 "$HOME/.gnupg"
 chmod 600 -R "$HOME/.gnupg"
 chown -R "$(whoami)" "$HOME/.gnupg"
 
+apt-get update
+
 apt-get install zsh ssh git zip unzip tar gzip bzip2 rsync nano vim lsb-release ca-certificates xinput numlockx screen -y
 apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey synaptic ufw gufw openssl cmatrix -y
 apt-get install neofetch trash-cli thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr lshw -y
