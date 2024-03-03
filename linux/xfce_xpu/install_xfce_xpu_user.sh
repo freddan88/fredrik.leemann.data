@@ -28,7 +28,7 @@ mkdir -p .local/bin
 # https://github.com/paulirish/git-open
 # https://github.com/zsh-users/zsh-autosuggestions
 #
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions .oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/paulirish/git-open.git .oh-my-zsh/custom/plugins/git-open
 
