@@ -20,6 +20,8 @@
 
 <br/>
 
+**Install packages**
+
 ```bash
 sudo apt update && sudo apt install curl sudo wget -y
 ```
