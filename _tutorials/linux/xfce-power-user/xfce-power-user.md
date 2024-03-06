@@ -30,7 +30,7 @@
 **Install packages**
 
 ```bash
-sudo apt update && sudo apt install curl sudo wget -y
+sudo apt update && sudo apt install git curl sudo wget -y
 ```
 
 <br/>
