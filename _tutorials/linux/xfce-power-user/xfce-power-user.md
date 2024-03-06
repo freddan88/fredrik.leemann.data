@@ -13,8 +13,13 @@
 
 **Tested on:**
 
--   Linux Mint XFCE 64Bit
--   Xubuntu 64 Bit
+-   Linux Mint XFCE 21.2 64Bit
+-   Xubuntu 22.04 64 Bit
+
+**Download Distributions**
+
+-   [Linux Mint XFCE](https://linuxmint.com/)
+-   [Xubuntu](https://xubuntu.org/)
 
 ---
 
