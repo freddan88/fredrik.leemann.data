@@ -2,15 +2,14 @@
 
 [License: MIT](https://choosealicense.com/licenses/mit)
 
-| My Links  |                                                                                      |
-| --------- | ------------------------------------------------------------------------------------ |
-| WebPage:  | [fredrik.leemann.se](https://fredrik.leemann.se)                                     |
-| LinkedIn: | [linkedin.com/fredrik-leemann](https://se.linkedin.com/in/fredrik-leemann-821b19110) |
-| GitHub:   | [github.com/freddan88](https://github.com/freddan88)                                 |
+| My Links |                                                      |
+| -------- | ---------------------------------------------------- |
+| WebPage: | [fredrik.leemann.se](https://fredrik.leemann.se)     |
+| GitHub:  | [github.com/freddan88](https://github.com/freddan88) |
 
 **Tested on:**
 
-- Debian Linux 11 (bullseye) 64Bit (nonFree Software)
+-   Debian Linux 11 (bullseye) 64Bit (nonFree Software)
 
 ---
 
@@ -60,7 +59,7 @@ nvm install --lts && nvm alias default node && nvm use node
 
 _Please read the source of the scripts above to get a full list of programs_
 
-- [marktext](https://github.com/marktext/marktext "Edit and Create Markdown-documents")
-- [mongodb-compass](https://www.mongodb.com/try/download/compass "Manage MongoDB Databases")
-- [Visual Studio Code](https://code.visualstudio.com "My Preferred Code Editor")
-- [DBeaver](https://dbeaver.io/download "Universal Database Management Tool")
+-   [marktext](https://github.com/marktext/marktext "Edit and Create Markdown-documents")
+-   [mongodb-compass](https://www.mongodb.com/try/download/compass "Manage MongoDB Databases")
+-   [Visual Studio Code](https://code.visualstudio.com "My Preferred Code Editor")
+-   [DBeaver](https://dbeaver.io/download "Universal Database Management Tool")

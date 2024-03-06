@@ -8,15 +8,14 @@ https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/_tutorials/deb
 
 [License: MIT](https://choosealicense.com/licenses/mit)
 
-| My Links  |                                                                                      |
-| --------- | ------------------------------------------------------------------------------------ |
-| WebPage:  | [fredrik.leemann.se](https://fredrik.leemann.se)                                     |
-| LinkedIn: | [linkedin.com/fredrik-leemann](https://se.linkedin.com/in/fredrik-leemann-821b19110) |
-| GitHub:   | [github.com/freddan88](https://github.com/freddan88)                                 |
+| My Links |                                                      |
+| -------- | ---------------------------------------------------- |
+| WebPage: | [fredrik.leemann.se](https://fredrik.leemann.se)     |
+| GitHub:  | [github.com/freddan88](https://github.com/freddan88) |
 
 **Tested on:**
 
-- Debian Linux 11 (bullseye) 64Bit (nonFree Software)
+-   Debian Linux 11 (bullseye) 64Bit (nonFree Software)
 
 ---
 
@@ -26,15 +25,15 @@ https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/_tutorials/deb
 
 **Install Debian on your computer**
 
-- Go with a bare-bone installation with no desktop environment
+-   Go with a bare-bone installation with no desktop environment
 
-- Keep the root-password blank. By doing this it will:
+-   Keep the root-password blank. By doing this it will:
 
-  - Add your user to the sudoers-group automatically
+    -   Add your user to the sudoers-group automatically
 
-  - Disable the root-account for the new installation
+    -   Disable the root-account for the new installation
 
-  **_Screenshot from the software selection screen during installation_**
+    **_Screenshot from the software selection screen during installation_**
 
 > Select SSH server and standard system utilities or only standard system utilities
 
@@ -222,21 +221,21 @@ _i3keybindings.sh will automaticaly run on every login and restart_
 
 _Please read the source of the scripts above to get a full list of programs_
 
-- [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb "Link to download the Latest Stable Build of Google's Web Browser for deb-linux 64Bit")
-- [xfce4-panel-profiles](http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb "Save/restore xfce4-panel-configurations")
-- [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl "Control pulseaudio volume from the shell or keyboard")
-- [marktext](https://github.com/marktext/marktext "Edit and Create Markdown-documents")
-- [mongodb-compass](https://www.mongodb.com/try/download/compass "Manage MongoDB Databases")
-- [Visual Studio Code](https://code.visualstudio.com "My Preferred Code Editor")
-- [DBeaver](https://dbeaver.io/download "Universal Database Management Tool")
+-   [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb "Link to download the Latest Stable Build of Google's Web Browser for deb-linux 64Bit")
+-   [xfce4-panel-profiles](http://mirrors.kernel.org/ubuntu/pool/universe/x/xfce4-panel-profiles/xfce4-panel-profiles_1.0.13-0ubuntu2_all.deb "Save/restore xfce4-panel-configurations")
+-   [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl "Control pulseaudio volume from the shell or keyboard")
+-   [marktext](https://github.com/marktext/marktext "Edit and Create Markdown-documents")
+-   [mongodb-compass](https://www.mongodb.com/try/download/compass "Manage MongoDB Databases")
+-   [Visual Studio Code](https://code.visualstudio.com "My Preferred Code Editor")
+-   [DBeaver](https://dbeaver.io/download "Universal Database Management Tool")
 
 ### Links and resources
 
-- [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
-- [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
-- [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
-- [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
-- [How to Change the Default Terminal in Ubuntu - FOSS](https://itsfoss.com/change-default-terminal-ubuntu)
-- [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
-- [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
-- [http://www.secretmaryo.org](http://www.secretmaryo.org)
+-   [reddit.com - What happened to libappindicator3-1 in Debian 11](https://www.reddit.com/r/debian/comments/pn1oia/what_happened_to_libappindicator31_in_debian_11)
+-   [wuwablog.blogspot.com - atftpd vs tftpd-hpa](http://wuwablog.blogspot.com/2018/07/atftpd-vs-tftpd-hpa.html)
+-   [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
+-   [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
+-   [How to Change the Default Terminal in Ubuntu - FOSS](https://itsfoss.com/change-default-terminal-ubuntu)
+-   [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
+-   [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
+-   [http://www.secretmaryo.org](http://www.secretmaryo.org)
