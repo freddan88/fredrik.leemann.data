@@ -72,16 +72,15 @@ if $install_vscode_extensions && [ "$(command -v code)" ]; then
   echo "INSTALLING VSCODE EXTENSIONS" && sleep 2
   echo " "
 
+  mkdir -p /tmp/vscode && cd /tmp/vscode || exit
+
   if [ ! -f "/tmp/vscode/extensions.txt" ]; then
-    mkdir -p /tmp/vscode && cd /tmp/vscode || exit
     wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/vscode/extensions.txt
-
-    while read -r extension; do
-      code --install-extension "$extension"
-    done <extensions.txt
-
-    cd /tmp && rm -rf vscode
   fi
+
+  xargs -n1 code --install-extension <extensions.txt
+
+  cd /tmp && rm -rf vscode
 
   mkdir -p "$HOME"/.config/Code/User && cd "$HOME"/.config/Code/User || exit
 
