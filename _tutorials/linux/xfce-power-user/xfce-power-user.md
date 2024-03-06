@@ -34,6 +34,6 @@ cd /tmp && wget $url/install_xfce_xpu_user.sh
 
 ```bash
 cd /tmp && sudo chmod 754 install_xfce_xpu*.sh
-cd /tmp sudo ./install_xfce_xpu_sudo.sh
-cd /tmp . /install_xfce_xpu_user.sh
+cd /tmp && sudo ./install_xfce_xpu_sudo.sh
+cd /tmp && ./install_xfce_xpu_user.sh
 ```
