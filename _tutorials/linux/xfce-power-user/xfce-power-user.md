@@ -20,6 +20,8 @@
 sudo apt update && sudo apt install curl sudo wget -y
 ```
 
+<br/>
+
 **Download scripts**
 
 ```bash
@@ -29,6 +31,8 @@ cd /tmp && wget $url/install_xfce_xpu_user.sh
 ```
 
 > Sources: [linux-scripts-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/xfce_xpu)
+
+<br/>
 
 **Run scripts**
 
