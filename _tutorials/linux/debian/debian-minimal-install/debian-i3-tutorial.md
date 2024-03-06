@@ -2,15 +2,14 @@
 
 [License: MIT](https://choosealicense.com/licenses/mit)
 
-| My Links  |                                                                                      |
-| --------- | ------------------------------------------------------------------------------------ |
-| WebPage:  | [fredrik.leemann.se](https://fredrik.leemann.se)                                     |
-| LinkedIn: | [linkedin.com/fredrik-leemann](https://se.linkedin.com/in/fredrik-leemann-821b19110) |
-| GitHub:   | [github.com/freddan88](https://github.com/freddan88)                                 |
+| My Links |                                                      |
+| -------- | ---------------------------------------------------- |
+| WebPage: | [fredrik.leemann.se](https://fredrik.leemann.se)     |
+| GitHub:  | [github.com/freddan88](https://github.com/freddan88) |
 
 **Tested on:**
 
-- Debian Linux 11 (bullseye) 64Bit (nonFree Software)
+-   Debian Linux 11 (bullseye) 64Bit (nonFree Software)
 
 ---
 
@@ -20,15 +19,15 @@
 
 **Install Debian on your computer**
 
-- Go with a bare-bone installation with no desktop environment
+-   Go with a bare-bone installation with no desktop environment
 
-- Keep the root-password blank. By doing this it will:
+-   Keep the root-password blank. By doing this it will:
 
-  - Add your user to the sudoers-group automatically
+    -   Add your user to the sudoers-group automatically
 
-  - Disable the root-account for the new installation
+    -   Disable the root-account for the new installation
 
-  **_Screenshot from the software selection screen during installation_**
+    **_Screenshot from the software selection screen during installation_**
 
 > Select SSH server and standard system utilities or only standard system utilities
 
@@ -171,9 +170,9 @@ sudo apt install spice-vdagent -y && sudo /etc/init.d/spice-vdagent start
 
 **Speed up apt-package-manager using the nala-project**
 
-- [Nala package manager installation and usage - Tutorial by: Chris Titus Tech](https://christitus.com/stop-using-apt)
-- [Nala package manager installation - Tutorial by: Jake Redfield](https://trendoceans.com/nala-package-manager)
-- [Nala package manager installation - Official tutorial](https://gitlab.com/volian/nala/-/wikis/Installation)
+-   [Nala package manager installation and usage - Tutorial by: Chris Titus Tech](https://christitus.com/stop-using-apt)
+-   [Nala package manager installation - Tutorial by: Jake Redfield](https://trendoceans.com/nala-package-manager)
+-   [Nala package manager installation - Official tutorial](https://gitlab.com/volian/nala/-/wikis/Installation)
 
 For Debian Linux 11 (bullseye) 64Bit
 
@@ -221,17 +220,17 @@ _i3keybindings.sh will automatically run on every login and restart_
 
 _Please read the source of the scripts above to get a full list of programs_
 
-- [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
-- [xfce4-panel-profiles](http://ftp.ports.debian.org/debian-ports/pool/main/x/xfce4-panel-profiles)
-- [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl)
+-   [google-chrome-stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb)
+-   [xfce4-panel-profiles](http://ftp.ports.debian.org/debian-ports/pool/main/x/xfce4-panel-profiles)
+-   [pulseaudio-ctl](https://github.com/graysky2/pulseaudio-ctl)
 
 ### Links and resources
 
-- [unix.stackexchange.com - automatically-login-via-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
-- [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
-- [Rofi command/application-launcher Tutorial](https://linuxconfig.org/how-to-use-and-install-rofi-on-linux-tutorial)
-- [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
-- [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
-- [i3 improved tiling wm - user’s Guide](https://i3wm.org/docs/userguide.html)
-- [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
-- [http://www.secretmaryo.org](http://www.secretmaryo.org)
+-   [unix.stackexchange.com - automatically-login-via-command-line](https://unix.stackexchange.com/questions/401759/automatically-login-on-debian-9-2-1-command-line)
+-   [github.com/denesb - Workspaces plugin for xfce4 and the i3 window manager.](https://github.com/denesb/xfce4-i3-workspaces-plugin)
+-   [Rofi command/application-launcher Tutorial](https://linuxconfig.org/how-to-use-and-install-rofi-on-linux-tutorial)
+-   [SDLPoP · Prince of Persia: Original Trilogy](https://www.popot.org/get_the_games.php?game=SDLPoP)
+-   [Configuring i3 Window Manager: a Complete Guide](https://thevaluable.dev/i3-config-mouseless)
+-   [i3 improved tiling wm - user’s Guide](https://i3wm.org/docs/userguide.html)
+-   [NetworkManager - Debian Wiki](https://wiki.debian.org/NetworkManager)
+-   [http://www.secretmaryo.org](http://www.secretmaryo.org)
