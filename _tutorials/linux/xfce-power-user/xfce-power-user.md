@@ -9,12 +9,16 @@
 | WebPage: | [fredrik.leemann.se](https://fredrik.leemann.se)     |
 | GitHub:  | [github.com/freddan88](https://github.com/freddan88) |
 
+<br/>
+
 **Tested on:**
 
 -   Linux Mint XFCE 64Bit
 -   Xubuntu 64 Bit
 
 ---
+
+<br/>
 
 ```bash
 sudo apt update && sudo apt install curl sudo wget -y
