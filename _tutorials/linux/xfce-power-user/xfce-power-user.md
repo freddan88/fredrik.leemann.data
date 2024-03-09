@@ -64,7 +64,7 @@ cd /tmp && ./install_xfce_xpu_user.sh
 
 <br/>
 
-**Reboot you computer after running the scripts manually or from terminal**
+**Reboot you computer after running the scripts either from gui or from terminal**
 
 ```bash
 sudo reboot
