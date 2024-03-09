@@ -62,8 +62,8 @@ apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard sc
 apt-get install neofetch trash-cli thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr lshw -y
 apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa httpie httping perl curl htop powertop nmap -y
 apt-get install arc-theme elementary-xfce-icon-theme xfce4-panel-profiles keepassxc stacer baobab ristretto gparted obs-studio -y
-apt-get install gnome-system-monitor gnome-disk-utility libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript -y
-apt-get install network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder -y
+apt-get install gnome-system-monitor gnome-disk-utility libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript xfce4-screenshooter -y
+apt-get install network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder software-properties-common -y
 
 usermod -s /bin/zsh "$SUDO_USER"
 
@@ -335,5 +335,12 @@ print_user_global_bin_and_exit
 #
 # curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 # echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
-# apt-get update && apt install spotify-client
+# apt-get update && sudo apt install spotify-client
 #
+# EXTRA PACKAGES FOR DEBIAN LINUX
+# apt-add-repository contrib non-free -y
+# apt-get install ttf-mscorefonts-installer unrar -y
+#
+# EXTRA PACKAGES FOR UBUNTU/LINUX MINT
+# sudo add-apt-repository multiverse -y
+# sudo apt install ubuntu-restricted-extras
