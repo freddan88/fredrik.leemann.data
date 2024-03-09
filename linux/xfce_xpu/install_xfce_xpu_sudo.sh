@@ -216,8 +216,11 @@ if $install_docker; then
   chmod a+r /etc/apt/keyrings/docker.asc
 
   # distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
+  # distro_id=$(cat /etc/os-release | grep -w ID | cut -d"=" -f2)
   # if [ "$distro_name" = '"Linux Mint"' ]; then
-  #fi
+  # fi
+  # if [ "$distro_id" = '"debian"' ]; then
+  # fi
   codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
   docker_source="deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $codename stable"
   echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null
