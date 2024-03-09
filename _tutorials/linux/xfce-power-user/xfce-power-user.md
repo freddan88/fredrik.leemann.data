@@ -27,10 +27,10 @@
 
 <br/>
 
-**Install packages**
+**Install and upgrade packages**
 
 ```bash
-sudo apt update && sudo apt upgrade -y && sudo apt install git curl sudo wget -y
+sudo apt update && sudo apt upgrade -y && sudo apt install git curl sudo wget && sudo apt clean -y
 ```
 
 <br/>
