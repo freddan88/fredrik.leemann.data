@@ -211,18 +211,26 @@ if $install_docker; then
   # Install docker here
   # https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
   #
-  install -m 0755 -d /etc/apt/keyrings
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-  chmod a+r /etc/apt/keyrings/docker.asc
-
   # distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
-  # distro_id=$(cat /etc/os-release | grep -w ID | cut -d"=" -f2)
   # if [ "$distro_name" = '"Linux Mint"' ]; then
   # fi
-  # if [ "$distro_id" = '"debian"' ]; then
-  # fi
-  codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
-  docker_source="deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $codename stable"
+
+  distro_id=$(cat /etc/os-release | grep -w ID | cut -d"=" -f2)
+
+  if [ "$distro_id" = '"debian"' ]; then
+    curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+    codename=$(cat /etc/os-release | grep -w VERSION_CODENAME | cut -d"=" -f2)
+    apt_link="https://download.docker.com/linux/debian"
+  else
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    codename=$(cat /etc/os-release | grep -w UBUNTU_CODENAME | cut -d"=" -f2)
+    apt_link="https://download.docker.com/linux/ubuntu"
+  fi
+
+  install -m 0755 -d /etc/apt/keyrings && chmod a+r /etc/apt/keyrings/docker.asc
+
+  docker_source="deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] $apt_link $codename stable"
+
   echo "$docker_source" | tee /etc/apt/sources.list.d/docker.list >/dev/null
 
   apt-get update && apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
