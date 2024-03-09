@@ -46,7 +46,7 @@ cd /tmp && wget $url/install_xfce_xpu_sudo.sh
 cd /tmp && wget $url/install_xfce_xpu_user.sh
 ```
 
-> Sources: [linux-scripts-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/xfce_xpu)
+> You may configure parts in the scripts before running them. Please edit to your liking
 
 <br/>
 
@@ -59,3 +59,5 @@ cd /tmp && ./install_xfce_xpu_user.sh
 ```
 
 > Please read the scripts before running them. They will change your configurations
+
+`Sources:` [linux-scripts-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/xfce_xpu)
