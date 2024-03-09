@@ -30,7 +30,7 @@
 **Install packages**
 
 ```bash
-sudo apt update && sudo apt install git curl sudo wget -y
+sudo apt update && sudo apt upgrade -y && sudo apt install git curl sudo wget -y
 ```
 
 <br/>
@@ -54,3 +54,5 @@ cd /tmp && sudo chmod 754 install_xfce_xpu*.sh
 cd /tmp && sudo ./install_xfce_xpu_sudo.sh
 cd /tmp && ./install_xfce_xpu_user.sh
 ```
+
+> Please read the scripts before running them. They will change your configurations
