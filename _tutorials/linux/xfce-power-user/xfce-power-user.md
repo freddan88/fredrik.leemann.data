@@ -30,8 +30,11 @@
 **Install and upgrade packages**
 
 ```bash
-sudo apt update && sudo apt upgrade -y && sudo apt install git curl sudo wget && sudo apt clean -y
+sudo apt update && sudo apt upgrade -y && sudo apt install git curl sudo wget -y
+sudo apt clean -y && sudo apt sudo apt autoremove -y
 ```
+
+> You may want to reboot your computer after those steps to be sure you have a clean environment
 
 <br/>
 
