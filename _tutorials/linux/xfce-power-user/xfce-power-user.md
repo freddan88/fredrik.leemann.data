@@ -61,3 +61,11 @@ cd /tmp && ./install_xfce_xpu_user.sh
 > Please read the scripts before running them. They will change your configurations
 
 `Sources:` [linux-scripts-github](https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/xfce_xpu)
+
+<br/>
+
+**Reboot you computer after running the scripts manually or from terminal**
+
+```bash
+sudo reboot
+```
