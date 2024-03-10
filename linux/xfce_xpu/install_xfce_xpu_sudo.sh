@@ -62,7 +62,7 @@ apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard sc
 apt-get install neofetch trash-cli thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr lshw -y
 apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa httpie httping perl curl htop powertop nmap -y
 apt-get install arc-theme elementary-xfce-icon-theme xfce4-panel-profiles keepassxc stacer baobab ristretto gparted obs-studio -y
-apt-get install gnome-system-monitor gnome-disk-utility libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript xfce4-screenshooter -y
+apt-get install gnome-system-monitor gnome-disk-utility libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript xfce4-screenshooter catfish -y
 apt-get install network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder software-properties-common net-tools -y
 
 usermod -s /bin/zsh "$SUDO_USER"
@@ -184,6 +184,14 @@ if [ ! -f "/usr/local/bin/smnetscanner" ]; then
   cd /usr/local/bin && wget -O smnetscanner https://cloud.compumatter.biz/s/fxfYM9SkamBtGqG/download/smnetscanner.sh
 fi
 
+distro_id=$(cat /etc/os-release | grep -w ID | cut -d"=" -f2)
+
+if [ "$distro_id" = '"debian"' ]; then
+  if [ -f "/sbin/ifconfig" ]; then
+    ln -s /sbin/ifconfig /bin/ifconfig
+  fi
+fi
+
 if [ -d "/etc/lightdm" ]; then
   cd /etc/lightdm && rm -f /etc/lightdm/slick-greeter.conf
   wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/xfce_xpu/files/slick-greeter.conf
@@ -214,8 +222,6 @@ if $install_docker; then
   # distro_name=$(cat /etc/os-release | grep -w NAME | cut -d"=" -f2)
   # if [ "$distro_name" = '"Linux Mint"' ]; then
   # fi
-
-  distro_id=$(cat /etc/os-release | grep -w ID | cut -d"=" -f2)
 
   if [ "$distro_id" = '"debian"' ]; then
     curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
