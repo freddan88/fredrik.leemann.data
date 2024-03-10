@@ -63,7 +63,7 @@ apt-get install neofetch trash-cli thefuck tldr rofi tmux tree exa bat ripgrep x
 apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa httpie httping perl curl htop powertop nmap -y
 apt-get install arc-theme elementary-xfce-icon-theme xfce4-panel-profiles keepassxc stacer baobab ristretto gparted obs-studio -y
 apt-get install gnome-system-monitor gnome-disk-utility libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript xfce4-screenshooter -y
-apt-get install network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder software-properties-common -y
+apt-get install network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder software-properties-common net-tools -y
 
 usermod -s /bin/zsh "$SUDO_USER"
 
