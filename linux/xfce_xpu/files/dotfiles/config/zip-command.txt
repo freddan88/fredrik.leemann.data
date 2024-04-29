@@ -1,1 +1,1 @@
-zip -r config.zip rofi xfce4
+zip -r config.zip rofi xfce4 autostart
