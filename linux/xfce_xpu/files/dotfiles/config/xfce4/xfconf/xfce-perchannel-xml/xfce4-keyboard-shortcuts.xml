@@ -63,6 +63,7 @@
       <property name="&lt;Shift&gt;&lt;Super&gt;space" type="string" value="thunar -B"/>
       <property name="&lt;Super&gt;w" type="string" value="/usr/bin/google-chrome --disable-features=HardwareMediaKeyHandling"/>
       <property name="&lt;Super&gt;space" type="string" value="xfce4-appfinder"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;c" type="string" value="xfce4-clipman-history"/>
     </property>
   </property>
   <property name="xfwm4" type="empty">
