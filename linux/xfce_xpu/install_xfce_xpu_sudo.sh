@@ -60,9 +60,9 @@ apt-get update
 apt-get install zsh ssh git zip unzip tar gzip bzip2 rsync nano vim lsb-release ca-certificates xinput numlockx screen -y
 apt-get install pandoc lrzsz minicom cutecom remmina thunderbird orca onboard screenkey synaptic ufw gufw openssl cmatrix -y
 apt-get install neofetch trash-cli thefuck tldr rofi tmux tree exa bat ripgrep xdotool wmctrl members fzf zoxide entr lshw -y
-apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa httpie httping perl curl htop powertop nmap -y
-apt-get install arc-theme elementary-xfce-icon-theme xfce4-panel-profiles keepassxc stacer baobab ristretto gparted obs-studio -y
-apt-get install gnome-system-monitor gnome-disk-utility libsodium23 ffmpeg pwgen imagemagick exiftool ghostscript xfce4-screenshooter catfish -y
+apt-get install dos2unix cifs-utils smbclient samba nfs-common ftp tftp tftpd-hpa httpie httping perl curl htop powertop nmap ffmpeg -y
+apt-get install arc-theme elementary-xfce-icon-theme xfce4-panel-profiles keepassxc stacer baobab ristretto gparted obs-studio catfish pwgen -y
+apt-get install gnome-system-monitor gnome-disk-utility libsodium23 imagemagick exiftool ghostscript xfce4-screenshooter xfce4-clipman-plugin -y
 apt-get install network-manager-openvpn-gnome catfish mugshot dbus-x11 gimp vlc pitivi simplescreenrecorder software-properties-common net-tools -y
 
 usermod -s /bin/zsh "$SUDO_USER"
