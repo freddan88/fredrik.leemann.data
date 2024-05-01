@@ -28,3 +28,4 @@ streetsidesoftware.code-spell-checker
 timonwong.shellcheck
 wayou.vscode-todo-highlight
 xabikos.JavaScriptSnippets
+yoavbls.pretty-ts-errors
