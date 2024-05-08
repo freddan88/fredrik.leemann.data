@@ -187,9 +187,14 @@ fi
 distro_id=$(cat /etc/os-release | grep -w ID | cut -d"=" -f2)
 
 if [ "$distro_id" = '"debian"' ]; then
+  apt-get install slick-greeter -y
+
   if [ -f "/sbin/ifconfig" ]; then
     ln -s /sbin/ifconfig /bin/ifconfig
   fi
+
+  cd /etc/lightdm && rm -f /etc/lightdm/lightdm.conf
+  wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf
 fi
 
 if [ -d "/etc/lightdm" ]; then
