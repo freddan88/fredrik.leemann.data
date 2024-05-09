@@ -186,7 +186,7 @@ fi
 
 distro_id=$(cat /etc/os-release | grep -w ID | cut -d"=" -f2)
 
-if [ "$distro_id" = '"debian"' ]; then
+if [ "$distro_id" = "debian" ]; then
   if [ -f "/sbin/ifconfig" ]; then
     ln -s /sbin/ifconfig /bin/ifconfig
   fi
