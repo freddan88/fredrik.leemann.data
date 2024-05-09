@@ -223,7 +223,7 @@ if $install_docker; then
   # if [ "$distro_name" = '"Linux Mint"' ]; then
   # fi
 
-  if [ "$distro_id" = '"debian"' ]; then
+  if [ "$distro_id" = "debian" ]; then
     curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
     codename=$(cat /etc/os-release | grep -w VERSION_CODENAME | cut -d"=" -f2)
     apt_link="https://download.docker.com/linux/debian"
