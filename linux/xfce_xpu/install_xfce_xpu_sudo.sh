@@ -187,14 +187,9 @@ fi
 distro_id=$(cat /etc/os-release | grep -w ID | cut -d"=" -f2)
 
 if [ "$distro_id" = '"debian"' ]; then
-  apt-get install slick-greeter -y
-
   if [ -f "/sbin/ifconfig" ]; then
     ln -s /sbin/ifconfig /bin/ifconfig
   fi
-
-  cd /etc/lightdm && rm -f /etc/lightdm/lightdm.conf
-  wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf
 fi
 
 if [ -d "/etc/lightdm" ]; then
@@ -339,6 +334,11 @@ print_user_global_bin_and_exit
 # TODO: Add to readme
 #
 # sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
+#
+# Install new greeter as login window and update settings ubuntu/debian
+# apt-get install slick-greeter -y
+# cd /etc/lightdm && rm -f /etc/lightdm/lightdm.conf
+# wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf
 #
 # https://www.spotify.com/se/download/linux/
 # https://flathub.org/apps/com.spotify.Client
