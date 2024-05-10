@@ -153,7 +153,7 @@ sudo apt install ubuntu-restricted-extras
 
 ```bash
 sudo apt install slick-greeter
-cd /etc/lightdm && rm -f /etc/lightdm/lightdm.conf
+cd /etc/lightdm && sudo rm -f lightdm.conf
 sudo wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf
 ```
 
