@@ -12,6 +12,8 @@
 | WebPage: | [fredrik.leemann.se](https://fredrik.leemann.se)     |
 | GitHub:  | [github.com/freddan88](https://github.com/freddan88) |
 
+<br/>
+
 #### Tested on
 
 -   Linux Mint XFCE 21.2 64Bit
@@ -23,8 +25,6 @@
 -   [Linux Mint XFCE](https://linuxmint.com/download.php)
 -   [Debian](https://www.debian.org/distrib/)
 -   [Xubuntu](https://xubuntu.org/)
-
----
 
 <br/>
 
