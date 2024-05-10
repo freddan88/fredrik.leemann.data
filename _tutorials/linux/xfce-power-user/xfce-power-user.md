@@ -22,6 +22,10 @@
 -   [Debian](https://www.debian.org/distrib/)
 -   [Xubuntu](https://xubuntu.org/)
 
+---
+
+<br/>
+
 #### Table of contents
 
 -   [Installation](#installation)
@@ -33,9 +37,9 @@
 
 ### Installation
 
-<br/>
-
 > Those scripts are intended to be run after installation and will change your configuration and packages.
+
+<br/>
 
 #### Install and upgrade packages
 
