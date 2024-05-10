@@ -92,6 +92,11 @@ sudo reboot
 
 ### Keybindings
 
+| Keybinding                          | Action         | Description                |
+| ----------------------------------- | -------------- | -------------------------- |
+| <kbd>super</kbd> + <kbd>enter</kbd> | Xfce4 terminal | Open a new terminal-window |
+| More to come!                       |                |                            |
+
 <br/>
 
 ### Extra packages
@@ -189,5 +194,7 @@ sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 <br/>
 
 ### Installed packages
+
+> Please se the installation of apt-packages in the [script](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/xfce_xpu/install_xfce_xpu_sudo.sh)
 
 <br/>
