@@ -25,6 +25,9 @@
 #### Table of contents
 
 -   [Installation](#Installation)
+-   [Keybindings](#Keybindings)
+-   [Extra packages](#Extra-packages)
+-   [Installed packages](#Installed-packages)
 
 ### Installation
 
@@ -72,3 +75,9 @@ cd /tmp && ./install_xfce_xpu_user.sh
 ```bash
 sudo reboot
 ```
+
+### Keybindings
+
+### Extra packages
+
+### Installed packages
