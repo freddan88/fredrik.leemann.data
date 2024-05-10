@@ -150,9 +150,9 @@ sudo apt install ubuntu-restricted-extras
 > lightdm and the greeter is the login-window in: ubuntu / debian / linux-mint
 
 ```bash
-apt-get install slick-greeter -y
+sudo apt install slick-greeter -y
 cd /etc/lightdm && rm -f /etc/lightdm/lightdm.conf
-wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf
+sudo wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf
 ```
 
 <br/>
