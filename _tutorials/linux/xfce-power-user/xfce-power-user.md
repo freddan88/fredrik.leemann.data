@@ -125,6 +125,8 @@ sudo nala fetch
 
 Project: [Volian Linux / nala - GitLab](https://gitlab.com/volian/nala)
 
+<br/>
+
 #### Install restricted codecs and packages
 
 > Debian
@@ -150,7 +152,7 @@ sudo apt install ubuntu-restricted-extras
 > lightdm and the greeter is the login-window in: ubuntu / debian / linux-mint
 
 ```bash
-sudo apt install slick-greeter -y
+sudo apt install slick-greeter
 cd /etc/lightdm && rm -f /etc/lightdm/lightdm.conf
 sudo wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf
 ```
