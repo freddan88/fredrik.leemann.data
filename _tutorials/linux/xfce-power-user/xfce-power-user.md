@@ -3,6 +3,8 @@
 > I call this project XFCE POWER USER because of handy keybindings for applications as well as the window manager.<br/>
 > The layout for the xfce-desktop is inspired by various window managers like [i3-wm](https://i3wm.org/)<br/>
 
+![](images/desktop.png)
+
 [License: MIT](https://choosealicense.com/licenses/mit)
 
 | My Links |                                                      |
@@ -156,6 +158,8 @@ sudo apt install slick-greeter
 cd /etc/lightdm && sudo rm -f lightdm.conf
 sudo wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf
 ```
+
+![](images/login.png)
 
 <br/>
 
