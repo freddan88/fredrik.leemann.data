@@ -7,6 +7,8 @@
 
 [License: MIT](https://choosealicense.com/licenses/mit)
 
+<br/>
+
 | My Links |                                                      |
 | -------- | ---------------------------------------------------- |
 | WebPage: | [fredrik.leemann.se](https://fredrik.leemann.se)     |
