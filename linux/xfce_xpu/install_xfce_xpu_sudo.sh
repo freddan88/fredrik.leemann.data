@@ -330,28 +330,3 @@ if [ ! -f "/usr/local/bin/wwwsrv" ]; then
 fi
 
 print_user_global_bin_and_exit
-
-# TODO: Add to readme
-#
-# sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
-#
-# Install new greeter as login window and update settings ubuntu/debian
-# apt-get install slick-greeter -y
-# cd /etc/lightdm && rm -f /etc/lightdm/lightdm.conf
-# wget https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/configurations/display_managers/lightdm/lightdm.conf
-#
-# https://www.spotify.com/se/download/linux/
-# https://flathub.org/apps/com.spotify.Client
-# https://snapcraft.io/spotify
-#
-# curl -sS https://download.spotify.com/debian/pubkey_6224F9941A8AA6D1.gpg | gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
-# echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list >/dev/null
-# apt-get update && sudo apt install spotify-client
-#
-# EXTRA PACKAGES FOR DEBIAN LINUX
-# apt-add-repository contrib non-free -y
-# apt-get install ttf-mscorefonts-installer unrar -y
-#
-# EXTRA PACKAGES FOR UBUNTU/LINUX MINT
-# sudo add-apt-repository multiverse -y
-# sudo apt install ubuntu-restricted-extras
