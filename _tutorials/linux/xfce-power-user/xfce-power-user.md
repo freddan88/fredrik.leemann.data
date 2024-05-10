@@ -24,12 +24,16 @@
 
 #### Table of contents
 
--   [Installation](#Installation)
--   [Keybindings](#Keybindings)
--   [Extra packages](#Extra-packages)
--   [Installed packages](#Installed-packages)
+-   [Installation](#installation)
+-   [Keybindings](#keybindings)
+-   [Extra packages](#extra-packages)
+-   [Installed packages](#installed-packages)
+
+<br/>
 
 ### Installation
+
+<br/>
 
 > Those scripts are intended to be run after installation and will change your configuration and packages.
 
@@ -76,8 +80,16 @@ cd /tmp && ./install_xfce_xpu_user.sh
 sudo reboot
 ```
 
+<br/>
+
 ### Keybindings
+
+<br/>
 
 ### Extra packages
 
+<br/>
+
 ### Installed packages
+
+<br/>
