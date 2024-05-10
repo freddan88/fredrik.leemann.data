@@ -1,6 +1,7 @@
 ## Linux XFCE Power User
 
----
+> I call this project XFCE POWER USER because of handy keybindings for applications as well as the window manager.<br/>
+> The layout for the xfce-desktop is inspired by various window managers like [i3-wm](https://i3wm.org/)<br/>
 
 [License: MIT](https://choosealicense.com/licenses/mit)
 
@@ -9,25 +10,27 @@
 | WebPage: | [fredrik.leemann.se](https://fredrik.leemann.se)     |
 | GitHub:  | [github.com/freddan88](https://github.com/freddan88) |
 
-<br/>
-
-**Tested on:**
+#### Tested on
 
 -   Linux Mint XFCE 21.2 64Bit
--   Xubuntu 22.04 64 Bit
+-   Debian 12 XFCE 64BIT (netinst)
+-   Xubuntu 22.04 64Bit
 
-<br/>
+#### Download Distributions
 
-**Download Distributions**
-
--   [Linux Mint XFCE](https://linuxmint.com/)
+-   [Linux Mint XFCE](https://linuxmint.com/download.php)
+-   [Debian](https://www.debian.org/distrib/)
 -   [Xubuntu](https://xubuntu.org/)
 
----
+#### Table of contents
 
-<br/>
+-   [Installation](#Installation)
 
-**Install and upgrade packages**
+### Installation
+
+> Those scripts are intended to be run after installation and will change your configuration and packages.
+
+#### Install and upgrade packages
 
 ```bash
 sudo apt update && sudo apt upgrade -y && sudo apt install git curl sudo wget -y
@@ -38,7 +41,7 @@ sudo apt clean -y && sudo apt autoremove -y
 
 <br/>
 
-**Download scripts**
+#### Download scripts
 
 ```bash
 url="https://raw.githubusercontent.com/freddan88/fredrik.leemann.data/main/linux/xfce_xpu"
@@ -50,7 +53,7 @@ cd /tmp && wget $url/install_xfce_xpu_user.sh
 
 <br/>
 
-**Run scripts**
+#### Run scripts
 
 ```bash
 cd /tmp && sudo chmod 754 install_xfce_xpu*.sh
@@ -64,7 +67,7 @@ cd /tmp && ./install_xfce_xpu_user.sh
 
 <br/>
 
-**Reboot you computer after running the scripts either from gui or from terminal**
+#### Reboot you computer after running the scripts either from gui or from terminal
 
 ```bash
 sudo reboot
