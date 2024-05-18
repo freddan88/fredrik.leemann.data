@@ -112,8 +112,9 @@ sudo reboot
 #### Install various games
 
 ```bash
-sudo apt install quadrapassel frozen-bubble openarena supertux supertuxkart warzone2100 gnome-nibbles
-sudo apt install 0ad xmoto pinball pinball-table-gnu pinball-table-hurd hedgewars teeworlds
+sudo apt install supertux supertuxkart frozen-bubble gnome-nibbles quadrapassel openarena hedgewars -y
+sudo apt install nexuiz freedoom teeworlds warzone2100 xmoto sauerbraten alienblaster extremetuxracer -y
+sudo apt install alien-arena 0ad  pinball pinball-table-gnu pinball-table-hurd -y
 ```
 
 <br/>
