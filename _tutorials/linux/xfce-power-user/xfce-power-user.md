@@ -92,10 +92,11 @@ sudo reboot
 
 ### Keybindings
 
-| Keybinding                          | Action         | Description                |
-| ----------------------------------- | -------------- | -------------------------- |
-| <kbd>super</kbd> + <kbd>enter</kbd> | Xfce4 terminal | Open a new terminal-window |
-| More to come!                       |                |                            |
+| Keybinding                          | Action                                                              | Description                |
+| ----------------------------------- | ------------------------------------------------------------------- | -------------------------- |
+| <kbd>super</kbd> + <kbd>enter</kbd> | [Xfce4-terminal](https://docs.xfce.org/apps/terminal/start)         | Open a new terminal-window |
+| <kbd>super</kbd> + <kbd>space</kbd> | [Xfce4-appfinder](https://docs.xfce.org/xfce/xfce4-appfinder/start) | Open an applications menu  |
+| More to come!                       |                                                                     |                            |
 
 <br/>
 
