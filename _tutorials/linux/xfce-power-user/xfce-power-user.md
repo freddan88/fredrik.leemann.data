@@ -118,6 +118,8 @@ sudo apt install nexuiz freedoom teeworlds warzone2100 xmoto sauerbraten alienbl
 sudo apt install alien-arena 0ad  pinball pinball-table-gnu pinball-table-hurd
 ```
 
+Open Source two-dimensional platform game: [Secret Maryo Chronicles](http://www.secretmaryo.org/)
+
 <br/>
 
 #### Speed up apt-package-manager using the nala-project
