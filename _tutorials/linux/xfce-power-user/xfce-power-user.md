@@ -120,6 +120,8 @@ sudo apt install alien-arena 0ad  pinball pinball-table-gnu pinball-table-hurd
 
 Open Source two-dimensional platform game: [Secret Maryo Chronicles](http://www.secretmaryo.org/)
 
+Open Source fork of the game above: [The Secret Chronicles of Dr.M](https://secretchronicles.org/en/)
+
 <br/>
 
 #### Speed up apt-package-manager using the nala-project
