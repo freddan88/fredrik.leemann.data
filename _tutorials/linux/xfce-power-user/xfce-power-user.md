@@ -95,7 +95,7 @@ sudo reboot
 | Keybinding                          | Action                                                              | Description                |
 | ----------------------------------- | ------------------------------------------------------------------- | -------------------------- |
 | <kbd>super</kbd> + <kbd>enter</kbd> | [Xfce4-terminal](https://docs.xfce.org/apps/terminal/start)         | Open a new terminal-window |
-| <kbd>super</kbd> + <kbd>space</kbd> | [Xfce4-appfinder](https://docs.xfce.org/xfce/xfce4-appfinder/start) | Open an applications menu  |
+| <kbd>super</kbd> + <kbd>space</kbd> | [Xfce4-appfinder](https://docs.xfce.org/xfce/xfce4-appfinder/start) | Open the applications-menu |
 | More to come!                       |                                                                     |                            |
 
 <br/>
