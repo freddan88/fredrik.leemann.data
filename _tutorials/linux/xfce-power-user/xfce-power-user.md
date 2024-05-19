@@ -1,6 +1,6 @@
 ## Linux XFCE Power User
 
-> I call this project XFCE POWER USER because of handy keybindings for applications as well as the window manager.<br/>
+> I call this project XFCE POWER USER because of handy keybindings for applications as well as the desktop.<br/>
 > The layout for the xfce-desktop is inspired by various window managers like [i3-wm](https://i3wm.org/)<br/>
 
 ![](images/desktop.png)
@@ -160,7 +160,7 @@ sudo apt install ubuntu-restricted-extras
 
 <br/>
 
-#### Install new greeter as login window and update settings ubuntu/debian
+#### Install new greeter as login-window and update settings ubuntu/debian
 
 > I tend to like the looks of slick-greeter for lightdm rather than whats included in ubuntu/debian<br/>
 > If you also wan´t to change this you can install and configure with the commands below<br/>
