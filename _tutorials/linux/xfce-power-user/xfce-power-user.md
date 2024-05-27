@@ -90,13 +90,39 @@ sudo reboot
 
 <br/>
 
-### Keybindings
+### Keybindings applications
 
-| Keybinding                          | Action                                                              | Description                |
-| ----------------------------------- | ------------------------------------------------------------------- | -------------------------- |
-| <kbd>super</kbd> + <kbd>enter</kbd> | [Xfce4-terminal](https://docs.xfce.org/apps/terminal/start)         | Open a new terminal-window |
-| <kbd>super</kbd> + <kbd>space</kbd> | [Xfce4-appfinder](https://docs.xfce.org/xfce/xfce4-appfinder/start) | Open the applications-menu |
-| More to come!                       |                                                                     |                            |
+| Keybinding                                              | Action                                                                               | Description                      |
+| ------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------- |
+| <kbd>Super</kbd> + <kbd>W</kbd>                         | Google Chrome                                                                        | My preferred Web browser         |
+| <kbd>Super</kbd> + <kbd>Escape</kbd>                    | Xfce4-find-cursor                                                                    | Easily lactate the mouse-pointer |
+| <kbd>Super</kbd> + <kbd>E</kbd>                         | [Thunar](https://docs.xfce.org/xfce/thunar/start)                                    | Default File Manager in XFCE     |
+| <kbd>Shift</kbd> + <kbd>B</kbd>                         | [Bulk Rename](https://docs.xfce.org/xfce/thunar/bulk-renamer/start)                  | Rename multiple files            |
+| <kbd>Shift</kbd> + <kbd>F</kbd>                         | [Catfish](https://docs.xfce.org/apps/catfish/start)                                  | Search for files                 |
+| <kbd>Super</kbd> + <kbd>Tab</kbd>                       | [Rofi -show window](https://github.com/davatorium/rofi)                              | Show windows from all workspaces |
+| <kbd>Super</kbd> + <kbd>Enter</kbd>                     | [Xfce4-terminal](https://docs.xfce.org/apps/terminal/start)                          | Open a new terminal-window       |
+| <kbd>Super</kbd> + <kbd>Space</kbd>                     | [Xfce4-appfinder](https://docs.xfce.org/xfce/xfce4-appfinder/start)                  | Open the applications-menu       |
+| <kbd>Super</kbd> + <kbd>T</kbd>                         | [Xfce4-terminal](https://docs.xfce.org/apps/terminal/start)                          | Open a new terminal-window       |
+| <kbd>Super</kbd> + <kbd>R</kbd>                         | [Xfce4-appfinder](https://docs.xfce.org/xfce/xfce4-appfinder/start)                  | Open the applications-search     |
+| <kbd>Super</kbd> + <kbd>C</kbd>                         | [Xfce4-settings-manager](https://docs.xfce.org/xfce/xfce4-settings/manager)          | Open the systems setting-manager |
+| <kbd>Super</kbd> + <kbd>D</kbd>                         | [Xfce4-display-settings](https://docs.xfce.org/xfce/xfce4-settings/display)          | Open and edit display-settings   |
+| <kbd>Super</kbd> + <kbd>X</kbd>                         | [Xfce4-screenshooter](https://docs.xfce.org/apps/xfce4-screenshooter/usage)          | Application to take screenshots  |
+| <kbd>DISPLAY</kbd>                                      | [Xfce4-display-settings](https://docs.xfce.org/xfce/xfce4-settings/display)          | Open and edit display-settings   |
+| <kbd>PRINT</kbd>                                        | [Xfce4-screenshooter](https://docs.xfce.org/apps/xfce4-screenshooter/usage)          | Application to take screenshots  |
+| <kbd>MAIL</kbd>                                         | [Thunderbird](https://www.thunderbird.net/en-US/)                                    | Open preferred mail-reader       |
+| <kbd>Super</kbd> + <kbd>V</kbd>                         | [Baobab](https://community.linuxmint.com/software/view/baobab)                       | Disk usage analyzer              |
+| <kbd>Super</kbd> + <kbd>G</kbd>                         | [Galculator](https://community.linuxmint.com/software/view/galculator)               | Open a new calculator            |
+| <kbd>Super</kbd> + <kbd>S</kbd>                         | [Pavucontrol](https://community.linuxmint.com/software/view/pavucontrol)             | Audio mixer for output and input |
+| <kbd>Super</kbd> + <kbd>Z</kbd>                         | [Simplescreenrecorder](https://www.maartenbaert.be/simplescreenrecorder/)            | Record your desktop and more     |
+| <kbd>Super</kbd> + <kbd>A</kbd>                         | [Stacer](https://community.linuxmint.com/software/view/stacer)                       | System optimizer and monitoring  |
+| <kbd>Shift</kbd> + <kbd>Super</kbd> + <kbd>Space</kbd>  | [Bulk Rename](https://docs.xfce.org/xfce/thunar/bulk-renamer/start)                  | Rename multiple files            |
+| <kbd>Ctrl</kbd> + <kbd>Super</kbd> + <kbd>Space</kbd>   | [Catfish](https://docs.xfce.org/apps/catfish/start)                                  | Search for files                 |
+| <kbd>Ctrl</kbd> + <kbd>Super</kbd> + <kbd>C</kbd>       | [Xfce4-clipman-history](https://community.linuxmint.com/software/view/xfce4-clipman) | Clipboard history utility        |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Backspace</kbd> | Xflock4                                                                              | Lock the screen on your computer |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift-R</kbd>   | [Xfce4-session-logout --logout](https://docs.xfce.org/xfce/xfce4-session/logout)     | Logout from your session         |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Delete</kbd>    | [Xfce4-taskmanager](https://community.linuxmint.com/software/view/xfce4-taskmanager) | Process manager for XFCE         |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Escape</kbd>    | [Xkill](https://en.wikipedia.org/wiki/Xkill)                                         | Force quit applications          |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>     | [Xfce4-session-logout](https://docs.xfce.org/xfce/xfce4-session/logout)              | Open a menu to handle session    |
 
 <br/>
 
