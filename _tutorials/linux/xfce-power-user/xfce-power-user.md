@@ -1,6 +1,6 @@
 ## Linux XFCE Power User
 
-> I call this project XFCE POWER USER because of handy keybindings for applications as well as the desktop.<br/>
+> I call this project XFCE POWER USER because of handy keybindings for applications and desktop.<br/>
 > The layout for the xfce-desktop is inspired by various window managers like [i3-wm](https://i3wm.org/)<br/>
 
 ![](images/desktop.png)
@@ -90,7 +90,7 @@ sudo reboot
 
 <br/>
 
-### Keybindings applications
+### Keybindings for applications
 
 | Keybinding                                              | Action                                                                               | Description                      |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------- |
