@@ -33,9 +33,10 @@
 #### Table of contents
 
 -   [Installation](#installation)
--   [Keybindings](#keybindings)
--   [Extra packages](#extra-packages)
+-   [Keybindings for applications](#keybindings-for-applications)
+-   [Keybindings for the desktop](#keybindings-for-the-desktop)
 -   [Installed packages](#installed-packages)
+-   [Extra packages](#extra-packages)
 
 <br/>
 
@@ -123,6 +124,19 @@ sudo reboot
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Delete</kbd>    | [Xfce4-taskmanager](https://community.linuxmint.com/software/view/xfce4-taskmanager) | Process manager for XFCE         |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Escape</kbd>    | [Xkill](https://en.wikipedia.org/wiki/Xkill)                                         | Force quit applications          |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>     | [Xfce4-session-logout](https://docs.xfce.org/xfce/xfce4-session/logout)              | Open a menu to handle session    |
+
+<br/>
+
+### Keybindings for the desktop
+
+| Keybinding | Description |
+| ---------- | ----------- |
+
+<br/>
+
+### Installed packages
+
+> Please se the installation of apt-packages in the [script](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/xfce_xpu/install_xfce_xpu_sudo.sh)
 
 <br/>
 
@@ -222,11 +236,5 @@ sudo apt install libreoffice-help-sv mythes-sv hunspell-sv-se hyphen-sv -y
 ```bash
 sudo apt install linux-headers-$(uname -r) make gcc dkms build-essential -y
 ```
-
-<br/>
-
-### Installed packages
-
-> Please se the installation of apt-packages in the [script](https://github.com/freddan88/fredrik.leemann.data/blob/main/linux/xfce_xpu/install_xfce_xpu_sudo.sh)
 
 <br/>
