@@ -93,7 +93,7 @@ sudo reboot
 
 ### Keybindings for applications
 
-| Keybinding                                              | Action                                                                               | Description                      |
+| Keybinding                                              | Application                                                                          | Description                      |
 | ------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------- |
 | <kbd>Super</kbd> + <kbd>W</kbd>                         | Google Chrome                                                                        | My preferred Web browser         |
 | <kbd>Super</kbd> + <kbd>Escape</kbd>                    | Xfce4-find-cursor                                                                    | Easily lactate the mouse-pointer |
