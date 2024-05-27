@@ -118,7 +118,7 @@ sudo reboot
 | <kbd>Shift</kbd> + <kbd>Super</kbd> + <kbd>Space</kbd>  | [Bulk Rename](https://docs.xfce.org/xfce/thunar/bulk-renamer/start)                  | Rename multiple files            |
 | <kbd>Ctrl</kbd> + <kbd>Super</kbd> + <kbd>Space</kbd>   | [Catfish](https://docs.xfce.org/apps/catfish/start)                                  | Search for files                 |
 | <kbd>Ctrl</kbd> + <kbd>Super</kbd> + <kbd>C</kbd>       | [Xfce4-clipman-history](https://community.linuxmint.com/software/view/xfce4-clipman) | Clipboard history utility        |
-| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Backspace</kbd> | Xflock4                                                                              | Lock the screen on your computer |
+| <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Backspace</kbd> | [Xflock4](https://wiki.postmarketos.org/wiki/Screen_locker)                          | Lock the screen on your computer |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift-R</kbd>   | [Xfce4-session-logout --logout](https://docs.xfce.org/xfce/xfce4-session/logout)     | Logout from your session         |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Delete</kbd>    | [Xfce4-taskmanager](https://community.linuxmint.com/software/view/xfce4-taskmanager) | Process manager for XFCE         |
 | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Escape</kbd>    | [Xkill](https://en.wikipedia.org/wiki/Xkill)                                         | Force quit applications          |
