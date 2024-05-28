@@ -129,8 +129,9 @@ sudo reboot
 
 ### Keybindings for the desktop
 
-| Keybinding | Description |
-| ---------- | ----------- |
+| Keybinding       | Description      |
+| ---------------- | ---------------- |
+| Work in progress | Work in progress |
 
 <br/>
 
