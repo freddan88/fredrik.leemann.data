@@ -1,17 +1,7 @@
 [
   {
-    "title": "Linux Debian i3 Minimal Installation",
-    "link": "https://github.com/freddan88/fredrik.leemann.data/blob/main/_tutorials/linux/debian/debian-minimal-install/debian-i3-tutorial.md",
-    "updated": "2022-10-23"
-  },
-  {
-    "title": "Linux Debian web-developer utilities",
-    "link": "https://github.com/freddan88/fredrik.leemann.data/blob/main/_tutorials/linux/debian/debian-webdev-tutorial.md",
-    "updated": "2022-10-23"
-  },
-  {
-    "title": "Linux Mint XFCE Power User (Coming when it is done)",
-    "link": "https://github.com/freddan88/fredrik.leemann.data/tree/main/linux/xfce_xpu",
-    "updated": "2024-02-17"
+    "title": "Linux XFCE Power User",
+    "link": "https://github.com/freddan88/fredrik.leemann.data/blob/main/_tutorials/linux/xfce-power-user/xfce-power-user.md",
+    "updated": "2024-05-28"
   }
 ]
