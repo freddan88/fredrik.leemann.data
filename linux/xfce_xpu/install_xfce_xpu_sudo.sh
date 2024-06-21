@@ -212,8 +212,8 @@ fi
 cd /tmp || exit
 
 apt-get install apache2 libapache2-mpm-itk libapache2-mod-php sqlite3 mariadb-client pre-commit jq gh -y
-apt-get install php php-cli php-common php-xdebug php-mysql php-mbstring php-curl php-soap php-readline -y
-apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-pear php-phpseclib php-sqlite3 -y
+apt-get install php php-cli php-common php-xdebug php-mysql php-sqlite3 php-mbstring php-curl php-pear php-soap -y
+apt-get install php-imagick php-gd php-bcmath php-opcache php-xml php-zip php-readline php-phpseclib php-mail -y
 
 if $install_docker; then
   # Install docker here
